@@ -63,6 +63,11 @@
     <Compile Include="frmQuanLiThongTinSinhVien.Designer.cs">
       <DependentUpon>frmQuanLiThongTinSinhVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmQuanLiThongTinSinhVien.resx">
+      <DependentUpon>frmQuanLiThongTinSinhVien.cs</DependentUpon>
+    </EmbeddedResource>
     <Compile Include="fTrangChinh.cs">
       <SubType>Form</SubType>
     </Compile>
