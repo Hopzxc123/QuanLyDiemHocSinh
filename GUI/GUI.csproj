@@ -46,6 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="QLDiemHocSinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLDiemHocSinh.Designer.cs">
+      <DependentUpon>QLDiemHocSinh.cs</DependentUpon>
     <Compile Include="fQuanLyMonHoc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +95,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="QLDiemHocSinh.resx">
+      <DependentUpon>QLDiemHocSinh.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -112,6 +120,9 @@
       <Project>{78d1b6f2-a270-4b89-a019-a046391cc69b}</Project>
       <Name>DTO</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
