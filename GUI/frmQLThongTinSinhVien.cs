@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class QLDiemHocSinh : Form
+    public partial class frmQLThongTinSinhVien : Form
     {
-        public QLDiemHocSinh()
+        public frmQLThongTinSinhVien()
         {
             InitializeComponent();
         }

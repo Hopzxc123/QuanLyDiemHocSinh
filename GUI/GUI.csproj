@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-
   <!-- Import chuẩn MSBuild -->
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-
   <!-- Cấu hình chung -->
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -17,7 +15,6 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
-
   <!-- Debug -->
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -29,7 +26,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-
   <!-- Release -->
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -40,7 +36,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-
   <!-- References -->
   <ItemGroup>
     <Reference Include="System" />
@@ -55,66 +50,49 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
-
   <!-- Compile Forms & code -->
   <ItemGroup>
-    <Compile Include="QLDiemHocSinh.cs">
+    <Compile Include="frmQLThongTinSinhVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QLDiemHocSinh.Designer.cs">
-      <DependentUpon>QLDiemHocSinh.cs</DependentUpon>
+    <Compile Include="frmQLThongTinSinhVien.Designer.cs">
+      <DependentUpon>frmQLThongTinSinhVien.cs</DependentUpon>
     </Compile>
-
-    <Compile Include="fQuanLyMonHoc.cs">
+    <Compile Include="frmQuanLyMonHoc.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fQuanLyMonHoc.Designer.cs">
-      <DependentUpon>fQuanLyMonHoc.cs</DependentUpon>
+    <Compile Include="frmQuanLyMonHoc.Designer.cs">
+      <DependentUpon>frmQuanLyMonHoc.cs</DependentUpon>
     </Compile>
-
-    <Compile Include="frmQuanLiThongTinSinhVien.cs">
+    <Compile Include="frmTrangChinh.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmQuanLiThongTinSinhVien.Designer.cs">
-      <DependentUpon>frmQuanLiThongTinSinhVien.cs</DependentUpon>
+    <Compile Include="frmTrangChinh.Designer.cs">
+      <DependentUpon>frmTrangChinh.cs</DependentUpon>
     </Compile>
-
-    <Compile Include="fTrangChinh.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="fTrangChinh.Designer.cs">
-      <DependentUpon>fTrangChinh.cs</DependentUpon>
-    </Compile>
-
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
-
   <!-- Embedded Resources -->
   <ItemGroup>
-    <EmbeddedResource Include="QLDiemHocSinh.resx">
-      <DependentUpon>QLDiemHocSinh.cs</DependentUpon>
+    <EmbeddedResource Include="frmQLThongTinSinhVien.resx">
+      <DependentUpon>frmQLThongTinSinhVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fQuanLyMonHoc.resx">
-      <DependentUpon>fQuanLyMonHoc.cs</DependentUpon>
+    <EmbeddedResource Include="frmQuanLyMonHoc.resx">
+      <DependentUpon>frmQuanLyMonHoc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmQuanLiThongTinSinhVien.resx">
-      <DependentUpon>frmQuanLiThongTinSinhVien.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="fTrangChinh.resx">
-      <DependentUpon>fTrangChinh.cs</DependentUpon>
+    <EmbeddedResource Include="frmTrangChinh.resx">
+      <DependentUpon>frmTrangChinh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -122,7 +100,6 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
-
   <!-- Config & settings -->
   <ItemGroup>
     <None Include="App.config" />
@@ -131,7 +108,6 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
-
   <!-- Project References -->
   <ItemGroup>
     <ProjectReference Include="..\BLL\BLL.csproj">
@@ -143,13 +119,10 @@
       <Name>DTO</Name>
     </ProjectReference>
   </ItemGroup>
-
   <!-- Extra resources -->
   <ItemGroup>
     <None Include="Resources\add1.png" />
   </ItemGroup>
-
   <!-- Import C# targets -->
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-
 </Project>

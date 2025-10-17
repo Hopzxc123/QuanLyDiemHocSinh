@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class fTrangChinh : Form
+    public partial class frmTrangChinh : Form
     {
-        public fTrangChinh()
+        public frmTrangChinh()
         {
             InitializeComponent();
         }
@@ -44,7 +44,32 @@ namespace GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            openChildForm(new fQuanLyMonHoc());
+            openChildForm(new frmQLThongTinSinhVien ());
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+           // openChildForm();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frmQLThongTinSinhVien());
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void thôngTinToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frmQuanLyMonHoc());
         }
     }
 }

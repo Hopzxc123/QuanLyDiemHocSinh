@@ -16,8 +16,7 @@ namespace GUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new QLDiemHocSinh());
-            Application.Run(new fTrangChinh());
+            Application.Run(new frmTrangChinh());
         }
     }
 }

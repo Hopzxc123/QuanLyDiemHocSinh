@@ -1,6 +1,6 @@
 ﻿namespace GUI
 {
-    partial class QLDiemHocSinh
+    partial class frmQLThongTinSinhVien
     {
         /// <summary>
         /// Required designer variable.

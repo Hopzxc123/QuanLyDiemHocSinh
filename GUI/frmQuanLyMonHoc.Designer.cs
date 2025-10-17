@@ -1,6 +1,6 @@
 ﻿namespace GUI
 {
-    partial class fQuanLyMonHoc
+    partial class frmQuanLyMonHoc
     {
         /// <summary>
         /// Required designer variable.
@@ -68,9 +68,9 @@
             this.label1.ForeColor = System.Drawing.Color.Yellow;
             this.label1.Location = new System.Drawing.Point(19, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(492, 42);
+            this.label1.Size = new System.Drawing.Size(436, 42);
             this.label1.TabIndex = 0;
-            this.label1.Text = "QUẢN LÝ ĐIỂM HỌC SINH";
+            this.label1.Text = "DANH SÁCH MÔN HỌC";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
@@ -330,7 +330,7 @@
             this.panel2.Size = new System.Drawing.Size(147, 553);
             this.panel2.TabIndex = 8;
             // 
-            // fQuanLyMonHoc
+            // frmQuanLyMonHoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -340,7 +340,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.MinimumSize = new System.Drawing.Size(800, 600);
-            this.Name = "fQuanLyMonHoc";
+            this.Name = "frmQuanLyMonHoc";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fQuanLyMonHoc";
             this.Load += new System.EventHandler(this.fQuanLyMonHoc_Load);

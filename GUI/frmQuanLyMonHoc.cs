@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class fQuanLyMonHoc : Form
+    public partial class frmQuanLyMonHoc : Form
     {
-        public fQuanLyMonHoc()
+        public frmQuanLyMonHoc()
         {
             InitializeComponent();
           
