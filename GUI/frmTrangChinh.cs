@@ -49,7 +49,7 @@ namespace GUI
 
         private void button2_Click(object sender, EventArgs e)
         {
-           // openChildForm();
+            openChildForm(new frmQLDiemHS());
         }
 
         private void button3_Click(object sender, EventArgs e)

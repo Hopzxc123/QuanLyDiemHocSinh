@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbltitle = new System.Windows.Forms.Label();
             this.gbThongTin = new System.Windows.Forms.GroupBox();
             this.cbHocKy = new System.Windows.Forms.ComboBox();
             this.cbMon = new System.Windows.Forms.ComboBox();
@@ -59,20 +59,20 @@
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // lbltitle
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lbltitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Yellow;
-            this.label1.Location = new System.Drawing.Point(19, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(436, 42);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "DANH SÁCH MÔN HỌC";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.lbltitle.AutoSize = true;
+            this.lbltitle.Font = new System.Drawing.Font("Times New Roman", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbltitle.ForeColor = System.Drawing.Color.Yellow;
+            this.lbltitle.Location = new System.Drawing.Point(39, 25);
+            this.lbltitle.Name = "lbltitle";
+            this.lbltitle.Size = new System.Drawing.Size(436, 42);
+            this.lbltitle.TabIndex = 0;
+            this.lbltitle.Text = "DANH SÁCH MÔN HỌC";
+            this.lbltitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbltitle.Click += new System.EventHandler(this.label1_Click);
             // 
             // gbThongTin
             // 
@@ -268,12 +268,14 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.dgv);
-            this.panel3.Controls.Add(this.label1);
+            this.panel3.Controls.Add(this.lbltitle);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(310, 0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(546, 553);
             this.panel3.TabIndex = 9;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            this.panel3.Resize += new System.EventHandler(this.panel3_Resize);
             // 
             // btnXoa
             // 
@@ -357,7 +359,7 @@
 
         #endregion
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbltitle;
         private System.Windows.Forms.GroupBox gbThongTin;
         private System.Windows.Forms.DataGridView dgv;
         private System.Windows.Forms.Label label6;
