@@ -71,5 +71,15 @@ namespace GUI
         {
             openChildForm(new frmQuanLyMonHoc());
         }
+
+        private void plBody_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button5_Click_1(object sender, EventArgs e)
+        {
+            //openChildForm(new QuanLyGiangVien());
+        }
     }
 }
