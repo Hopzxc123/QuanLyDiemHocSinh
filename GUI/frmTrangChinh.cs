@@ -54,13 +54,9 @@ namespace GUI
 
         private void button3_Click(object sender, EventArgs e)
         {
-            openChildForm(new frmQLThongTinSinhVien());
+            openChildForm(new frmQLLop());
         }
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void thôngTinToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -79,7 +75,7 @@ namespace GUI
 
         private void button5_Click_1(object sender, EventArgs e)
         {
-            //openChildForm(new QuanLyGiangVien());
+            openChildForm(new QuanLyGiangVien());
         }
     }
 }

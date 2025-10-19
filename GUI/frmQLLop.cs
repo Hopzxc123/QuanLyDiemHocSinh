@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class QLLop : Form
+    public partial class frmQLLop : Form
     {
         private void MaNganh()
         {
@@ -18,7 +18,7 @@ namespace GUI
             cbMaNganh.Items.Add("EE");
             cbMaNganh.Items.Add("CE");
         }
-        public QLLop()
+        public frmQLLop()
         {
             InitializeComponent();
             MaNganh();
@@ -90,6 +90,11 @@ namespace GUI
                 txtTenLop.Text= i.SubItems[1].Text;
                 cbMaNganh.Text = i.SubItems[2].Text;
             }
+        }
+
+        private void QLLop_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
