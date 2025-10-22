@@ -759,7 +759,7 @@ namespace DAL
 
         private HocKyDAL() { }
 
-        // Lấy tất cả học kỳ
+        // 🔹 Lấy tất cả học kỳ
         public List<HocKyDTO> GetAllHocKy()
         {
             List<HocKyDTO> list = new List<HocKyDTO>();
@@ -769,21 +769,235 @@ namespace DAL
 
             foreach (DataRow row in data.Rows)
             {
-                HocKyDTO hk = new HocKyDTO
-                {
-                    MaHocKy = row["MaHocKy"].ToString(),
-                    TenHocKy = row["TenHocKy"].ToString(),
-                    NgayBatDau = Convert.ToDateTime(row["NgayBatDau"]),
-                    NgayKetThuc = Convert.ToDateTime(row["NgayKetThuc"]),
-                    MaNamHoc = row["MaNamHoc"].ToString()
-                };
-                list.Add(hk);
+                list.Add(MapToDTO(row));
             }
 
             return list;
         }
 
-        // Lấy học kỳ theo mã
-        public HocKyDTO GetHocKyByMa(string maHocKy)
+        // 🔹 Lấy học kỳ theo mã
+        public HocKyDTO GetHocKyById(int maHocKy)
         {
-            string query = "SELECT * FROM HocKy WHERE MaHocKy = @MaH
+            string query = "SELECT * FROM HocKy WHERE MaHocKy = @MaHocKy";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { maHocKy });
+
+            if (data.Rows.Count > 0)
+                return MapToDTO(data.Rows[0]);
+
+            return null;
+        }
+
+        // 🔹 Lấy học kỳ theo năm học
+        public List<HocKyDTO> GetHocKyByNamHoc(int maNamHoc)
+        {
+            List<HocKyDTO> list = new List<HocKyDTO>();
+            string query = "SELECT * FROM HocKy WHERE MaNamHoc = @MaNamHoc";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { maNamHoc });
+
+            foreach (DataRow row in data.Rows)
+            {
+                list.Add(MapToDTO(row));
+            }
+
+            return list;
+        }
+
+        // 🔹 Thêm mới học kỳ
+        public bool InsertHocKy(HocKyDTO hk)
+        {
+            string query = @"
+                INSERT INTO HocKy (MaNamHoc, TenHocKy, NgayBatDau, NgayKetThuc)
+                VALUES (@MaNamHoc, @TenHocKy, @NgayBatDau, @NgayKetThuc)";
+
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[]
+            {
+                hk.MaNamHoc,
+                hk.TenHocKy,
+                hk.NgayBatDau,
+                hk.NgayKetThuc
+            });
+
+            return result > 0;
+        }
+
+        // 🔹 Cập nhật học kỳ
+        public bool UpdateHocKy(HocKyDTO hk)
+        {
+            string query = @"
+                UPDATE HocKy
+                SET MaNamHoc = @MaNamHoc,
+                    TenHocKy = @TenHocKy,
+                    NgayBatDau = @NgayBatDau,
+                    NgayKetThuc = @NgayKetThuc
+                WHERE MaHocKy = @MaHocKy";
+
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[]
+            {
+                hk.MaNamHoc,
+                hk.TenHocKy,
+                hk.NgayBatDau,
+                hk.NgayKetThuc,
+                hk.MaHocKy
+            });
+
+            return result > 0;
+        }
+
+        // 🔹 Xóa học kỳ
+        public bool DeleteHocKy(int maHocKy)
+        {
+            string query = "DELETE FROM HocKy WHERE MaHocKy = @MaHocKy";
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { maHocKy });
+            return result > 0;
+        }
+
+        // 🔹 Hàm chuyển DataRow -> DTO
+        private HocKyDTO MapToDTO(DataRow row)
+        {
+            return new HocKyDTO
+            {
+                MaHocKy = Convert.ToInt32(row["MaHocKy"]),
+                MaNamHoc = Convert.ToInt32(row["MaNamHoc"]),
+                TenHocKy = row["TenHocKy"].ToString(),
+                NgayBatDau = Convert.ToDateTime(row["NgayBatDau"]),
+                NgayKetThuc = Convert.ToDateTime(row["NgayKetThuc"])
+            };
+        }
+    }
+}
+
+
+
+
+    // ======================GiaoVienDAL.cs================
+    using System;
+            using System.Data;
+            using System.Collections.Generic;
+            using DTO;
+
+namespace DAL
+    {
+        public class GiaoVienDAL
+        {
+            private static GiaoVienDAL _instance;
+            public static GiaoVienDAL Instance
+            {
+                get
+                {
+                    if (_instance == null)
+                        _instance = new GiaoVienDAL();
+                    return _instance;
+                }
+            }
+
+            private GiaoVienDAL() { }
+
+            // Lấy toàn bộ danh sách giáo viên
+            public List<GiaoVienDTO> GetAllGiaoVien()
+            {
+                List<GiaoVienDTO> list = new List<GiaoVienDTO>();
+                string query = "SELECT * FROM GiaoVien";
+
+                DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+                foreach (DataRow row in data.Rows)
+                {
+                    list.Add(MapToDTO(row));
+                }
+
+                return list;
+            }
+
+            // Lấy giáo viên theo mã
+            public GiaoVienDTO GetGiaoVienById(int maGiaoVien)
+            {
+                string query = "SELECT * FROM GiaoVien WHERE MaGiaoVien = @MaGiaoVien";
+                DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { maGiaoVien });
+
+                if (data.Rows.Count > 0)
+                    return MapToDTO(data.Rows[0]);
+
+                return null;
+            }
+
+            // Thêm mới
+            public bool InsertGiaoVien(GiaoVienDTO gv)
+            {
+                string query = @"
+                INSERT INTO GiaoVien (HoTen, NgaySinh, GioiTinh, DiaChi, DienThoai, Email, ChuyenMon, TrangThai)
+                VALUES (@HoTen, @NgaySinh, @GioiTinh, @DiaChi, @DienThoai, @Email, @ChuyenMon, @TrangThai)";
+
+                int result = DataProvider.Instance.ExecuteNonQuery(query, new object[]
+                {
+                gv.HoTen, gv.NgaySinh, gv.GioiTinh, gv.DiaChi, gv.DienThoai,
+                gv.Email, gv.ChuyenMon, gv.TrangThai
+                });
+
+                return result > 0;
+            }
+
+            // Cập nhật
+            public bool UpdateGiaoVien(GiaoVienDTO gv)
+            {
+                string query = @"
+                UPDATE GiaoVien
+                SET HoTen = @HoTen,
+                    NgaySinh = @NgaySinh,
+                    GioiTinh = @GioiTinh,
+                    DiaChi = @DiaChi,
+                    DienThoai = @DienThoai,
+                    Email = @Email,
+                    ChuyenMon = @ChuyenMon,
+                    TrangThai = @TrangThai
+                WHERE MaGiaoVien = @MaGiaoVien";
+
+                int result = DataProvider.Instance.ExecuteNonQuery(query, new object[]
+                {
+                gv.HoTen, gv.NgaySinh, gv.GioiTinh, gv.DiaChi, gv.DienThoai,
+                gv.Email, gv.ChuyenMon, gv.TrangThai, gv.MaGiaoVien
+                });
+
+                return result > 0;
+            }
+
+            // Xóa
+            public bool DeleteGiaoVien(int maGiaoVien)
+            {
+                string query = "DELETE FROM GiaoVien WHERE MaGiaoVien = @MaGiaoVien";
+                int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { maGiaoVien });
+                return result > 0;
+            }
+
+            // Tìm kiếm theo tên
+            public List<GiaoVienDTO> SearchGiaoVienByName(string keyword)
+            {
+                List<GiaoVienDTO> list = new List<GiaoVienDTO>();
+                string query = "SELECT * FROM GiaoVien WHERE HoTen LIKE N'%' + @keyword + '%'";
+                DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { keyword });
+
+                foreach (DataRow row in data.Rows)
+                {
+                    list.Add(MapToDTO(row));
+                }
+
+                return list;
+            }
+
+            // Helper: chuyển DataRow sang DTO
+            private GiaoVienDTO MapToDTO(DataRow row)
+            {
+                return new GiaoVienDTO
+                {
+                    MaGiaoVien = Convert.ToInt32(row["MaGiaoVien"]),
+                    HoTen = row["HoTen"].ToString(),
+                    NgaySinh = Convert.ToDateTime(row["NgaySinh"]),
+                    GioiTinh = row["GioiTinh"].ToString(),
+                    DiaChi = row["DiaChi"].ToString(),
+                    DienThoai = row["DienThoai"].ToString(),
+                    Email = row["Email"].ToString(),
+                    ChuyenMon = row["ChuyenMon"].ToString(),
+                    TrangThai = Convert.ToBoolean(row["TrangThai"])
+                };
+            }
+        }
+    }
