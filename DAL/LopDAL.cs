@@ -124,12 +124,17 @@ namespace DAL
             return result > 0;
         }
 
-        // Xóa lớp
+        // Replace CountHocSinhTrongLop with CountHocSinhInLop to match the signature in LopDAL
         public bool DeleteLop(string maLop)
         {
-            string query = "DELETE FROM Lop WHERE MaLop = @MaLop";
-            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { maLop });
-            return result > 0;
+            if (string.IsNullOrWhiteSpace(maLop))
+                throw new Exception("Mã lớp không được để trống");
+
+            int soHocSinh = LopDAL.Instance.CountHocSinhInLop(maLop);
+            if (soHocSinh > 0)
+                throw new Exception($"Không thể xóa lớp vì còn {soHocSinh} học sinh");
+
+            return LopDAL.Instance.DeleteLop(maLop);
         }
 
         // Đếm số học sinh trong lớp
@@ -138,6 +143,10 @@ namespace DAL
             string query = "SELECT COUNT(*) FROM HocSinh WHERE MaLop = @MaLop";
             object result = DataProvider.Instance.ExecuteScalar(query, new object[] { maLop });
             return result != null ? Convert.ToInt32(result) : 0;
+        }
+        public bool CheckMaLopExists(string maLop)
+        {
+            return GetLopByMa(maLop) != null;
         }
     }
 }

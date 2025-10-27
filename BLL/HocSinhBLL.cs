@@ -28,9 +28,9 @@ namespace BLL
 
         public bool InsertHocSinh(HocSinhDTO hs)
         {
-            if (string.IsNullOrWhiteSpace(hs.MaHS))
+            if (string.IsNullOrWhiteSpace(hs.MaHocSinh))
                 throw new Exception("Mã học sinh không được để trống");
-            if (string.IsNullOrWhiteSpace(hs.TenHS))
+            if (string.IsNullOrWhiteSpace(hs.HoTen))
                 throw new Exception("Tên học sinh không được để trống");
             if (string.IsNullOrWhiteSpace(hs.GioiTinh))
                 throw new Exception("Giới tính không được để trống");
@@ -49,7 +49,8 @@ namespace BLL
             if (!IsValidEmail(hs.Email))
                 throw new Exception("Email không hợp lệ");
 
-            if (HocSinhDAL.Instance.CheckMaHocSinhExists(hs.MaHS))
+            
+            if (HocSinhDAL.Instance.GetHocSinhByMa(hs.MaHocSinh) != null)
                 throw new Exception("Mã học sinh đã tồn tại");
 
             return HocSinhDAL.Instance.InsertHocSinh(hs);
@@ -57,7 +58,7 @@ namespace BLL
 
         public bool UpdateHocSinh(HocSinhDTO hs)
         {
-            if (string.IsNullOrWhiteSpace(hs.MaHS))
+            if (string.IsNullOrWhiteSpace(hs.MaHocSinh))
                 throw new Exception("Mã học sinh không được để trống");
 
             return HocSinhDAL.Instance.UpdateHocSinh(hs);

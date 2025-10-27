@@ -52,7 +52,10 @@ namespace BLL
             if (string.IsNullOrWhiteSpace(maHocKy))
                 throw new Exception("Mã học kỳ không được để trống");
 
-            return HocKyDAL.Instance.DeleteHocKy(maHocKy);
+            if (!int.TryParse(maHocKy, out int maHocKyInt))
+                throw new Exception("Mã học kỳ phải là số nguyên hợp lệ");
+
+            return HocKyDAL.Instance.DeleteHocKy(maHocKyInt);
         }
     }
 }

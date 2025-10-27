@@ -1,4 +1,5 @@
-﻿// ==================== MonHocDAL.cs ====================
+﻿
+// ==================== MonHocDAL.cs ====================
 using System;
 using System.Data;
 using System.Collections.Generic;
@@ -120,6 +121,10 @@ namespace DAL
             }
 
             return list;
+        }
+        public bool CheckMaMonHocExists(string maMonHoc)
+        {
+            return GetMonHocByMa(maMonHoc) != null;
         }
     }
 }

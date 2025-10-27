@@ -28,7 +28,7 @@ namespace BLL
 
         public bool InsertDiem(DiemDTO diem)
         {
-            if (string.IsNullOrWhiteSpace(diem.MaHS))
+            if (string.IsNullOrWhiteSpace(diem.MaHocSinh))
                 throw new Exception("Mã học sinh không được để trống");
             if (string.IsNullOrWhiteSpace(diem.MaMonHoc))
                 throw new Exception("Mã môn học không được để trống");

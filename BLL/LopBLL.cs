@@ -32,7 +32,7 @@ namespace BLL
                 throw new Exception("Mã lớp không được để trống");
             if (string.IsNullOrWhiteSpace(lop.TenLop))
                 throw new Exception("Tên lớp không được để trống");
-            if (string.IsNullOrWhiteSpace(lop.MaKhoi))
+            if (string.IsNullOrWhiteSpace(lop.MaLop))
                 throw new Exception("Mã khối không được để trống");
 
             if (LopDAL.Instance.CheckMaLopExists(lop.MaLop))
@@ -54,7 +54,7 @@ namespace BLL
             if (string.IsNullOrWhiteSpace(maLop))
                 throw new Exception("Mã lớp không được để trống");
 
-            int soHocSinh = LopDAL.Instance.CountHocSinhTrongLop(maLop);
+            int soHocSinh = LopDAL.Instance.CountHocSinhInLop(maLop);
             if (soHocSinh > 0)
                 throw new Exception($"Không thể xóa lớp vì còn {soHocSinh} học sinh");
 
