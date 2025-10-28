@@ -4,7 +4,7 @@ namespace DTO
 {
     public class GiaoVienDTO
     {
-        public string MaGiaoVien { get; set; }
+        public int MaGiaoVien { get; set; }
         public string HoTen { get; set; }
         public DateTime? NgaySinh { get; set; }
         public string GioiTinh { get; set; }
@@ -12,13 +12,13 @@ namespace DTO
         public string DienThoai { get; set; }
         public string Email { get; set; }
         public string ChuyenMon { get; set; }
-        public string TrangThai { get; set; }
+        public bool TrangThai { get; set; }
 
         public GiaoVienDTO() { }
 
-        public GiaoVienDTO(string maGiaoVien, string hoTen, DateTime? ngaySinh,
+        public GiaoVienDTO(int maGiaoVien, string hoTen, DateTime? ngaySinh,
                            string gioiTinh, string diaChi, string dienThoai,
-                           string email, string chuyenMon, string trangThai)
+                           string email, string chuyenMon, bool trangThai)
         {
             MaGiaoVien = maGiaoVien;
             HoTen = hoTen;

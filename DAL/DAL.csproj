@@ -42,7 +42,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="LopDAL.cs" />
+=======
+    <Compile Include="DataProvider.cs" />
+    <Compile Include="DiemDAL.cs" />
+    <Compile Include="GiaoVienDAL.cs" />
+    <Compile Include="HocKyDAL.cs" />
+    <Compile Include="HocSinhDAL.cs" />
+    <Compile Include="LopDAL.cs" />
+    <Compile Include="MonHocDAL.cs" />
+    <Compile Include="NamHocDAL.cs" />
+>>>>>>> bede1167c6bf312cdbfc0c79b2f182baa58801b1
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DataProvider.cs" />
   </ItemGroup>
