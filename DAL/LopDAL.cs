@@ -1,5 +1,4 @@
-﻿// ==================== LopDAL.cs ====================
-using System;
+﻿using System;
 using System.Data;
 using System.Collections.Generic;
 using DTO;
@@ -22,131 +21,105 @@ namespace DAL
 
         private LopDAL() { }
 
+        // ====================== READ ======================
+
         // Lấy tất cả lớp
         public List<LopDTO> GetAllLop()
         {
             List<LopDTO> list = new List<LopDTO>();
             string query = "SELECT * FROM Lop";
-
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
             foreach (DataRow row in data.Rows)
             {
-                LopDTO lop = new LopDTO
-                {
-                    MaLop = row["MaLop"].ToString(),
-                    TenLop = row["TenLop"].ToString(),
-                    KhoiLop = row["KhoiLop"].ToString(),
-                    SSo = row["SSo"] != DBNull.Value ? Convert.ToInt32(row["SSo"]) : 0,
-                    NamHoc = row["NamHoc"].ToString(),
-                    GhiChu = row["GhiChu"].ToString()
-                };
-                list.Add(lop);
+                list.Add(MapToDTO(row));
             }
 
             return list;
         }
 
         // Lấy lớp theo mã
-        public LopDTO GetLopByMa(string maLop)
+        public LopDTO GetLopByMa(int maLop)
         {
             string query = "SELECT * FROM Lop WHERE MaLop = @MaLop";
             DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { maLop });
 
             if (data.Rows.Count > 0)
-            {
-                DataRow row = data.Rows[0];
-                return new LopDTO
-                {
-                    MaLop = row["MaLop"].ToString(),
-                    TenLop = row["TenLop"].ToString(),
-                    KhoiLop = row["KhoiLop"].ToString(),
-                    SSo = row["SSo"] != DBNull.Value ? Convert.ToInt32(row["SSo"]) : 0,
-                    NamHoc = row["NamHoc"].ToString(),
-                    GhiChu = row["GhiChu"].ToString()
-                };
-            }
+                return MapToDTO(data.Rows[0]);
 
             return null;
         }
 
         // Lấy lớp theo năm học
-        public List<LopDTO> GetLopByNamHoc(string namHoc)
+        public List<LopDTO> GetLopByNamHoc(int namHoc)
         {
             List<LopDTO> list = new List<LopDTO>();
             string query = "SELECT * FROM Lop WHERE NamHoc = @NamHoc";
-
             DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { namHoc });
 
             foreach (DataRow row in data.Rows)
             {
-                LopDTO lop = new LopDTO
-                {
-                    MaLop = row["MaLop"].ToString(),
-                    TenLop = row["TenLop"].ToString(),
-                    KhoiLop = row["KhoiLop"].ToString(),
-                    SSo = row["SSo"] != DBNull.Value ? Convert.ToInt32(row["SSo"]) : 0,
-                    NamHoc = row["NamHoc"].ToString(),
-                    GhiChu = row["GhiChu"].ToString()
-                };
-                list.Add(lop);
+                list.Add(MapToDTO(row));
             }
 
             return list;
         }
 
-        // Thêm lớp mới
+        // ====================== CREATE ======================
+
         public bool InsertLop(LopDTO lop)
         {
-            string query = "INSERT INTO Lop (MaLop, TenLop, KhoiLop, SSo, NamHoc, GhiChu) " +
-                          "VALUES ( @MaLop , @TenLop , @KhoiLop , @SSo , @NamHoc , @GhiChu )";
-
-            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[]
-            {
-                lop.MaLop, lop.TenLop, lop.KhoiLop, lop.SSo, lop.NamHoc, lop.GhiChu
-            });
-
-            return result > 0;
+            string query = $"INSERT INTO Lop(TenLop, KhoiLop, SiSo, NamHoc,GhiChu)" +
+                $" VALUES(N'{lop.TenLop}', {lop.KhoiLop}, {lop.SiSo}, {lop.NamHoc}, N'{lop.GhiChu}')";
+            return DataProvider.Instance.ExecuteNonQuery(query) > 0;
         }
 
-        // Cập nhật lớp
+        // ====================== UPDATE ======================
+
         public bool UpdateLop(LopDTO lop)
         {
-            string query = "UPDATE Lop SET TenLop = @TenLop , KhoiLop = @KhoiLop , " +
-                          "SSo = @SSo , NamHoc = @NamHoc , GhiChu = @GhiChu " +
-                          "WHERE MaLop = @MaLop";
+            string query = $"UPDATE Lop SET TenLop = N'{lop.TenLop}'," +
+                $" KhoiLop = {lop.KhoiLop}, SiSo = {lop.SiSo}, NamHoc = {lop.NamHoc}, GhiChu = N'{lop.GhiChu}'" +
+                $"WHERE MaLop = {lop.MaLop}";
+            return DataProvider.Instance.ExecuteNonQuery(query) > 0;
+        }
 
-            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[]
-            {
-                lop.TenLop, lop.KhoiLop, lop.SSo, lop.NamHoc, lop.GhiChu, lop.MaLop
-            });
+        // ====================== DELETE ======================
 
+        public bool DeleteLop(int maLop)
+        {
+            string query = "DELETE FROM Lop WHERE MaLop = @MaLop";
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { maLop });
             return result > 0;
         }
 
-        // Replace CountHocSinhTrongLop with CountHocSinhInLop to match the signature in LopDAL
-        public bool DeleteLop(string maLop)
-        {
-            if (string.IsNullOrWhiteSpace(maLop))
-                throw new Exception("Mã lớp không được để trống");
+        // ====================== SUPPORT ======================
 
-            int soHocSinh = LopDAL.Instance.CountHocSinhInLop(maLop);
-            if (soHocSinh > 0)
-                throw new Exception($"Không thể xóa lớp vì còn {soHocSinh} học sinh");
-
-            return LopDAL.Instance.DeleteLop(maLop);
-        }
-
-        // Đếm số học sinh trong lớp
-        public int CountHocSinhInLop(string maLop)
+        public int CountHocSinhInLop(int maLop)
         {
             string query = "SELECT COUNT(*) FROM HocSinh WHERE MaLop = @MaLop";
             object result = DataProvider.Instance.ExecuteScalar(query, new object[] { maLop });
             return result != null ? Convert.ToInt32(result) : 0;
         }
-        public bool CheckMaLopExists(string maLop)
+
+        public bool CheckMaLopExists(int maLop)
         {
             return GetLopByMa(maLop) != null;
+        }
+
+        // ====================== PRIVATE HELPER ======================
+
+        private LopDTO MapToDTO(DataRow row)
+        {
+            return new LopDTO
+            {
+                MaLop = row["MaLop"] != DBNull.Value ? Convert.ToInt32(row["MaLop"]) : 0,
+                TenLop = row["TenLop"]?.ToString(),
+                KhoiLop = row["KhoiLop"] != DBNull.Value ? Convert.ToInt32(row["KhoiLop"]) : 0,
+                SiSo = row["SiSo"] != DBNull.Value ? Convert.ToInt32(row["SiSo"]) : 0,
+                NamHoc = row["NamHoc"] != DBNull.Value ? Convert.ToInt32(row["NamHoc"]) : 0,
+                GhiChu = row["GhiChu"]?.ToString()
+            };
         }
     }
 }
