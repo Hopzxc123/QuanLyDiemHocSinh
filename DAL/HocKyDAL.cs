@@ -117,5 +117,10 @@ namespace DAL
                 NgayKetThuc = Convert.ToDateTime(row["NgayKetThuc"])
             };
         }
+        public bool CheckMaHocKyExists(string maHocKy)
+        {
+            var allHocKy = GetAllHocKy();
+            return allHocKy.Exists(hk => hk.MaHocKy == maHocKy);
+        }
     }
 }

@@ -45,12 +45,27 @@ namespace DAL
                 $" KhoiLop = {lop.KhoiLop}, SiSo = {lop.SiSo}, NamHoc = {lop.NamHoc}, GhiChu = N'{lop.GhiChu}'" +
                 $"WHERE MaLop = {lop.MaLop}";
             return DataProvider.Instance.ExecuteNonQuery(query) > 0;
+        // Replace CountHocSinhTrongLop with CountHocSinhInLop to match the signature in LopDAL
+        public bool DeleteLop(string maLop)
+        {
+            if (string.IsNullOrWhiteSpace(maLop))
+                throw new Exception("Mã lớp không được để trống");
+
+            int soHocSinh = LopDAL.Instance.CountHocSinhInLop(maLop);
+            if (soHocSinh > 0)
+                throw new Exception($"Không thể xóa lớp vì còn {soHocSinh} học sinh");
+
+            return LopDAL.Instance.DeleteLop(maLop);
         }
 
         public bool Delete(int id)
         {
             string query = $"DELETE FROM Lop WHERE MaLop = {id}";
             return DataProvider.Instance.ExecuteNonQuery(query) > 0;
+        }
+        public bool CheckMaLopExists(string maLop)
+        {
+            return GetLopByMa(maLop) != null;
         }
     }
 }

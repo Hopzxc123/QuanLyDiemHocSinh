@@ -134,5 +134,10 @@ namespace DAL
             int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { maNamHoc });
             return result > 0;
         }
+        public bool CheckMaNamHocExists(string maNamHoc)
+        {
+            var allNamHoc = GetAllNamHoc();
+            return allNamHoc.Exists(nh => nh.MaNamHoc == maNamHoc);
+        }
     }
 }
