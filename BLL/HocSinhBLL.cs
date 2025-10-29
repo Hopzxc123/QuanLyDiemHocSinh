@@ -44,12 +44,18 @@ namespace BLL
 
             if (string.IsNullOrWhiteSpace(hs.DiaChi))
                 throw new Exception("Địa chỉ không được để trống");
+
+            if (string.IsNullOrWhiteSpace(hs.MaLop))
+                throw new Exception("Mã lớp không được để trống");
+            if (string.IsNullOrWhiteSpace(hs.TrangThai))
+                hs.TrangThai = "1";
             if (string.IsNullOrWhiteSpace(hs.Email))
                 throw new Exception("Email không được để trống");
             if (!IsValidEmail(hs.Email))
                 throw new Exception("Email không hợp lệ");
 
             
+
             if (HocSinhDAL.Instance.GetHocSinhByMa(hs.MaHocSinh) != null)
                 throw new Exception("Mã học sinh đã tồn tại");
 
@@ -71,6 +77,12 @@ namespace BLL
 
             return HocSinhDAL.Instance.DeleteHocSinh(maHS);
         }
+
+        public List<HocSinhDTO> GetHocSinhByLop(string maLop)
+        {
+            return HocSinhDAL.Instance.GetHocSinhByLop(maLop);
+        }
+
 
         private bool IsValidEmail(string email)
         {

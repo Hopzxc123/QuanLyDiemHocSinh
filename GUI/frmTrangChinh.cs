@@ -44,7 +44,7 @@ namespace GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            openChildForm(new frmQLThongTinSinhVien ());
+            openChildForm(new frmQLThongTinHocSinh ());
         }
 
         private void button2_Click(object sender, EventArgs e)
