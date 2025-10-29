@@ -32,15 +32,18 @@ namespace GUI
         {
             cboKhoiLop.Items.Clear();
             cboKhoiLop.Items.AddRange(new object[] { 10, 11, 12 });
-            cboKhoiLop.SelectedIndex = 0;
+            cboKhoiLop.SelectedIndex = -1;
         }
 
         private void LoadNamHoc()
         {
             var list = NamHocBLL.Instance.GetAllNamHoc();
+
             cboNamHoc.DataSource = list;
             cboNamHoc.DisplayMember = "TenNamHoc";
             cboNamHoc.ValueMember = "MaNamHoc";
+
+            cboNamHoc.SelectedIndex = -1;
         }
 
         private void frmQLLop_Load(object sender, EventArgs e)
@@ -158,8 +161,8 @@ namespace GUI
             txtTenLop.Clear();
             txtSiSo.Clear();
             txtGhiChu.Clear();
-            cboKhoiLop.SelectedIndex = 0;
-            if (cboNamHoc.Items.Count > 0) cboNamHoc.SelectedIndex = 0;
+            cboKhoiLop.SelectedIndex = -1;
+            if (cboNamHoc.Items.Count > 0) cboNamHoc.SelectedIndex = -1;
         }
 
         private void btnLamMoi_Click(object sender, EventArgs e)
