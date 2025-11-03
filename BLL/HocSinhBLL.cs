@@ -25,7 +25,11 @@ namespace BLL
         {
             return HocSinhDAL.Instance.GetAllHocSinh();
         }
-
+        public HocSinhDTO GetHocSinhByMa(string maHS)
+        {
+            return HocSinhDAL.Instance.GetHocSinhByMa(maHS);
+        }
+        
         public bool InsertHocSinh(HocSinhDTO hs)
         {
             if (string.IsNullOrWhiteSpace(hs.MaHocSinh))
