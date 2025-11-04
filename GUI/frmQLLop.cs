@@ -59,10 +59,11 @@ namespace GUI
             {
                 LopDTO lop = new LopDTO
                 {
+                    MaLop = txtMaLop.Text,
                     TenLop = txtTenLop.Text,
                     KhoiLop = Convert.ToInt32(cboKhoiLop.SelectedItem),
                     SiSo = int.TryParse(txtSiSo.Text, out int siso) ? siso : 0,
-                    NamHoc = Convert.ToInt32(cboNamHoc.SelectedValue),
+                    NamHoc = cboNamHoc.SelectedValue.ToString(),
                     GhiChu = txtGhiChu.Text
                 };
 
@@ -89,11 +90,11 @@ namespace GUI
 
                 LopDTO lop = new LopDTO
                 {
-                    MaLop = Convert.ToInt32(dgvLop.CurrentRow.Cells["MaLop"].Value),
+                    MaLop = txtMaLop.Text,
                     TenLop = txtTenLop.Text,
                     KhoiLop = Convert.ToInt32(cboKhoiLop.SelectedItem),
                     SiSo = int.TryParse(txtSiSo.Text, out int siso) ? siso : 0,
-                    NamHoc = Convert.ToInt32(cboNamHoc.SelectedValue),
+                    NamHoc = cboNamHoc.SelectedValue.ToString(),
                     GhiChu = txtGhiChu.Text
                 };
 
@@ -121,7 +122,7 @@ namespace GUI
                     return;
                 }
 
-                int maLop = int.Parse(txtMaLop.Text);
+                string maLop = txtMaLop.Text;
                 var confirm = MessageBox.Show("Bạn có chắc muốn xóa lớp này không?", "Xác nhận",
                                               MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (confirm == DialogResult.Yes)
@@ -149,7 +150,7 @@ namespace GUI
                 txtTenLop.Text = dgvLop.CurrentRow.Cells["TenLop"].Value.ToString();
                 txtSiSo.Text = dgvLop.CurrentRow.Cells["SiSo"].Value.ToString();
                 cboKhoiLop.SelectedItem = Convert.ToInt32(dgvLop.CurrentRow.Cells["KhoiLop"].Value);
-                cboNamHoc.SelectedValue = Convert.ToInt32(dgvLop.CurrentRow.Cells["NamHoc"].Value);
+                cboNamHoc.SelectedValue = dgvLop.CurrentRow.Cells["NamHoc"].Value.ToString();
                 txtGhiChu.Text = dgvLop.CurrentRow.Cells["GhiChu"].Value?.ToString();
 
             }

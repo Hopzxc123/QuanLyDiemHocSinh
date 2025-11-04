@@ -39,7 +39,7 @@ namespace DAL
         }
 
         // Lấy lớp theo mã
-        public LopDTO GetLopByMa(int maLop)
+        public LopDTO GetLopByMa(string maLop)
         {
             string query = "SELECT * FROM Lop WHERE MaLop = @MaLop";
             DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { maLop });
@@ -51,7 +51,7 @@ namespace DAL
         }
 
         // Lấy lớp theo năm học
-        public List<LopDTO> GetLopByNamHoc(int namHoc)
+        public List<LopDTO> GetLopByNamHoc(string namHoc)
         {
             List<LopDTO> list = new List<LopDTO>();
             string query = "SELECT * FROM Lop WHERE NamHoc = @NamHoc";
@@ -69,8 +69,8 @@ namespace DAL
 
         public bool InsertLop(LopDTO lop)
         {
-            string query = $"INSERT INTO Lop(TenLop, KhoiLop, SiSo, NamHoc,GhiChu)" +
-                $" VALUES(N'{lop.TenLop}', {lop.KhoiLop}, {lop.SiSo}, {lop.NamHoc}, N'{lop.GhiChu}')";
+            string query = $"INSERT INTO Lop(MaLop, TenLop, KhoiLop, SiSo, NamHoc,GhiChu)" +
+                $" VALUES(N'{lop.MaLop}', N'{lop.TenLop}', {lop.KhoiLop}, {lop.SiSo}, N'{lop.NamHoc}', N'{lop.GhiChu}')";
             return DataProvider.Instance.ExecuteNonQuery(query) > 0;
         }
 
@@ -79,14 +79,14 @@ namespace DAL
         public bool UpdateLop(LopDTO lop)
         {
             string query = $"UPDATE Lop SET TenLop = N'{lop.TenLop}'," +
-                $" KhoiLop = {lop.KhoiLop}, SiSo = {lop.SiSo}, NamHoc = {lop.NamHoc}, GhiChu = N'{lop.GhiChu}'" +
-                $"WHERE MaLop = {lop.MaLop}";
+                $" KhoiLop = {lop.KhoiLop}, SiSo = {lop.SiSo}, NamHoc = N'{lop.NamHoc}', GhiChu = N'{lop.GhiChu}'" +
+                $"WHERE MaLop = N'{lop.MaLop}'";
             return DataProvider.Instance.ExecuteNonQuery(query) > 0;
         }
 
         // ====================== DELETE ======================
 
-        public bool DeleteLop(int maLop)
+        public bool DeleteLop(string maLop)
         {
             string query = "DELETE FROM Lop WHERE MaLop = @MaLop";
             int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { maLop });
@@ -95,14 +95,14 @@ namespace DAL
 
         // ====================== SUPPORT ======================
 
-        public int CountHocSinhInLop(int maLop)
+        public int CountHocSinhInLop(string maLop)
         {
             string query = "SELECT COUNT(*) FROM HocSinh WHERE MaLop = @MaLop";
             object result = DataProvider.Instance.ExecuteScalar(query, new object[] { maLop });
             return result != null ? Convert.ToInt32(result) : 0;
         }
 
-        public bool CheckMaLopExists(int maLop)
+        public bool CheckMaLopExists(string maLop)
         {
             return GetLopByMa(maLop) != null;
         }
@@ -113,11 +113,11 @@ namespace DAL
         {
             return new LopDTO
             {
-                MaLop = row["MaLop"] != DBNull.Value ? Convert.ToInt32(row["MaLop"]) : 0,
-                TenLop = row["TenLop"]?.ToString(),
+                MaLop = row["MaLop"].ToString(),
+                TenLop = row["TenLop"].ToString(),
                 KhoiLop = row["KhoiLop"] != DBNull.Value ? Convert.ToInt32(row["KhoiLop"]) : 0,
                 SiSo = row["SiSo"] != DBNull.Value ? Convert.ToInt32(row["SiSo"]) : 0,
-                NamHoc = row["NamHoc"] != DBNull.Value ? Convert.ToInt32(row["NamHoc"]) : 0,
+                NamHoc = row["NamHoc"].ToString(),
                 GhiChu = row["GhiChu"]?.ToString()
             };
         }
