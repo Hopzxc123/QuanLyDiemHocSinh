@@ -25,7 +25,7 @@ namespace DAL
         private DataProvider()
         {
             // Lấy connection string từ App.config
-            _connectionString = ConfigurationManager.ConnectionStrings["QuanLyDiemHocSinh"].ConnectionString;
+            _connectionString = ConfigurationManager.ConnectionStrings["QLDiemHS"].ConnectionString;
         }
 
         // Thực thi query trả về DataTable

@@ -52,8 +52,8 @@ namespace DAL
         // Lấy điểm theo học sinh và môn học
         public DiemDTO GetDiemByHocSinhMonHoc(string maHocSinh, string maMonHoc, string maHocKy)
         {
-            string query = "SELECT * FROM Diem WHERE MaHocSinh = @MaHocSinh AND MaMonHoc = @MaMonHoc AND MaHocKy = @MaHocKy";
-            DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { maHocSinh, maMonHoc, maHocKy });
+            string query = $"SELECT * FROM Diem WHERE MaHocSinh ={maHocSinh} AND MaMonHoc = {maMonHoc} AND MaHocKy = {maHocKy}";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
             if (data.Rows.Count > 0)
                 return MapRowToDiemDTO(data.Rows[0]);
@@ -79,19 +79,11 @@ namespace DAL
         // Thêm điểm mới
         public bool InsertDiem(DiemDTO diem)
         {
-            string query = @"INSERT INTO Diem (MaDiem, MaHocSinh, MaMonHoc, MaHocKy, 
-                            DiemTrenLop, DiemGiuaKy, DiemThi, DiemTongKet)
-                            VALUES (@MaDiem, @MaHocSinh, @MaMonHoc, @MaHocKy, 
-                            @DiemTrenLop, @DiemGiuaKy, @DiemThi, @DiemTongKet)";
+            string query = @"INSERT INTO Diem (MaHocSinh, MaMonHoc, MaHocKy, 
+                            DiemTrenLop, DiemGiuaKy, DiemThi, DiemTongKet)"+
+                            $"VALUES ({diem.MaHocSinh}, {diem.MaMonHoc},{diem.MaHocKy}, {diem.DiemTrenLop}, {diem.DiemGiuaKy}, {diem.DiemThi}, {diem.DiemTongKet})";
 
-            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[]
-            {
-                diem.MaDiem, diem.MaHocSinh, diem.MaMonHoc, diem.MaHocKy,
-                diem.DiemTrenLop ?? (object)DBNull.Value,
-                diem.DiemGiuaKy ?? (object)DBNull.Value,
-                diem.DiemThi ?? (object)DBNull.Value,
-                diem.DiemTongKet ?? (object)DBNull.Value
-            });
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
 
             return result > 0;
         }
@@ -99,15 +91,9 @@ namespace DAL
         // Cập nhật điểm
         public bool UpdateDiem(DiemDTO diem)
         {
-            string query = @"UPDATE Diem SET 
-                            MaHocSinh = @MaHocSinh, 
-                            MaMonHoc = @MaMonHoc, 
-                            MaHocKy = @MaHocKy, 
-                            DiemTrenLop = @DiemTrenLop, 
-                            DiemGiuaKy = @DiemGiuaKy, 
-                            DiemThi = @DiemThi, 
-                            DiemTongKet = @DiemTongKet
-                            WHERE MaDiem = @MaDiem";
+            string query = @"UPDATE Diem SET "+
+                            
+                            $"MaMonHoc = {diem.MaMonHoc}, MaHocKy = {diem.MaHocKy}, DiemTrenLop = {diem.DiemTrenLop}, DiemGiuaKy = {diem.DiemGiuaKy}, DiemThi = {diem.DiemThi}, DiemTongKet = {diem.DiemTongKet} WHERE MaDiem = {diem.MaDiem}";
 
             int result = DataProvider.Instance.ExecuteNonQuery(query, new object[]
             {

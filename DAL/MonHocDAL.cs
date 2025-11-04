@@ -64,7 +64,25 @@ namespace DAL
 
             return null;
         }
+        //Lấy môn học theo tên
+        public MonHocDTO GetMonHocByTen(string tenMonHoc)
+        {
+            string query = "SELECT * FROM MonHoc WHERE MaMonHoc = @MaMonHoc";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { tenMonHoc });
 
+            if (data.Rows.Count > 0)
+            {
+                DataRow row = data.Rows[0];
+                return new MonHocDTO
+                {
+                    MaMonHoc = row["MaMonHoc"].ToString(),
+                    TenMonHoc = row["TenMonHoc"].ToString(),
+                    HeSo = row["HeSo"] != DBNull.Value ? Convert.ToInt32(row["HeSo"]) : 1
+                };
+            }
+
+            return null;
+        }
         // Thêm môn học mới
         public bool InsertMonHoc(MonHocDTO mh)
         {
