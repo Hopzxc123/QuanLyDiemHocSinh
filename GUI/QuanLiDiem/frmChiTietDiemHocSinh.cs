@@ -31,7 +31,7 @@ namespace GUI.frmQLDiemHS
         private void frmChiTietDiemHocSinh_Load(object sender, EventArgs e)
         {
             txtHoTen.Text = hocSinh.HoTen;
-            txtLop.Text = LopBLL.Instance.GetLopByMa(int.Parse(hocSinh.MaLop)).TenLop;
+            txtLop.Text = LopBLL.Instance.GetLopByMa(hocSinh.MaLop).TenLop;
             CapNhatDiem();
             CapNhatMonHoc();
         }
