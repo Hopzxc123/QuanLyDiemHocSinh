@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GUI.UserControls;
 
 namespace GUI
 {
@@ -35,12 +36,23 @@ namespace GUI
 
         }
 
+        private Control currentChild;
 
-
-        private void fTrangChinh_Load(object sender, EventArgs e)
+        private void openChildControl(UserControl uc)
         {
+            // Xóa control/form cũ
+            if (currentChild != null)
+            {
+                if (currentChild is Form f) f.Close();
+                else plBody.Controls.Remove(currentChild);
+            }
 
+            currentChild = uc;
+            uc.Dock = DockStyle.Fill;
+            plBody.Controls.Add(uc);
+            uc.BringToFront();
         }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -77,5 +89,11 @@ namespace GUI
         {
             openChildForm(new QuanLyGiangVien());
         }
+
+        private void frmTrangChinh_Load(object sender, EventArgs e)
+        {
+            openChildControl(new ucThongKeTongQuan());
+        }
+
     }
 }

@@ -28,8 +28,8 @@ namespace BLL
 
         public bool InsertHocSinh(HocSinhDTO hs)
         {
-            if (string.IsNullOrWhiteSpace(hs.MaHocSinh))
-                throw new Exception("Mã học sinh không được để trống");
+            //if (string.IsNullOrWhiteSpace(hs.MaHocSinh))
+            //    throw new Exception("Mã học sinh không được để trống");
             if (string.IsNullOrWhiteSpace(hs.HoTen))
                 throw new Exception("Tên học sinh không được để trống");
             if (string.IsNullOrWhiteSpace(hs.GioiTinh))
@@ -56,16 +56,16 @@ namespace BLL
 
             
 
-            if (HocSinhDAL.Instance.GetHocSinhByMa(hs.MaHocSinh) != null)
-                throw new Exception("Mã học sinh đã tồn tại");
+            //if (HocSinhDAL.Instance.GetHocSinhByMa(hs.MaHocSinh) != null)
+            //    throw new Exception("Mã học sinh đã tồn tại");
 
             return HocSinhDAL.Instance.InsertHocSinh(hs);
         }
 
         public bool UpdateHocSinh(HocSinhDTO hs)
         {
-            if (string.IsNullOrWhiteSpace(hs.MaHocSinh))
-                throw new Exception("Mã học sinh không được để trống");
+            //if (string.IsNullOrWhiteSpace(hs.MaHocSinh))
+            //    throw new Exception("Mã học sinh không được để trống");
 
             return HocSinhDAL.Instance.UpdateHocSinh(hs);
         }
