@@ -1,4 +1,5 @@
-﻿namespace GUI
+﻿using GUI.Properties;
+namespace GUI
 {
     partial class frmDangNhap
     {

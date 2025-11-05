@@ -25,7 +25,14 @@ namespace BLL
         {
             return MonHocDAL.Instance.GetAllMonHoc();
         }
-
+        public MonHocDTO GetMonHocByMa(string maMonHoc)
+        {
+            return MonHocDAL.Instance.GetMonHocByMa(maMonHoc);
+        }
+        public MonHocDTO GetMonHocByTen(string tenMonHoc)
+        {
+            return MonHocDAL.Instance.GetMonHocByTen(tenMonHoc);
+        }
         public bool InsertMonHoc(MonHocDTO mh)
         {
             if (string.IsNullOrWhiteSpace(mh.MaMonHoc))

@@ -67,13 +67,13 @@ namespace GUI
         private void button1_Click(object sender, EventArgs e)
         {
             
-            openChildForm(new frmQLThongTinSinhVien ());
+            openChildForm(new frmQLThongTinHocSinh ());
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
          
-            openChildForm(new frmQLDiemHS());
+            openChildForm(new FrmQLDiemHS());
         }
 
         private void button3_Click(object sender, EventArgs e)

@@ -43,6 +43,9 @@
     <Reference Include="Guna.UI2, Version=2.0.4.7, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
       <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.7\lib\net472\Guna.UI2.dll</HintPath>
     </Reference>
+    <Reference Include="FontAwesome.Sharp, Version=6.6.0.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.Sharp.6.6.0\lib\net472\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
@@ -62,7 +65,7 @@
     <Reference Include="System.Xml" />
     <Reference Include="WindowsBase" />
   </ItemGroup>
-  <!-- Compile Forms & code -->
+  <!-- Source files -->
   <ItemGroup>
     <Compile Include="frmDangNhap.cs">
       <SubType>Form</SubType>
@@ -70,10 +73,21 @@
     <Compile Include="frmDangNhap.Designer.cs">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmQLDiemHS.cs">
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLiDiem\frmChiTietDiemHocSinh.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmQLDiemHS.Designer.cs">
+    <Compile Include="QuanLiDiem\frmChiTietDiemHocSinh.Designer.cs">
+      <DependentUpon>frmChiTietDiemHocSinh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLiDiem\frmQLDiemHS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLiDiem\frmQLDiemHS.Designer.cs">
       <DependentUpon>frmQLDiemHS.cs</DependentUpon>
     </Compile>
     <Compile Include="frmQLLop.cs">
@@ -100,19 +114,12 @@
     <Compile Include="frmTrangChinh.Designer.cs">
       <DependentUpon>frmTrangChinh.cs</DependentUpon>
     </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <!-- Bổ sung QuanLyGiangVien -->
     <Compile Include="QuanLyGiangVien.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="QuanLyGiangVien.Designer.cs">
       <DependentUpon>QuanLyGiangVien.cs</DependentUpon>
     </Compile>
-    <!-- Cấu hình chung -->
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -126,7 +133,10 @@
     <EmbeddedResource Include="frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmQLDiemHS.resx">
+    <EmbeddedResource Include="QuanLiDiem\frmChiTietDiemHocSinh.resx">
+      <DependentUpon>frmChiTietDiemHocSinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLiDiem\frmQLDiemHS.resx">
       <DependentUpon>frmQLDiemHS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmQLLop.resx">
@@ -174,48 +184,52 @@
       <Name>DTO</Name>
     </ProjectReference>
   </ItemGroup>
+  <!-- Resources (images) -->
   <ItemGroup>
     <None Include="Resources\lock.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\user.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\login.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\login %281%29.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\login %282%29.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\burger-menu-svgrepo-com.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\burger-menu-svgrepo-com %283%29.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\icons8-classroom-50.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\icons8-classroom-100.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\icons8-student-50.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\icons8-inspection-50.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\icons8-open-book-50.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\icons8-teacher-50.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\icons8-logout-50.png" />
   </ItemGroup>
-  <!-- Extra resources -->
+  <!-- COM References -->
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
