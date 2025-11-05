@@ -1,23 +1,25 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUI
 {
-    internal static class Program
+    static class Program
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmTrangChinh ());
 
+            // Mở form đăng nhập
+            using (frmDangNhap frmLogin = new frmDangNhap())
+            {
+                if (frmLogin.ShowDialog() == DialogResult.OK && frmLogin.CurrentUser != null)
+                {
+                    // Đăng nhập thành công, mở form chính
+                    Application.Run(new frmTrangChinh());
+                }
+            }
         }
     }
 }

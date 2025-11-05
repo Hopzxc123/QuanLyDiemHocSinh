@@ -1,10 +1,11 @@
 ﻿using System;
+using System.Runtime.InteropServices;
 
 namespace DTO
 {
     public class LopDTO
     {
-        public string MaLop { get; set; }
+        public string  MaLop { get; set; }
         public string TenLop { get; set; }
         public string KhoiLop { get; set; }
         public int SSo { get; set; }

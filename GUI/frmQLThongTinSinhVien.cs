@@ -17,6 +17,9 @@ namespace GUI
             InitializeComponent();
         }
 
-        
+        private void frmQLThongTinSinhVien_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

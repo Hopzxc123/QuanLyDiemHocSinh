@@ -28,280 +28,318 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.plBody = new System.Windows.Forms.Panel();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.quảnLýToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.quảnLýLớpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.quảnLýHọcSinhToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.quảnLýMônHọcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.quảnLýGiáoViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.chứcNăngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.thôngTinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.đổiMậtKhẩuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tìmKiểmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.thốngKêToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.trợGiúpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.plBody.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
+            this.components = new System.ComponentModel.Container();
+            this.sidebarTransition = new System.Windows.Forms.Timer(this.components);
+            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.plQLHocSinh = new Guna.UI2.WinForms.Guna2Panel();
+            this.plQLDiemHS = new Guna.UI2.WinForms.Guna2Panel();
+            this.plQLLop = new Guna.UI2.WinForms.Guna2Panel();
+            this.plQLMonHoc = new Guna.UI2.WinForms.Guna2Panel();
+            this.plQLGiaoVien = new Guna.UI2.WinForms.Guna2Panel();
+            this.plDangXuat = new Guna.UI2.WinForms.Guna2Panel();
+            this.sidebar = new Guna.UI2.WinForms.Guna2Panel();
+            this.plView = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnQLHS = new Guna.UI2.WinForms.Guna2Button();
+            this.btnQLMonHoc = new Guna.UI2.WinForms.Guna2Button();
+            this.btnQLGiaoVien = new Guna.UI2.WinForms.Guna2Button();
+            this.btnQLLop = new Guna.UI2.WinForms.Guna2Button();
+            this.btnDangXuat = new Guna.UI2.WinForms.Guna2Button();
+            this.btnQLDiem = new Guna.UI2.WinForms.Guna2Button();
+            this.btnHam = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2Panel1.SuspendLayout();
+            this.plQLHocSinh.SuspendLayout();
+            this.plQLDiemHS.SuspendLayout();
+            this.plQLLop.SuspendLayout();
+            this.plQLMonHoc.SuspendLayout();
+            this.plQLGiaoVien.SuspendLayout();
+            this.plDangXuat.SuspendLayout();
+            this.sidebar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnHam)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // sidebarTransition
             // 
-            this.panel1.BackColor = System.Drawing.Color.DarkCyan;
-            this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 721);
-            this.panel1.TabIndex = 0;
+            this.sidebarTransition.Interval = 10;
+            this.sidebarTransition.Tick += new System.EventHandler(this.sidebarTransition_Tick);
             // 
-            // button5
+            // guna2Panel1
             // 
-            this.button5.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.button5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(0, 411);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(200, 67);
-            this.button5.TabIndex = 3;
-            this.button5.Text = "QL giáo viên";
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click_1);
+            this.guna2Panel1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.guna2Panel1.Controls.Add(this.btnHam);
+            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.Size = new System.Drawing.Size(1262, 65);
+            this.guna2Panel1.TabIndex = 1;
+            this.guna2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint);
             // 
-            // button4
+            // plQLHocSinh
             // 
-            this.button4.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(0, 344);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(200, 67);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "QL môn học";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.plQLHocSinh.Controls.Add(this.btnQLHS);
+            this.plQLHocSinh.Location = new System.Drawing.Point(3, 3);
+            this.plQLHocSinh.Name = "plQLHocSinh";
+            this.plQLHocSinh.Size = new System.Drawing.Size(242, 67);
+            this.plQLHocSinh.TabIndex = 4;
+            this.plQLHocSinh.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel7_Paint);
             // 
-            // button3
+            // plQLDiemHS
             // 
-            this.button3.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(0, 277);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(200, 67);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "QL lớp";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.plQLDiemHS.Controls.Add(this.btnQLDiem);
+            this.plQLDiemHS.Location = new System.Drawing.Point(3, 76);
+            this.plQLDiemHS.Name = "plQLDiemHS";
+            this.plQLDiemHS.Size = new System.Drawing.Size(242, 67);
+            this.plQLDiemHS.TabIndex = 4;
+            this.plQLDiemHS.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel4_Paint);
             // 
-            // button2
+            // plQLLop
             // 
-            this.button2.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(0, 210);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(200, 67);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "QL điểm học sinh";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.plQLLop.Controls.Add(this.btnQLLop);
+            this.plQLLop.Location = new System.Drawing.Point(3, 149);
+            this.plQLLop.Name = "plQLLop";
+            this.plQLLop.Size = new System.Drawing.Size(242, 67);
+            this.plQLLop.TabIndex = 4;
+            this.plQLLop.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel5_Paint);
             // 
-            // button1
+            // plQLMonHoc
             // 
-            this.button1.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(0, 143);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(200, 67);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "QL học sinh";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.plQLMonHoc.Controls.Add(this.btnQLMonHoc);
+            this.plQLMonHoc.Location = new System.Drawing.Point(3, 222);
+            this.plQLMonHoc.Name = "plQLMonHoc";
+            this.plQLMonHoc.Size = new System.Drawing.Size(242, 67);
+            this.plQLMonHoc.TabIndex = 4;
+            this.plQLMonHoc.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel2_Paint);
             // 
-            // pictureBox1
+            // plQLGiaoVien
             // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(200, 143);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.plQLGiaoVien.Controls.Add(this.btnQLGiaoVien);
+            this.plQLGiaoVien.Location = new System.Drawing.Point(3, 295);
+            this.plQLGiaoVien.Name = "plQLGiaoVien";
+            this.plQLGiaoVien.Size = new System.Drawing.Size(242, 67);
+            this.plQLGiaoVien.TabIndex = 4;
+            this.plQLGiaoVien.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel3_Paint);
             // 
-            // plBody
+            // plDangXuat
             // 
-            this.plBody.Controls.Add(this.menuStrip1);
-            this.plBody.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.plBody.Location = new System.Drawing.Point(200, 0);
-            this.plBody.Name = "plBody";
-            this.plBody.Size = new System.Drawing.Size(1062, 721);
-            this.plBody.TabIndex = 1;
-            this.plBody.Paint += new System.Windows.Forms.PaintEventHandler(this.plBody_Paint);
+            this.plDangXuat.Controls.Add(this.btnDangXuat);
+            this.plDangXuat.Location = new System.Drawing.Point(3, 368);
+            this.plDangXuat.Name = "plDangXuat";
+            this.plDangXuat.Size = new System.Drawing.Size(242, 67);
+            this.plDangXuat.TabIndex = 4;
+            this.plDangXuat.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel6_Paint);
             // 
-            // menuStrip1
+            // sidebar
             // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.quảnLýToolStripMenuItem,
-            this.chứcNăngToolStripMenuItem,
-            this.tìmKiểmToolStripMenuItem,
-            this.thốngKêToolStripMenuItem,
-            this.trợGiúpToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1062, 28);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
+            this.sidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(101)))), ((int)(((byte)(241)))));
+            this.sidebar.Controls.Add(this.plQLHocSinh);
+            this.sidebar.Controls.Add(this.plQLMonHoc);
+            this.sidebar.Controls.Add(this.plQLGiaoVien);
+            this.sidebar.Controls.Add(this.plQLLop);
+            this.sidebar.Controls.Add(this.plDangXuat);
+            this.sidebar.Controls.Add(this.plQLDiemHS);
+            this.sidebar.Dock = System.Windows.Forms.DockStyle.Left;
+            this.sidebar.Location = new System.Drawing.Point(0, 65);
+            this.sidebar.Name = "sidebar";
+            this.sidebar.Size = new System.Drawing.Size(245, 686);
+            this.sidebar.TabIndex = 5;
             // 
-            // quảnLýToolStripMenuItem
+            // plView
             // 
-            this.quảnLýToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.quảnLýLớpToolStripMenuItem,
-            this.quảnLýHọcSinhToolStripMenuItem,
-            this.quảnLýMônHọcToolStripMenuItem,
-            this.quảnLýGiáoViênToolStripMenuItem});
-            this.quảnLýToolStripMenuItem.Name = "quảnLýToolStripMenuItem";
-            this.quảnLýToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
-            this.quảnLýToolStripMenuItem.Text = "Quản lý";
+            this.plView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.plView.Location = new System.Drawing.Point(245, 65);
+            this.plView.Name = "plView";
+            this.plView.Size = new System.Drawing.Size(1017, 686);
+            this.plView.TabIndex = 6;
+            this.plView.Paint += new System.Windows.Forms.PaintEventHandler(this.plView_Paint);
             // 
-            // quảnLýLớpToolStripMenuItem
+            // btnQLHS
             // 
-            this.quảnLýLớpToolStripMenuItem.Name = "quảnLýLớpToolStripMenuItem";
-            this.quảnLýLớpToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
-            this.quảnLýLớpToolStripMenuItem.Text = "Quản lý điểm";
+            this.btnQLHS.BorderRadius = 8;
+            this.btnQLHS.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnQLHS.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnQLHS.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnQLHS.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnQLHS.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(101)))), ((int)(((byte)(241)))));
+            this.btnQLHS.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btnQLHS.ForeColor = System.Drawing.Color.White;
+            this.btnQLHS.HoverState.FillColor = System.Drawing.Color.SlateBlue;
+            this.btnQLHS.Image = global::GUI.Properties.Resources.icons8_student_50;
+            this.btnQLHS.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnQLHS.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnQLHS.Location = new System.Drawing.Point(0, 0);
+            this.btnQLHS.Name = "btnQLHS";
+            this.btnQLHS.Size = new System.Drawing.Size(245, 67);
+            this.btnQLHS.TabIndex = 3;
+            this.btnQLHS.Text = "QL Học Sinh";
+            this.btnQLHS.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnQLHS.Click += new System.EventHandler(this.button1_Click);
             // 
-            // quảnLýHọcSinhToolStripMenuItem
+            // btnQLMonHoc
             // 
-            this.quảnLýHọcSinhToolStripMenuItem.Name = "quảnLýHọcSinhToolStripMenuItem";
-            this.quảnLýHọcSinhToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
-            this.quảnLýHọcSinhToolStripMenuItem.Text = "Quản lý học sinh";
+            this.btnQLMonHoc.BorderRadius = 8;
+            this.btnQLMonHoc.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnQLMonHoc.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnQLMonHoc.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnQLMonHoc.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnQLMonHoc.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(101)))), ((int)(((byte)(241)))));
+            this.btnQLMonHoc.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btnQLMonHoc.ForeColor = System.Drawing.Color.White;
+            this.btnQLMonHoc.HoverState.FillColor = System.Drawing.Color.SlateBlue;
+            this.btnQLMonHoc.Image = global::GUI.Properties.Resources.icons8_open_book_50;
+            this.btnQLMonHoc.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnQLMonHoc.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnQLMonHoc.Location = new System.Drawing.Point(0, 0);
+            this.btnQLMonHoc.Name = "btnQLMonHoc";
+            this.btnQLMonHoc.Size = new System.Drawing.Size(242, 67);
+            this.btnQLMonHoc.TabIndex = 3;
+            this.btnQLMonHoc.Text = "QL môn học";
+            this.btnQLMonHoc.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnQLMonHoc.Click += new System.EventHandler(this.button4_Click);
             // 
-            // quảnLýMônHọcToolStripMenuItem
+            // btnQLGiaoVien
             // 
-            this.quảnLýMônHọcToolStripMenuItem.Name = "quảnLýMônHọcToolStripMenuItem";
-            this.quảnLýMônHọcToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
-            this.quảnLýMônHọcToolStripMenuItem.Text = "Quản lý môn học";
+            this.btnQLGiaoVien.BorderRadius = 8;
+            this.btnQLGiaoVien.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnQLGiaoVien.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnQLGiaoVien.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnQLGiaoVien.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnQLGiaoVien.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(101)))), ((int)(((byte)(241)))));
+            this.btnQLGiaoVien.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btnQLGiaoVien.ForeColor = System.Drawing.Color.White;
+            this.btnQLGiaoVien.HoverState.FillColor = System.Drawing.Color.SlateBlue;
+            this.btnQLGiaoVien.Image = global::GUI.Properties.Resources.icons8_teacher_50;
+            this.btnQLGiaoVien.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnQLGiaoVien.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnQLGiaoVien.Location = new System.Drawing.Point(0, 0);
+            this.btnQLGiaoVien.Name = "btnQLGiaoVien";
+            this.btnQLGiaoVien.Size = new System.Drawing.Size(242, 67);
+            this.btnQLGiaoVien.TabIndex = 3;
+            this.btnQLGiaoVien.Text = "QL giáo viên";
+            this.btnQLGiaoVien.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnQLGiaoVien.Click += new System.EventHandler(this.button5_Click_1);
             // 
-            // quảnLýGiáoViênToolStripMenuItem
+            // btnQLLop
             // 
-            this.quảnLýGiáoViênToolStripMenuItem.Name = "quảnLýGiáoViênToolStripMenuItem";
-            this.quảnLýGiáoViênToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
-            this.quảnLýGiáoViênToolStripMenuItem.Text = "Quản lý giáo viên";
+            this.btnQLLop.BorderRadius = 8;
+            this.btnQLLop.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnQLLop.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnQLLop.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnQLLop.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnQLLop.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(101)))), ((int)(((byte)(241)))));
+            this.btnQLLop.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btnQLLop.ForeColor = System.Drawing.Color.White;
+            this.btnQLLop.HoverState.FillColor = System.Drawing.Color.SlateBlue;
+            this.btnQLLop.Image = global::GUI.Properties.Resources.icons8_classroom_100;
+            this.btnQLLop.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnQLLop.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnQLLop.Location = new System.Drawing.Point(0, 0);
+            this.btnQLLop.Name = "btnQLLop";
+            this.btnQLLop.Size = new System.Drawing.Size(242, 67);
+            this.btnQLLop.TabIndex = 3;
+            this.btnQLLop.Text = "QL lớp";
+            this.btnQLLop.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnQLLop.Click += new System.EventHandler(this.button3_Click);
             // 
-            // chứcNăngToolStripMenuItem
+            // btnDangXuat
             // 
-            this.chứcNăngToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.thôngTinToolStripMenuItem,
-            this.đổiMậtKhẩuToolStripMenuItem,
-            this.đăngXuấtToolStripMenuItem});
-            this.chứcNăngToolStripMenuItem.Name = "chứcNăngToolStripMenuItem";
-            this.chứcNăngToolStripMenuItem.Size = new System.Drawing.Size(87, 24);
-            this.chứcNăngToolStripMenuItem.Text = "Tài Khoản";
+            this.btnDangXuat.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnDangXuat.BorderRadius = 8;
+            this.btnDangXuat.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDangXuat.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDangXuat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDangXuat.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDangXuat.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(101)))), ((int)(((byte)(241)))));
+            this.btnDangXuat.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btnDangXuat.ForeColor = System.Drawing.Color.White;
+            this.btnDangXuat.HoverState.FillColor = System.Drawing.Color.SlateBlue;
+            this.btnDangXuat.Image = global::GUI.Properties.Resources.icons8_logout_50;
+            this.btnDangXuat.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnDangXuat.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnDangXuat.Location = new System.Drawing.Point(0, 0);
+            this.btnDangXuat.Name = "btnDangXuat";
+            this.btnDangXuat.Size = new System.Drawing.Size(242, 67);
+            this.btnDangXuat.TabIndex = 3;
+            this.btnDangXuat.Text = "Đăng xuất";
+            this.btnDangXuat.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnDangXuat.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
-            // thôngTinToolStripMenuItem
+            // btnQLDiem
             // 
-            this.thôngTinToolStripMenuItem.Name = "thôngTinToolStripMenuItem";
-            this.thôngTinToolStripMenuItem.Size = new System.Drawing.Size(204, 26);
-            this.thôngTinToolStripMenuItem.Text = "Thông tin chi tiết";
-            this.thôngTinToolStripMenuItem.Click += new System.EventHandler(this.thôngTinToolStripMenuItem_Click);
+            this.btnQLDiem.BorderRadius = 8;
+            this.btnQLDiem.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnQLDiem.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnQLDiem.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnQLDiem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnQLDiem.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(101)))), ((int)(((byte)(241)))));
+            this.btnQLDiem.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btnQLDiem.ForeColor = System.Drawing.Color.White;
+            this.btnQLDiem.HoverState.FillColor = System.Drawing.Color.SlateBlue;
+            this.btnQLDiem.Image = global::GUI.Properties.Resources.icons8_inspection_50;
+            this.btnQLDiem.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnQLDiem.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnQLDiem.Location = new System.Drawing.Point(0, 0);
+            this.btnQLDiem.Name = "btnQLDiem";
+            this.btnQLDiem.Size = new System.Drawing.Size(242, 67);
+            this.btnQLDiem.TabIndex = 3;
+            this.btnQLDiem.Text = "QL điểm học sinh";
+            this.btnQLDiem.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnQLDiem.Click += new System.EventHandler(this.button2_Click);
             // 
-            // đổiMậtKhẩuToolStripMenuItem
+            // btnHam
             // 
-            this.đổiMậtKhẩuToolStripMenuItem.Name = "đổiMậtKhẩuToolStripMenuItem";
-            this.đổiMậtKhẩuToolStripMenuItem.Size = new System.Drawing.Size(204, 26);
-            this.đổiMậtKhẩuToolStripMenuItem.Text = "Đổi mật khẩu";
-            // 
-            // đăngXuấtToolStripMenuItem
-            // 
-            this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(204, 26);
-            this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
-            // 
-            // tìmKiểmToolStripMenuItem
-            // 
-            this.tìmKiểmToolStripMenuItem.Name = "tìmKiểmToolStripMenuItem";
-            this.tìmKiểmToolStripMenuItem.Size = new System.Drawing.Size(86, 24);
-            this.tìmKiểmToolStripMenuItem.Text = "Tìm Kiểm";
-            // 
-            // thốngKêToolStripMenuItem
-            // 
-            this.thốngKêToolStripMenuItem.Name = "thốngKêToolStripMenuItem";
-            this.thốngKêToolStripMenuItem.Size = new System.Drawing.Size(84, 24);
-            this.thốngKêToolStripMenuItem.Text = "Thống kê";
-            // 
-            // trợGiúpToolStripMenuItem
-            // 
-            this.trợGiúpToolStripMenuItem.Name = "trợGiúpToolStripMenuItem";
-            this.trợGiúpToolStripMenuItem.Size = new System.Drawing.Size(78, 24);
-            this.trợGiúpToolStripMenuItem.Text = "Trợ giúp";
+            this.btnHam.Image = global::GUI.Properties.Resources.burger_menu_svgrepo_com__3_;
+            this.btnHam.ImageRotate = 0F;
+            this.btnHam.Location = new System.Drawing.Point(12, 14);
+            this.btnHam.Name = "btnHam";
+            this.btnHam.Size = new System.Drawing.Size(46, 39);
+            this.btnHam.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnHam.TabIndex = 2;
+            this.btnHam.TabStop = false;
+            this.btnHam.Click += new System.EventHandler(this.btnHam_Click);
             // 
             // frmTrangChinh
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1262, 721);
-            this.Controls.Add(this.plBody);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(1262, 751);
+            this.Controls.Add(this.plView);
+            this.Controls.Add(this.sidebar);
+            this.Controls.Add(this.guna2Panel1);
             this.HelpButton = true;
-            this.MainMenuStrip = this.menuStrip1;
+            this.IsMdiContainer = true;
             this.Name = "frmTrangChinh";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fTrangChinh";
             this.Load += new System.EventHandler(this.fTrangChinh_Load);
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.plBody.ResumeLayout(false);
-            this.plBody.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.guna2Panel1.ResumeLayout(false);
+            this.plQLHocSinh.ResumeLayout(false);
+            this.plQLDiemHS.ResumeLayout(false);
+            this.plQLLop.ResumeLayout(false);
+            this.plQLMonHoc.ResumeLayout(false);
+            this.plQLGiaoVien.ResumeLayout(false);
+            this.plDangXuat.ResumeLayout(false);
+            this.sidebar.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnHam)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel plBody;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem quảnLýToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem chứcNăngToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem thôngTinToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem đổiMậtKhẩuToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem đăngXuấtToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem quảnLýLớpToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem quảnLýHọcSinhToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem quảnLýMônHọcToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem quảnLýGiáoViênToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tìmKiểmToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem thốngKêToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem trợGiúpToolStripMenuItem;
+        private System.Windows.Forms.Timer sidebarTransition;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private Guna.UI2.WinForms.Guna2PictureBox btnHam;
+        private Guna.UI2.WinForms.Guna2Panel plQLHocSinh;
+        private Guna.UI2.WinForms.Guna2Panel plQLDiemHS;
+        private Guna.UI2.WinForms.Guna2Panel plQLLop;
+        private Guna.UI2.WinForms.Guna2Panel plQLMonHoc;
+        private Guna.UI2.WinForms.Guna2Panel plQLGiaoVien;
+        private Guna.UI2.WinForms.Guna2Panel plDangXuat;
+        private Guna.UI2.WinForms.Guna2Panel sidebar;
+        private Guna.UI2.WinForms.Guna2Panel plView;
+        private Guna.UI2.WinForms.Guna2Button btnQLHS;
+        private Guna.UI2.WinForms.Guna2Button btnQLDiem;
+        private Guna.UI2.WinForms.Guna2Button btnQLLop;
+        private Guna.UI2.WinForms.Guna2Button btnQLMonHoc;
+        private Guna.UI2.WinForms.Guna2Button btnQLGiaoVien;
+        private Guna.UI2.WinForms.Guna2Button btnDangXuat;
     }
 }
