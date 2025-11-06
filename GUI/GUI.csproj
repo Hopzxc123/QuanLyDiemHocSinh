@@ -130,9 +130,6 @@
   </ItemGroup>
   <!-- Embedded Resources -->
   <ItemGroup>
-    <EmbeddedResource Include="frmDangNhap.resx">
-      <DependentUpon>frmDangNhap.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="QuanLiDiem\frmChiTietDiemHocSinh.resx">
       <DependentUpon>frmChiTietDiemHocSinh.cs</DependentUpon>
     </EmbeddedResource>

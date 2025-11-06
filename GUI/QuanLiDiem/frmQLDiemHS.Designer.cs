@@ -36,12 +36,12 @@
             this.dgvDanhSach = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnIn = new System.Windows.Forms.Button();
+            this.btnReload = new System.Windows.Forms.Button();
             this.btnLoc = new System.Windows.Forms.Button();
             this.cbbLop = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.btnReload = new System.Windows.Forms.Button();
-            this.btnIn = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -135,6 +135,28 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Lựa chọn ";
             // 
+            // btnIn
+            // 
+            this.btnIn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnIn.Image = global::GUI.Properties.Resources.OIP;
+            this.btnIn.Location = new System.Drawing.Point(12, 22);
+            this.btnIn.Name = "btnIn";
+            this.btnIn.Size = new System.Drawing.Size(48, 42);
+            this.btnIn.TabIndex = 4;
+            this.btnIn.UseVisualStyleBackColor = true;
+            this.btnIn.Click += new System.EventHandler(this.btnIn_Click);
+            // 
+            // btnReload
+            // 
+            this.btnReload.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnReload.Image = global::GUI.Properties.Resources.btnreload;
+            this.btnReload.Location = new System.Drawing.Point(957, 14);
+            this.btnReload.Name = "btnReload";
+            this.btnReload.Size = new System.Drawing.Size(48, 42);
+            this.btnReload.TabIndex = 3;
+            this.btnReload.UseVisualStyleBackColor = true;
+            this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
+            // 
             // btnLoc
             // 
             this.btnLoc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -170,28 +192,6 @@
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // btnReload
-            // 
-            this.btnReload.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnReload.Image = global::GUI.Properties.Resources.btnreload__1_;
-            this.btnReload.Location = new System.Drawing.Point(957, 14);
-            this.btnReload.Name = "btnReload";
-            this.btnReload.Size = new System.Drawing.Size(48, 42);
-            this.btnReload.TabIndex = 3;
-            this.btnReload.UseVisualStyleBackColor = true;
-            this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
-            // 
-            // btnIn
-            // 
-            this.btnIn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnIn.Image = global::GUI.Properties.Resources.OIP;
-            this.btnIn.Location = new System.Drawing.Point(12, 22);
-            this.btnIn.Name = "btnIn";
-            this.btnIn.Size = new System.Drawing.Size(48, 42);
-            this.btnIn.TabIndex = 4;
-            this.btnIn.UseVisualStyleBackColor = true;
-            this.btnIn.Click += new System.EventHandler(this.btnIn_Click);
             // 
             // FrmQLDiemHS
             // 

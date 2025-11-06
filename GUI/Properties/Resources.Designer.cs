@@ -83,16 +83,6 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap btnreload__1_ {
-            get {
-                object obj = ResourceManager.GetObject("btnreload (1)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap burger_menu_svgrepo_com__3_ {
             get {
                 object obj = ResourceManager.GetObject("burger-menu-svgrepo-com (3)", resourceCulture);
@@ -166,26 +156,6 @@ namespace GUI.Properties {
         internal static System.Drawing.Bitmap login__2_ {
             get {
                 object obj = ResourceManager.GetObject("login (2)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap btnreload {
-            get {
-                object obj = ResourceManager.GetObject("btnreload", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap btnreload__1_ {
-            get {
-                object obj = ResourceManager.GetObject("btnreload (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
