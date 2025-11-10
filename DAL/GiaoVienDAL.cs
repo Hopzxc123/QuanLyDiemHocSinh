@@ -116,7 +116,7 @@ namespace DAL
         {
             return new GiaoVienDTO
             {
-                MaGiaoVien = Convert.ToInt32(row["MaGiaoVien"]),
+                MaGiaoVien = row["MaGiaoVien"].ToString(),
                 HoTen = row["HoTen"].ToString(),
                 NgaySinh = Convert.ToDateTime(row["NgaySinh"]),
                 GioiTinh = row["GioiTinh"].ToString(),
