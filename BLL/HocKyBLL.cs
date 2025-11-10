@@ -25,7 +25,10 @@ namespace BLL
         {
             return HocKyDAL.Instance.GetAllHocKy();
         }
-
+        public HocKyDTO GetHocKyById(string maHocKy)
+        {
+            return HocKyDAL.Instance.GetHocKyById(maHocKy);
+        }
         public bool InsertHocKy(HocKyDTO hk)
         {
             if (string.IsNullOrWhiteSpace(hk.MaHocKy))

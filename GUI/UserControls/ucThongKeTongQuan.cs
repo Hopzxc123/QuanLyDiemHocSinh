@@ -1,9 +1,12 @@
 ﻿using BLL;
 using System;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Text;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+
 
 namespace GUI.UserControls
 {
@@ -40,7 +43,6 @@ namespace GUI.UserControls
             {
                 var dsHS = HocSinhBLL.Instance.GetAllHocSinh();
                 var dsDiem = DiemBLL.Instance.GetAllDiem();
-
                 // Gộp dữ liệu điểm và học sinh theo MaHocSinh
                 var hocSinhGioi = (from hs in dsHS
                                    join d in dsDiem on hs.MaHocSinh equals d.MaHocSinh
@@ -59,12 +61,8 @@ namespace GUI.UserControls
                                                  diemTrungBinh >= 6.5 ? "Khá" :
                                                  diemTrungBinh >= 5 ? "Trung bình" : "Yếu"
                                    }).ToList();
-
-
-
                 dgvHocSinhGioi.DataSource = hocSinhGioi;
                 dgvHocSinhGioi.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
                 dgvHocSinhGioi.Columns["MaHocSinh"].HeaderText = "Mã HS";
                 dgvHocSinhGioi.Columns["HoTen"].HeaderText = "Họ tên";
                 dgvHocSinhGioi.Columns["MaLop"].HeaderText = "Lớp";
@@ -83,6 +81,71 @@ namespace GUI.UserControls
                 // Có thể để trống hoặc xóa
             }
 
-        
+        private void label_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ExportToCSV(DataGridView dgv)
+        {
+            if (dgv.Rows.Count == 0)
+            {
+                MessageBox.Show("Không có dữ liệu để xuất!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            SaveFileDialog saveDialog = new SaveFileDialog();
+            saveDialog.Filter = "CSV file (*.csv)|*.csv";
+            saveDialog.FileName = "HocSinhGioi.csv";
+
+            if (saveDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    using (StreamWriter sw = new StreamWriter(saveDialog.FileName, false, Encoding.UTF8))
+                    {
+                        // Ghi dòng tiêu đề (header)
+                        for (int i = 0; i < dgv.Columns.Count; i++)
+                        {
+                            sw.Write(dgv.Columns[i].HeaderText);
+                            if (i < dgv.Columns.Count - 1)
+                                sw.Write(",");
+                        }
+                        sw.WriteLine();
+
+                        // Ghi dữ liệu từng hàng
+                        foreach (DataGridViewRow row in dgv.Rows)
+                        {
+                            // Bỏ qua dòng trống (nếu có)
+                            if (row.IsNewRow) continue;
+
+                            for (int i = 0; i < dgv.Columns.Count; i++)
+                            {
+                                var value = row.Cells[i].Value?.ToString();
+                                // Nếu có dấu phẩy hoặc xuống dòng, bọc trong dấu ngoặc kép
+                                if (value != null && (value.Contains(",") || value.Contains("\n")))
+                                    value = $"\"{value}\"";
+
+                                sw.Write(value);
+                                if (i < dgv.Columns.Count - 1)
+                                    sw.Write(",");
+                            }
+                            sw.WriteLine();
+                        }
+                    }
+
+                    MessageBox.Show("Xuất file CSV thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi khi xuất CSV: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void btnXuatExcel_Click(object sender, EventArgs e)
+        {
+            ExportToCSV(dgvHocSinhGioi);
+        }
     }
 }

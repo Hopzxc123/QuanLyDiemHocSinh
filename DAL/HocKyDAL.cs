@@ -38,7 +38,7 @@ namespace DAL
         }
 
         // 🔹 Lấy học kỳ theo mã
-        public HocKyDTO GetHocKyById(int maHocKy)
+        public HocKyDTO GetHocKyById(string maHocKy)
         {
             string query = "SELECT * FROM HocKy WHERE MaHocKy = @MaHocKy";
             DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { maHocKy });

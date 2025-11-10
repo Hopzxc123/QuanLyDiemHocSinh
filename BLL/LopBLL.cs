@@ -28,16 +28,16 @@ namespace BLL
             return LopDAL.Instance.GetAllLop();
         }
 
-        public LopDTO GetLopByMa(int maLop)
+        public LopDTO GetLopByMa(string maLop)
         {
-            if (maLop <= 0)
+            if (string.IsNullOrWhiteSpace(maLop))
                 throw new Exception("Mã lớp không hợp lệ.");
             return LopDAL.Instance.GetLopByMa(maLop);
         }
 
-        public List<LopDTO> GetLopByNamHoc(int namHoc)
+        public List<LopDTO> GetLopByNamHoc(string namHoc)
         {
-            if (namHoc <= 0)
+            if (string.IsNullOrWhiteSpace(namHoc))
                 throw new Exception("Năm học không hợp lệ.");
             return LopDAL.Instance.GetLopByNamHoc(namHoc);
         }
@@ -60,9 +60,9 @@ namespace BLL
 
         // ====================== DELETE ======================
 
-        public bool DeleteLop(int maLop)
+        public bool DeleteLop(string maLop)
         {
-            if (maLop <= 0)
+            if (string.IsNullOrWhiteSpace(maLop))
                 throw new Exception("Mã lớp không hợp lệ.");
 
             int soHocSinh = LopDAL.Instance.CountHocSinhInLop(maLop);
@@ -82,7 +82,7 @@ namespace BLL
                 throw new Exception("Tên lớp không được để trống.");
             if (lop.KhoiLop <= 0)
                 throw new Exception("Khối lớp phải lớn hơn 0.");
-            if (lop.NamHoc <= 0)
+            if (string.IsNullOrWhiteSpace(lop.NamHoc))
                 throw new Exception("Năm học phải hợp lệ.");
 
             if (isInsert && LopDAL.Instance.CheckMaLopExists(lop.MaLop))

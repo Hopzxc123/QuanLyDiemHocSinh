@@ -40,6 +40,7 @@ namespace GUI
 
         private void openChildControl(UserControl uc)
         {
+
             // Xóa control/form cũ
             if (currentChild != null)
             {
@@ -51,6 +52,7 @@ namespace GUI
             uc.Dock = DockStyle.Fill;
             plBody.Controls.Add(uc);
             uc.BringToFront();
+
         }
 
 
@@ -61,7 +63,7 @@ namespace GUI
 
         private void button2_Click(object sender, EventArgs e)
         {
-            openChildForm(new frmQLDiemHS());
+            openChildForm(new FrmQLDiemHS());
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -95,5 +97,9 @@ namespace GUI
             openChildControl(new ucThongKeTongQuan());
         }
 
+        private void thongKeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openChildControl(new ucThongKeTongQuan());
+        }
     }
 }

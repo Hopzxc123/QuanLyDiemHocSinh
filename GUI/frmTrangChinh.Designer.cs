@@ -47,7 +47,7 @@
             this.đổiMậtKhẩuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tìmKiểmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.thốngKêToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.thongKeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.trợGiúpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -66,7 +66,7 @@
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(150, 586);
             this.panel1.TabIndex = 0;
@@ -78,7 +78,7 @@
             this.button5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.White;
             this.button5.Location = new System.Drawing.Point(0, 332);
-            this.button5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button5.Margin = new System.Windows.Forms.Padding(2);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(150, 54);
             this.button5.TabIndex = 3;
@@ -93,7 +93,7 @@
             this.button4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.White;
             this.button4.Location = new System.Drawing.Point(0, 278);
-            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(150, 54);
             this.button4.TabIndex = 2;
@@ -108,7 +108,7 @@
             this.button3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.Location = new System.Drawing.Point(0, 224);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(150, 54);
             this.button3.TabIndex = 1;
@@ -123,7 +123,7 @@
             this.button2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Location = new System.Drawing.Point(0, 170);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(150, 54);
             this.button2.TabIndex = 1;
@@ -138,7 +138,7 @@
             this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(0, 116);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(150, 54);
             this.button1.TabIndex = 1;
@@ -150,7 +150,7 @@
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(150, 116);
             this.pictureBox1.TabIndex = 0;
@@ -161,7 +161,7 @@
             this.plBody.Controls.Add(this.menuStrip1);
             this.plBody.Dock = System.Windows.Forms.DockStyle.Fill;
             this.plBody.Location = new System.Drawing.Point(150, 0);
-            this.plBody.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.plBody.Margin = new System.Windows.Forms.Padding(2);
             this.plBody.Name = "plBody";
             this.plBody.Size = new System.Drawing.Size(796, 586);
             this.plBody.TabIndex = 1;
@@ -174,7 +174,7 @@
             this.quảnLýToolStripMenuItem,
             this.chứcNăngToolStripMenuItem,
             this.tìmKiểmToolStripMenuItem,
-            this.thốngKêToolStripMenuItem,
+            this.thongKeToolStripMenuItem,
             this.trợGiúpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -253,11 +253,12 @@
             this.tìmKiểmToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
             this.tìmKiểmToolStripMenuItem.Text = "Tìm Kiểm";
             // 
-            // thốngKêToolStripMenuItem
+            // thongKeToolStripMenuItem
             // 
-            this.thốngKêToolStripMenuItem.Name = "thốngKêToolStripMenuItem";
-            this.thốngKêToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
-            this.thốngKêToolStripMenuItem.Text = "Thống kê";
+            this.thongKeToolStripMenuItem.Name = "thongKeToolStripMenuItem";
+            this.thongKeToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
+            this.thongKeToolStripMenuItem.Text = "Thống kê";
+            this.thongKeToolStripMenuItem.Click += new System.EventHandler(this.thongKeToolStripMenuItem_Click);
             // 
             // trợGiúpToolStripMenuItem
             // 
@@ -275,7 +276,7 @@
             this.Controls.Add(this.panel1);
             this.HelpButton = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmTrangChinh";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fTrangChinh";
@@ -311,7 +312,7 @@
         private System.Windows.Forms.ToolStripMenuItem quảnLýMônHọcToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quảnLýGiáoViênToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tìmKiểmToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem thốngKêToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem thongKeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem trợGiúpToolStripMenuItem;
     }
 }
