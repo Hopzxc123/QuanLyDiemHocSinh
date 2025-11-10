@@ -57,6 +57,16 @@ namespace GUI
         {
             try
             {
+                if (string.IsNullOrWhiteSpace(txtMaLop.Text) &&
+                    string.IsNullOrWhiteSpace(txtTenLop.Text) &&
+                    string.IsNullOrWhiteSpace(txtGhiChu.Text) &&
+                    string.IsNullOrWhiteSpace(txtSiSo.Text) &&
+                    cboKhoiLop.SelectedValue == null &&
+                    cboNamHoc.SelectedValue == null)
+                {
+                    MessageBox.Show("Vui lòng lớp cần thêm!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
                 LopDTO lop = new LopDTO
                 {
                     MaLop = txtMaLop.Text,
@@ -85,6 +95,17 @@ namespace GUI
         {
             try
             {
+                if (string.IsNullOrWhiteSpace(txtMaLop.Text) &&
+                    string.IsNullOrWhiteSpace(txtTenLop.Text) &&
+                    string.IsNullOrWhiteSpace(txtGhiChu.Text) &&
+                    string.IsNullOrWhiteSpace(txtSiSo.Text) &&
+                    cboKhoiLop.SelectedValue == null &&
+                    cboNamHoc.SelectedValue == null)
+                {
+                    MessageBox.Show("Vui lòng chọn lớp cần sửa!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 if (dgvLop.CurrentRow == null)
                     return;
 
@@ -163,7 +184,8 @@ namespace GUI
             txtSiSo.Clear();
             txtGhiChu.Clear();
             cboKhoiLop.SelectedIndex = -1;
-            if (cboNamHoc.Items.Count > 0) cboNamHoc.SelectedIndex = -1;
+            cboNamHoc.SelectedIndex = -1;
+            cboNamHoc.SelectedIndex = -1;
         }
 
         private void btnLamMoi_Click(object sender, EventArgs e)
@@ -171,7 +193,5 @@ namespace GUI
             ClearForm();
             LoadLopData();
         }
-
-        
     }
 }
