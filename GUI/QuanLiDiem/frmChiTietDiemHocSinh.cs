@@ -32,29 +32,56 @@ namespace GUI.frmQLDiemHS
         {
             txtHoTen.Text = hocSinh.HoTen;
             txtLop.Text = LopBLL.Instance.GetLopByMa(hocSinh.MaLop).TenLop;
+            btnSua.Enabled = false;
+            btnXoa.Enabled = false;
             CapNhatDiem();
-            CapNhatMonHoc();
+            CapNhatCBB();
+            SetUpToolTip();
+            
         }
 
-        private void CapNhatMonHoc()
+        private void SetUpToolTip()
         {
+            // Thiết lập một số tùy chọn (không bắt buộc)
+            toolTip1.AutoPopDelay = 4000;   // hiện trong 5 giây
+            toolTip1.InitialDelay = 1000;   // sau 1 giây mới hiện
+            toolTip1.ReshowDelay = 500;     // thời gian giữa các lần hover
+            toolTip1.ShowAlways = true;     // hiển thị ngay cả khi buttn bị disable
 
-            List<HocKyDTO> hocKys = HocKyBLL.Instance.GetAllHocKy();
-            cbbHocKy.DataSource = hocKys;
-            cbbHocKy.DisplayMember = "TenHocKy";
-            cbbHocKy.ValueMember = "MaHocKy";
-            //timkiem
-            cbbtHocKy.DataSource = hocKys;
-            cbbtHocKy.DisplayMember = "TenHocKy";
-            cbbtHocKy.ValueMember = "MaHocKy";
 
+        }
+
+        private void CapNhatCBB()
+        {
+            //NAMHOC
+           
+            //nhap thong tin
+            List<NamHocDTO> nams = NamHocBLL.Instance.GetAllNamHoc();
+            nams.Insert(0, new NamHocDTO
+            {
+                MaNamHoc = "",
+                TenNamHoc = "-- Chọn năm học --"
+            });
+            cbbNamHoc.DataSource = nams;
+            cbbNamHoc.DisplayMember = "TenNamHoc";  // Cái hiện ra
+            cbbNamHoc.ValueMember = "MaNamHoc";      // Giá trị thật
+            //tim kiem
+            cbbtNamHoc.DataSource = nams;
+            cbbtNamHoc.DisplayMember = "TenNamHoc";  // Cái hiện ra
+            cbbtNamHoc.ValueMember = "MaNamHoc";      // Giá trị thật
+            
+            
+            // MON HOC
             List<MonHocDTO> mons = MonHocBLL.Instance.GetAllMonHoc();
+            mons.Insert(0, new MonHocDTO
+            {
+                MaMonHoc = "",
+                TenMonHoc = "-- Chọn môn học --"
+            });
             cbbMonHoc.DataSource = mons;
             cbbMonHoc.DisplayMember = "TenMonHoc";  // Cái hiện ra
             cbbMonHoc.ValueMember = "MaMonHoc";      // Giá trị thật
-                                                     //timkiem
-
-
+          
         }
 
         private void CapNhatDiem()
@@ -63,7 +90,13 @@ namespace GUI.frmQLDiemHS
             diems = DiemBLL.Instance.GetDiemByHocSinh(hocSinh.MaHocSinh);
             foreach (DiemDTO d in diems)
             {
-                dgvDiem.Rows.Add(d.DiemTrenLop, d.DiemGiuaKy, d.DiemThi, d.DiemTongKet, MonHocBLL.Instance.GetMonHocByMa(d.MaMonHoc).TenMonHoc, HocKyBLL.Instance.GetHocKyById(d.MaHocKy).TenHocKy);
+
+                dgvDiem.Rows.Add(d.DiemTrenLop, d.DiemGiuaKy, d.DiemThi, d.DiemTongKet,
+                    MonHocBLL.Instance.GetMonHocByMa(d.MaMonHoc).TenMonHoc, // lay tên môn học
+                    HocKyBLL.Instance.GetHocKyById(d.MaHocKy).TenHocKy, // lay tên học kỳ
+                    NamHocBLL.Instance.GetNamHocByMa(HocKyBLL.Instance.GetHocKyById(d.MaHocKy).MaNamHoc).TenNamHoc, // lay tên năm học
+                    d.MaDiem
+                    );
             }
 
         }
@@ -71,7 +104,7 @@ namespace GUI.frmQLDiemHS
         private void btnReset_Click(object sender, EventArgs e)
         {
             CapNhatDiem();
-            CapNhatMonHoc();
+            CapNhatCBB();
             LamMoiTxt();
         }
 
@@ -99,6 +132,13 @@ namespace GUI.frmQLDiemHS
                 string tenHocKy = dgvDiem.Rows[index].Cells[5].Value.ToString();
                 cbbHocKy.SelectedIndex = cbbHocKy.FindStringExact(tenHocKy);
 
+                string maNamHoc = dgvDiem.Rows[index].Cells[6].Value.ToString();
+                cbbNamHoc.SelectedIndex = cbbNamHoc.FindStringExact(maNamHoc);
+
+                cbbNamHoc.Enabled = false;
+                btnSua.Enabled = true;
+                btnXoa.Enabled = true;
+                btnThem.Enabled = false;
             }
         }
 
@@ -143,7 +183,7 @@ namespace GUI.frmQLDiemHS
                     string maMonHoc = cbbMonHoc.SelectedValue.ToString();
                     DiemDTO diem = new DiemDTO
                     {
-                        MaDiem = diems.FirstOrDefault(d => d.MaMonHoc == maMonHoc && d.MaHocKy == maHocKy).MaDiem,
+                        MaDiem = row.Cells[7].Value.ToString(),
                         MaHocSinh = hocSinh.MaHocSinh,
                         MaHocKy = maHocKy,
                         MaMonHoc = maMonHoc,
@@ -213,8 +253,12 @@ namespace GUI.frmQLDiemHS
         private void btnReload_Click(object sender, EventArgs e)
         {
             CapNhatDiem();
-            CapNhatMonHoc();
+            CapNhatCBB();
             LamMoiTxt();
+            cbbNamHoc.Enabled = true;
+            btnThem.Enabled = true;
+            btnSua.Enabled = false;
+            btnXoa.Enabled = false;
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -326,21 +370,95 @@ namespace GUI.frmQLDiemHS
 
         private void btnLoc_Click(object sender, EventArgs e)
         {
-            if (cbbtHocKy.SelectedItem != null)
+            if (cbbtHocKy.SelectedIndex == 0 && cbbtNamHoc.SelectedIndex > 0)
             {
-                   string maHocKy = cbbtHocKy.SelectedValue.ToString();
+                string maNamHoc = cbbtNamHoc.SelectedValue.ToString();
+                dgvDiem.Rows.Clear();
+                List<DiemDTO> diemhks = DiemBLL.Instance.GetDiemByHocSinhNamHoc(hocSinh.MaHocSinh, maNamHoc);
+                foreach (DiemDTO d in diemhks)
+                {
+
+                    dgvDiem.Rows.Add(d.DiemTrenLop, d.DiemGiuaKy, d.DiemThi, d.DiemTongKet,
+                        MonHocBLL.Instance.GetMonHocByMa(d.MaMonHoc).TenMonHoc, // lay tên môn học
+                        HocKyBLL.Instance.GetHocKyById(d.MaHocKy).TenHocKy, // lay tên học kỳ
+                        NamHocBLL.Instance.GetNamHocByMa(HocKyBLL.Instance.GetHocKyById(d.MaHocKy).MaNamHoc).TenNamHoc, // lay tên năm học
+                        d.MaDiem
+                        );
+                }
+
+            }
+            else if(cbbtHocKy.SelectedIndex > 0  )
+            {
+                string maHocKy = cbbtHocKy.SelectedValue.ToString();
                 dgvDiem.Rows.Clear();
                 List<DiemDTO> diemhks = DiemBLL.Instance.GetDiemByHocSinhHocKy(hocSinh.MaHocSinh, maHocKy);
                 foreach (DiemDTO d in diemhks)
                 {
-                    dgvDiem.Rows.Add(d.DiemTrenLop, d.DiemGiuaKy, d.DiemThi, d.DiemTongKet, MonHocBLL.Instance.GetMonHocByMa(d.MaMonHoc).TenMonHoc, HocKyBLL.Instance.GetHocKyById(d.MaHocKy).TenHocKy);
-                }
 
+                    dgvDiem.Rows.Add(d.DiemTrenLop, d.DiemGiuaKy, d.DiemThi, d.DiemTongKet,
+                        MonHocBLL.Instance.GetMonHocByMa(d.MaMonHoc).TenMonHoc, // lay tên môn học
+                        HocKyBLL.Instance.GetHocKyById(d.MaHocKy).TenHocKy, // lay tên học kỳ
+                        NamHocBLL.Instance.GetNamHocByMa(HocKyBLL.Instance.GetHocKyById(d.MaHocKy).MaNamHoc).TenNamHoc, // lay tên năm học
+                        d.MaDiem
+                        );
+                }
             }
-            else
+            else  
             {
                 MessageBox.Show(this, "Vui lòng chọn học kỳ để lọc!");
             }
+            
+        }
+
+        private void cbbNamHoc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //fix loi khi load form gan datasoure vao cbb thi no se tu dong kich hoat su kien nay
+            if (cbbtNamHoc.SelectedValue == null) return;
+            if (cbbtNamHoc.SelectedItem != null)
+            {
+                cbbtHocKy.DataSource = null;
+                string maNamHoc = cbbtNamHoc.SelectedValue.ToString();
+                List<HocKyDTO> hocKys = HocKyBLL.Instance.GetHocKyByNamHoc(maNamHoc);
+                hocKys.Insert(0, new HocKyDTO
+                {
+                    MaHocKy = "",
+                    TenHocKy = "-- Chọn học kỳ --"
+                });
+                cbbtHocKy.DataSource = hocKys;
+                cbbtHocKy.DisplayMember = "TenHocKy";
+                cbbtHocKy.ValueMember = "MaHocKy";
+                cbbHocKy.SelectedIndex = 0;
+            }
+            else
+            {
+                MessageBox.Show(this, "Vui lòng chọn năm học để lọc!");
+            }
+        }
+
+        private void toolTip1_Popup(object sender, PopupEventArgs e)
+        {
+
+        }
+
+        private void cbbNamHoc_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            if (cbbNamHoc.SelectedValue == null) return;
+            if (cbbNamHoc.SelectedItem != null)
+            {
+                cbbHocKy.DataSource = null;
+                string maNamHoc = cbbNamHoc.SelectedValue.ToString();
+                List<HocKyDTO> hocKys = HocKyBLL.Instance.GetHocKyByNamHoc(maNamHoc);
+                hocKys.Insert(0, new HocKyDTO
+                {
+                    MaHocKy = "",
+                    TenHocKy = "-- Chọn Học Kỳ --"
+                });
+                cbbHocKy.DataSource = hocKys;
+                cbbHocKy.DisplayMember = "TenHocKy";
+                cbbHocKy.ValueMember = "MaHocKy";
+                cbbHocKy.SelectedIndex = 0;
+            }
+            return;
         }
     }
 }

@@ -36,14 +36,14 @@
             this.dgvDanhSach = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txttMaHS = new System.Windows.Forms.TextBox();
             this.btnReload = new System.Windows.Forms.Button();
-            this.btnLoc = new System.Windows.Forms.Button();
             this.cbbLop = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.txttMaHS = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.btnLoc = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -54,9 +54,10 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(101)))), ((int)(((byte)(241)))));
             this.panel1.Controls.Add(this.lblTieuDe);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1017, 61);
@@ -65,14 +66,15 @@
             // 
             // lblTieuDe
             // 
-            this.lblTieuDe.AutoSize = true;
-            this.lblTieuDe.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTieuDe.ForeColor = System.Drawing.Color.Yellow;
-            this.lblTieuDe.Location = new System.Drawing.Point(266, 9);
+            this.lblTieuDe.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTieuDe.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTieuDe.ForeColor = System.Drawing.Color.White;
+            this.lblTieuDe.Location = new System.Drawing.Point(0, 0);
             this.lblTieuDe.Name = "lblTieuDe";
-            this.lblTieuDe.Size = new System.Drawing.Size(491, 38);
+            this.lblTieuDe.Size = new System.Drawing.Size(1017, 61);
             this.lblTieuDe.TabIndex = 0;
             this.lblTieuDe.Text = "THÔNG TIN ĐIỂM HỌC SINH ";
+            this.lblTieuDe.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel2
             // 
@@ -102,6 +104,7 @@
             this.dgvDanhSach.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDanhSach.Location = new System.Drawing.Point(3, 18);
             this.dgvDanhSach.Name = "dgvDanhSach";
+            this.dgvDanhSach.RowHeadersVisible = false;
             this.dgvDanhSach.RowHeadersWidth = 51;
             this.dgvDanhSach.RowTemplate.Height = 24;
             this.dgvDanhSach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -121,7 +124,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(101)))), ((int)(((byte)(241)))));
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.txttMaHS);
             this.groupBox2.Controls.Add(this.btnReload);
@@ -130,6 +133,7 @@
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.groupBox2.ForeColor = System.Drawing.Color.White;
             this.groupBox2.Location = new System.Drawing.Point(0, 0);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(1017, 67);
@@ -137,44 +141,56 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Lựa chọn ";
             // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(629, 32);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(106, 20);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Mã Học Sinh";
+            // 
+            // txttMaHS
+            // 
+            this.txttMaHS.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txttMaHS.Location = new System.Drawing.Point(760, 26);
+            this.txttMaHS.Name = "txttMaHS";
+            this.txttMaHS.Size = new System.Drawing.Size(149, 26);
+            this.txttMaHS.TabIndex = 5;
+            // 
             // btnReload
             // 
-            this.btnReload.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnReload.Image = global::GUI.Properties.Resources.btnreload;
-            this.btnReload.Location = new System.Drawing.Point(957, 14);
+            this.btnReload.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnReload.Image = global::GUI.Properties.Resources.icons8_reload_30;
+            this.btnReload.Location = new System.Drawing.Point(957, 23);
             this.btnReload.Name = "btnReload";
-            this.btnReload.Size = new System.Drawing.Size(48, 42);
+            this.btnReload.Size = new System.Drawing.Size(37, 33);
             this.btnReload.TabIndex = 3;
             this.btnReload.UseVisualStyleBackColor = true;
             this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
             // 
-            // btnLoc
-            // 
-            this.btnLoc.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnLoc.Location = new System.Drawing.Point(866, 14);
-            this.btnLoc.Name = "btnLoc";
-            this.btnLoc.Size = new System.Drawing.Size(85, 42);
-            this.btnLoc.TabIndex = 2;
-            this.btnLoc.Text = "Lọc";
-            this.btnLoc.UseVisualStyleBackColor = true;
-            this.btnLoc.Click += new System.EventHandler(this.btnLoc_Click);
-            // 
             // cbbLop
             // 
-            this.cbbLop.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.cbbLop.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cbbLop.FormattingEnabled = true;
             this.cbbLop.Items.AddRange(new object[] {
             "Vui lòng chọn lớp"});
-            this.cbbLop.Location = new System.Drawing.Point(384, 23);
+            this.cbbLop.Location = new System.Drawing.Point(445, 26);
             this.cbbLop.Name = "cbbLop";
             this.cbbLop.Size = new System.Drawing.Size(161, 28);
             this.cbbLop.TabIndex = 1;
             // 
             // label2
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(341, 29);
+            this.label2.Location = new System.Drawing.Point(402, 32);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 20);
             this.label2.TabIndex = 0;
@@ -186,23 +202,17 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // txttMaHS
+            // btnLoc
             // 
-            this.txttMaHS.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.txttMaHS.Location = new System.Drawing.Point(699, 23);
-            this.txttMaHS.Name = "txttMaHS";
-            this.txttMaHS.Size = new System.Drawing.Size(149, 26);
-            this.txttMaHS.TabIndex = 5;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(568, 29);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(106, 20);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Mã Học Sinh";
+            this.btnLoc.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLoc.Image = global::GUI.Properties.Resources.icons8_search_30;
+            this.btnLoc.Location = new System.Drawing.Point(915, 23);
+            this.btnLoc.Name = "btnLoc";
+            this.btnLoc.Size = new System.Drawing.Size(36, 33);
+            this.btnLoc.TabIndex = 2;
+            this.btnLoc.UseVisualStyleBackColor = true;
+            this.btnLoc.Click += new System.EventHandler(this.btnLoc_Click);
             // 
             // FrmQLDiemHS
             // 
@@ -215,7 +225,6 @@
             this.Text = "frmQLDiemHS";
             this.Load += new System.EventHandler(this.frmQLDiemHS_Load);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSach)).EndInit();
@@ -238,10 +247,10 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.DataGridView dgvDanhSach;
-        private System.Windows.Forms.Button btnLoc;
         private System.Windows.Forms.Button btnReload;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.TextBox txttMaHS;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnLoc;
     }
 }

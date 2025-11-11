@@ -132,7 +132,7 @@
     <value>97, 20</value>
   </data>
   <data name="lblThongBao.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="lblThongBao.Text" xml:space="preserve">
     <value>Thông báo: </value>
@@ -166,7 +166,7 @@
     <value>229, 32</value>
   </data>
   <data name="txtTenDangNhap.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;txtTenDangNhap.Name" xml:space="preserve">
     <value>txtTenDangNhap</value>
@@ -193,7 +193,7 @@
     <value>229, 32</value>
   </data>
   <data name="txtMatKhau.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;txtMatKhau.Name" xml:space="preserve">
     <value>txtMatKhau</value>
@@ -220,7 +220,7 @@
     <value>113, 21</value>
   </data>
   <data name="guna2CheckBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>3</value>
   </data>
   <data name="guna2CheckBox1.Text" xml:space="preserve">
     <value>Hiện mật khẩu</value>
@@ -247,7 +247,7 @@
     <value>108, 45</value>
   </data>
   <data name="btnDangNhap.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>4</value>
   </data>
   <data name="btnDangNhap.Text" xml:space="preserve">
     <value>Đăng nhập</value>
@@ -274,7 +274,7 @@
     <value>108, 45</value>
   </data>
   <data name="btnThoat.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>5</value>
   </data>
   <data name="btnThoat.Text" xml:space="preserve">
     <value>Thoát</value>

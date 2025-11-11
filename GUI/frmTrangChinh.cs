@@ -15,17 +15,18 @@ namespace GUI
     public partial class frmTrangChinh : Form
     {
         public event EventHandler LogoutRequested;
+        public TaiKhoanDTO Account { get; private set; }
         public bool IsLoggedOut { get; private set; }
-        public frmTrangChinh()
+        public frmTrangChinh(TaiKhoanDTO account)
         {
             InitializeComponent();
             this.DoubleBuffered = true;
             this.SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
             this.UpdateStyles();
-
-         
-
+            Account = account;
         }
+
+        
 
         private Form currentFormChild;
         private void openChildForm(Form childForm)
@@ -54,15 +55,18 @@ namespace GUI
             plView.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
-
-
-
         }
 
 
 
         private void fTrangChinh_Load(object sender, EventArgs e)
         {
+            CapNhatThongTinNguoiDangNhap();
+        }
+
+        private void CapNhatThongTinNguoiDangNhap()
+        {
+            lblTenTaiKhoan.Text = Account.TenDangNhap;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -151,7 +155,7 @@ namespace GUI
             }else
             {
                 sidebar.Width += 5;
-                if(sidebar.Width >= 245)
+                if(sidebar.Width >= 194)
                 {
                     sidebarExpand = true;
                     sidebarTransition.Stop();
@@ -234,6 +238,14 @@ namespace GUI
 
         }
 
-        
+        private void sidebar_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

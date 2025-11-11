@@ -10,7 +10,7 @@ namespace GUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
+            //Application.Run(new frmQLDiemHS());
             while (true)
             {
                 using (frmDangNhap frmLogin = new frmDangNhap())
@@ -19,7 +19,7 @@ namespace GUI
                     if (frmLogin.ShowDialog() == DialogResult.OK && frmLogin.CurrentUser != null)
                     {
                         // Đăng nhập thành công
-                        frmTrangChinh mainForm = new frmTrangChinh();
+                        frmTrangChinh mainForm = new frmTrangChinh(frmLogin.CurrentUser);
 
                         // Gắn sự kiện khi người dùng đăng xuất
                         mainForm.LogoutRequested += (s, e) =>
