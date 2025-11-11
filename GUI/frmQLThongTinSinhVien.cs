@@ -105,12 +105,16 @@ namespace GUI
         {
             try
             {
+                // Kiểm tra có dòng nào đang chọn không
                 if (dgvHocSinh.CurrentRow == null)
+                {
+                    MessageBox.Show("Vui lòng chọn học sinh cần sửa!", "Thông báo",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
-
+                string maHocSinh = dgvHocSinh.CurrentRow.Cells["MaHocSinh"].Value.ToString();
                 HocSinhDTO hs = new HocSinhDTO
                 {
-                    //MaHocSinh = txtMaHS.Text.Trim(),
+                    MaHocSinh = maHocSinh,
                     HoTen = txtHoTen.Text.Trim(),
                     GioiTinh = cboGioiTinh.SelectedItem?.ToString(),
                     NgaySinh = dtpNgaySinh.Value,
@@ -120,22 +124,27 @@ namespace GUI
                     TrangThai = "1"
                 };
 
+                // Gọi BLL để cập nhật
                 if (HocSinhBLL.Instance.UpdateHocSinh(hs))
                 {
-                    MessageBox.Show("Cập nhật học sinh thành công!");
+                    MessageBox.Show("Cập nhật học sinh thành công!", "Thông báo",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadHocSinhData();
                     ClearForm();
                 }
                 else
                 {
-                    MessageBox.Show("Cập nhật thất bại!");
+                    MessageBox.Show("Cập nhật thất bại!", "Thông báo",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi: " + ex.Message, "Lỗi",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
@@ -279,6 +288,9 @@ namespace GUI
             }
         }
 
-        
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

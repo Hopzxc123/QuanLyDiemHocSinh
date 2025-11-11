@@ -36,7 +36,20 @@ namespace DAL
 
             return list;
         }
+        public List<HocKyDTO> GetHocKyByNamHoc(string maNamHoc)
+        {
+            List<HocKyDTO> list = new List<HocKyDTO>();
+            string query = $"SELECT * FROM HocKy where MaNamHoc ='{maNamHoc}'";
 
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            foreach (DataRow row in data.Rows)
+            {
+                list.Add(MapToDTO(row));
+            }
+
+            return list;
+        }
         // 🔹 Lấy học kỳ theo mã
         public HocKyDTO GetHocKyById(string maHocKy)
         {

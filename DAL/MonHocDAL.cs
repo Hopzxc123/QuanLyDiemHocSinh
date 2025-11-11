@@ -37,7 +37,8 @@ namespace DAL
                 {
                     MaMonHoc = row["MaMonHoc"].ToString(),
                     TenMonHoc = row["TenMonHoc"].ToString(),
-                    HeSo = row["HeSo"] != DBNull.Value ? Convert.ToInt32(row["HeSo"]) : 1
+                    HeSo = row["HeSo"] != DBNull.Value ? Convert.ToInt32(row["HeSo"]) : 1,
+                    GhiChu = row["GhiChu"].ToString()
                 };
                 list.Add(mh);
             }
@@ -58,12 +59,14 @@ namespace DAL
                 {
                     MaMonHoc = row["MaMonHoc"].ToString(),
                     TenMonHoc = row["TenMonHoc"].ToString(),
-                    HeSo = row["HeSo"] != DBNull.Value ? Convert.ToInt32(row["HeSo"]) : 1
+                    HeSo = row["HeSo"] != DBNull.Value ? Convert.ToInt32(row["HeSo"]) : 1,
+                    GhiChu = row["GhiChu"].ToString()
                 };
             }
 
             return null;
         }
+
         //Lấy môn học theo tên
         public MonHocDTO GetMonHocByTen(string tenMonHoc)
         {
@@ -83,15 +86,16 @@ namespace DAL
 
             return null;
         }
+
         // Thêm môn học mới
         public bool InsertMonHoc(MonHocDTO mh)
         {
-            string query = "INSERT INTO MonHoc (MaMonHoc, TenMonHoc, HeSo) " +
-                          "VALUES ( @MaMonHoc , @TenMonHoc , @HeSo )";
+            string query = "INSERT INTO MonHoc (MaMonHoc, TenMonHoc, HeSo, GhiChu) " +
+                          "VALUES ( @MaMonHoc , @TenMonHoc , @HeSo , @GhiChu )";
 
             int result = DataProvider.Instance.ExecuteNonQuery(query, new object[]
             {
-                mh.MaMonHoc, mh.TenMonHoc, mh.HeSo
+                mh.MaMonHoc, mh.TenMonHoc, mh.HeSo, mh.GhiChu
             });
 
             return result > 0;
@@ -100,12 +104,12 @@ namespace DAL
         // Cập nhật môn học
         public bool UpdateMonHoc(MonHocDTO mh)
         {
-            string query = "UPDATE MonHoc SET TenMonHoc = @TenMonHoc , HeSo = @HeSo " +
-                          "WHERE MaMonHoc = @MaMonHoc";
+            string query = "UPDATE MonHoc SET TenMonHoc = @TenMonHoc , HeSo = @HeSo , GhiChu = @GhiChu " +
+                          "WHERE MaMonHoc = @MaMonHoc ";
 
             int result = DataProvider.Instance.ExecuteNonQuery(query, new object[]
             {
-                mh.TenMonHoc, mh.HeSo, mh.MaMonHoc
+                mh.TenMonHoc, mh.HeSo, mh.GhiChu , mh.MaMonHoc
             });
 
             return result > 0;
@@ -114,7 +118,7 @@ namespace DAL
         // Xóa môn học
         public bool DeleteMonHoc(string maMonHoc)
         {
-            string query = "DELETE FROM MonHoc WHERE MaMonHoc = @MaMonHoc";
+            string query = "DELETE FROM MonHoc WHERE MaMonHoc = @MaMonHoc ";
             int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { maMonHoc });
             return result > 0;
         }
@@ -133,7 +137,8 @@ namespace DAL
                 {
                     MaMonHoc = row["MaMonHoc"].ToString(),
                     TenMonHoc = row["TenMonHoc"].ToString(),
-                    HeSo = row["HeSo"] != DBNull.Value ? Convert.ToInt32(row["HeSo"]) : 1
+                    HeSo = row["HeSo"] != DBNull.Value ? Convert.ToInt32(row["HeSo"]) : 1,
+                    GhiChu = row["GhiChu"].ToString()
                 };
                 list.Add(mh);
             }

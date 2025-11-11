@@ -38,7 +38,10 @@ namespace BLL
 
             return NamHocDAL.Instance.InsertNamHoc(nh);
         }
-
+        public NamHocDTO GetNamHocByMa(string maNamHoc)
+        {
+            return NamHocDAL.Instance.GetNamHocByMa(maNamHoc);
+        }
         public bool UpdateNamHoc(NamHocDTO nh)
         {
             if (string.IsNullOrWhiteSpace(nh.MaNamHoc))
