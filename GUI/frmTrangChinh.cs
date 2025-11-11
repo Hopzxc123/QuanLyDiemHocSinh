@@ -14,17 +14,19 @@ namespace GUI
 {
     public partial class frmTrangChinh : Form
     {
-      
-        public frmTrangChinh()
+        public event EventHandler LogoutRequested;
+        public TaiKhoanDTO Account { get; private set; }
+        public bool IsLoggedOut { get; private set; }
+        public frmTrangChinh(TaiKhoanDTO account)
         {
             InitializeComponent();
             this.DoubleBuffered = true;
             this.SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
             this.UpdateStyles();
-
-         
-
+            Account = account;
         }
+
+        
 
         private Form currentFormChild;
         private void openChildForm(Form childForm)
@@ -53,11 +55,23 @@ namespace GUI
             plView.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
-
-
-
         }
 
+<<<<<<< HEAD
+=======
+
+
+        private void fTrangChinh_Load(object sender, EventArgs e)
+        {
+            CapNhatThongTinNguoiDangNhap();
+        }
+
+        private void CapNhatThongTinNguoiDangNhap()
+        {
+            lblTenTaiKhoan.Text = Account.TenDangNhap;
+        }
+
+>>>>>>> bb3e825e3f69b280b8e9c3ba49f44e5536dc898f
         private void button1_Click(object sender, EventArgs e)
         {
             
@@ -100,7 +114,24 @@ namespace GUI
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
+                DialogResult result = MessageBox.Show(
+             "Bạn có chắc chắn muốn đăng xuất không?",
+             "Xác nhận đăng xuất",
+             MessageBoxButtons.YesNo,
+             MessageBoxIcon.Question
+                  );
 
+            if (result == DialogResult.Yes)
+            {
+                // Người dùng đồng ý đăng xuất
+                IsLoggedOut = true;
+                LogoutRequested?.Invoke(this, EventArgs.Empty);
+            }
+            else
+            {
+                // Người dùng bấm "Không" → không làm gì cả
+                return;
+            }
         }
 
         bool sidebarExpand = true;
@@ -127,7 +158,7 @@ namespace GUI
             }else
             {
                 sidebar.Width += 5;
-                if(sidebar.Width >= 245)
+                if(sidebar.Width >= 194)
                 {
                     sidebarExpand = true;
                     sidebarTransition.Stop();
@@ -210,9 +241,20 @@ namespace GUI
 
         }
 
+<<<<<<< HEAD
         private void frmTrangChinh_Load(object sender, EventArgs e)
         {
             openChildForm(new frmThongKe());
+=======
+        private void sidebar_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+>>>>>>> bb3e825e3f69b280b8e9c3ba49f44e5536dc898f
         }
     }
 }

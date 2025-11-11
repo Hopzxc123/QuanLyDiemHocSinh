@@ -111,15 +111,10 @@ namespace GUI
                     MessageBox.Show("Vui lòng chọn học sinh cần sửa!", "Thông báo",
                                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
-                }
-
-                // Lấy mã học sinh từ dòng đang chọn
                 string maHocSinh = dgvHocSinh.CurrentRow.Cells["MaHocSinh"].Value.ToString();
-
-                // Tạo đối tượng học sinh mới với các giá trị cập nhật
                 HocSinhDTO hs = new HocSinhDTO
                 {
-                    MaHocSinh = maHocSinh, // 🔹 lấy từ DataGridView
+                    MaHocSinh = maHocSinh,
                     HoTen = txtHoTen.Text.Trim(),
                     GioiTinh = cboGioiTinh.SelectedItem?.ToString(),
                     NgaySinh = dtpNgaySinh.Value,
@@ -293,6 +288,9 @@ namespace GUI
             }
         }
 
-        
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

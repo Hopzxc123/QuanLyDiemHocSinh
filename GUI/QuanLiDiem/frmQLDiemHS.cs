@@ -91,8 +91,23 @@ namespace GUI
 
         private void btnLoc_Click(object sender, EventArgs e)
         {
-            dgvDanhSach.DataSource = HocSinhBLL.Instance.GetHocSinhByLop((cbbLop.SelectedValue.ToString()));
-
+            if(txttMaHS.Text == "" && cbbLop.SelectedIndex != -1)
+            {
+                dgvDanhSach.DataSource = HocSinhBLL.Instance.GetHocSinhByLop((cbbLop.SelectedValue.ToString()));
+                return;
+            }
+            else if(txttMaHS.Text !="")
+            {
+                dgvDanhSach.DataSource = HocSinhBLL.Instance.GetHocSinhByMa(txttMaHS.Text.Trim());
+                return;
+            }
+            else
+            {
+                
+                MessageBox.Show(this, "Vui lòng chọn tiêu chí để lọc ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+           
         }
 
         private void btnReload_Click(object sender, EventArgs e)

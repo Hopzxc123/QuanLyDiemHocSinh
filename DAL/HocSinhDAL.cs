@@ -51,7 +51,7 @@ namespace DAL
         // Lấy học sinh theo mã
         public HocSinhDTO GetHocSinhByMa(string maHocSinh)
         {
-            string query = "SELECT * FROM HocSinh WHERE MaHocSinh = @MaHocSinh";
+            string query = $"SELECT * FROM HocSinh WHERE MaHocSinh = '{maHocSinh}'";
             DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { maHocSinh });
 
             if (data.Rows.Count > 0)

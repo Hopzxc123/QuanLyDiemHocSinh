@@ -139,8 +139,8 @@
   </ItemGroup>
   <!-- Embedded Resources -->
   <ItemGroup>
-    <EmbeddedResource Include="frmThongKe.resx">
-      <DependentUpon>frmThongKe.cs</DependentUpon>
+    <EmbeddedResource Include="frmDangNhap.resx">
+      <DependentUpon>frmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLiDiem\frmChiTietDiemHocSinh.resx">
       <DependentUpon>frmChiTietDiemHocSinh.cs</DependentUpon>

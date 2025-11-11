@@ -25,6 +25,29 @@ namespace BLL
         {
             return DiemDAL.Instance.GetAllDiem();
         }
+        public List<DiemDTO> GetDiemByHocSinhHocKy(string maHocSinh, string maHocKy)
+        {
+            if (string.IsNullOrWhiteSpace(maHocSinh))
+                throw new Exception("Mã học sinh không được để trống");
+            if (string.IsNullOrWhiteSpace(maHocKy))
+                throw new Exception("Mã học kỳ không được để trống");
+            return DiemDAL.Instance.GetDiemByHocSinhHocKy(maHocSinh, maHocKy);
+        }
+        public List<DiemDTO> GetDiemByHocSinhNamHoc(string maHocSinh, string maNamHoc)
+        {
+            if (string.IsNullOrWhiteSpace(maHocSinh))
+                throw new Exception("Mã học sinh không được để trống");
+            if (string.IsNullOrWhiteSpace(maNamHoc))
+                throw new Exception("Mã học kỳ không được để trống");
+            List<DiemDTO> diems = new List<DiemDTO>();
+            List<HocKyDTO> hocKys = HocKyBLL.Instance.GetHocKyByNamHoc(maNamHoc);
+            foreach(HocKyDTO hocKy in hocKys)
+            {
+                diems.AddRange(DiemDAL.Instance.GetDiemByHocSinhHocKy(maHocSinh, hocKy.MaHocKy));
+            }
+            return diems;
+            
+        }
         public List<DiemDTO> GetDiemByHocSinh(string maHocSinh)
         {
             if (string.IsNullOrWhiteSpace(maHocSinh))
