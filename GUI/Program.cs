@@ -10,16 +10,35 @@ namespace GUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmTrangChinh());
-            // Mở form đăng nhập
-            //using (frmDangNhap frmLogin = new frmDangNhap())
-            //{
-            //    if (frmLogin.ShowDialog() == DialogResult.OK && frmLogin.CurrentUser != null)
-            //    {
-            //        // Đăng nhập thành công, mở form chính
-            //        Application.Run(new frmTrangChinh());
-            //    }
-            //}
+
+            while (true)
+            {
+                using (frmDangNhap frmLogin = new frmDangNhap())
+                {
+                    // Mở form đăng nhập
+                    if (frmLogin.ShowDialog() == DialogResult.OK && frmLogin.CurrentUser != null)
+                    {
+                        // Đăng nhập thành công
+                        frmTrangChinh mainForm = new frmTrangChinh();
+
+                        // Gắn sự kiện khi người dùng đăng xuất
+                        mainForm.LogoutRequested += (s, e) =>
+                        {
+                            mainForm.Close(); // Đóng form chính
+                        };
+
+                        Application.Run(mainForm);
+
+                        // Nếu người dùng chọn đăng xuất → lặp lại từ đầu (đăng nhập lại)
+                        if (mainForm.IsLoggedOut)
+                            continue;
+                    }
+
+                    // Nếu không đăng nhập hoặc nhấn Hủy → thoát hẳn chương trình
+                    break;
+                }
+            }
+
         }
     }
 }
