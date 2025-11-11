@@ -75,13 +75,23 @@ namespace DAL
 
             return list;
         }
-
+         public List<DiemDTO> GetDiemByHocSinhHocKy(string maHocSinh, string maHocKy)
+        {
+            List<DiemDTO> list = new List<DiemDTO>();
+            string query = $"SELECT * FROM Diem WHERE MaHocSinh = '{maHocSinh}' AND MaHocKy = '{maHocKy}'";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow row in data.Rows)
+            {
+                list.Add(MapRowToDiemDTO(row));
+            }
+            return list;
+        }
         // Thêm điểm mới
         public bool InsertDiem(DiemDTO diem)
         {
             string query = @"INSERT INTO Diem (MaHocSinh, MaMonHoc, MaHocKy, 
                             DiemTrenLop, DiemGiuaKy, DiemThi, DiemTongKet)"+
-                            $"VALUES ({diem.MaHocSinh}, {diem.MaMonHoc},{diem.MaHocKy}, {diem.DiemTrenLop}, {diem.DiemGiuaKy}, {diem.DiemThi}, {diem.DiemTongKet})";
+                            $"VALUES ('{diem.MaHocSinh}', '{diem.MaMonHoc}','{diem.MaHocKy}', {diem.DiemTrenLop}, {diem.DiemGiuaKy}, {diem.DiemThi}, {diem.DiemTongKet})";
 
             int result = DataProvider.Instance.ExecuteNonQuery(query);
 
@@ -93,7 +103,7 @@ namespace DAL
         {
             string query = @"UPDATE Diem SET "+
                             
-                            $"MaMonHoc = {diem.MaMonHoc}, MaHocKy = {diem.MaHocKy}, DiemTrenLop = {diem.DiemTrenLop}, DiemGiuaKy = {diem.DiemGiuaKy}, DiemThi = {diem.DiemThi}, DiemTongKet = {diem.DiemTongKet} WHERE MaDiem = {diem.MaDiem}";
+                            $"MaMonHoc = '{diem.MaMonHoc}', MaHocKy = '{diem.MaHocKy}', DiemTrenLop = {diem.DiemTrenLop}, DiemGiuaKy = {diem.DiemGiuaKy}, DiemThi = {diem.DiemThi}, DiemTongKet = {diem.DiemTongKet} WHERE MaDiem = '{diem.MaDiem}'";
 
             int result = DataProvider.Instance.ExecuteNonQuery(query, new object[]
             {

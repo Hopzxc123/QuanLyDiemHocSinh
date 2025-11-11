@@ -10,16 +10,16 @@ namespace GUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
+            Application.Run(new frmTrangChinh());
             // Mở form đăng nhập
-            using (frmDangNhap frmLogin = new frmDangNhap())
-            {
-                if (frmLogin.ShowDialog() == DialogResult.OK && frmLogin.CurrentUser != null)
-                {
-                    // Đăng nhập thành công, mở form chính
-                    Application.Run(new frmTrangChinh());
-                }
-            }
+            //using (frmDangNhap frmLogin = new frmDangNhap())
+            //{
+            //    if (frmLogin.ShowDialog() == DialogResult.OK && frmLogin.CurrentUser != null)
+            //    {
+            //        // Đăng nhập thành công, mở form chính
+            //        Application.Run(new frmTrangChinh());
+            //    }
+            //}
         }
     }
 }

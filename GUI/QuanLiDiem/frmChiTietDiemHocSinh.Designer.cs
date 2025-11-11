@@ -61,11 +61,11 @@
             this.btnThoat = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnIn = new System.Windows.Forms.Button();
             this.btnLoc = new System.Windows.Forms.Button();
             this.cbbtHocKy = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btnReload = new System.Windows.Forms.Button();
-            this.btnIn = new System.Windows.Forms.Button();
             this.dlgSave = new System.Windows.Forms.SaveFileDialog();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -118,7 +118,7 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnXoa.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnXoa.Location = new System.Drawing.Point(189, 517);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(75, 44);
@@ -129,7 +129,7 @@
             // 
             // btnSua
             // 
-            this.btnSua.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSua.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnSua.Location = new System.Drawing.Point(103, 517);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(75, 44);
@@ -156,7 +156,7 @@
             // 
             // btnThem
             // 
-            this.btnThem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnThem.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnThem.Location = new System.Drawing.Point(18, 517);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(75, 44);
@@ -367,6 +367,7 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.btnIn);
             this.panel4.Controls.Add(this.btnThoat);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel4.Location = new System.Drawing.Point(0, 527);
@@ -377,7 +378,7 @@
             // btnThoat
             // 
             this.btnThoat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnThoat.Location = new System.Drawing.Point(661, 6);
+            this.btnThoat.Location = new System.Drawing.Point(662, 4);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(75, 44);
             this.btnThoat.TabIndex = 28;
@@ -396,7 +397,6 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.btnIn);
             this.groupBox3.Controls.Add(this.btnLoc);
             this.groupBox3.Controls.Add(this.cbbtHocKy);
             this.groupBox3.Controls.Add(this.label6);
@@ -409,9 +409,20 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Tìm kiếm";
             // 
+            // btnIn
+            // 
+            this.btnIn.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnIn.Image = global::GUI.Properties.Resources.icons8_teacher_50;
+            this.btnIn.Location = new System.Drawing.Point(581, 6);
+            this.btnIn.Name = "btnIn";
+            this.btnIn.Size = new System.Drawing.Size(75, 44);
+            this.btnIn.TabIndex = 37;
+            this.btnIn.UseVisualStyleBackColor = true;
+            this.btnIn.Click += new System.EventHandler(this.btnIn_Click);
+            // 
             // btnLoc
             // 
-            this.btnLoc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLoc.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnLoc.Location = new System.Drawing.Point(608, 23);
             this.btnLoc.Name = "btnLoc";
             this.btnLoc.Size = new System.Drawing.Size(85, 42);
@@ -422,6 +433,7 @@
             // 
             // cbbtHocKy
             // 
+            this.cbbtHocKy.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.cbbtHocKy.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.cbbtHocKy.FormattingEnabled = true;
             this.cbbtHocKy.Location = new System.Drawing.Point(310, 33);
@@ -432,6 +444,7 @@
             // 
             // label6
             // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label6.Location = new System.Drawing.Point(307, 10);
@@ -442,7 +455,7 @@
             // 
             // btnReload
             // 
-            this.btnReload.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnReload.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnReload.Image = global::GUI.Properties.Resources.btnreload;
             this.btnReload.Location = new System.Drawing.Point(699, 21);
             this.btnReload.Name = "btnReload";
@@ -450,17 +463,6 @@
             this.btnReload.TabIndex = 35;
             this.btnReload.UseVisualStyleBackColor = true;
             this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
-            // 
-            // btnIn
-            // 
-            this.btnIn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnIn.Image = global::GUI.Properties.Resources.OIP;
-            this.btnIn.Location = new System.Drawing.Point(554, 23);
-            this.btnIn.Name = "btnIn";
-            this.btnIn.Size = new System.Drawing.Size(48, 42);
-            this.btnIn.TabIndex = 37;
-            this.btnIn.UseVisualStyleBackColor = true;
-            this.btnIn.Click += new System.EventHandler(this.btnIn_Click);
             // 
             // frmChiTietDiemHocSinh
             // 
