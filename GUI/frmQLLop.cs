@@ -18,7 +18,6 @@ namespace GUI
         public frmQLLop()
         {
             InitializeComponent();
-           
         }
 
         private void LoadLopData()
@@ -30,20 +29,20 @@ namespace GUI
 
         private void LoadKhoiLop()
         {
-            cboKhoiLop.Items.Clear();
-            cboKhoiLop.Items.AddRange(new object[] { 10, 11, 12 });
-            cboKhoiLop.SelectedIndex = -1;
+            cbbKhoiLop.Items.Clear();
+            cbbKhoiLop.Items.AddRange(new object[] { 10, 11, 12 });
+            cbbKhoiLop.SelectedIndex = -1;
         }
 
         private void LoadNamHoc()
         {
             var list = NamHocBLL.Instance.GetAllNamHoc();
 
-            cboNamHoc.DataSource = list;
-            cboNamHoc.DisplayMember = "TenNamHoc";
-            cboNamHoc.ValueMember = "MaNamHoc";
+            cbbNamHoc.DataSource = list;
+            cbbNamHoc.DisplayMember = "TenNamHoc";
+            cbbNamHoc.ValueMember = "MaNamHoc";
 
-            cboNamHoc.SelectedIndex = -1;
+            cbbNamHoc.SelectedIndex = -1;
         }
 
         private void frmQLLop_Load(object sender, EventArgs e)
@@ -61,8 +60,8 @@ namespace GUI
                     string.IsNullOrWhiteSpace(txtTenLop.Text) &&
                     string.IsNullOrWhiteSpace(txtGhiChu.Text) &&
                     string.IsNullOrWhiteSpace(txtSiSo.Text) &&
-                    cboKhoiLop.SelectedValue == null &&
-                    cboNamHoc.SelectedValue == null)
+                    cbbKhoiLop.SelectedValue == null &&
+                    cbbNamHoc.SelectedValue == null)
                 {
                     MessageBox.Show("Vui lòng lớp cần thêm!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
@@ -71,9 +70,9 @@ namespace GUI
                 {
                     MaLop = txtMaLop.Text,
                     TenLop = txtTenLop.Text,
-                    KhoiLop = Convert.ToInt32(cboKhoiLop.SelectedItem),
+                    KhoiLop = Convert.ToInt32(cbbKhoiLop.SelectedItem),
                     SiSo = int.TryParse(txtSiSo.Text, out int siso) ? siso : 0,
-                    NamHoc = cboNamHoc.SelectedValue.ToString(),
+                    NamHoc = cbbNamHoc.SelectedValue.ToString(),
                     GhiChu = txtGhiChu.Text
                 };
 
@@ -99,8 +98,8 @@ namespace GUI
                     string.IsNullOrWhiteSpace(txtTenLop.Text) &&
                     string.IsNullOrWhiteSpace(txtGhiChu.Text) &&
                     string.IsNullOrWhiteSpace(txtSiSo.Text) &&
-                    cboKhoiLop.SelectedValue == null &&
-                    cboNamHoc.SelectedValue == null)
+                    cbbKhoiLop.SelectedValue == null &&
+                    cbbNamHoc.SelectedValue == null)
                 {
                     MessageBox.Show("Vui lòng chọn lớp cần sửa!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
@@ -113,9 +112,9 @@ namespace GUI
                 {
                     MaLop = txtMaLop.Text,
                     TenLop = txtTenLop.Text,
-                    KhoiLop = Convert.ToInt32(cboKhoiLop.SelectedItem),
+                    KhoiLop = Convert.ToInt32(cbbKhoiLop.SelectedItem),
                     SiSo = int.TryParse(txtSiSo.Text, out int siso) ? siso : 0,
-                    NamHoc = cboNamHoc.SelectedValue.ToString(),
+                    NamHoc = cbbNamHoc.SelectedValue.ToString(),
                     GhiChu = txtGhiChu.Text
                 };
 
@@ -170,8 +169,8 @@ namespace GUI
                 txtMaLop.Text = dgvLop.CurrentRow.Cells["MaLop"].Value.ToString();
                 txtTenLop.Text = dgvLop.CurrentRow.Cells["TenLop"].Value.ToString();
                 txtSiSo.Text = dgvLop.CurrentRow.Cells["SiSo"].Value.ToString();
-                cboKhoiLop.SelectedItem = Convert.ToInt32(dgvLop.CurrentRow.Cells["KhoiLop"].Value);
-                cboNamHoc.SelectedValue = dgvLop.CurrentRow.Cells["NamHoc"].Value.ToString();
+                cbbKhoiLop.SelectedItem = Convert.ToInt32(dgvLop.CurrentRow.Cells["KhoiLop"].Value);
+                cbbNamHoc.SelectedValue = dgvLop.CurrentRow.Cells["NamHoc"].Value.ToString();
                 txtGhiChu.Text = dgvLop.CurrentRow.Cells["GhiChu"].Value?.ToString();
 
             }
@@ -183,9 +182,9 @@ namespace GUI
             txtTenLop.Clear();
             txtSiSo.Clear();
             txtGhiChu.Clear();
-            cboKhoiLop.SelectedIndex = -1;
-            cboNamHoc.SelectedIndex = -1;
-            cboNamHoc.SelectedIndex = -1;
+            cbbKhoiLop.SelectedIndex = -1;
+            cbbNamHoc.SelectedIndex = -1;
+            cbbNamHoc.SelectedIndex = -1;
         }
 
         private void btnLamMoi_Click(object sender, EventArgs e)
@@ -193,5 +192,7 @@ namespace GUI
             ClearForm();
             LoadLopData();
         }
+
+    
     }
 }
