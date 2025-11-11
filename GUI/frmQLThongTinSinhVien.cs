@@ -107,10 +107,10 @@ namespace GUI
             {
                 if (dgvHocSinh.CurrentRow == null)
                     return;
-
+                string maHocSinh = dgvHocSinh.CurrentRow.Cells["MaHocSinh"].Value.ToString();
                 HocSinhDTO hs = new HocSinhDTO
                 {
-                    //MaHocSinh = txtMaHS.Text.Trim(),
+                    MaHocSinh = maHocSinh,
                     HoTen = txtHoTen.Text.Trim(),
                     GioiTinh = cboGioiTinh.SelectedItem?.ToString(),
                     NgaySinh = dtpNgaySinh.Value,
@@ -279,6 +279,9 @@ namespace GUI
             }
         }
 
-        
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

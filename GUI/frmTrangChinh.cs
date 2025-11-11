@@ -14,7 +14,8 @@ namespace GUI
 {
     public partial class frmTrangChinh : Form
     {
-      
+        public event EventHandler LogoutRequested;
+        public bool IsLoggedOut { get; private set; }
         public frmTrangChinh()
         {
             InitializeComponent();
@@ -106,7 +107,24 @@ namespace GUI
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
+                DialogResult result = MessageBox.Show(
+             "Bạn có chắc chắn muốn đăng xuất không?",
+             "Xác nhận đăng xuất",
+             MessageBoxButtons.YesNo,
+             MessageBoxIcon.Question
+                  );
 
+            if (result == DialogResult.Yes)
+            {
+                // Người dùng đồng ý đăng xuất
+                IsLoggedOut = true;
+                LogoutRequested?.Invoke(this, EventArgs.Empty);
+            }
+            else
+            {
+                // Người dùng bấm "Không" → không làm gì cả
+                return;
+            }
         }
 
         bool sidebarExpand = true;

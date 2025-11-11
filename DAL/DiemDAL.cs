@@ -97,7 +97,7 @@ namespace DAL
 
             int result = DataProvider.Instance.ExecuteNonQuery(query, new object[]
             {
-                diem.MaHocSinh, diem.MaMonHoc, diem.MaHocKy,
+                diem.MaMonHoc, diem.MaHocKy,
                 diem.DiemTrenLop ?? (object)DBNull.Value,
                 diem.DiemGiuaKy ?? (object)DBNull.Value,
                 diem.DiemThi ?? (object)DBNull.Value,
