@@ -111,31 +111,32 @@ namespace GUI
                     MessageBox.Show("Vui lòng chọn học sinh cần sửa!", "Thông báo",
                                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
-                string maHocSinh = dgvHocSinh.CurrentRow.Cells["MaHocSinh"].Value.ToString();
-                HocSinhDTO hs = new HocSinhDTO
-                {
-                    MaHocSinh = maHocSinh,
-                    HoTen = txtHoTen.Text.Trim(),
-                    GioiTinh = cboGioiTinh.SelectedItem?.ToString(),
-                    NgaySinh = dtpNgaySinh.Value,
-                    DiaChi = txtDiaChi.Text.Trim(),
-                    Email = txtEmail.Text.Trim(),
-                    MaLop = cboMaLop.SelectedValue?.ToString(),
-                    TrangThai = "1"
-                };
+                    string maHocSinh = dgvHocSinh.CurrentRow.Cells["MaHocSinh"].Value.ToString();
+                    HocSinhDTO hs = new HocSinhDTO
+                    {
+                        MaHocSinh = maHocSinh,
+                        HoTen = txtHoTen.Text.Trim(),
+                        GioiTinh = cboGioiTinh.SelectedItem?.ToString(),
+                        NgaySinh = dtpNgaySinh.Value,
+                        DiaChi = txtDiaChi.Text.Trim(),
+                        Email = txtEmail.Text.Trim(),
+                        MaLop = cboMaLop.SelectedValue?.ToString(),
+                        TrangThai = "1"
+                    };
 
-                // Gọi BLL để cập nhật
-                if (HocSinhBLL.Instance.UpdateHocSinh(hs))
-                {
-                    MessageBox.Show("Cập nhật học sinh thành công!", "Thông báo",
-                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LoadHocSinhData();
-                    ClearForm();
-                }
-                else
-                {
-                    MessageBox.Show("Cập nhật thất bại!", "Thông báo",
-                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    // Gọi BLL để cập nhật
+                    if (HocSinhBLL.Instance.UpdateHocSinh(hs))
+                    {
+                        MessageBox.Show("Cập nhật học sinh thành công!", "Thông báo",
+                                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LoadHocSinhData();
+                        ClearForm();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Cập nhật thất bại!", "Thông báo",
+                                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
             catch (Exception ex)

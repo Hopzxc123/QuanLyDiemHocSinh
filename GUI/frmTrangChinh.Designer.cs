@@ -45,12 +45,9 @@
             this.plDangXuat = new Guna.UI2.WinForms.Guna2Panel();
             this.btnDangXuat = new Guna.UI2.WinForms.Guna2Button();
             this.sidebar = new Guna.UI2.WinForms.Guna2Panel();
-<<<<<<< HEAD
-=======
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblTenTaiKhoan = new System.Windows.Forms.Label();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
->>>>>>> bb3e825e3f69b280b8e9c3ba49f44e5536dc898f
             this.plView = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnHam)).BeginInit();
@@ -61,11 +58,8 @@
             this.plQLGiaoVien.SuspendLayout();
             this.plDangXuat.SuspendLayout();
             this.sidebar.SuspendLayout();
-<<<<<<< HEAD
-=======
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
->>>>>>> bb3e825e3f69b280b8e9c3ba49f44e5536dc898f
             this.SuspendLayout();
             // 
             // sidebarTransition
@@ -88,15 +82,9 @@
             // 
             this.btnHam.Image = global::GUI.Properties.Resources.burger_menu_svgrepo_com__3_;
             this.btnHam.ImageRotate = 0F;
-<<<<<<< HEAD
-            this.btnHam.Location = new System.Drawing.Point(12, 14);
-            this.btnHam.Name = "btnHam";
-            this.btnHam.Size = new System.Drawing.Size(46, 39);
-=======
             this.btnHam.Location = new System.Drawing.Point(12, 12);
             this.btnHam.Name = "btnHam";
             this.btnHam.Size = new System.Drawing.Size(19, 20);
->>>>>>> bb3e825e3f69b280b8e9c3ba49f44e5536dc898f
             this.btnHam.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnHam.TabIndex = 2;
             this.btnHam.TabStop = false;
@@ -135,80 +123,6 @@
             this.btnQLHS.Click += new System.EventHandler(this.button1_Click);
             // 
             // plQLDiemHS
-<<<<<<< HEAD
-            // 
-            this.plQLDiemHS.Controls.Add(this.btnQLDiem);
-            this.plQLDiemHS.Location = new System.Drawing.Point(3, 76);
-            this.plQLDiemHS.Name = "plQLDiemHS";
-            this.plQLDiemHS.Size = new System.Drawing.Size(242, 67);
-            this.plQLDiemHS.TabIndex = 4;
-            this.plQLDiemHS.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel4_Paint);
-            // 
-            // btnQLDiem
-            // 
-            this.btnQLDiem.BorderRadius = 8;
-            this.btnQLDiem.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnQLDiem.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnQLDiem.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnQLDiem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnQLDiem.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(101)))), ((int)(((byte)(241)))));
-            this.btnQLDiem.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btnQLDiem.ForeColor = System.Drawing.Color.White;
-            this.btnQLDiem.HoverState.FillColor = System.Drawing.Color.SlateBlue;
-            this.btnQLDiem.Image = global::GUI.Properties.Resources.icons8_inspection_50;
-            this.btnQLDiem.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnQLDiem.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnQLDiem.Location = new System.Drawing.Point(0, 0);
-            this.btnQLDiem.Name = "btnQLDiem";
-            this.btnQLDiem.Size = new System.Drawing.Size(242, 67);
-            this.btnQLDiem.TabIndex = 3;
-            this.btnQLDiem.Text = "QL điểm học sinh";
-            this.btnQLDiem.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnQLDiem.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // plQLLop
-            // 
-            this.plQLLop.Controls.Add(this.btnQLLop);
-            this.plQLLop.Location = new System.Drawing.Point(3, 149);
-            this.plQLLop.Name = "plQLLop";
-            this.plQLLop.Size = new System.Drawing.Size(242, 67);
-            this.plQLLop.TabIndex = 4;
-            this.plQLLop.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel5_Paint);
-            // 
-            // btnQLLop
-            // 
-            this.btnQLLop.BorderRadius = 8;
-            this.btnQLLop.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnQLLop.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnQLLop.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnQLLop.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnQLLop.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(101)))), ((int)(((byte)(241)))));
-            this.btnQLLop.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btnQLLop.ForeColor = System.Drawing.Color.White;
-            this.btnQLLop.HoverState.FillColor = System.Drawing.Color.SlateBlue;
-            this.btnQLLop.Image = global::GUI.Properties.Resources.icons8_classroom_100;
-            this.btnQLLop.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnQLLop.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnQLLop.Location = new System.Drawing.Point(0, 0);
-            this.btnQLLop.Name = "btnQLLop";
-            this.btnQLLop.Size = new System.Drawing.Size(242, 67);
-            this.btnQLLop.TabIndex = 3;
-            this.btnQLLop.Text = "QL lớp";
-            this.btnQLLop.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnQLLop.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // plQLMonHoc
-            // 
-            this.plQLMonHoc.Controls.Add(this.btnQLMonHoc);
-            this.plQLMonHoc.Location = new System.Drawing.Point(3, 222);
-            this.plQLMonHoc.Name = "plQLMonHoc";
-            this.plQLMonHoc.Size = new System.Drawing.Size(242, 67);
-            this.plQLMonHoc.TabIndex = 4;
-            this.plQLMonHoc.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel2_Paint);
-            // 
-            // btnQLMonHoc
-=======
->>>>>>> bb3e825e3f69b280b8e9c3ba49f44e5536dc898f
             // 
             this.plQLDiemHS.Controls.Add(this.btnQLDiem);
             this.plQLDiemHS.Location = new System.Drawing.Point(3, 173);
@@ -217,20 +131,7 @@
             this.plQLDiemHS.TabIndex = 4;
             this.plQLDiemHS.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel4_Paint);
             // 
-<<<<<<< HEAD
-            // plQLGiaoVien
-            // 
-            this.plQLGiaoVien.Controls.Add(this.btnQLGiaoVien);
-            this.plQLGiaoVien.Location = new System.Drawing.Point(3, 295);
-            this.plQLGiaoVien.Name = "plQLGiaoVien";
-            this.plQLGiaoVien.Size = new System.Drawing.Size(242, 67);
-            this.plQLGiaoVien.TabIndex = 4;
-            this.plQLGiaoVien.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel3_Paint);
-            // 
-            // btnQLGiaoVien
-=======
             // btnQLDiem
->>>>>>> bb3e825e3f69b280b8e9c3ba49f44e5536dc898f
             // 
             this.btnQLDiem.BorderRadius = 8;
             this.btnQLDiem.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -264,14 +165,6 @@
             // 
             // plDangXuat
             // 
-<<<<<<< HEAD
-            this.plDangXuat.Controls.Add(this.btnDangXuat);
-            this.plDangXuat.Location = new System.Drawing.Point(3, 368);
-            this.plDangXuat.Name = "plDangXuat";
-            this.plDangXuat.Size = new System.Drawing.Size(242, 67);
-            this.plDangXuat.TabIndex = 4;
-            this.plDangXuat.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel6_Paint);
-=======
             this.btnQLLop.BorderRadius = 8;
             this.btnQLLop.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnQLLop.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -292,7 +185,6 @@
             this.btnQLLop.Text = "QL lớp";
             this.btnQLLop.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnQLLop.Click += new System.EventHandler(this.button3_Click);
->>>>>>> bb3e825e3f69b280b8e9c3ba49f44e5536dc898f
             // 
             // plQLMonHoc
             // 
@@ -394,11 +286,8 @@
             // sidebar
             // 
             this.sidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(101)))), ((int)(((byte)(241)))));
-<<<<<<< HEAD
-=======
             this.sidebar.BorderColor = System.Drawing.Color.White;
             this.sidebar.Controls.Add(this.panel1);
->>>>>>> bb3e825e3f69b280b8e9c3ba49f44e5536dc898f
             this.sidebar.Controls.Add(this.plQLHocSinh);
             this.sidebar.Controls.Add(this.plQLMonHoc);
             this.sidebar.Controls.Add(this.plQLGiaoVien);
@@ -406,19 +295,6 @@
             this.sidebar.Controls.Add(this.plDangXuat);
             this.sidebar.Controls.Add(this.plQLDiemHS);
             this.sidebar.Dock = System.Windows.Forms.DockStyle.Left;
-<<<<<<< HEAD
-            this.sidebar.Location = new System.Drawing.Point(0, 65);
-            this.sidebar.Name = "sidebar";
-            this.sidebar.Size = new System.Drawing.Size(245, 684);
-            this.sidebar.TabIndex = 5;
-            // 
-            // plView
-            // 
-            this.plView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.plView.Location = new System.Drawing.Point(245, 65);
-            this.plView.Name = "plView";
-            this.plView.Size = new System.Drawing.Size(1017, 684);
-=======
             this.sidebar.Location = new System.Drawing.Point(0, 39);
             this.sidebar.Name = "sidebar";
             this.sidebar.Size = new System.Drawing.Size(194, 712);
@@ -465,7 +341,6 @@
             this.plView.Location = new System.Drawing.Point(194, 39);
             this.plView.Name = "plView";
             this.plView.Size = new System.Drawing.Size(1068, 712);
->>>>>>> bb3e825e3f69b280b8e9c3ba49f44e5536dc898f
             this.plView.TabIndex = 6;
             this.plView.Paint += new System.Windows.Forms.PaintEventHandler(this.plView_Paint);
             // 
@@ -483,7 +358,7 @@
             this.Name = "frmTrangChinh";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fTrangChinh";
-            this.Load += new System.EventHandler(this.frmTrangChinh_Load);
+            //this.Load += new System.EventHandler(this.frmTrangChinh_Load);
             this.guna2Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnHam)).EndInit();
             this.plQLHocSinh.ResumeLayout(false);
@@ -493,11 +368,8 @@
             this.plQLGiaoVien.ResumeLayout(false);
             this.plDangXuat.ResumeLayout(false);
             this.sidebar.ResumeLayout(false);
-<<<<<<< HEAD
-=======
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
->>>>>>> bb3e825e3f69b280b8e9c3ba49f44e5536dc898f
             this.ResumeLayout(false);
 
         }

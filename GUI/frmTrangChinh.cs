@@ -57,8 +57,6 @@ namespace GUI
             childForm.Show();
         }
 
-<<<<<<< HEAD
-=======
 
 
         private void fTrangChinh_Load(object sender, EventArgs e)
@@ -71,7 +69,6 @@ namespace GUI
             lblTenTaiKhoan.Text = Account.TenDangNhap;
         }
 
->>>>>>> bb3e825e3f69b280b8e9c3ba49f44e5536dc898f
         private void button1_Click(object sender, EventArgs e)
         {
             
@@ -241,11 +238,6 @@ namespace GUI
 
         }
 
-<<<<<<< HEAD
-        private void frmTrangChinh_Load(object sender, EventArgs e)
-        {
-            openChildForm(new frmThongKe());
-=======
         private void sidebar_Paint(object sender, PaintEventArgs e)
         {
 
@@ -254,7 +246,6 @@ namespace GUI
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
->>>>>>> bb3e825e3f69b280b8e9c3ba49f44e5536dc898f
         }
     }
 }
