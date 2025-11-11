@@ -443,7 +443,7 @@
             // btnReload
             // 
             this.btnReload.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnReload.Image = global::GUI.Properties.Resources.btnreload__1_;
+            this.btnReload.Image = global::GUI.Properties.Resources.btnreload;
             this.btnReload.Location = new System.Drawing.Point(699, 21);
             this.btnReload.Name = "btnReload";
             this.btnReload.Size = new System.Drawing.Size(37, 40);

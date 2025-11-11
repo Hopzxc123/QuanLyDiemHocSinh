@@ -1,18 +1,21 @@
 ﻿using BLL;
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Forms.DataVisualization.Charting;
+using Excel = Microsoft.Office.Interop.Excel;
 
-
-namespace GUI.UserControls
+namespace GUI
 {
-    public partial class ucThongKeTongQuan : UserControl
+    public partial class frmThongKe : Form
     {
-        public ucThongKeTongQuan()
+        public frmThongKe()
         {
             InitializeComponent();
             LoadThongKe();
@@ -28,7 +31,7 @@ namespace GUI.UserControls
                 int tongMon = MonHocBLL.Instance.GetAllMonHoc().Count;
 
                 lblHocSinh.Text = tongHocSinh.ToString();
-                lblLop.Text = tongLop.ToString();
+                lblLopHoc.Text = tongLop.ToString();
                 lblMonHoc.Text = tongMon.ToString();
             }
             catch (Exception ex)
@@ -77,9 +80,9 @@ namespace GUI.UserControls
 
 
         private void ucThongKeTongQuan_Load(object sender, EventArgs e)
-            {
-                // Có thể để trống hoặc xóa
-            }
+        {
+            // Có thể để trống hoặc xóa
+        }
 
         private void label_Click(object sender, EventArgs e)
         {
@@ -90,60 +93,84 @@ namespace GUI.UserControls
         {
             if (dgv.Rows.Count == 0)
             {
-                MessageBox.Show("Không có dữ liệu để xuất!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Không có dữ liệu để xuất!", "Thông báo");
                 return;
             }
 
-            SaveFileDialog saveDialog = new SaveFileDialog();
-            saveDialog.Filter = "CSV file (*.csv)|*.csv";
-            saveDialog.FileName = "HocSinhGioi.csv";
+            Excel.Application app = new Excel.Application();
+            app.Visible = false;
 
-            if (saveDialog.ShowDialog() == DialogResult.OK)
+            Excel.Workbook wb = app.Workbooks.Add(Type.Missing);
+            Excel.Worksheet ws = wb.ActiveSheet;
+            ws.Name = "DanhSachHSG";
+
+            int row = 1;
+
+            // ===== TIÊU ĐỀ CHÍNH =====
+            ws.Cells[row, 2] = "TRƯỜNG THPT";
+            ws.Cells[row, 2].Font.Bold = true;
+            ws.Cells[row, 2].Font.Size = 16;
+            row += 2;
+
+            ws.Cells[row, 2] = "DANH SÁCH HỌC SINH GIỎI";
+            ws.Cells[row, 2].Font.Bold = true;
+            ws.Cells[row, 2].Font.Size = 14;
+
+            ws.Range["B" + row, "F" + row].Merge();
+            ws.Range["B" + row, "F" + row].HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+
+            row += 2;
+
+            // ===== HEADER BẢNG =====
+            ws.Cells[row, 2] = "MÃ HS";
+            ws.Cells[row, 3] = "Họ tên";
+            ws.Cells[row, 4] = "Lớp";
+            ws.Cells[row, 5] = "Điểm tổng kết";
+            ws.Cells[row, 6] = "Xếp loại";
+
+            Excel.Range header = ws.Range["B" + row, "F" + row];
+            header.Font.Bold = true;
+            header.Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.LightGray);
+            header.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+            header.Borders.LineStyle = Excel.XlLineStyle.xlContinuous;
+
+            row++;
+
+            // ===== GHI DỮ LIỆU =====
+            for (int i = 0; i < dgv.Rows.Count; i++)
             {
-                try
-                {
-                    using (StreamWriter sw = new StreamWriter(saveDialog.FileName, false, Encoding.UTF8))
-                    {
-                        // Ghi dòng tiêu đề (header)
-                        for (int i = 0; i < dgv.Columns.Count; i++)
-                        {
-                            sw.Write(dgv.Columns[i].HeaderText);
-                            if (i < dgv.Columns.Count - 1)
-                                sw.Write(",");
-                        }
-                        sw.WriteLine();
+                if (dgv.Rows[i].IsNewRow) continue;
 
-                        // Ghi dữ liệu từng hàng
-                        foreach (DataGridViewRow row in dgv.Rows)
-                        {
-                            // Bỏ qua dòng trống (nếu có)
-                            if (row.IsNewRow) continue;
+                ws.Cells[row + i, 2] = dgv.Rows[i].Cells["MaHocSinh"].Value?.ToString();
+                ws.Cells[row + i, 3] = dgv.Rows[i].Cells["HoTen"].Value?.ToString();
+                ws.Cells[row + i, 4] = dgv.Rows[i].Cells["MaLop"].Value?.ToString();
+                ws.Cells[row + i, 5] = dgv.Rows[i].Cells["DiemTongKet"].Value?.ToString();
+                ws.Cells[row + i, 6] = dgv.Rows[i].Cells["XepLoai"].Value?.ToString();
 
-                            for (int i = 0; i < dgv.Columns.Count; i++)
-                            {
-                                var value = row.Cells[i].Value?.ToString();
-                                // Nếu có dấu phẩy hoặc xuống dòng, bọc trong dấu ngoặc kép
-                                if (value != null && (value.Contains(",") || value.Contains("\n")))
-                                    value = $"\"{value}\"";
-
-                                sw.Write(value);
-                                if (i < dgv.Columns.Count - 1)
-                                    sw.Write(",");
-                            }
-                            sw.WriteLine();
-                        }
-                    }
-
-                    MessageBox.Show("Xuất file CSV thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Lỗi khi xuất CSV: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                Excel.Range rowRange = ws.Range["B" + (row + i), "F" + (row + i)];
+                rowRange.Borders.LineStyle = Excel.XlLineStyle.xlContinuous;
             }
+
+            // ===== AUTO FIT =====
+            ws.Columns.AutoFit();
+
+            // ===== LƯU FILE =====
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "Excel File (*.xlsx)|*.xlsx";
+            sfd.FileName = "DanhSachHocSinhGioi.xlsx";
+
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                wb.SaveAs(sfd.FileName);
+                MessageBox.Show("Xuất file Excel thành công!");
+            }
+
+            wb.Close();
+            app.Quit();
         }
 
-        private void btnXuatExcel_Click(object sender, EventArgs e)
+
+    private void btnXuatExcel_Click(object sender, EventArgs e)
         {
             ExportToCSV(dgvHocSinhGioi);
         }
