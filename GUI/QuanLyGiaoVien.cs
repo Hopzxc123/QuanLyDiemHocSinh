@@ -106,13 +106,20 @@ namespace GUI
                     txtEmail.Text = row.Cells["Email"].Value.ToString();
 
                 if (row.Cells["ChuyenMon"].Value != null)
-                    cboChuyenMon.SelectedItem = row.Cells["ChuyenMon"].Value.ToString(); // cboChuyenMon
+                    cboChuyenMon.Text = row.Cells["ChuyenMon"].Value.ToString(); // cboChuyenMon
 
                 if (row.Cells["TrangThai"].Value != null && row.Cells["TrangThai"].Value != DBNull.Value)
                 {
                     bool trangThai = Convert.ToBoolean(row.Cells["TrangThai"].Value);
-                    cboTrangThai.SelectedItem = trangThai ? "Đang làm việc" : "Nghỉ việc"; // cboTrangThai
+                    cboTrangThai.Text = trangThai ? "Đang làm việc" : "Nghỉ việc"; // cboTrangThai
                 }
+
+                txtMaGV.ReadOnly = true; // Giữ nguyên ReadOnly cho Mã GV
+
+                // Khóa nút Thêm và mở nút Sửa/Xóa (chế độ sửa/xóa)
+                btnThem.Enabled = false; // Khóa nút Thêm
+                btnSua.Enabled = true; // Mở nút Sửa
+                btnXoa.Enabled = true; // Mở nút Xóa
 
                 // Xử lý load ảnh khi click vào hàng (nếu có)
                 // ... (logic ảnh của bạn) ...
@@ -166,7 +173,8 @@ namespace GUI
             GiaoVienDTO gv = new GiaoVienDTO();
             gv.NgaySinh = DTPNgaySinh.Value; // DTPNgaySinh
             gv.GioiTinh = cboGioiTinh.Text; // cboGioiTinh
-            gv.MaGiaoVien = Convert.ToInt32(txtMaGV.Text).ToString();
+                                            // Đảm bảo gv.MaGiaoVien là kiểu string
+            gv.MaGiaoVien = txtMaGV.Text.Trim();
             gv.HoTen = txtHoTen.Text;
             gv.DiaChi = txtDiaChi.Text; // txtDiaChi
             gv.DienThoai = txtSĐT.Text; // txtSĐT
@@ -198,7 +206,7 @@ namespace GUI
 
             if (MessageBox.Show("Bạn có chắc chắn muốn xóa giáo viên này?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                int maGiaoVien = Convert.ToInt32(txtMaGV.Text);
+                string maGiaoVien = txtMaGV.Text.Trim();
                 string ketQua = GiaoVienBLL.Instance.DeleteGiaoVien(maGiaoVien);
                 MessageBox.Show(ketQua, "Thông báo");
 
@@ -248,12 +256,13 @@ namespace GUI
 
 
             cboChuyenMon.SelectedIndex = -1; // cboChuyenMon
-            cboTrangThai.SelectedIndex = -1; // cboTrangThai
+            cboTrangThai.SelectedIndex = 0; // cboTrangThai
+                                             
+            txtMaGV.ReadOnly = true; // Giữ nguyên, vì Mã GV thường được tự động sinh.
+            txtHoTen.ReadOnly = false;
 
 
-
-            txtMaGV.ReadOnly = true;
-            txtHoTen.Focus();
+           
         }
 
         private void SetupDataGridView()
@@ -373,6 +382,11 @@ namespace GUI
         }
 
         private void GrbDanhSach_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
