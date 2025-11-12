@@ -101,7 +101,7 @@ namespace GUI
         private void button5_Click_1(object sender, EventArgs e)
         {
            
-            openChildForm(new QuanLyGiangVien());
+            openChildForm(new QuanLyGiaoVien());
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
