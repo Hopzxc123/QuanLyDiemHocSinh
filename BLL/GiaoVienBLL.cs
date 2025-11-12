@@ -102,9 +102,10 @@ namespace BLL
         }
 
         // 5. Hàm xóa
-        public string DeleteGiaoVien(int maGiaoVien)
+        public string DeleteGiaoVien(string maGiaoVien)
         {
-            if (maGiaoVien <= 0)
+            string maGV = maGiaoVien?.Trim();
+            if (string.IsNullOrEmpty(maGV))
             {
                 return "Mã giáo viên không hợp lệ.";
             }

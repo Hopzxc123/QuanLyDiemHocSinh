@@ -1,7 +1,8 @@
-﻿using System;
-using System.Data;
+﻿using DTO;
+using System;
 using System.Collections.Generic;
-using DTO;
+using System.Data;
+using System.Net.NetworkInformation;
 
 namespace DAL
 {
@@ -51,10 +52,12 @@ namespace DAL
         // Thêm mới
         public bool InsertGiaoVien(GiaoVienDTO gv)
         {
+            // THAY ĐỔI CÂU LỆNH SQL: Thêm khoảng trắng xung quanh các tham số
             string query = @"
                 INSERT INTO GiaoVien (HoTen, NgaySinh, GioiTinh, DiaChi, DienThoai, Email, ChuyenMon, TrangThai)
-                VALUES (@HoTen, @NgaySinh, @GioiTinh, @DiaChi, @DienThoai, @Email, @ChuyenMon, @TrangThai)";
+                VALUES ( @HoTen , @NgaySinh , @GioiTinh , @DiaChi , @DienThoai , @Email , @ChuyenMon , @TrangThai )";
 
+            // Giữ nguyên mảng tham số (vì thứ tự đã đúng)
             int result = DataProvider.Instance.ExecuteNonQuery(query, new object[]
             {
                 gv.HoTen, gv.NgaySinh, gv.GioiTinh, gv.DiaChi, gv.DienThoai,
@@ -69,14 +72,14 @@ namespace DAL
         {
             string query = @"
                 UPDATE GiaoVien
-                SET HoTen = @HoTen,
-                    NgaySinh = @NgaySinh,
-                    GioiTinh = @GioiTinh,
-                    DiaChi = @DiaChi,
-                    DienThoai = @DienThoai,
-                    Email = @Email,
-                    ChuyenMon = @ChuyenMon,
-                    TrangThai = @TrangThai
+                SET HoTen = @HoTen , 
+                    NgaySinh = @NgaySinh , 
+                    GioiTinh = @GioiTinh , 
+                    DiaChi = @DiaChi , 
+                    DienThoai = @DienThoai , 
+                    Email = @Email , 
+                    ChuyenMon = @ChuyenMon , 
+                    TrangThai = @TrangThai 
                 WHERE MaGiaoVien = @MaGiaoVien";
 
             int result = DataProvider.Instance.ExecuteNonQuery(query, new object[]
@@ -89,8 +92,9 @@ namespace DAL
         }
 
         // Xóa
-        public bool DeleteGiaoVien(int maGiaoVien)
+        public bool DeleteGiaoVien(string maGiaoVien)
         {
+            string maGV = maGiaoVien.Trim();
             string query = "DELETE FROM GiaoVien WHERE MaGiaoVien = @MaGiaoVien";
             int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { maGiaoVien });
             return result > 0;
