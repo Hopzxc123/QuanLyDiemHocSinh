@@ -72,7 +72,30 @@ namespace DAL
 
             return null;
         }
-
+        public List<HocSinhDTO> GetHocSinhByNamHoc(string maNamHoc)
+        {
+            List<HocSinhDTO> list = new List<HocSinhDTO>();
+            string query = "SELECT hs.* FROM HocSinh as hs " +
+                           "JOIN Lop as l ON hs.MaLop = l.MaLop " +
+                           $"WHERE l.NamHoc = '{maNamHoc}'";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow row in data.Rows)
+            {
+                HocSinhDTO hs = new HocSinhDTO
+                {
+                    MaHocSinh = row["MaHocSinh"].ToString(),
+                    HoTen = row["HoTen"].ToString(),
+                    NgaySinh = Convert.ToDateTime(row["NgaySinh"]),
+                    GioiTinh = row["GioiTinh"].ToString(),
+                    DiaChi = row["DiaChi"].ToString(),
+                    Email = row["Email"].ToString(),
+                    MaLop = row["MaLop"].ToString(),
+                    TrangThai = row["TrangThai"].ToString()
+                };
+                list.Add(hs);
+            }
+            return list;
+        }
         // Thêm học sinh mới
         public bool InsertHocSinh(HocSinhDTO hs)
         {

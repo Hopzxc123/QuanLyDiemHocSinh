@@ -57,6 +57,7 @@ namespace GUI.frmQLDiemHS
            
             //nhap thong tin
             List<NamHocDTO> nams = NamHocBLL.Instance.GetAllNamHoc();
+            nams.Sort((x, y) => y.NgayKetThuc.CompareTo(x.NgayBatDau)); // Sắp xếp giảm dần theo Năm Bắt Đầu
             nams.Insert(0, new NamHocDTO
             {
                 MaNamHoc = "",
@@ -73,6 +74,7 @@ namespace GUI.frmQLDiemHS
             
             // MON HOC
             List<MonHocDTO> mons = MonHocBLL.Instance.GetAllMonHoc();
+            mons.Sort((x, y) => string.Compare(x.TenMonHoc, y.TenMonHoc));
             mons.Insert(0, new MonHocDTO
             {
                 MaMonHoc = "",
@@ -419,6 +421,7 @@ namespace GUI.frmQLDiemHS
                 cbbtHocKy.DataSource = null;
                 string maNamHoc = cbbtNamHoc.SelectedValue.ToString();
                 List<HocKyDTO> hocKys = HocKyBLL.Instance.GetHocKyByNamHoc(maNamHoc);
+                hocKys.Sort((x, y) => string.Compare(x.TenHocKy, y.TenHocKy));
                 hocKys.Insert(0, new HocKyDTO
                 {
                     MaHocKy = "",
@@ -448,6 +451,7 @@ namespace GUI.frmQLDiemHS
                 cbbHocKy.DataSource = null;
                 string maNamHoc = cbbNamHoc.SelectedValue.ToString();
                 List<HocKyDTO> hocKys = HocKyBLL.Instance.GetHocKyByNamHoc(maNamHoc);
+                hocKys.Sort((x, y) => string.Compare(x.TenHocKy, y.TenHocKy));
                 hocKys.Insert(0, new HocKyDTO
                 {
                     MaHocKy = "",

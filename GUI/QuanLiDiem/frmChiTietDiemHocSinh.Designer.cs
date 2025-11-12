@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbbNamHoc = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.txtLop = new System.Windows.Forms.TextBox();
@@ -52,21 +54,6 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvDiem = new System.Windows.Forms.DataGridView();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.btnIn = new System.Windows.Forms.Button();
-            this.btnThoat = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.cbbtNamHoc = new System.Windows.Forms.ComboBox();
-            this.btnLoc = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.cbbtHocKy = new System.Windows.Forms.ComboBox();
-            this.btnReload = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.dlgSave = new System.Windows.Forms.SaveFileDialog();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.cbbNamHoc = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.diemTrenLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.diemGiuaKy = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.diemThi = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -75,6 +62,19 @@
             this.hocKy = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.namHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.maDiem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.btnThoat = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.cbbtNamHoc = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cbbtHocKy = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.dlgSave = new System.Windows.Forms.SaveFileDialog();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.btnIn = new System.Windows.Forms.Button();
+            this.btnLoc = new System.Windows.Forms.Button();
+            this.btnReload = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -125,6 +125,30 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin học sinh";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // cbbNamHoc
+            // 
+            this.cbbNamHoc.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbbNamHoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.cbbNamHoc.FormattingEnabled = true;
+            this.cbbNamHoc.Location = new System.Drawing.Point(34, 220);
+            this.cbbNamHoc.Name = "cbbNamHoc";
+            this.cbbNamHoc.Size = new System.Drawing.Size(209, 24);
+            this.cbbNamHoc.TabIndex = 35;
+            this.cbbNamHoc.SelectedIndexChanged += new System.EventHandler(this.cbbNamHoc_SelectedIndexChanged_1);
+            // 
+            // label9
+            // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label9.Location = new System.Drawing.Point(34, 185);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(64, 17);
+            this.label9.TabIndex = 34;
+            this.label9.Text = "Năm học";
             // 
             // btnXoa
             // 
@@ -373,6 +397,55 @@
             this.dgvDiem.TabIndex = 0;
             this.dgvDiem.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDiem_CellClick);
             // 
+            // diemTrenLop
+            // 
+            this.diemTrenLop.HeaderText = "Điểm trên lớp";
+            this.diemTrenLop.MinimumWidth = 6;
+            this.diemTrenLop.Name = "diemTrenLop";
+            // 
+            // diemGiuaKy
+            // 
+            this.diemGiuaKy.HeaderText = "Điểm Giữa Kỳ";
+            this.diemGiuaKy.MinimumWidth = 6;
+            this.diemGiuaKy.Name = "diemGiuaKy";
+            // 
+            // diemThi
+            // 
+            this.diemThi.HeaderText = "Điểm Thi";
+            this.diemThi.MinimumWidth = 6;
+            this.diemThi.Name = "diemThi";
+            // 
+            // diemTongKet
+            // 
+            this.diemTongKet.HeaderText = "Điểm Tổng Kết";
+            this.diemTongKet.MinimumWidth = 6;
+            this.diemTongKet.Name = "diemTongKet";
+            // 
+            // monHoc
+            // 
+            this.monHoc.HeaderText = "Môn học";
+            this.monHoc.MinimumWidth = 6;
+            this.monHoc.Name = "monHoc";
+            // 
+            // hocKy
+            // 
+            this.hocKy.HeaderText = "Học Kỳ";
+            this.hocKy.MinimumWidth = 6;
+            this.hocKy.Name = "hocKy";
+            // 
+            // namHoc
+            // 
+            this.namHoc.HeaderText = "Năm học";
+            this.namHoc.MinimumWidth = 6;
+            this.namHoc.Name = "namHoc";
+            // 
+            // maDiem
+            // 
+            this.maDiem.HeaderText = "Mã Điểm";
+            this.maDiem.MinimumWidth = 6;
+            this.maDiem.Name = "maDiem";
+            this.maDiem.Visible = false;
+            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.btnIn);
@@ -382,17 +455,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(748, 59);
             this.panel4.TabIndex = 30;
-            // 
-            // btnIn
-            // 
-            this.btnIn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnIn.Image = global::GUI.Properties.Resources.icons8_teacher_50;
-            this.btnIn.Location = new System.Drawing.Point(592, 6);
-            this.btnIn.Name = "btnIn";
-            this.btnIn.Size = new System.Drawing.Size(64, 44);
-            this.btnIn.TabIndex = 37;
-            this.btnIn.UseVisualStyleBackColor = true;
-            this.btnIn.Click += new System.EventHandler(this.btnIn_Click);
             // 
             // btnThoat
             // 
@@ -445,19 +507,6 @@
             this.cbbtNamHoc.TabIndex = 38;
             this.cbbtNamHoc.SelectedIndexChanged += new System.EventHandler(this.cbbNamHoc_SelectedIndexChanged);
             // 
-            // btnLoc
-            // 
-            this.btnLoc.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnLoc.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.btnLoc.Image = global::GUI.Properties.Resources.icons8_search_30;
-            this.btnLoc.Location = new System.Drawing.Point(624, 21);
-            this.btnLoc.Name = "btnLoc";
-            this.btnLoc.Size = new System.Drawing.Size(53, 40);
-            this.btnLoc.TabIndex = 36;
-            this.toolTip1.SetToolTip(this.btnLoc, "lọc ");
-            this.btnLoc.UseVisualStyleBackColor = true;
-            this.btnLoc.Click += new System.EventHandler(this.btnLoc_Click);
-            // 
             // label3
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Right;
@@ -480,17 +529,6 @@
             this.cbbtHocKy.TabIndex = 35;
             this.cbbtHocKy.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
-            // btnReload
-            // 
-            this.btnReload.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnReload.Image = global::GUI.Properties.Resources.icons8_reload_30;
-            this.btnReload.Location = new System.Drawing.Point(683, 21);
-            this.btnReload.Name = "btnReload";
-            this.btnReload.Size = new System.Drawing.Size(53, 40);
-            this.btnReload.TabIndex = 35;
-            this.btnReload.UseVisualStyleBackColor = true;
-            this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
-            // 
             // label6
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Right;
@@ -506,78 +544,40 @@
             // 
             this.toolTip1.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip1_Popup);
             // 
-            // cbbNamHoc
+            // btnIn
             // 
-            this.cbbNamHoc.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbbNamHoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.cbbNamHoc.FormattingEnabled = true;
-            this.cbbNamHoc.Location = new System.Drawing.Point(34, 220);
-            this.cbbNamHoc.Name = "cbbNamHoc";
-            this.cbbNamHoc.Size = new System.Drawing.Size(209, 24);
-            this.cbbNamHoc.TabIndex = 35;
-            this.cbbNamHoc.SelectedIndexChanged += new System.EventHandler(this.cbbNamHoc_SelectedIndexChanged_1);
+            this.btnIn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnIn.Image = global::GUI.Properties.Resources.icons8_print_24;
+            this.btnIn.Location = new System.Drawing.Point(603, 6);
+            this.btnIn.Name = "btnIn";
+            this.btnIn.Size = new System.Drawing.Size(53, 44);
+            this.btnIn.TabIndex = 37;
+            this.btnIn.UseVisualStyleBackColor = true;
+            this.btnIn.Click += new System.EventHandler(this.btnIn_Click);
             // 
-            // label9
+            // btnLoc
             // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label9.Location = new System.Drawing.Point(34, 185);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(64, 17);
-            this.label9.TabIndex = 34;
-            this.label9.Text = "Năm học";
+            this.btnLoc.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnLoc.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.btnLoc.Image = global::GUI.Properties.Resources.icons8_search_30;
+            this.btnLoc.Location = new System.Drawing.Point(624, 21);
+            this.btnLoc.Name = "btnLoc";
+            this.btnLoc.Size = new System.Drawing.Size(53, 40);
+            this.btnLoc.TabIndex = 36;
+            this.toolTip1.SetToolTip(this.btnLoc, "lọc ");
+            this.btnLoc.UseVisualStyleBackColor = true;
+            this.btnLoc.Click += new System.EventHandler(this.btnLoc_Click);
             // 
-            // diemTrenLop
+            // btnReload
             // 
-            this.diemTrenLop.HeaderText = "Điểm trên lớp";
-            this.diemTrenLop.MinimumWidth = 6;
-            this.diemTrenLop.Name = "diemTrenLop";
-            // 
-            // diemGiuaKy
-            // 
-            this.diemGiuaKy.HeaderText = "Điểm Giữa Kỳ";
-            this.diemGiuaKy.MinimumWidth = 6;
-            this.diemGiuaKy.Name = "diemGiuaKy";
-            // 
-            // diemThi
-            // 
-            this.diemThi.HeaderText = "Điểm Thi";
-            this.diemThi.MinimumWidth = 6;
-            this.diemThi.Name = "diemThi";
-            // 
-            // diemTongKet
-            // 
-            this.diemTongKet.HeaderText = "Điểm Tổng Kết";
-            this.diemTongKet.MinimumWidth = 6;
-            this.diemTongKet.Name = "diemTongKet";
-            // 
-            // monHoc
-            // 
-            this.monHoc.HeaderText = "Môn học";
-            this.monHoc.MinimumWidth = 6;
-            this.monHoc.Name = "monHoc";
-            // 
-            // hocKy
-            // 
-            this.hocKy.HeaderText = "Học Kỳ";
-            this.hocKy.MinimumWidth = 6;
-            this.hocKy.Name = "hocKy";
-            // 
-            // namHoc
-            // 
-            this.namHoc.HeaderText = "Năm học";
-            this.namHoc.MinimumWidth = 6;
-            this.namHoc.Name = "namHoc";
-            // 
-            // maDiem
-            // 
-            this.maDiem.HeaderText = "Mã Điểm";
-            this.maDiem.MinimumWidth = 6;
-            this.maDiem.Name = "maDiem";
-            this.maDiem.Visible = false;
+            this.btnReload.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnReload.Image = global::GUI.Properties.Resources.icons8_reload_30;
+            this.btnReload.Location = new System.Drawing.Point(683, 21);
+            this.btnReload.Name = "btnReload";
+            this.btnReload.Size = new System.Drawing.Size(53, 40);
+            this.btnReload.TabIndex = 35;
+            this.btnReload.UseVisualStyleBackColor = true;
+            this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
             // 
             // frmChiTietDiemHocSinh
             // 

@@ -29,7 +29,10 @@ namespace BLL
         {
             return HocSinhDAL.Instance.GetHocSinhByMa(maHS);
         }
-        
+        public List<HocSinhDTO> GetHocSinhByNamHoc(string maNamHoc)
+        {
+            return HocSinhDAL.Instance.GetHocSinhByNamHoc(maNamHoc);
+        }
         public bool InsertHocSinh(HocSinhDTO hs)
         {
             
