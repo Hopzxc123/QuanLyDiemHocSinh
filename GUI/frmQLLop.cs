@@ -50,6 +50,7 @@ namespace GUI
             LoadKhoiLop();
             LoadNamHoc();
             LoadLopData();
+            btnThem.Enabled = false;
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -174,6 +175,7 @@ namespace GUI
                 txtGhiChu.Text = dgvLop.CurrentRow.Cells["GhiChu"].Value?.ToString();
 
             }
+            btnThem.Enabled = false;
         }
 
         private void ClearForm()
@@ -193,6 +195,9 @@ namespace GUI
             LoadLopData();
         }
 
-    
+        private void dgvLop_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

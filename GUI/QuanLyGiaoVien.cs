@@ -4,7 +4,7 @@ using System.IO;
 using System.Windows.Forms;
 using BLL;
 using DTO;
-using Guna.UI2.WinForms; 
+using Guna.UI2.WinForms;
 namespace GUI
 {
 
@@ -20,8 +20,45 @@ namespace GUI
         private void QuanLyGiaoVien_Resize(object sender, EventArgs e)
         {
             AdjustItemHeight();
-    
+
         }
+
+        // ====================================================================
+        // KHỐI LOGIC NGHIỆP VỤ MỚI
+        // ====================================================================
+
+        /// <summary>
+        /// Quản lý trạng thái của các nút Thêm, Sửa, Xóa.
+        /// </summary>
+        /// <param name="isAdding">True: Chế độ "Thêm mới". False: Chế độ "Sửa/Xóa".</param>
+        private void SetAppMode(bool isAdding)
+        {
+            if (isAdding)
+            {
+                // THAY ĐỔI LOGIC:
+                // 1. Xóa lựa chọn (ClearSelection) TRƯỚC TIÊN.
+                //    Việc này có thể kích hoạt CellClick (gọi SetAppMode(false)),
+                //    nhưng không sao, vì chúng ta sẽ ghi đè lại ở bước 2.
+                DataGridView1.ClearSelection();
+
+                // 2. Bật/Tắt các nút SAU CÙNG.
+                //    Điều này đảm bảo trạng thái "Thêm" (Enabled = true) là trạng thái cuối cùng.
+                btnThem.Enabled = true;
+                btnSua.Enabled = false;
+                btnXoa.Enabled = false;
+            }
+            else
+            {
+                // Vô hiệu hóa Thêm, cho phép Sửa/Xóa
+                btnThem.Enabled = false;
+                btnSua.Enabled = true;
+                btnXoa.Enabled = true;
+            }
+        }
+        // ====================================================================
+        // KẾT THÚC KHỐI LOGIC MỚI
+        // ====================================================================
+
         private void QuanLyGiaoVien_Load(object sender, EventArgs e)
         {
             cboTrangThai.Items.Clear();
@@ -36,51 +73,8 @@ namespace GUI
             // Liên kết CellClick cho DataGridView1
             this.DataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellClick);
 
-            try
-            {
-                if (DataGridView1.Rows.Count > 0)
-                {
-                    DataGridViewRow firstRow = DataGridView1.Rows[0];
-
-                    txtMaGV.Text = firstRow.Cells["MaGiaoVien"].Value?.ToString();
-                    txtHoTen.Text = firstRow.Cells["HoTen"].Value?.ToString();
-
-                    if (firstRow.Cells["NgaySinh"].Value != null && firstRow.Cells["NgaySinh"].Value != DBNull.Value)
-                    {
-                        DTPNgaySinh.Value = (DateTime)firstRow.Cells["NgaySinh"].Value; // DTPNgaySinh
-                    }
-
-                    if (firstRow.Cells["GioiTinh"].Value != null)
-                    {
-                        cboGioiTinh.SelectedItem = firstRow.Cells["GioiTinh"].Value.ToString(); // cboGioiTinh
-                    }
-
-                    if (firstRow.Cells["DiaChi"].Value != null)
-                        txtDiaChi.Text = firstRow.Cells["DiaChi"].Value.ToString(); // txtDiaChi
-
-                    if (firstRow.Cells["DienThoai"].Value != null)
-                        txtSĐT.Text = firstRow.Cells["DienThoai"].Value.ToString(); // txtSĐT
-
-                    if (firstRow.Cells["Email"].Value != null)
-                        txtEmail.Text = firstRow.Cells["Email"].Value.ToString();
-
-                    if (firstRow.Cells["ChuyenMon"].Value != null)
-                        cboChuyenMon.SelectedItem = firstRow.Cells["ChuyenMon"].Value.ToString(); // cboChuyenMon
-
-                    if (firstRow.Cells["TrangThai"].Value != null && firstRow.Cells["TrangThai"].Value != DBNull.Value)
-                    {
-                        bool trangThai = Convert.ToBoolean(firstRow.Cells["TrangThai"].Value);
-                        cboTrangThai.SelectedItem = trangThai ? "Đang làm việc" : "Nghỉ việc"; // cboTrangThai
-                    }
-
-                  
-                    txtMaGV.ReadOnly = true;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Có lỗi xảy ra khi hiển thị thông tin giảng viên đầu tiên: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+            // Bắt đầu ở chế độ "Thêm"
+            SetAppMode(isAdding: true);
         }
 
         // --- Xử lý sự kiện CellClick của DataGridView ---
@@ -121,19 +115,10 @@ namespace GUI
                 }
 
                 // Xử lý load ảnh khi click vào hàng (nếu có)
-                // if (row.Cells["HinhAnh"].Value != null && row.Cells["HinhAnh"].Value is byte[] imageData)
-                // {
-                //     using (MemoryStream ms = new MemoryStream(imageData))
-                //     {
-                //         picThemAnh.Image = Image.FromStream(ms);
-                //         picThemAnh.Tag = null; 
-                //     }
-                // }
-                // else
-                // {
-                //     picThemAnh.Image = null;
-                //     picThemAnh.Tag = null;
-                // }
+                // ... (logic ảnh của bạn) ...
+
+                // Khi nhấn vào 1 hàng, chuyển sang chế độ "Sửa/Xóa"
+                SetAppMode(isAdding: false);
             }
         }
 
@@ -141,7 +126,7 @@ namespace GUI
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-           
+
             GiaoVienDTO gv = new GiaoVienDTO();
             gv.NgaySinh = DTPNgaySinh.Value; // DTPNgaySinh
             gv.GioiTinh = cboGioiTinh.Text; // cboGioiTinh
@@ -154,10 +139,7 @@ namespace GUI
             gv.TrangThai = (cboTrangThai.SelectedItem?.ToString() == "Đang làm việc"); // cboTrangThai
 
             // Xử lý ảnh (nếu có)
-            // if (picThemAnh.Tag != null)
-            // {
-            //      gv.HinhAnh = File.ReadAllBytes(picThemAnh.Tag.ToString());
-            // }
+            // ... (logic ảnh của bạn) ...
 
             string ketQua = GiaoVienBLL.Instance.InsertGiaoVien(gv);
             MessageBox.Show(ketQua, "Thông báo");
@@ -166,6 +148,8 @@ namespace GUI
             {
                 LoadData();
                 ClearForm();
+                // Trở về chế độ "Thêm"
+                SetAppMode(isAdding: true);
             }
         }
 
@@ -191,16 +175,16 @@ namespace GUI
             gv.TrangThai = (cboTrangThai.SelectedItem?.ToString() == "Đang làm việc"); // cboTrangThai
 
             // Xử lý ảnh (nếu có)
-            // if (picThemAnh.Tag != null)
-            // {
-            //      gv.HinhAnh = File.ReadAllBytes(picThemAnh.Tag.ToString());
-            // }
+            // ... (logic ảnh của bạn) ...
 
             string ketQua = GiaoVienBLL.Instance.UpdateGiaoVien(gv);
             MessageBox.Show(ketQua, "Thông báo");
             if (ketQua.Contains("thành công"))
             {
                 LoadData();
+                // Trở về chế độ "Thêm"
+                ClearForm();
+                SetAppMode(isAdding: true);
             }
         }
 
@@ -222,6 +206,8 @@ namespace GUI
                 {
                     LoadData();
                     ClearForm();
+                    // Trở về chế độ "Thêm"
+                    SetAppMode(isAdding: true);
                 }
             }
         }
@@ -234,7 +220,7 @@ namespace GUI
             }
         }
 
-      
+
         // --- Các Hàm Hỗ trợ ---
 
         private void LoadData()
@@ -242,7 +228,7 @@ namespace GUI
             try
             {
                 List<GiaoVienDTO> danhSach = GiaoVienBLL.Instance.GetAllGiaoVien();
-                DataGridView1.DataSource = danhSach; 
+                DataGridView1.DataSource = danhSach;
             }
             catch (Exception ex)
             {
@@ -255,16 +241,16 @@ namespace GUI
             txtMaGV.Text = "";
             txtHoTen.Text = "";
             DTPNgaySinh.Value = DateTime.Now; // DTPNgaySinh
-            cboGioiTinh.Text = ""; // cboGioiTinh
+            cboGioiTinh.SelectedIndex = -1; // cboGioiTinh (An toàn hơn .Text = "")
             txtDiaChi.Text = ""; // txtDiaChi
             txtSĐT.Text = ""; // txtSĐT
             txtEmail.Text = "";
 
-          
+
             cboChuyenMon.SelectedIndex = -1; // cboChuyenMon
             cboTrangThai.SelectedIndex = -1; // cboTrangThai
 
-          
+
 
             txtMaGV.ReadOnly = true;
             txtHoTen.Focus();
@@ -274,7 +260,7 @@ namespace GUI
         {
             DataGridView1.ReadOnly = true;
             DataGridView1.AutoGenerateColumns = false;
-            
+
             DataGridView1.AllowUserToResizeRows = false;
             DataGridView1.AllowUserToResizeColumns = false;
             DataGridView1.Columns.Clear();
@@ -288,10 +274,10 @@ namespace GUI
             DataGridView1.Columns.Add(new DataGridViewTextBoxColumn { Name = "Email", HeaderText = "Email", DataPropertyName = "Email", Width = 190 });
             DataGridView1.Columns.Add(new DataGridViewTextBoxColumn { Name = "ChuyenMon", HeaderText = "Chuyên Môn", DataPropertyName = "ChuyenMon", Width = 100 });
             DataGridView1.Columns.Add(new DataGridViewTextBoxColumn { Name = "TrangThai", HeaderText = "Trạng Thái", DataPropertyName = "TrangThai", Width = 120 });
-          
+
         }
 
-        
+
         private void DataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             if (this.DataGridView1.Columns[e.ColumnIndex].Name == "TrangThai")

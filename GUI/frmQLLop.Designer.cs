@@ -132,8 +132,8 @@
             this.lblQuanLyLop.AutoSize = false;
             this.lblQuanLyLop.BackColor = System.Drawing.Color.Transparent;
             this.lblQuanLyLop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblQuanLyLop.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQuanLyLop.ForeColor = System.Drawing.Color.Black;
+            this.lblQuanLyLop.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQuanLyLop.ForeColor = System.Drawing.Color.White;
             this.lblQuanLyLop.Location = new System.Drawing.Point(0, 0);
             this.lblQuanLyLop.Name = "lblQuanLyLop";
             this.lblQuanLyLop.Size = new System.Drawing.Size(1424, 122);
@@ -731,6 +731,7 @@
             this.dgvLop.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvLop.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvLop.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLop_CellClick);
+            this.dgvLop.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLop_CellContentClick);
             // 
             // MaLop
             // 

@@ -1,4 +1,5 @@
 ﻿using DTO;
+using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,9 +15,15 @@ namespace GUI
 {
     public partial class frmTrangChinh : Form
     {
+        bool sidebarExpand = true; // Trạng thái sidebar
         public event EventHandler LogoutRequested;
         public TaiKhoanDTO Account { get; private set; }
         public bool IsLoggedOut { get; private set; }
+
+        // Định nghĩa hằng số cho kích thước, dễ dàng bảo trì
+        private const int sidebarWidthExpanded = 192;
+        private const int sidebarWidthCollapsed = 55;
+
         public frmTrangChinh(TaiKhoanDTO account)
         {
             InitializeComponent();
@@ -26,7 +33,7 @@ namespace GUI
             Account = account;
         }
 
-        
+
 
         private Form currentFormChild;
         private void openChildForm(Form childForm)
@@ -71,13 +78,13 @@ namespace GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
-            openChildForm(new frmQLThongTinHocSinh ());
+
+            openChildForm(new frmQLThongTinHocSinh());
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-         
+
             openChildForm(new FrmQLDiemHS());
         }
 
@@ -89,7 +96,7 @@ namespace GUI
 
         private void button4_Click(object sender, EventArgs e)
         {
-            
+
             openChildForm(new frmQuanLyMonHoc());
         }
 
@@ -100,23 +107,23 @@ namespace GUI
 
         private void button5_Click_1(object sender, EventArgs e)
         {
-           
-            openChildForm(new QuanLyGiangVien());
+
+            openChildForm(new QuanLyGiaoVien());
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-                DialogResult result = MessageBox.Show(
-             "Bạn có chắc chắn muốn đăng xuất không?",
-             "Xác nhận đăng xuất",
-             MessageBoxButtons.YesNo,
-             MessageBoxIcon.Question
-                  );
+            DialogResult result = MessageBox.Show(
+            "Bạn có chắc chắn muốn đăng xuất không?",
+            "Xác nhận đăng xuất",
+            MessageBoxButtons.YesNo,
+            MessageBoxIcon.Question
+             );
 
             if (result == DialogResult.Yes)
             {
@@ -131,51 +138,51 @@ namespace GUI
             }
         }
 
-        bool sidebarExpand = true;
-        private void sidebarTransition_Tick(object sender, EventArgs e)
+        // ====================================================================
+        // HÀM ĐÃ ĐƯỢC VIẾT LẠI VÀ ĐƠN GIẢN HÓA
+        // ====================================================================
+        private void ToggleSidebar()
         {
-            sidebar.SuspendLayout(); // 🧩 Ngắt layout tạm thời
-            plView.SuspendLayout();
+           
 
             if (sidebarExpand)
             {
-                sidebar.Width -= 5;
-                if(sidebar.Width <= 55)
-                {
-                    sidebarExpand = false;
-                    sidebarTransition.Stop();
-                    plQLHocSinh.Width = sidebar.Width;
-                    plQLDiemHS.Width = sidebar.Width;
-                    plQLLop.Width = sidebar.Width;
-                    plQLMonHoc.Width = sidebar.Width;
-                    plQLGiaoVien.Width = sidebar.Width;
-                    plDangXuat.Width = sidebar.Width;
-                    HideButtonText();
-                }
-            }else
-            {
-                sidebar.Width += 5;
-                if(sidebar.Width >= 194)
-                {
-                    sidebarExpand = true;
-                    sidebarTransition.Stop();
-                    plQLHocSinh.Width = sidebar.Width;
-                    plQLDiemHS.Width = sidebar.Width;
-                    plQLLop.Width = sidebar.Width;
-                    plQLMonHoc.Width = sidebar.Width;
-                    plQLGiaoVien.Width = sidebar.Width;
-                    plDangXuat.Width = sidebar.Width;
-                    ShowButtonText();
-                }
+                // --- THU GỌN SIDEBAR ---
+
+                // 1. Ẩn text của các button
+               
+                HideButtonText();
+
+                // 2. Thay đổi Width ngay lập tức (Snap)
+                
+                sidebar.Width = sidebarWidthCollapsed;
+
+                
+                sidebarExpand = false;
             }
-            sidebar.ResumeLayout(); // 🔧 Bật lại layout sau khi thay đổi
-            plView.ResumeLayout();
+            else
+            {
+                // --- MỞ RỘNG SIDEBAR ---
+
+                // 1. Thay đổi Width ngay lập tức (Snap)
+               
+                sidebar.Width = sidebarWidthExpanded;
+
+                // 2. Hiển thị lại text cho các button
+                ShowButtonText();
+
+                // 3. Cập nhật lại trạng thái
+                sidebarExpand = true;
+            }
+
+            
         }
 
         private void btnHam_Click(object sender, EventArgs e)
         {
-            sidebarTransition.Start();
+            ToggleSidebar();
         }
+
 
         private void HideButtonText()
         {
@@ -189,12 +196,12 @@ namespace GUI
 
         private void ShowButtonText()
         {
-            btnQLHS.Text = "   Quản lý học sinh";
-            btnQLDiem.Text = "   Quản lý điểm";
-            btnQLLop.Text = "   Quản lý lớp";
-            btnQLMonHoc.Text = "   Quản lý môn học";
-            btnQLGiaoVien.Text = "   Quản lý giáo viên";
-            btnDangXuat.Text = "   Đăng xuất";
+            btnQLHS.Text = "     Quản lý học sinh";
+            btnQLDiem.Text = "     Quản lý điểm";
+            btnQLLop.Text = "     Quản lý lớp";
+            btnQLMonHoc.Text = "     Quản lý môn học";
+            btnQLGiaoVien.Text = "     Quản lý giáo viên";
+            btnDangXuat.Text = "     Đăng xuất";
         }
 
 
@@ -244,6 +251,11 @@ namespace GUI
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmTrangChinh_Load(object sender, EventArgs e)
         {
 
         }

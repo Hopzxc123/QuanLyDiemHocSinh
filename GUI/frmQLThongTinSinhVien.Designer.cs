@@ -436,6 +436,7 @@
             this.dgvHocSinh.Size = new System.Drawing.Size(727, 420);
             this.dgvHocSinh.TabIndex = 0;
             this.dgvHocSinh.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHocSinh_CellClick);
+            this.dgvHocSinh.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHocSinh_CellContentClick);
             // 
             // panel5
             // 
