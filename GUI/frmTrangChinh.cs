@@ -247,5 +247,10 @@ namespace GUI
         {
 
         }
+
+        private void frmTrangChinh_Load(object sender, EventArgs e)
+        {
+            openChildForm(new frmThongKe());
+        }
     }
 }
