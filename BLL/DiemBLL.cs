@@ -127,5 +127,9 @@ namespace BLL
             }
             return $"D{(max + 1).ToString("D3")}";
         }
+        public float getDiemTongKet(string maHocSinh, string maHocKy)
+        {
+            return DiemDAL.Instance.getDiemTongKet(maHocSinh, maHocKy);
+        }
     }
 }
