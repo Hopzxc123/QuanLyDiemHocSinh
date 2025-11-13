@@ -22,6 +22,7 @@ namespace GUI
 
             // Bắt đầu ở chế độ "Thêm"
             SetAppMode(isAdding: true);
+            CapNhatNamHoc();
         }
 
         // ====================================================================
@@ -350,5 +351,17 @@ namespace GUI
         {
 
         }
+        private void CapNhatNamHoc()
+        {
+            List<NamHocDTO> nams = NamHocBLL.Instance.GetAllNamHoc();
+            nams.Sort((x, y) => y.NgayKetThuc.CompareTo(x.NgayBatDau)); // Sắp xếp giảm dần theo Năm Bắt Đầu
+            nams.Insert(0, new NamHocDTO { MaNamHoc = "", TenNamHoc = "-Tất cả-" });
+            cbbNamHoc.DataSource = nams;
+            cbbNamHoc.DisplayMember = "TenNamHoc";
+            cbbNamHoc.ValueMember = "MaNamHoc";
+
+        }
+
+        
     }
 }

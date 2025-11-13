@@ -154,5 +154,22 @@ namespace DAL
                 DiemTongKet = row["DiemTongKet"] != DBNull.Value ? (float?)Convert.ToSingle(row["DiemTongKet"]) : null
             };
         }
+        public float getDiemTongKet(string maHocSinh, string maHocKy)
+        {
+            string query = $"SELECT avg(DiemTongKet) as diemtongket FROM Diem WHERE MaHocSinh = '{maHocSinh}' AND MaHocKy = '{maHocKy}'";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            if (data.Rows.Count > 0)
+            {
+                // Lấy giá trị ra biến object trước
+                object result = data.Rows[0]["diemtongket"];
+
+                // Kiểm tra nếu khác DBNull thì mới convert
+                if (result != DBNull.Value)
+                {
+                    return Convert.ToSingle(result);
+                }
+            }
+            return -1; // Hoặc giá trị khác để biểu thị không tìm thấy
+        }
     }
 }
