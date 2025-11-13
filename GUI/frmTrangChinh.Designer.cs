@@ -163,7 +163,7 @@
             this.plQLLop.TabIndex = 4;
             this.plQLLop.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel5_Paint);
             // 
-            // plDangXuat
+            // btnQLLop
             // 
             this.btnQLLop.BorderRadius = 8;
             this.btnQLLop.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -297,7 +297,7 @@
             this.sidebar.Dock = System.Windows.Forms.DockStyle.Left;
             this.sidebar.Location = new System.Drawing.Point(0, 39);
             this.sidebar.Name = "sidebar";
-            this.sidebar.Size = new System.Drawing.Size(194, 712);
+            this.sidebar.Size = new System.Drawing.Size(194, 710);
             this.sidebar.TabIndex = 5;
             this.sidebar.Paint += new System.Windows.Forms.PaintEventHandler(this.sidebar_Paint);
             // 
@@ -340,7 +340,7 @@
             this.plView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.plView.Location = new System.Drawing.Point(194, 39);
             this.plView.Name = "plView";
-            this.plView.Size = new System.Drawing.Size(1068, 712);
+            this.plView.Size = new System.Drawing.Size(1068, 710);
             this.plView.TabIndex = 6;
             this.plView.Paint += new System.Windows.Forms.PaintEventHandler(this.plView_Paint);
             // 
@@ -358,7 +358,7 @@
             this.Name = "frmTrangChinh";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fTrangChinh";
-            //this.Load += new System.EventHandler(this.frmTrangChinh_Load);
+            this.Load += new System.EventHandler(this.frmTrangChinh_Load);
             this.guna2Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnHam)).EndInit();
             this.plQLHocSinh.ResumeLayout(false);

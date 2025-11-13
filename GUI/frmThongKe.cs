@@ -46,10 +46,14 @@ namespace GUI
             {
                 var dsHS = HocSinhBLL.Instance.GetAllHocSinh();
                 var dsDiem = DiemBLL.Instance.GetAllDiem();
+                var dsHocKy = HocKyBLL.Instance.GetAllHocKy();
+                var dsNamHoc = NamHocBLL.Instance.GetAllNamHoc();
                 // Gộp dữ liệu điểm và học sinh theo MaHocSinh
                 var hocSinhGioi = (from hs in dsHS
                                    join d in dsDiem on hs.MaHocSinh equals d.MaHocSinh
-                                   group d by new { hs.MaHocSinh, hs.HoTen, hs.MaLop } into g
+                                   join hk in dsHocKy on d.MaHocKy equals hk.MaHocKy
+                                   join nh in dsNamHoc on hk.MaNamHoc equals nh.MaNamHoc
+                                   group d by new { hs.MaHocSinh, hs.HoTen, hs.MaLop, nh.TenNamHoc, hk.TenHocKy } into g
                                    let diemTrungBinh = g.Average(x => x.DiemTongKet)
                                    where diemTrungBinh >= 8.0
                                    orderby diemTrungBinh descending
@@ -58,6 +62,8 @@ namespace GUI
                                        g.Key.MaHocSinh,
                                        g.Key.HoTen,
                                        g.Key.MaLop,
+                                       g.Key.TenNamHoc,     
+                                       g.Key.TenHocKy,
                                        DiemTongKet = Math.Round(Convert.ToDouble(diemTrungBinh), 2),
                                        XepLoai = diemTrungBinh >= 9 ? "Xuất sắc" :
                                                  diemTrungBinh >= 8 ? "Giỏi" :
@@ -71,6 +77,8 @@ namespace GUI
                 dgvHocSinhGioi.Columns["MaLop"].HeaderText = "Lớp";
                 dgvHocSinhGioi.Columns["DiemTongKet"].HeaderText = "Điểm tổng kết";
                 dgvHocSinhGioi.Columns["DiemTongKet"].DefaultCellStyle.Format = "0.00";
+                dgvHocSinhGioi.Columns["TenNamHoc"].HeaderText = "Năm học";
+                dgvHocSinhGioi.Columns["TenHocKy"].HeaderText = "Học kỳ";
             }
             catch (Exception ex)
             {
