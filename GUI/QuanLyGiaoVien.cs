@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using BLL;
 using DTO;
 using Guna.UI2.WinForms;
+using System.Data.SqlClient;
 namespace GUI
 {
 
@@ -200,23 +201,103 @@ namespace GUI
         {
             if (string.IsNullOrEmpty(txtMaGV.Text))
             {
-                MessageBox.Show("Vui lòng chọn một giáo viên để xóa.", "Thông báo");
+                MessageBox.Show("Vui lòng chọn một giáo viên để xóa.", "Thông báo",
+                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            if (MessageBox.Show("Bạn có chắc chắn muốn xóa giáo viên này?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            string maGiaoVien = txtMaGV.Text.Trim();
+            string tenGiaoVien = txtHoTen.Text; // Lấy tên để thông báo đẹp hơn
+
+            var confirm = MessageBox.Show($"Bạn có chắc chắn muốn xóa giáo viên '{tenGiaoVien}' (Mã: {maGiaoVien}) không?",
+                                           "Xác nhận xóa",
+                                           MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (confirm == DialogResult.No)
+                return;
+
+            try
             {
-                string maGiaoVien = txtMaGV.Text.Trim();
+                // BƯỚC 1: Thử XÓA CỨNG (DELETE)
                 string ketQua = GiaoVienBLL.Instance.DeleteGiaoVien(maGiaoVien);
-                MessageBox.Show(ketQua, "Thông báo");
 
                 if (ketQua.Contains("thành công"))
                 {
+                    // Xóa cứng thành công (giáo viên "sạch", chưa có tài khoản/dữ liệu điểm)
+                    MessageBox.Show(ketQua, "Thông báo",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadData();
                     ClearForm();
-                    // Trở về chế độ "Thêm"
-                    SetAppMode(isAdding: true);
+                    // ClearForm() đã tự gọi SetAppMode(true)
                 }
+                else
+                {
+                    // Trường hợp BLL trả về lỗi mà không phải exception (ví dụ: "Không tìm thấy GV")
+                    MessageBox.Show(ketQua, "Thông báo",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (SqlException sqlEx) when (sqlEx.Number == 547)
+            {
+                // BƯỚC 2: Bị lỗi khóa ngoại (FK constraint, lỗi 547) 
+                // -> Giáo viên này đã có dữ liệu (Tài khoản, Điểm)
+                // -> Chuyển sang XÓA MỀM (SOFT DELETE)
+
+                var confirmSoftDelete = MessageBox.Show(
+                    $"Không thể xóa vĩnh viễn giáo viên '{tenGiaoVien}' vì đã có dữ liệu liên quan (tài khoản hoặc điểm đã nhập).\n\n" +
+                    $"Bạn có muốn 'Vô hiệu hóa' (ẩn) giáo viên này thay thế không?",
+                    "Không thể xóa vĩnh viễn",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning);
+
+                if (confirmSoftDelete == DialogResult.Yes)
+                {
+                    try
+                    {
+                        // Tạo đối tượng GiaoVienDTO để gọi hàm Update
+                        GiaoVienDTO gv = new GiaoVienDTO
+                        {
+                            MaGiaoVien = maGiaoVien,
+                            HoTen = txtHoTen.Text,
+                            NgaySinh = DTPNgaySinh.Value,
+                            GioiTinh = cboGioiTinh.Text,
+                            DiaChi = txtDiaChi.Text,
+                            DienThoai = txtSĐT.Text,
+                            Email = txtEmail.Text,
+                            ChuyenMon = cboChuyenMon.SelectedItem?.ToString(),
+
+                            // Đây là điểm mấu chốt: Cập nhật TrangThai = false ("Nghỉ việc")
+                            TrangThai = false
+                        };
+
+                        // Gọi lại hàm Update (giống hệt nút Sửa) để vô hiệu hóa
+                        string ketQuaUpdate = GiaoVienBLL.Instance.UpdateGiaoVien(gv);
+
+                        if (ketQuaUpdate.Contains("thành công"))
+                        {
+                            MessageBox.Show("Vô hiệu hóa giáo viên thành công!", "Thông báo",
+                                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            LoadData(); // Tải lại dữ liệu (GV này sẽ biến mất nếu LoadData chỉ lấy GV đang làm)
+                            ClearForm(); // Đưa về chế độ thêm
+                        }
+                        else
+                        {
+                            MessageBox.Show("Vô hiệu hóa thất bại: " + ketQuaUpdate, "Lỗi",
+                                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    catch (Exception exUpdate)
+                    {
+                        MessageBox.Show("Lỗi khi đang vô hiệu hóa: " + exUpdate.Message, "Lỗi",
+                                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Các lỗi chung khác (mất kết nối, v.v.)
+                MessageBox.Show("Lỗi không xác định: " + ex.Message, "Lỗi",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -248,21 +329,18 @@ namespace GUI
         {
             txtMaGV.Text = "";
             txtHoTen.Text = "";
-            DTPNgaySinh.Value = DateTime.Now; // DTPNgaySinh
-            cboGioiTinh.SelectedIndex = -1; // cboGioiTinh (An toàn hơn .Text = "")
-            txtDiaChi.Text = ""; // txtDiaChi
-            txtSĐT.Text = ""; // txtSĐT
+            DTPNgaySinh.Value = DateTime.Now;
+            cboGioiTinh.SelectedIndex = -1;
+            txtDiaChi.Text = "";
+            txtSĐT.Text = "";
             txtEmail.Text = "";
+            cboChuyenMon.SelectedIndex = -1;
+            cboTrangThai.SelectedIndex = 0; // Luôn mặc định là "Đang làm việc"
 
+            // Bỏ dòng txtMaGV.ReadOnly = true;
 
-            cboChuyenMon.SelectedIndex = -1; // cboChuyenMon
-            cboTrangThai.SelectedIndex = 0; // cboTrangThai
-                                             
-            txtMaGV.ReadOnly = true; // Giữ nguyên, vì Mã GV thường được tự động sinh.
-            txtHoTen.ReadOnly = false;
-
-
-           
+            // Quan trọng: Sau khi xóa form, đưa về chế độ "Thêm mới"
+            SetAppMode(isAdding: true);
         }
 
         private void SetupDataGridView()

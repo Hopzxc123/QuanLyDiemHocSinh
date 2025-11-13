@@ -14,11 +14,44 @@ namespace GUI
 {
     public partial class frmQLLop : Form
     {
-       
+
         public frmQLLop()
         {
             InitializeComponent();
         }
+
+        // ====================================================================
+        // KHỐI LOGIC NGHIỆP VỤ MỚI
+        // ====================================================================
+
+        /// <summary>
+        /// Quản lý trạng thái của các nút Thêm, Sửa, Xóa.
+        /// </summary>
+        /// <param name="isAdding">True: Chế độ "Thêm mới". False: Chế độ "Sửa/Xóa".</param>
+        private void SetAppMode(bool isAdding)
+        {
+            if (isAdding)
+            {
+                // Fix: Xóa lựa chọn trước để tránh kích hoạt CellClick
+                dgvLop.ClearSelection();
+
+                // Đặt trạng thái nút
+                btn_Them.Enabled = true;
+                btn_Sua.Enabled = false;
+                btn_Xoa.Enabled = false;
+            }
+            else
+            {
+                // Chế độ Sửa/Xóa
+                btn_Them.Enabled = false;
+                btn_Sua.Enabled = true;
+                btn_Xoa.Enabled = true;
+            }
+        }
+        // ====================================================================
+        // KẾT THÚC KHỐI LOGIC MỚI
+        // ====================================================================
+
 
         private void LoadLopData()
         {
@@ -50,13 +83,16 @@ namespace GUI
             LoadKhoiLop();
             LoadNamHoc();
             LoadLopData();
-            btnThem.Enabled = false;
+            // Bắt đầu ở chế độ "Thêm"
+            SetAppMode(isAdding: true);
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
             try
             {
+                // !! Ghi chú: Logic kiểm tra (validation) này có vẻ chưa tối ưu,
+                // nhưng tôi sẽ giữ nguyên theo yêu cầu của bạn.
                 if (string.IsNullOrWhiteSpace(txtMaLop.Text) &&
                     string.IsNullOrWhiteSpace(txtTenLop.Text) &&
                     string.IsNullOrWhiteSpace(txtGhiChu.Text) &&
@@ -64,7 +100,7 @@ namespace GUI
                     cbbKhoiLop.SelectedValue == null &&
                     cbbNamHoc.SelectedValue == null)
                 {
-                    MessageBox.Show("Vui lòng lớp cần thêm!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Vui lòng nhập thông tin lớp cần thêm!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 LopDTO lop = new LopDTO
@@ -81,6 +117,9 @@ namespace GUI
                 {
                     MessageBox.Show("Thêm lớp thành công!");
                     LoadLopData();
+                    ClearForm();
+                    // Trở về chế độ "Thêm"
+                    SetAppMode(isAdding: true);
                 }
                 else
                     MessageBox.Show("Thêm lớp thất bại!");
@@ -95,19 +134,11 @@ namespace GUI
         {
             try
             {
-                if (string.IsNullOrWhiteSpace(txtMaLop.Text) &&
-                    string.IsNullOrWhiteSpace(txtTenLop.Text) &&
-                    string.IsNullOrWhiteSpace(txtGhiChu.Text) &&
-                    string.IsNullOrWhiteSpace(txtSiSo.Text) &&
-                    cbbKhoiLop.SelectedValue == null &&
-                    cbbNamHoc.SelectedValue == null)
+                if (dgvLop.CurrentRow == null)
                 {
                     MessageBox.Show("Vui lòng chọn lớp cần sửa!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-
-                if (dgvLop.CurrentRow == null)
-                    return;
 
                 LopDTO lop = new LopDTO
                 {
@@ -123,6 +154,9 @@ namespace GUI
                 {
                     MessageBox.Show("Cập nhật lớp thành công!");
                     LoadLopData();
+                    ClearForm();
+                    // Trở về chế độ "Thêm"
+                    SetAppMode(isAdding: true);
                 }
                 else
                     MessageBox.Show("Cập nhật thất bại!");
@@ -145,7 +179,7 @@ namespace GUI
 
                 string maLop = txtMaLop.Text;
                 var confirm = MessageBox.Show("Bạn có chắc muốn xóa lớp này không?", "Xác nhận",
-                                              MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                                                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (confirm == DialogResult.Yes)
                 {
                     bool result = LopBLL.Instance.DeleteLop(maLop);
@@ -154,6 +188,8 @@ namespace GUI
                         MessageBox.Show("Xóa lớp thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoadLopData();
                         ClearForm();
+                        // Trở về chế độ "Thêm"
+                        SetAppMode(isAdding: true);
                     }
                 }
             }
@@ -174,8 +210,9 @@ namespace GUI
                 cbbNamHoc.SelectedValue = dgvLop.CurrentRow.Cells["NamHoc"].Value.ToString();
                 txtGhiChu.Text = dgvLop.CurrentRow.Cells["GhiChu"].Value?.ToString();
 
+                // Chuyển sang chế độ "Sửa/Xóa"
+                SetAppMode(isAdding: false);
             }
-            btnThem.Enabled = false;
         }
 
         private void ClearForm()
@@ -186,13 +223,14 @@ namespace GUI
             txtGhiChu.Clear();
             cbbKhoiLop.SelectedIndex = -1;
             cbbNamHoc.SelectedIndex = -1;
-            cbbNamHoc.SelectedIndex = -1;
         }
 
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
             ClearForm();
             LoadLopData();
+            // Trở về chế độ "Thêm"
+            SetAppMode(isAdding: true);
         }
 
         private void dgvLop_CellContentClick(object sender, DataGridViewCellEventArgs e)
