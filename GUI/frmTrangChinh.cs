@@ -70,6 +70,7 @@ namespace GUI
         private void fTrangChinh_Load(object sender, EventArgs e)
         {
             CapNhatThongTinNguoiDangNhap();
+            openChildForm(new frmThongKe());
         }
 
         private void CapNhatThongTinNguoiDangNhap()
@@ -112,7 +113,7 @@ namespace GUI
         private void button5_Click_1(object sender, EventArgs e)
         {
 
-            openChildForm(new QuanLyGiaoVien());
+            openChildForm(new frmQuanLyGiaoVien());
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

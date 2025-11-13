@@ -9,9 +9,9 @@ using System.Data.SqlClient;
 namespace GUI
 {
 
-    public partial class QuanLyGiaoVien : Form
+    public partial class frmQuanLyGiaoVien : Form
     {
-        public QuanLyGiaoVien()
+        public frmQuanLyGiaoVien()
         {
             InitializeComponent();
             this.Resize += new EventHandler(QuanLyGiaoVien_Resize);

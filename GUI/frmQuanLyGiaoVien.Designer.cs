@@ -1,6 +1,6 @@
 ﻿namespace GUI
 {
-    partial class QuanLyGiaoVien
+    partial class frmQuanLyGiaoVien
     {
         /// <summary>
         /// Required designer variable.
@@ -613,7 +613,7 @@
             this.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 10F);
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
@@ -708,7 +708,7 @@
             this.tableLabelPanel1.TabIndex = 7;
             this.tableLabelPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLabelPanel1_Paint);
             // 
-            // QuanLyGiaoVien
+            // frmQuanLyGiaoVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -718,7 +718,7 @@
             this.Controls.Add(this.tableLabelPanel1);
             this.Controls.Add(this.PanelTieuDe);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "QuanLyGiaoVien";
+            this.Name = "frmQuanLyGiaoVien";
             this.Text = "QuanLyGiaoVien";
             this.Load += new System.EventHandler(this.QuanLyGiaoVien_Load);
             this.GrbTTCT.ResumeLayout(false);
