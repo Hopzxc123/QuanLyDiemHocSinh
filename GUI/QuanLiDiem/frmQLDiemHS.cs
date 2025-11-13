@@ -39,6 +39,12 @@ namespace GUI
         }
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
+            ControlPaint.DrawBorder(e.Graphics,
+        panel1.ClientRectangle,
+        Color.White, 2, ButtonBorderStyle.Solid,
+        Color.White, 0, ButtonBorderStyle.Solid,
+        Color.White, 0, ButtonBorderStyle.Solid,
+        Color.White, 0, ButtonBorderStyle.Solid);
 
         }
         private void panel1_Resize(object sender, EventArgs e)
@@ -142,7 +148,7 @@ namespace GUI
                     CapNhatThongTinDiemHS();
                     return;
                 }
-                
+
             }
 
             else
@@ -212,7 +218,7 @@ namespace GUI
 
             // Lọc danh sách học sinh theo năm học
             dgvDanhSach.DataSource = HocSinhBLL.Instance.GetHocSinhByNamHoc(maNamHoc);
-           
+
         }
 
         private void btnReload_Click_1(object sender, EventArgs e)
@@ -221,6 +227,11 @@ namespace GUI
             cbbLop.DataSource = null;
             txttMaHS.Text = "";
             CapNhatThongTinDiemHS();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

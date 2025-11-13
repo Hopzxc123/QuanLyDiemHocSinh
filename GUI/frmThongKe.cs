@@ -225,5 +225,15 @@ namespace GUI
         {
 
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            ControlPaint.DrawBorder(e.Graphics,
+        panel1.ClientRectangle,
+        Color.White, 2, ButtonBorderStyle.Solid,
+        Color.White, 0, ButtonBorderStyle.Solid,
+        Color.White, 0, ButtonBorderStyle.Solid,
+        Color.White, 0, ButtonBorderStyle.Solid);
+        }
     }
 }
