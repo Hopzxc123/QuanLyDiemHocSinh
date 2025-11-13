@@ -108,7 +108,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 78);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(295, 476);
+            this.panel2.Size = new System.Drawing.Size(236, 476);
             this.panel2.TabIndex = 1;
             // 
             // btnXuatExcel
@@ -203,9 +203,9 @@
             // 
             this.panel3.Controls.Add(this.grThongKe);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(295, 78);
+            this.panel3.Location = new System.Drawing.Point(236, 78);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(772, 476);
+            this.panel3.Size = new System.Drawing.Size(831, 476);
             this.panel3.TabIndex = 2;
             // 
             // grThongKe
@@ -217,7 +217,7 @@
             this.grThongKe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(101)))), ((int)(((byte)(241)))));
             this.grThongKe.Location = new System.Drawing.Point(0, 0);
             this.grThongKe.Name = "grThongKe";
-            this.grThongKe.Size = new System.Drawing.Size(772, 476);
+            this.grThongKe.Size = new System.Drawing.Size(831, 476);
             this.grThongKe.TabIndex = 0;
             this.grThongKe.TabStop = false;
             // 
@@ -228,7 +228,7 @@
             this.chart.Legend.LabelFont = chartFont1;
             this.chart.Location = new System.Drawing.Point(0, 0);
             this.chart.Name = "chart";
-            this.chart.Size = new System.Drawing.Size(766, 397);
+            this.chart.Size = new System.Drawing.Size(825, 397);
             this.chart.TabIndex = 0;
             chartFont2.FontName = "Arial";
             chartFont2.Size = 12;
@@ -270,7 +270,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(3, 20);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(766, 56);
+            this.panel4.Size = new System.Drawing.Size(825, 56);
             this.panel4.TabIndex = 0;
             // 
             // panel5
@@ -279,7 +279,7 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(3, 76);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(766, 397);
+            this.panel5.Size = new System.Drawing.Size(825, 397);
             this.panel5.TabIndex = 1;
             // 
             // cbbNamHoc
