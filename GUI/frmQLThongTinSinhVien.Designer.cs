@@ -129,7 +129,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(333, 492);
+            this.groupBox1.Size = new System.Drawing.Size(327, 492);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin chi tiết";
@@ -143,12 +143,13 @@
             this.tableLayoutPanel1.Controls.Add(this.btnThem, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnXoa, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.btnSua, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 363);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(4, 388);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(326, 100);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(319, 100);
             this.tableLayoutPanel1.TabIndex = 15;
             // 
             // btnLamMoi
@@ -166,9 +167,9 @@
             this.btnLamMoi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(101)))), ((int)(((byte)(241)))));
             this.btnLamMoi.HoverState.FillColor = System.Drawing.Color.MediumSlateBlue;
             this.btnLamMoi.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnLamMoi.Location = new System.Drawing.Point(166, 53);
+            this.btnLamMoi.Location = new System.Drawing.Point(162, 53);
             this.btnLamMoi.Name = "btnLamMoi";
-            this.btnLamMoi.Size = new System.Drawing.Size(157, 44);
+            this.btnLamMoi.Size = new System.Drawing.Size(154, 44);
             this.btnLamMoi.TabIndex = 5;
             this.btnLamMoi.Text = "Làm mới";
             this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
@@ -187,7 +188,7 @@
             this.btnThem.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(81)))), ((int)(((byte)(221)))));
             this.btnThem.Location = new System.Drawing.Point(3, 3);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(157, 44);
+            this.btnThem.Size = new System.Drawing.Size(153, 44);
             this.btnThem.TabIndex = 5;
             this.btnThem.Text = "Thêm";
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
@@ -209,7 +210,7 @@
             this.btnXoa.HoverState.ForeColor = System.Drawing.Color.White;
             this.btnXoa.Location = new System.Drawing.Point(3, 53);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(157, 44);
+            this.btnXoa.Size = new System.Drawing.Size(153, 44);
             this.btnXoa.TabIndex = 5;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
@@ -229,9 +230,9 @@
             this.btnSua.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(101)))), ((int)(((byte)(241)))));
             this.btnSua.HoverState.FillColor = System.Drawing.Color.MediumSlateBlue;
             this.btnSua.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnSua.Location = new System.Drawing.Point(166, 3);
+            this.btnSua.Location = new System.Drawing.Point(162, 3);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(157, 44);
+            this.btnSua.Size = new System.Drawing.Size(154, 44);
             this.btnSua.TabIndex = 5;
             this.btnSua.Text = "Sửa";
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);

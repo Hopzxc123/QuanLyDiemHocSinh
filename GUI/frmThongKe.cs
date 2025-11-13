@@ -18,8 +18,7 @@ namespace GUI
         public frmThongKe()
         {
             InitializeComponent();
-            LoadThongKe();
-            LoadHocSinhGioi();
+            
         }
 
         private void LoadThongKe()
@@ -173,6 +172,12 @@ namespace GUI
     private void btnXuatExcel_Click(object sender, EventArgs e)
         {
             ExportToCSV(dgvHocSinhGioi);
+        }
+
+        private void frmThongKe_Load(object sender, EventArgs e)
+        {
+            LoadThongKe();
+            LoadHocSinhGioi();
         }
     }
 }

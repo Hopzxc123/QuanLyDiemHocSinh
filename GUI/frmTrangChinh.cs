@@ -31,6 +31,7 @@ namespace GUI
             this.SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
             this.UpdateStyles();
             Account = account;
+
         }
 
 
@@ -104,7 +105,10 @@ namespace GUI
         {
 
         }
-
+        private void buttonThongKe_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frmThongKe());
+        }
         private void button5_Click_1(object sender, EventArgs e)
         {
 
@@ -191,7 +195,7 @@ namespace GUI
             btnQLLop.Text = "";
             btnQLMonHoc.Text = "";
             btnQLGiaoVien.Text = "";
-            btnDangXuat.Text = "";
+            btnThongKe.Text = "";
         }
 
         private void ShowButtonText()
@@ -201,7 +205,7 @@ namespace GUI
             btnQLLop.Text = "     Quản lý lớp";
             btnQLMonHoc.Text = "     Quản lý môn học";
             btnQLGiaoVien.Text = "     Quản lý giáo viên";
-            btnDangXuat.Text = "     Đăng xuất";
+            btnThongKe.Text = "     Đăng xuất";
         }
 
 
@@ -255,9 +259,9 @@ namespace GUI
 
         }
 
-        private void frmTrangChinh_Load(object sender, EventArgs e)
+        private void guna2CirclePictureBox1_Click(object sender, EventArgs e)
         {
-
+            openChildForm(new frmHoSo(Account));
         }
     }
 }

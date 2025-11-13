@@ -317,7 +317,7 @@ namespace GUI
             }
             else
             {
-                newHeight = 35;
+                newHeight = 22;
             }
 
             if (this.cboGioiTinh.ItemHeight != newHeight)
@@ -387,6 +387,16 @@ namespace GUI
         }
 
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void lblNgaySinh_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblChuyenmon_Click(object sender, EventArgs e)
         {
 
         }
