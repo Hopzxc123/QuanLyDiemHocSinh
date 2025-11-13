@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace GUI
 {
@@ -19,46 +20,10 @@ namespace GUI
             LoadGioiTinh();
             LoadLop();
             LoadHocSinhData();
-
-            // Bắt đầu ở chế độ "Thêm"
-            SetAppMode(isAdding: true);
             CapNhatNamHoc();
         }
 
-        // ====================================================================
-        // KHỐI LOGIC NGHIỆP VỤ MỚI
-        // ====================================================================
-
-        /// <summary>
-        /// Quản lý trạng thái của các nút Thêm, Sửa, Xóa.
-        /// </summary>
-        /// <param name="isAdding">True: Chế độ "Thêm mới". False: Chế độ "Sửa/Xóa".</param>
-        private void SetAppMode(bool isAdding)
-        {
-            if (isAdding)
-            {
-                // Cho phép Thêm, vô hiệu hóa Sửa/Xóa
-                btnThem.Enabled = true;
-                btnSua.Enabled = false;
-                btnXoa.Enabled = false;
-
-                // Xóa lựa chọn trên DataGridView
-                dgvHocSinh.ClearSelection();
-            }
-            else
-            {
-                // Vô hiệu hóa Thêm, cho phép Sửa/Xóa
-                btnThem.Enabled = false;
-                btnSua.Enabled = true;
-                btnXoa.Enabled = true;
-            }
-        }
-
-        // ====================================================================
-        // KẾT THÚC KHỐI LOGIC MỚI
-        // ====================================================================
-
-
+        // ======================== LOAD DỮ LIỆU =========================
         private void LoadGioiTinh()
         {
             cboGioiTinh.Items.Clear();
@@ -77,26 +42,24 @@ namespace GUI
         private void LoadHocSinhData()
         {
             var listHocSinh = HocSinhBLL.Instance.GetAllHocSinh() ?? new List<HocSinhDTO>();
-            var listLop = LopBLL.Instance.GetAllLop() ?? new List<LopDTO>();
-
-            var displayList = listHocSinh.Select(hs => new
-            {
-                hs.MaHocSinh,
-                hs.HoTen,
-                hs.GioiTinh,
-                hs.NgaySinh,
-                hs.DiaChi,
-                hs.Email,
-                TenLop = listLop.FirstOrDefault(l => l.MaLop.ToString() == hs.MaLop)?.TenLop
-            }).ToList();
-
-            dgvHocSinh.DataSource = displayList;
+            dgvHocSinh.DataSource = listHocSinh;
             dgvHocSinh.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
+        private void CapNhatNamHoc()
+        {
+            List<NamHocDTO> nams = NamHocBLL.Instance.GetAllNamHoc();
+            nams.Sort((x, y) => y.NgayKetThuc.CompareTo(x.NgayBatDau));
+            nams.Insert(0, new NamHocDTO { MaNamHoc = "", TenNamHoc = "-Tất cả-" });
+
+            cbbNamHoc.DataSource = nams;
+            cbbNamHoc.DisplayMember = "TenNamHoc";
+            cbbNamHoc.ValueMember = "MaNamHoc";
+        }
+
+        // ======================== XỬ LÝ NÚT =========================
         private void ClearForm()
         {
-            //txtMaHS.Clear();
             txtHoTen.Clear();
             txtDiaChi.Clear();
             txtEmail.Clear();
@@ -112,7 +75,6 @@ namespace GUI
             {
                 HocSinhDTO hs = new HocSinhDTO
                 {
-                    //MaHocSinh = txtMaHS.Text.Trim(),
                     HoTen = txtHoTen.Text.Trim(),
                     GioiTinh = cboGioiTinh.SelectedItem?.ToString(),
                     NgaySinh = dtpNgaySinh.Value,
@@ -127,8 +89,6 @@ namespace GUI
                     MessageBox.Show("Thêm học sinh thành công!");
                     LoadHocSinhData();
                     ClearForm();
-                    // Sau khi thêm, vẫn ở chế độ "Thêm"
-                    SetAppMode(isAdding: true);
                 }
                 else
                 {
@@ -145,16 +105,15 @@ namespace GUI
         {
             try
             {
-                // Kiểm tra có dòng nào đang chọn không
                 if (dgvHocSinh.CurrentRow == null)
                 {
                     MessageBox.Show("Vui lòng chọn học sinh cần sửa!", "Thông báo",
-                                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
-                // === SỬA LỖI: Logic này phải nằm BÊN NGOÀI khối 'if' ở trên ===
                 string maHocSinh = dgvHocSinh.CurrentRow.Cells["MaHocSinh"].Value.ToString();
+
                 HocSinhDTO hs = new HocSinhDTO
                 {
                     MaHocSinh = maHocSinh,
@@ -167,100 +126,130 @@ namespace GUI
                     TrangThai = "1"
                 };
 
-                // Gọi BLL để cập nhật
                 if (HocSinhBLL.Instance.UpdateHocSinh(hs))
                 {
                     MessageBox.Show("Cập nhật học sinh thành công!", "Thông báo",
-                                     MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadHocSinhData();
                     ClearForm();
-                    // Sau khi sửa, trả về chế độ "Thêm"
-                    SetAppMode(isAdding: true);
                 }
                 else
                 {
                     MessageBox.Show("Cập nhật thất bại!", "Thông báo",
-                                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                // === KẾT THÚC SỬA LỖI ===
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi: " + ex.Message, "Lỗi",
-                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
             try
             {
-                // Kiểm tra có hàng được chọn trong DataGridView
                 if (dgvHocSinh.CurrentRow == null)
                 {
-                    MessageBox.Show("Vui lòng chọn học sinh cần xóa!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Vui lòng chọn học sinh cần xóa!", "Cảnh báo",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
-                // Lấy MaHocSinh từ DataGridView
                 string maHocSinh = dgvHocSinh.CurrentRow.Cells["MaHocSinh"].Value.ToString();
+                string tenHocSinh = dgvHocSinh.CurrentRow.Cells["HoTen"].Value.ToString();
 
-                var confirm = MessageBox.Show("Bạn có chắc muốn xóa học sinh này không?", "Xác nhận",
-                                                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (confirm == DialogResult.Yes)
+                var confirm = MessageBox.Show($"Bạn có chắc muốn xóa học sinh '{tenHocSinh}' (Mã: {maHocSinh}) không?",
+                                               "Xác nhận xóa",
+                                               MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (confirm == DialogResult.No)
+                    return;
+
+                try
                 {
+                    // BƯỚC 1: Thử XÓA CỨNG (DELETE)
                     if (HocSinhBLL.Instance.DeleteHocSinh(maHocSinh))
                     {
-                        MessageBox.Show("Xóa học sinh thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        // Xóa cứng thành công (học sinh này "sạch", chưa có dữ liệu điểm)
+                        MessageBox.Show("Xóa học sinh thành công!", "Thông báo",
+                                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoadHocSinhData();
                         ClearForm();
-                        // Sau khi xóa, trả về chế độ "Thêm"
-                        SetAppMode(isAdding: true);
                     }
                     else
                     {
-                        MessageBox.Show("Xóa học sinh thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        // BLL trả về false mà không ném exception
+                        MessageBox.Show("Xóa học sinh thất bại!", "Thông báo",
+                                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
+                }
+                catch (SqlException sqlEx) when (sqlEx.Number == 547)
+                {
+                    // BƯỚC 2: Bị lỗi khóa ngoại (FK constraint, lỗi 547) 
+                    // -> Học sinh này đã có dữ liệu (điểm)
+                    // -> Chuyển sang XÓA MỀM (SOFT DELETE)
+
+                    var confirmSoftDelete = MessageBox.Show(
+                        $"Không thể xóa vĩnh viễn học sinh '{tenHocSinh}' vì đã có dữ liệu điểm liên quan.\n\n" +
+                        $"Bạn có muốn 'Vô hiệu hóa' (ẩn) học sinh này thay thế không?",
+                        "Không thể xóa vĩnh viễn",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Warning);
+
+                    if (confirmSoftDelete == DialogResult.Yes)
+                    {
+                        // Lấy toàn bộ thông tin của học sinh từ DGV
+                        // để gọi hàm Update, chỉ thay đổi TrangThai
+                        HocSinhDTO hs = new HocSinhDTO
+                        {
+                            MaHocSinh = maHocSinh,
+                            HoTen = dgvHocSinh.CurrentRow.Cells["HoTen"].Value.ToString(),
+                            GioiTinh = dgvHocSinh.CurrentRow.Cells["GioiTinh"].Value.ToString(),
+                            NgaySinh = Convert.ToDateTime(dgvHocSinh.CurrentRow.Cells["NgaySinh"].Value),
+                            DiaChi = dgvHocSinh.CurrentRow.Cells["DiaChi"].Value.ToString(),
+                            Email = dgvHocSinh.CurrentRow.Cells["Email"].Value.ToString(),
+                            MaLop = dgvHocSinh.CurrentRow.Cells["MaLop"].Value?.ToString(),
+
+                            // Đây là điểm mấu chốt: Cập nhật TrangThai = 0 (tức là false)
+                            TrangThai = "0"
+                        };
+
+                        // Gọi lại hàm Update (giống hệt nút Sửa) để vô hiệu hóa
+                        if (HocSinhBLL.Instance.UpdateHocSinh(hs))
+                        {
+                            MessageBox.Show("Vô hiệu hóa học sinh thành công!", "Thông báo",
+                                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            LoadHocSinhData(); // Tải lại dữ liệu (học sinh này sẽ biến mất)
+                            ClearForm();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Vô hiệu hóa thất bại.", "Lỗi",
+                                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Các lỗi chung khác (mất kết nối, v.v.)
+                    MessageBox.Show("Lỗi không xác định: " + ex.Message, "Lỗi",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // Lỗi chung khi lấy dữ liệu từ DGV
+                MessageBox.Show("Lỗi chung: " + ex.Message, "Lỗi",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-
-        private void dgvHocSinh_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0 && dgvHocSinh.Rows.Count > 0)
-            {
-                //txtMaHS.Text = dgvHocSinh.CurrentRow.Cells["MaHocSinh"].Value.ToString();
-                txtHoTen.Text = dgvHocSinh.CurrentRow.Cells["HoTen"].Value.ToString();
-                cboGioiTinh.SelectedItem = dgvHocSinh.CurrentRow.Cells["GioiTinh"].Value.ToString();
-                dtpNgaySinh.Value = Convert.ToDateTime(dgvHocSinh.CurrentRow.Cells["NgaySinh"].Value);
-                txtDiaChi.Text = dgvHocSinh.CurrentRow.Cells["DiaChi"].Value.ToString();
-                txtEmail.Text = dgvHocSinh.CurrentRow.Cells["Email"].Value.ToString();
-                string tenLop = dgvHocSinh.CurrentRow.Cells["TenLop"].Value.ToString();
-                var lop = LopBLL.Instance.GetAllLop().FirstOrDefault(l => l.TenLop == tenLop);
-                if (lop != null)
-                {
-                    cboMaLop.SelectedValue = lop.MaLop;
-                }
-
-                // Khi nhấn vào 1 hàng, chuyển sang chế độ "Sửa/Xóa"
-                SetAppMode(isAdding: false);
-            }
-        }
-
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
             ClearForm();
-            txtTimKiem.Clear(); // Clear textbox tìm kiếm
+            cbbNamHoc.SelectedIndex = 0;
             LoadHocSinhData();
-
-            // Khi làm mới, trả về chế độ "Thêm"
-            SetAppMode(isAdding: true);
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -278,90 +267,74 @@ namespace GUI
             }
         }
 
-        // ===== CHỨC NĂNG TÌM KIẾM =====
-
-        private void btnTimKiem_Click(object sender, EventArgs e)
+        // ======================== CELL CLICK =========================
+        private void dgvHocSinh_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            try
+            if (e.RowIndex >= 0 && dgvHocSinh.Rows.Count > 0)
             {
-                string keyword = txtTimKiem.Text.Trim().ToLower();
+                txtHoTen.Text = dgvHocSinh.CurrentRow.Cells["HoTen"].Value.ToString();
+                cboGioiTinh.SelectedItem = dgvHocSinh.CurrentRow.Cells["GioiTinh"].Value.ToString();
+                dtpNgaySinh.Value = Convert.ToDateTime(dgvHocSinh.CurrentRow.Cells["NgaySinh"].Value);
+                txtDiaChi.Text = dgvHocSinh.CurrentRow.Cells["DiaChi"].Value.ToString();
+                txtEmail.Text = dgvHocSinh.CurrentRow.Cells["Email"].Value.ToString();
 
-                if (string.IsNullOrEmpty(keyword))
+                // ✅ Lấy trực tiếp MaLop
+                if (dgvHocSinh.Columns.Contains("MaLop"))
                 {
-                    LoadHocSinhData();
-                    return;
+                    string maLop = dgvHocSinh.CurrentRow.Cells["MaLop"].Value?.ToString();
+                    if (!string.IsNullOrEmpty(maLop))
+                        cboMaLop.SelectedValue = maLop;
                 }
+            }
+        }
 
-                var allHocSinh = HocSinhBLL.Instance.GetAllHocSinh();
-                var listLop = LopBLL.Instance.GetAllLop();
+        // ======================== LỌC THEO NĂM HỌC & LỚP =========================
+        private void cbbNamHoc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbbNamHoc.SelectedIndex == 0)
+            {
+                LoadHocSinhData();
+                cbbLop.SelectedIndexChanged -= cbbLop_SelectedIndexChanged;
+                cbbLop.DataSource = null;
+                cbbLop.SelectedIndexChanged += cbbLop_SelectedIndexChanged;
+                return;
+            }
 
-                // Map học sinh với tên lớp
-                var displayList = allHocSinh.Select(hs => new
-                {
-                    hs.MaHocSinh,
-                    hs.HoTen,
-                    hs.GioiTinh,
-                    hs.NgaySinh,
-                    hs.DiaChi,
-                    hs.Email,
-                    TenLop = listLop.FirstOrDefault(l => l.MaLop.ToString() == hs.MaLop)?.TenLop
-                }).ToList();
+            cbbLop.SelectedIndexChanged -= cbbLop_SelectedIndexChanged;
+            string maNamHoc = cbbNamHoc.SelectedValue.ToString();
 
-                // Tìm kiếm theo tên lớp
-                var result = displayList.Where(hs =>
+            List<LopDTO> lops = LopBLL.Instance.GetLopByNamHoc(maNamHoc);
+            lops.Sort((x, y) => string.Compare(x.TenLop, y.TenLop));
+            lops.Insert(0, new LopDTO { MaLop = "", TenLop = "-Chọn lớp-" });
 
-                    (hs.TenLop != null && hs.TenLop.ToLower().Contains(keyword))
-                ).ToList();
+            cbbLop.DataSource = lops;
+            cbbLop.DisplayMember = "TenLop";
+            cbbLop.ValueMember = "MaLop";
+            cbbLop.SelectedIndexChanged += cbbLop_SelectedIndexChanged;
 
+            dgvHocSinh.DataSource = HocSinhBLL.Instance.GetHocSinhByNamHoc(maNamHoc);
+        }
+
+        private void cbbLop_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbbLop.SelectedIndex == 0 || cbbLop.SelectedValue == null)
+            {
                 dgvHocSinh.DataSource = null;
-                dgvHocSinh.DataSource = result;
-
-                if (result.Count == 0)
-                {
-                    MessageBox.Show("Không tìm thấy kết quả nào!", "Thông báo",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-
+                return;
             }
-            catch (Exception ex)
+
+            string maLop = cbbLop.SelectedValue.ToString();
+            if (!string.IsNullOrEmpty(maLop))
             {
-                MessageBox.Show("Lỗi tìm kiếm: " + ex.Message, "Lỗi",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                dgvHocSinh.DataSource = HocSinhBLL.Instance.GetHocSinhByLop(maLop);
+                dgvHocSinh.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             }
-        }
-
-
-        // Tìm kiếm khi nhấn Enter trong TextBox
-        private void txtTimKiem_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
+            else
             {
-                btnTimKiem_Click(sender, e);
-                e.Handled = true;
-                e.SuppressKeyPress = true;
+                LoadHocSinhData();
             }
         }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgvHocSinh_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-        private void CapNhatNamHoc()
-        {
-            List<NamHocDTO> nams = NamHocBLL.Instance.GetAllNamHoc();
-            nams.Sort((x, y) => y.NgayKetThuc.CompareTo(x.NgayBatDau)); // Sắp xếp giảm dần theo Năm Bắt Đầu
-            nams.Insert(0, new NamHocDTO { MaNamHoc = "", TenNamHoc = "-Tất cả-" });
-            cbbNamHoc.DataSource = nams;
-            cbbNamHoc.DisplayMember = "TenNamHoc";
-            cbbNamHoc.ValueMember = "MaNamHoc";
-
-        }
-
-        
     }
 }
+
+

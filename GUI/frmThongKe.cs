@@ -246,11 +246,6 @@ namespace GUI
             
         }
 
-        private void chart_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void cbbNamHoc_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cbbNamHoc.SelectedIndex == 0)
@@ -304,6 +299,9 @@ namespace GUI
             SetUpGunaChart(maHocKy);
         }
 
-       
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

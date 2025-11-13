@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.Charts.WinForms.ChartFont chartFont1 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.ChartFont chartFont2 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.ChartFont chartFont3 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.ChartFont chartFont4 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.Grid grid1 = new Guna.Charts.WinForms.Grid();
-            Guna.Charts.WinForms.Tick tick1 = new Guna.Charts.WinForms.Tick();
-            Guna.Charts.WinForms.ChartFont chartFont5 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.Grid grid2 = new Guna.Charts.WinForms.Grid();
-            Guna.Charts.WinForms.Tick tick2 = new Guna.Charts.WinForms.Tick();
-            Guna.Charts.WinForms.ChartFont chartFont6 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.Grid grid3 = new Guna.Charts.WinForms.Grid();
-            Guna.Charts.WinForms.PointLabel pointLabel1 = new Guna.Charts.WinForms.PointLabel();
-            Guna.Charts.WinForms.ChartFont chartFont7 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.Tick tick3 = new Guna.Charts.WinForms.Tick();
-            Guna.Charts.WinForms.ChartFont chartFont8 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.ChartFont chartFont9 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.ChartFont chartFont10 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.ChartFont chartFont11 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.ChartFont chartFont12 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.Grid grid4 = new Guna.Charts.WinForms.Grid();
+            Guna.Charts.WinForms.Tick tick4 = new Guna.Charts.WinForms.Tick();
+            Guna.Charts.WinForms.ChartFont chartFont13 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.Grid grid5 = new Guna.Charts.WinForms.Grid();
+            Guna.Charts.WinForms.Tick tick5 = new Guna.Charts.WinForms.Tick();
+            Guna.Charts.WinForms.ChartFont chartFont14 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.Grid grid6 = new Guna.Charts.WinForms.Grid();
+            Guna.Charts.WinForms.PointLabel pointLabel2 = new Guna.Charts.WinForms.PointLabel();
+            Guna.Charts.WinForms.ChartFont chartFont15 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.Tick tick6 = new Guna.Charts.WinForms.Tick();
+            Guna.Charts.WinForms.ChartFont chartFont16 = new Guna.Charts.WinForms.ChartFont();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -55,19 +55,19 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.grThongKe = new System.Windows.Forms.GroupBox();
-            this.chart = new Guna.Charts.WinForms.GunaChart();
-            this.gunaLineDataset1 = new Guna.Charts.WinForms.GunaLineDataset();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.cbbNamHoc = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.cbbHocKy = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.chart = new Guna.Charts.WinForms.GunaChart();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.btnLoc = new System.Windows.Forms.Button();
+            this.cbbHocKy = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cbbNamHoc = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.gunaLineDataset1 = new Guna.Charts.WinForms.GunaLineDataset();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.grThongKe.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -221,46 +221,49 @@
             this.grThongKe.TabIndex = 0;
             this.grThongKe.TabStop = false;
             // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.chart);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.Location = new System.Drawing.Point(3, 76);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(825, 397);
+            this.panel5.TabIndex = 1;
+            // 
             // chart
             // 
             this.chart.Dock = System.Windows.Forms.DockStyle.Fill;
-            chartFont1.FontName = "Arial";
-            this.chart.Legend.LabelFont = chartFont1;
+            chartFont9.FontName = "Arial";
+            this.chart.Legend.LabelFont = chartFont9;
             this.chart.Location = new System.Drawing.Point(0, 0);
             this.chart.Name = "chart";
             this.chart.Size = new System.Drawing.Size(825, 397);
             this.chart.TabIndex = 0;
-            chartFont2.FontName = "Arial";
-            chartFont2.Size = 12;
-            chartFont2.Style = Guna.Charts.WinForms.ChartFontStyle.Bold;
-            this.chart.Title.Font = chartFont2;
-            chartFont3.FontName = "Arial";
-            this.chart.Tooltips.BodyFont = chartFont3;
-            chartFont4.FontName = "Arial";
-            chartFont4.Size = 9;
-            chartFont4.Style = Guna.Charts.WinForms.ChartFontStyle.Bold;
-            this.chart.Tooltips.TitleFont = chartFont4;
-            this.chart.XAxes.GridLines = grid1;
-            chartFont5.FontName = "Arial";
-            tick1.Font = chartFont5;
-            this.chart.XAxes.Ticks = tick1;
-            this.chart.YAxes.GridLines = grid2;
-            chartFont6.FontName = "Arial";
-            tick2.Font = chartFont6;
-            this.chart.YAxes.Ticks = tick2;
-            this.chart.ZAxes.GridLines = grid3;
-            chartFont7.FontName = "Arial";
-            pointLabel1.Font = chartFont7;
-            this.chart.ZAxes.PointLabels = pointLabel1;
-            chartFont8.FontName = "Arial";
-            tick3.Font = chartFont8;
-            this.chart.ZAxes.Ticks = tick3;
-            // 
-            // gunaLineDataset1
-            // 
-            this.gunaLineDataset1.BorderColor = System.Drawing.Color.Empty;
-            this.gunaLineDataset1.FillColor = System.Drawing.Color.Empty;
-            this.gunaLineDataset1.Label = "Phổ điểm học sinh";
+            chartFont10.FontName = "Arial";
+            chartFont10.Size = 12;
+            chartFont10.Style = Guna.Charts.WinForms.ChartFontStyle.Bold;
+            this.chart.Title.Font = chartFont10;
+            chartFont11.FontName = "Arial";
+            this.chart.Tooltips.BodyFont = chartFont11;
+            chartFont12.FontName = "Arial";
+            chartFont12.Size = 9;
+            chartFont12.Style = Guna.Charts.WinForms.ChartFontStyle.Bold;
+            this.chart.Tooltips.TitleFont = chartFont12;
+            this.chart.XAxes.GridLines = grid4;
+            chartFont13.FontName = "Arial";
+            tick4.Font = chartFont13;
+            this.chart.XAxes.Ticks = tick4;
+            this.chart.YAxes.GridLines = grid5;
+            chartFont14.FontName = "Arial";
+            tick5.Font = chartFont14;
+            this.chart.YAxes.Ticks = tick5;
+            this.chart.ZAxes.GridLines = grid6;
+            chartFont15.FontName = "Arial";
+            pointLabel2.Font = chartFont15;
+            this.chart.ZAxes.PointLabels = pointLabel2;
+            chartFont16.FontName = "Arial";
+            tick6.Font = chartFont16;
+            this.chart.ZAxes.Ticks = tick6;
             // 
             // panel4
             // 
@@ -272,31 +275,18 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(825, 56);
             this.panel4.TabIndex = 0;
+            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
-            // panel5
+            // btnLoc
             // 
-            this.panel5.Controls.Add(this.chart);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(3, 76);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(825, 397);
-            this.panel5.TabIndex = 1;
-            // 
-            // cbbNamHoc
-            // 
-            this.cbbNamHoc.BackColor = System.Drawing.Color.Transparent;
-            this.cbbNamHoc.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbbNamHoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbNamHoc.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbbNamHoc.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbbNamHoc.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbbNamHoc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cbbNamHoc.ItemHeight = 30;
-            this.cbbNamHoc.Location = new System.Drawing.Point(15, 3);
-            this.cbbNamHoc.Name = "cbbNamHoc";
-            this.cbbNamHoc.Size = new System.Drawing.Size(146, 36);
-            this.cbbNamHoc.TabIndex = 0;
-            this.cbbNamHoc.SelectedIndexChanged += new System.EventHandler(this.cbbNamHoc_SelectedIndexChanged);
+            this.btnLoc.AutoSize = true;
+            this.btnLoc.Image = global::GUI.Properties.Resources.icons8_search_30;
+            this.btnLoc.Location = new System.Drawing.Point(369, 3);
+            this.btnLoc.Name = "btnLoc";
+            this.btnLoc.Size = new System.Drawing.Size(47, 36);
+            this.btnLoc.TabIndex = 2;
+            this.btnLoc.UseVisualStyleBackColor = true;
+            this.btnLoc.Click += new System.EventHandler(this.btnLoc_Click);
             // 
             // cbbHocKy
             // 
@@ -314,16 +304,27 @@
             this.cbbHocKy.TabIndex = 1;
             this.cbbHocKy.SelectedIndexChanged += new System.EventHandler(this.cbbHocKy_SelectedIndexChanged);
             // 
-            // btnLoc
+            // cbbNamHoc
             // 
-            this.btnLoc.AutoSize = true;
-            this.btnLoc.Image = global::GUI.Properties.Resources.icons8_search_30;
-            this.btnLoc.Location = new System.Drawing.Point(369, 3);
-            this.btnLoc.Name = "btnLoc";
-            this.btnLoc.Size = new System.Drawing.Size(47, 36);
-            this.btnLoc.TabIndex = 2;
-            this.btnLoc.UseVisualStyleBackColor = true;
-            this.btnLoc.Click += new System.EventHandler(this.btnLoc_Click);
+            this.cbbNamHoc.BackColor = System.Drawing.Color.Transparent;
+            this.cbbNamHoc.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbbNamHoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbNamHoc.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbbNamHoc.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbbNamHoc.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbbNamHoc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbbNamHoc.ItemHeight = 30;
+            this.cbbNamHoc.Location = new System.Drawing.Point(15, 3);
+            this.cbbNamHoc.Name = "cbbNamHoc";
+            this.cbbNamHoc.Size = new System.Drawing.Size(146, 36);
+            this.cbbNamHoc.TabIndex = 0;
+            this.cbbNamHoc.SelectedIndexChanged += new System.EventHandler(this.cbbNamHoc_SelectedIndexChanged);
+            // 
+            // gunaLineDataset1
+            // 
+            this.gunaLineDataset1.BorderColor = System.Drawing.Color.Empty;
+            this.gunaLineDataset1.FillColor = System.Drawing.Color.Empty;
+            this.gunaLineDataset1.Label = "Phổ điểm học sinh";
             // 
             // frmThongKe
             // 
@@ -336,16 +337,16 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmThongKe";
             this.Text = "frmThongKe";
-            
+            this.Load += new System.EventHandler(this.frmThongKe_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.grThongKe.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            this.panel5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
