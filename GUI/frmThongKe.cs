@@ -304,10 +304,6 @@ namespace GUI
             SetUpGunaChart(maHocKy);
         }
 
-        private void frmThongKe_Load(object sender, EventArgs e)
-        {
-            LoadThongKe();
-            LoadHocSinhGioi();
-        }
+       
     }
 }
