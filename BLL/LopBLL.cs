@@ -88,5 +88,12 @@ namespace BLL
             if (isInsert && LopDAL.Instance.CheckMaLopExists(lop.MaLop))
                 throw new Exception("Mã lớp đã tồn tại.");
         }
+
+        // ====================== SEARCH CLASS ======================
+
+        public List<LopDTO> SearchLop(string maLop, string tenLop, int? khoiLop, string namHoc)
+        {
+            return LopDAL.Instance.SearchLop(maLop, tenLop, khoiLop, namHoc);
+        }
     }
 }

@@ -121,5 +121,43 @@ namespace DAL
                 GhiChu = row["GhiChu"]?.ToString()
             };
         }
+
+        // ====================== SEARCH CLASS ======================
+        public List<LopDTO> SearchLop(string maLop, string tenLop, int? khoiLop, string namHoc)
+        {
+            List<LopDTO> list = new List<LopDTO>();
+
+            string query = $"SELECT * FROM Lop WHERE 1 = 1";
+
+            
+            if (!string.IsNullOrWhiteSpace(maLop))
+            {
+                query += $" AND MaLop = N'{maLop}'";
+            }
+
+            if (!string.IsNullOrWhiteSpace(tenLop))
+            {
+                query += $" AND TenLop = N'{tenLop}'";
+            }
+
+            if (khoiLop.HasValue)
+            {
+                query += $" AND KhoiLop = {khoiLop}";
+            }
+
+            if (!string.IsNullOrWhiteSpace(namHoc))
+            {
+                query += $" AND NamHoc = N'{namHoc}'";
+            }
+
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            foreach (DataRow row in data.Rows)
+            {
+                list.Add(MapToDTO(row));
+            }
+
+            return list;
+        }
     }
 }

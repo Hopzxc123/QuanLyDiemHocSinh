@@ -60,6 +60,8 @@ namespace GUI
             dgvLop.DataSource = null;
             dgvLop.DataSource = LopBLL.Instance.GetAllLop();
             dgvLop.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            
+            SetAppMode(isAdding: true);
         }
 
         private void LoadKhoiLop()
@@ -67,6 +69,10 @@ namespace GUI
             cbbKhoiLop.Items.Clear();
             cbbKhoiLop.Items.AddRange(new object[] { 10, 11, 12 });
             cbbKhoiLop.SelectedIndex = -1;
+
+            cbbTKKhoiLop.Items.Clear();
+            cbbTKKhoiLop.Items.AddRange(new object[] { 10, 11, 12 });
+            cbbTKKhoiLop.SelectedIndex = -1;
         }
 
         private void LoadNamHoc()
@@ -76,8 +82,14 @@ namespace GUI
             cbbNamHoc.DataSource = list;
             cbbNamHoc.DisplayMember = "TenNamHoc";
             cbbNamHoc.ValueMember = "MaNamHoc";
-
             cbbNamHoc.SelectedIndex = -1;
+
+            var listTK = NamHocBLL.Instance.GetAllNamHoc();
+
+            cbbTKNamHoc.DataSource = listTK;
+            cbbTKNamHoc.DisplayMember = "TenNamHoc";
+            cbbTKNamHoc.ValueMember = "MaNamHoc";
+            cbbTKNamHoc.SelectedIndex = -1;
         }
 
         private void frmQLLop_Load(object sender, EventArgs e)
@@ -225,6 +237,16 @@ namespace GUI
             txtGhiChu.Clear();
             cbbKhoiLop.SelectedIndex = -1;
             cbbNamHoc.SelectedIndex = -1;
+            cbbNamHoc.SelectedIndex = -1;
+        }
+
+        private void ClearFormTK()
+        {
+            txtTKMaLop.Clear();
+            txtTKTenLop.Clear();
+            cbbTKKhoiLop.SelectedIndex = -1;
+            cbbTKNamHoc.SelectedIndex = -1;
+            cbbTKNamHoc.SelectedIndex = -1;
         }
 
         private void btnLamMoi_Click(object sender, EventArgs e)
@@ -235,14 +257,31 @@ namespace GUI
             SetAppMode(isAdding: true);
         }
 
-        private void frmQuanLyLop_Layout(object sender, LayoutEventArgs e)
+        private void btnTKLamMoi_Click(object sender, EventArgs e)
         {
-
+            ClearFormTK();
+            LoadLopData();
         }
 
-        private void tableLayoutPanel2_Layout(object sender, LayoutEventArgs e)
+        private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            cbbTKKhoiLop.Height = txtTKMaLop.Height;
+            string maLop = txtTKMaLop.Text.Trim();
+            string tenLop = txtTKTenLop.Text.Trim();
+            int? khoiLop = null;
+
+            if (cbbTKKhoiLop.SelectedIndex != -1)
+            {
+                khoiLop = Convert.ToInt32(cbbTKKhoiLop.SelectedItem);
+            }
+
+            string namHoc = cbbTKNamHoc.SelectedIndex != -1
+                ? cbbTKNamHoc.SelectedValue.ToString() : null;
+
+            var result = LopBLL.Instance.SearchLop(maLop, tenLop, khoiLop, namHoc);
+
+            dgvLop.DataSource = null;
+            dgvLop.DataSource = result;
+            dgvLop.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
     }
 }
