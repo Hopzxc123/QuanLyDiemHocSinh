@@ -97,6 +97,12 @@
     <Compile Include="frmHoSo.Designer.cs">
       <DependentUpon>frmHoSo.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmQuanLyLop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQuanLyLop.Designer.cs">
+      <DependentUpon>frmQuanLyLop.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmThongKe.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,12 +125,6 @@
     </Compile>
     <Compile Include="QuanLiDiem\frmQLDiemHS.Designer.cs">
       <DependentUpon>frmQLDiemHS.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmQLLop.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmQLLop.Designer.cs">
-      <DependentUpon>frmQLLop.cs</DependentUpon>
     </Compile>
     <Compile Include="frmQLThongTinHocSinh.cs">
       <SubType>Form</SubType>
@@ -166,6 +166,9 @@
     <EmbeddedResource Include="frmHoSo.resx">
       <DependentUpon>frmHoSo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmQuanLyLop.resx">
+      <DependentUpon>frmQuanLyLop.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmThongKe.resx">
       <DependentUpon>frmThongKe.cs</DependentUpon>
     </EmbeddedResource>
@@ -174,9 +177,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLiDiem\frmQLDiemHS.resx">
       <DependentUpon>frmQLDiemHS.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmQLLop.resx">
-      <DependentUpon>frmQLLop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmQLThongTinHocSinh.resx">
       <DependentUpon>frmQLThongTinHocSinh.cs</DependentUpon>
@@ -298,15 +298,6 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="QuanLyDiemHocSinh.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="QuanLyDiemHocSinh_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>QuanLyDiemHocSinh.mdf</DependentUpon>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">

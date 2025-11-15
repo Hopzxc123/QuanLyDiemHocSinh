@@ -12,12 +12,14 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class frmQLLop : Form
+    public partial class frmQuanLyLop : Form
     {
-
-        public frmQLLop()
+        public frmQuanLyLop()
         {
             InitializeComponent();
+            LoadLopData();
+            LoadKhoiLop();
+            LoadNamHoc();
         }
 
         // ====================================================================
@@ -36,16 +38,16 @@ namespace GUI
                 dgvLop.ClearSelection();
 
                 // Đặt trạng thái nút
-                btn_Them.Enabled = true;
-                btn_Sua.Enabled = false;
-                btn_Xoa.Enabled = false;
+                btnThem.Enabled = true;
+                btnSua.Enabled = false;
+                btnXoa.Enabled = false;
             }
             else
             {
                 // Chế độ Sửa/Xóa
-                btn_Them.Enabled = false;
-                btn_Sua.Enabled = true;
-                btn_Xoa.Enabled = true;
+                btnThem.Enabled = false;
+                btnSua.Enabled = true;
+                btnXoa.Enabled = true;
             }
         }
         // ====================================================================
@@ -233,9 +235,14 @@ namespace GUI
             SetAppMode(isAdding: true);
         }
 
-        private void dgvLop_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void frmQuanLyLop_Layout(object sender, LayoutEventArgs e)
         {
 
+        }
+
+        private void tableLayoutPanel2_Layout(object sender, LayoutEventArgs e)
+        {
+            cbbTKKhoiLop.Height = txtTKMaLop.Height;
         }
     }
 }
