@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="QuanLyDiemHocSinhDataSet1" targetNamespace="http://tempuri.org/QuanLyDiemHocSinhDataSet1.xsd" xmlns:mstns="http://tempuri.org/QuanLyDiemHocSinhDataSet1.xsd" xmlns="http://tempuri.org/QuanLyDiemHocSinhDataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="QuanLyDiemHocSinhConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="QuanLyDiemHocSinhConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.GUI.Properties.Settings.GlobalReference.Default.QuanLyDiemHocSinhConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vw_DiemCaNamTableAdapter" GeneratorDataComponentClassName="vw_DiemCaNamTableAdapter" Name="vw_DiemCaNam" UserDataComponentName="vw_DiemCaNamTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="QuanLyDiemHocSinhConnectionString (Settings)" DbObjectName="QuanLyDiemHocSinh.dbo.vw_DiemCaNam" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT MaHocSinh, HoTen, MaLop, MaNamHoc, DiemHK1, DiemHK2, DiemCaNam, HocLuc, KetQua FROM dbo.vw_DiemCaNam</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="MaHocSinh" DataSetColumn="MaHocSinh" />
+              <Mapping SourceColumn="HoTen" DataSetColumn="HoTen" />
+              <Mapping SourceColumn="MaLop" DataSetColumn="MaLop" />
+              <Mapping SourceColumn="MaNamHoc" DataSetColumn="MaNamHoc" />
+              <Mapping SourceColumn="DiemHK1" DataSetColumn="DiemHK1" />
+              <Mapping SourceColumn="DiemHK2" DataSetColumn="DiemHK2" />
+              <Mapping SourceColumn="DiemCaNam" DataSetColumn="DiemCaNam" />
+              <Mapping SourceColumn="HocLuc" DataSetColumn="HocLuc" />
+              <Mapping SourceColumn="KetQua" DataSetColumn="KetQua" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="QuanLyDiemHocSinhDataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_UserDSName="QuanLyDiemHocSinhDataSet1" msprop:Generator_DataSetName="QuanLyDiemHocSinhDataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="vw_DiemCaNam" msprop:Generator_RowEvHandlerName="vw_DiemCaNamRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_DiemCaNamRowDeleted" msprop:Generator_RowDeletingName="vw_DiemCaNamRowDeleting" msprop:Generator_RowEvArgName="vw_DiemCaNamRowChangeEvent" msprop:Generator_TablePropName="vw_DiemCaNam" msprop:Generator_RowChangedName="vw_DiemCaNamRowChanged" msprop:Generator_RowChangingName="vw_DiemCaNamRowChanging" msprop:Generator_TableClassName="vw_DiemCaNamDataTable" msprop:Generator_RowClassName="vw_DiemCaNamRow" msprop:Generator_TableVarName="tablevw_DiemCaNam" msprop:Generator_UserTableName="vw_DiemCaNam">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MaHocSinh" msprop:Generator_ColumnPropNameInRow="MaHocSinh" msprop:Generator_ColumnPropNameInTable="MaHocSinhColumn" msprop:Generator_ColumnVarNameInTable="columnMaHocSinh" msprop:Generator_UserColumnName="MaHocSinh">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="HoTen" msprop:Generator_ColumnPropNameInRow="HoTen" msprop:Generator_ColumnPropNameInTable="HoTenColumn" msprop:Generator_ColumnVarNameInTable="columnHoTen" msprop:Generator_UserColumnName="HoTen">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MaLop" msprop:Generator_ColumnPropNameInRow="MaLop" msprop:Generator_ColumnPropNameInTable="MaLopColumn" msprop:Generator_ColumnVarNameInTable="columnMaLop" msprop:Generator_UserColumnName="MaLop">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MaNamHoc" msprop:Generator_ColumnPropNameInRow="MaNamHoc" msprop:Generator_ColumnPropNameInTable="MaNamHocColumn" msprop:Generator_ColumnVarNameInTable="columnMaNamHoc" msprop:Generator_UserColumnName="MaNamHoc" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DiemHK1" msprop:Generator_ColumnPropNameInRow="DiemHK1" msprop:Generator_ColumnPropNameInTable="DiemHK1Column" msprop:Generator_ColumnVarNameInTable="columnDiemHK1" msprop:Generator_UserColumnName="DiemHK1" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DiemHK2" msprop:Generator_ColumnPropNameInRow="DiemHK2" msprop:Generator_ColumnPropNameInTable="DiemHK2Column" msprop:Generator_ColumnVarNameInTable="columnDiemHK2" msprop:Generator_UserColumnName="DiemHK2" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DiemCaNam" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="DiemCaNam" msprop:Generator_ColumnPropNameInTable="DiemCaNamColumn" msprop:Generator_ColumnVarNameInTable="columnDiemCaNam" msprop:Generator_UserColumnName="DiemCaNam" type="xs:decimal" minOccurs="0" />
+              <xs:element name="HocLuc" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="HocLuc" msprop:Generator_ColumnPropNameInTable="HocLucColumn" msprop:Generator_ColumnVarNameInTable="columnHocLuc" msprop:Generator_UserColumnName="HocLuc" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="KetQua" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="KetQua" msprop:Generator_ColumnPropNameInTable="KetQuaColumn" msprop:Generator_ColumnVarNameInTable="columnKetQua" msprop:Generator_UserColumnName="KetQua" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="9" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:vw_DiemCaNam" />
+      <xs:field xpath="mstns:MaHocSinh" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
