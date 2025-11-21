@@ -105,10 +105,11 @@
             // panel5
             // 
             this.panel5.Controls.Add(this.chart);
-            this.panel5.Location = new System.Drawing.Point(3, 76);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.Location = new System.Drawing.Point(4, 90);
             this.panel5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1187, 582);
+            this.panel5.Size = new System.Drawing.Size(1189, 592);
             this.panel5.TabIndex = 1;
             // 
             // chart
@@ -119,7 +120,7 @@
             this.chart.Location = new System.Drawing.Point(0, 0);
             this.chart.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chart.Name = "chart";
-            this.chart.Size = new System.Drawing.Size(1187, 582);
+            this.chart.Size = new System.Drawing.Size(1189, 592);
             this.chart.TabIndex = 0;
             chartFont2.FontName = "Arial";
             chartFont2.Size = 12;

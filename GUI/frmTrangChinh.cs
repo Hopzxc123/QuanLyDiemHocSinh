@@ -1,10 +1,12 @@
-﻿using DTO;
+﻿using BLL;
+using DTO;
 using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -70,7 +72,37 @@ namespace GUI
         private void fTrangChinh_Load(object sender, EventArgs e)
         {
             CapNhatThongTinNguoiDangNhap();
+            LoadAvatar();
             openChildForm(new frmThongKe());
+            
+        }
+
+        public void LoadAvatar()
+        {
+            Account = TaiKhoanBLL.Instance.LayTaiKhoanTheoMa(Account.MaTaiKhoan);
+            if (Account != null)
+            {
+                lblTenTaiKhoan.Text = Account.TenDangNhap;
+                if (!string.IsNullOrEmpty(Account.Avatar))
+                {
+                    string fullPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, Account.Avatar);
+                    if (File.Exists(fullPath))
+                    {
+                        // Tải ảnh
+                        // Lưu ý: Dùng FileStream để tránh khóa tệp (file locking)
+                        using (FileStream fs = new FileStream(fullPath, FileMode.Open, FileAccess.Read))
+                        {
+                            ptbavatar.Image = System.Drawing.Image.FromStream(fs);
+                        }
+                    }
+                    else
+                    {
+                        // Hiển thị ảnh mặc định nếu tệp không tồn tại
+                        // ptbavatar.Image = Properties.Resources.DefaultAvatar;
+                    }
+                }
+            }
+
         }
 
         private void CapNhatThongTinNguoiDangNhap()
@@ -262,7 +294,7 @@ namespace GUI
 
         private void guna2CirclePictureBox1_Click(object sender, EventArgs e)
         {
-            openChildForm(new frmHoSo(Account));
+            openChildForm(new frmHoSo(this,Account));
         }
     }
 }

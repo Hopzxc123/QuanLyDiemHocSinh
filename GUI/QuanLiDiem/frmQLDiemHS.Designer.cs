@@ -157,9 +157,9 @@
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(101)))), ((int)(((byte)(241)))));
-            this.groupBox2.Location = new System.Drawing.Point(559, 0);
+            this.groupBox2.Location = new System.Drawing.Point(526, 0);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(656, 85);
+            this.groupBox2.Size = new System.Drawing.Size(689, 85);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tìm Kiếm";
@@ -181,7 +181,7 @@
             this.btnReload.HoverState.BorderColor = System.Drawing.Color.White;
             this.btnReload.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(101)))), ((int)(((byte)(241)))));
             this.btnReload.Image = global::GUI.Properties.Resources.icons8_reload_30;
-            this.btnReload.Location = new System.Drawing.Point(570, 23);
+            this.btnReload.Location = new System.Drawing.Point(603, 23);
             this.btnReload.Name = "btnReload";
             this.btnReload.Size = new System.Drawing.Size(45, 46);
             this.btnReload.TabIndex = 8;
@@ -204,7 +204,7 @@
             this.btnLoc.HoverState.BorderColor = System.Drawing.Color.White;
             this.btnLoc.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(101)))), ((int)(((byte)(241)))));
             this.btnLoc.Image = global::GUI.Properties.Resources.icons8_search_30;
-            this.btnLoc.Location = new System.Drawing.Point(504, 23);
+            this.btnLoc.Location = new System.Drawing.Point(537, 23);
             this.btnLoc.Name = "btnLoc";
             this.btnLoc.Size = new System.Drawing.Size(45, 46);
             this.btnLoc.TabIndex = 7;
@@ -216,7 +216,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(118, 38);
+            this.label1.Location = new System.Drawing.Point(151, 38);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(96, 20);
             this.label1.TabIndex = 6;
@@ -233,7 +233,7 @@
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(101)))), ((int)(((byte)(241)))));
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(559, 85);
+            this.groupBox1.Size = new System.Drawing.Size(526, 85);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Lọc";

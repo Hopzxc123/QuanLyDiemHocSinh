@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.AnimatorNS.Animation animation3 = new Guna.UI2.AnimatorNS.Animation();
+            Guna.UI2.AnimatorNS.Animation animation1 = new Guna.UI2.AnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTrangChinh));
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.plQLHocSinh = new Guna.UI2.WinForms.Guna2Panel();
@@ -43,7 +43,7 @@
             this.plView = new Guna.UI2.WinForms.Guna2Panel();
             this.sidebarTransition = new Guna.UI2.WinForms.Guna2Transition();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.ptbavatar = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.btnQLHS = new Guna.UI2.WinForms.Guna2Button();
             this.btnQLMonHoc = new Guna.UI2.WinForms.Guna2Button();
             this.btnQLGiaoVien = new Guna.UI2.WinForms.Guna2Button();
@@ -60,7 +60,7 @@
             this.plDangXuat.SuspendLayout();
             this.sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbavatar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnHam)).BeginInit();
             this.SuspendLayout();
             // 
@@ -159,7 +159,7 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.lblTenTaiKhoan);
-            this.panel1.Controls.Add(this.guna2CirclePictureBox1);
+            this.panel1.Controls.Add(this.ptbavatar);
             this.sidebarTransition.SetDecoration(this.panel1, Guna.UI2.AnimatorNS.DecorationType.None);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -195,22 +195,22 @@
             // 
             this.sidebarTransition.AnimationType = Guna.UI2.AnimatorNS.AnimationType.HorizSlide;
             this.sidebarTransition.Cursor = null;
-            animation3.AnimateOnlyDifferences = true;
-            animation3.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.BlindCoeff")));
-            animation3.LeafCoeff = 0F;
-            animation3.MaxTime = 1F;
-            animation3.MinTime = 0F;
-            animation3.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicCoeff")));
-            animation3.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicShift")));
-            animation3.MosaicSize = 0;
-            animation3.Padding = new System.Windows.Forms.Padding(0);
-            animation3.RotateCoeff = 0F;
-            animation3.RotateLimit = 0F;
-            animation3.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.ScaleCoeff")));
-            animation3.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.SlideCoeff")));
-            animation3.TimeCoeff = 0F;
-            animation3.TransparencyCoeff = 0F;
-            this.sidebarTransition.DefaultAnimation = animation3;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 0F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 0;
+            animation1.Padding = new System.Windows.Forms.Padding(0);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 0F;
+            animation1.TransparencyCoeff = 0F;
+            this.sidebarTransition.DefaultAnimation = animation1;
             this.sidebarTransition.MaxAnimationTime = 800;
             this.sidebarTransition.TimeStep = 0.03F;
             // 
@@ -239,19 +239,19 @@
             this.guna2Button1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
-            // guna2CirclePictureBox1
+            // ptbavatar
             // 
-            this.sidebarTransition.SetDecoration(this.guna2CirclePictureBox1, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.guna2CirclePictureBox1.Image = global::GUI.Properties.Resources.icons8_test_account_48;
-            this.guna2CirclePictureBox1.ImageRotate = 0F;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(0, 24);
-            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
-            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(51, 55);
-            this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.guna2CirclePictureBox1.TabIndex = 5;
-            this.guna2CirclePictureBox1.TabStop = false;
-            this.guna2CirclePictureBox1.Click += new System.EventHandler(this.guna2CirclePictureBox1_Click);
+            this.sidebarTransition.SetDecoration(this.ptbavatar, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.ptbavatar.Image = global::GUI.Properties.Resources.mau_nau_nhat_yody_vn1;
+            this.ptbavatar.ImageRotate = 0F;
+            this.ptbavatar.Location = new System.Drawing.Point(6, 22);
+            this.ptbavatar.Name = "ptbavatar";
+            this.ptbavatar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.ptbavatar.Size = new System.Drawing.Size(51, 55);
+            this.ptbavatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.ptbavatar.TabIndex = 5;
+            this.ptbavatar.TabStop = false;
+            this.ptbavatar.Click += new System.EventHandler(this.guna2CirclePictureBox1_Click);
             // 
             // btnQLHS
             // 
@@ -435,7 +435,7 @@
             this.plDangXuat.ResumeLayout(false);
             this.sidebar.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbavatar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnHam)).EndInit();
             this.ResumeLayout(false);
 
@@ -458,7 +458,7 @@
         private Guna.UI2.WinForms.Guna2Button btnQLMonHoc;
         private Guna.UI2.WinForms.Guna2Button btnQLGiaoVien;
         private Guna.UI2.WinForms.Guna2Button btnThongKe;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox ptbavatar;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblTenTaiKhoan;
         private Guna.UI2.WinForms.Guna2Transition sidebarTransition;

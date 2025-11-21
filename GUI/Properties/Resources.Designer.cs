@@ -73,6 +73,16 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bgnau {
+            get {
+                object obj = ResourceManager.GetObject("bgnau", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap btnreload {
             get {
                 object obj = ResourceManager.GetObject("btnreload", resourceCulture);
@@ -216,6 +226,16 @@ namespace GUI.Properties {
         internal static System.Drawing.Bitmap login__2_ {
             get {
                 object obj = ResourceManager.GetObject("login (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap mau_nau_nhat_yody_vn1 {
+            get {
+                object obj = ResourceManager.GetObject("mau-nau-nhat-yody-vn1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

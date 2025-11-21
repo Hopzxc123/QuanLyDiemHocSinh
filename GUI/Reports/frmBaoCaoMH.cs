@@ -31,7 +31,8 @@ namespace GUI.Reports
         private void frmBaoCaoMH_Load(object sender, EventArgs e)
         {
             CapNhatNamHoc();
-            string path = Path.Combine(Application.StartupPath, "Reports", "BaoCaoMH.rdlc");
+            string path = System.IO.Path.Combine(Application.StartupPath, @"Reports\BaoCaoMH.rdlc");
+            //string path = Path.Combine(Application.StartupPath, "Reports", "BaoCaoMH.rdlc");
             this.rpBaoCaoMH.LocalReport.ReportPath = path;
             this.rpBaoCaoMH.RefreshReport();
         }
