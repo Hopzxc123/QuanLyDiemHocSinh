@@ -127,10 +127,17 @@
     <Compile Include="frmThongKe.Designer.cs">
       <DependentUpon>frmThongKe.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helper\Utilities.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QLThongTinHocSinh\frmTimKiemHocSinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLThongTinHocSinh\frmTimKiemHocSinh.Designer.cs">
+      <DependentUpon>frmTimKiemHocSinh.cs</DependentUpon>
     </Compile>
     <Compile Include="QuanLiDiem\frmChiTietDiemHocSinh.cs">
       <SubType>Form</SubType>
@@ -144,10 +151,10 @@
     <Compile Include="QuanLiDiem\frmQLDiemHS.Designer.cs">
       <DependentUpon>frmQLDiemHS.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmQLThongTinHocSinh.cs">
+    <Compile Include="QLThongTinHocSinh\frmQLThongTinHocSinh.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmQLThongTinHocSinh.Designer.cs">
+    <Compile Include="QLThongTinHocSinh\frmQLThongTinHocSinh.Designer.cs">
       <DependentUpon>frmQLThongTinHocSinh.cs</DependentUpon>
     </Compile>
     <Compile Include="frmQuanLyMonHoc.cs">
@@ -181,6 +188,37 @@
     <Compile Include="Reports\frmKQLHHocKy.Designer.cs">
       <DependentUpon>frmKQLHHocKy.cs</DependentUpon>
     </Compile>
+    <Compile Include="QuanLyDiemHocSinhDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLyDiemHocSinhDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\frmKQHSCaNam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\frmKQHSCaNam.Designer.cs">
+      <DependentUpon>frmKQHSCaNam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="Reports\frmReportMonHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\frmReportMonHoc.Designer.cs">
+      <DependentUpon>frmReportMonHoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="Reports\frmBaoCaoDSHS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\frmBaoCaoDSHS.Designer.cs">
+      <DependentUpon>frmBaoCaoDSHS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\frmBaoCaoMH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\frmBaoCaoMH.Designer.cs">
+      <DependentUpon>frmBaoCaoMH.cs</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
   </ItemGroup>
   <!-- Embedded Resources -->
@@ -197,13 +235,24 @@
     <EmbeddedResource Include="frmThongKe.resx">
       <DependentUpon>frmThongKe.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="QLThongTinHocSinh\frmTimKiemHocSinh.resx">
+      <DependentUpon>frmTimKiemHocSinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\frmBaoCaoDSHS.resx">
+      <DependentUpon>frmBaoCaoDSHS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\frmReportMonHoc.resx">
+      <DependentUpon>frmReportMonHoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReportMonHocDTO.rdlc" />
+    <EmbeddedResource Include="Reports\rptDanhSachHocSinh.rdlc" />
     <EmbeddedResource Include="QuanLiDiem\frmChiTietDiemHocSinh.resx">
       <DependentUpon>frmChiTietDiemHocSinh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLiDiem\frmQLDiemHS.resx">
       <DependentUpon>frmQLDiemHS.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmQLThongTinHocSinh.resx">
+    <EmbeddedResource Include="QLThongTinHocSinh\frmQLThongTinHocSinh.resx">
       <DependentUpon>frmQLThongTinHocSinh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmQuanLyMonHoc.resx">
@@ -224,12 +273,39 @@
       <DependentUpon>frmKQLHHocKy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\rptKQLHHocKy.rdlc" />
+    <EmbeddedResource Include="Reports\frmKQHSCaNam.resx">
+      <DependentUpon>frmKQHSCaNam.cs</DependentUpon>
+    </EmbeddedResource>
+    <Content Include="Reports\rptKQHSCaNam.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="Reports\BaoCaoMH.rdlc" />
+    <EmbeddedResource Include="Reports\frmBaoCaoMH.resx">
+      <DependentUpon>frmBaoCaoMH.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <!-- Config & settings -->
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\DTO.Reports.KQLHHocKyDTO.datasource" />
+    <None Include="Properties\DataSources\DTO.DiemDTO.datasource" />
+    <None Include="Properties\DataSources\DTO.GiaoVienDTO.datasource" />
+    <None Include="Properties\DataSources\DTO.HocKyDTO.datasource" />
+    <None Include="Properties\DataSources\DTO.HocSinhDTO.datasource" />
+    <None Include="Properties\DataSources\DTO.LopDTO.datasource" />
+    <None Include="Properties\DataSources\DTO.MonHocDTO.datasource" />
+    <None Include="Properties\DataSources\DTO.NamHocDTO.datasource" />
+    <None Include="Properties\DataSources\DTO.ReportMonHocDTO.datasource" />
+    <None Include="Properties\DataSources\DTO.TaiKhoanDTO.datasource" />
+    <None Include="Properties\DataSources\DTO.DiemDTO.datasource" />
+    <None Include="Properties\DataSources\DTO.GiaoVienDTO.datasource" />
+    <None Include="Properties\DataSources\DTO.HocKyDTO.datasource" />
+    <None Include="Properties\DataSources\DTO.HocSinhDTO.datasource" />
+    <None Include="Properties\DataSources\DTO.LopDTO.datasource" />
+    <None Include="Properties\DataSources\DTO.MonHocDTO.datasource" />
+    <None Include="Properties\DataSources\DTO.NamHocDTO.datasource" />
+    <None Include="Properties\DataSources\DTO.TaiKhoanDTO.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -252,6 +328,17 @@
   </ItemGroup>
   <!-- Resources (images) -->
   <ItemGroup>
+    <None Include="QuanLyDiemHocSinhDataSet.xsc">
+      <DependentUpon>QuanLyDiemHocSinhDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QuanLyDiemHocSinhDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanLyDiemHocSinhDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QuanLyDiemHocSinhDataSet.xss">
+      <DependentUpon>QuanLyDiemHocSinhDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Resources\lock.png" />
     <None Include="Resources\user.png" />
     <None Include="Resources\login.png" />
@@ -356,5 +443,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
