@@ -1,5 +1,4 @@
 ﻿using BLL;
-using BLL.Reports;
 using Microsoft.Reporting.WinForms;
 using System;
 using System.Collections.Generic;
@@ -59,7 +58,7 @@ namespace GUI.Reports
             param.Add(new ReportParameter("Lop", cbbLop.Text));
 
 
-            DataTable dataTable = KQHSCaNamBLL.Instance.Report(maNamHoc, maLop);
+            DataTable dataTable = ReportBLL.Instance.ReportKQHSCaNam(maNamHoc, maLop);
 
             string reportPath = System.IO.Path.Combine(Application.StartupPath, @"Reports\rptKQHSCaNam.rdlc");
             rpvKQHSCaNam.LocalReport.ReportPath = reportPath;

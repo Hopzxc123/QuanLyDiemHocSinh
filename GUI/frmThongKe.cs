@@ -1,5 +1,7 @@
 ﻿using BLL;
 using DTO;
+using GUI.Helper;
+using GUI.Reports;
 using Guna.Charts.WinForms;
 using Microsoft.Office.Interop.Excel;
 using System;
@@ -234,6 +236,68 @@ namespace GUI
         Color.White, 0, ButtonBorderStyle.Solid,
         Color.White, 0, ButtonBorderStyle.Solid,
         Color.White, 0, ButtonBorderStyle.Solid);
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void danhSáchHọcSinhToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabControl1_Selected(object sender, TabControlEventArgs e)
+        {
+            
+        }
+
+        private void tabThongKe_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void tabThongKe_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void danhSáchMônHọcToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //frmBaoCaoMH frm = new frmBaoCaoMH();
+            //frm.MdiParent = this.MdiParent;
+            //frm.Show();
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            
+            Utilities.ShowForm("frmBaoCaoMH", pnBaoCao);
+   
+
+        }
+
+        private void btnBaoCaoHS_Click(object sender, EventArgs e)
+        {
+           
+            Utilities.ShowForm("frmBaoCaoHS", pnBaoCao);
+        }
+
+        private void btnDSHS_Click(object sender, EventArgs e)
+        {
+            
+            Utilities.ShowForm("frmBaoCaoDSHS", pnBaoCao);
+        }
+
+        private void btnDiemCaNam_Click(object sender, EventArgs e)
+        {
+            Utilities.ShowForm("frmKQHSCaNam", pnBaoCao);
         }
     }
 }
