@@ -38,17 +38,17 @@
             this.dgvDanhSach = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txttMaHS = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnReload = new Guna.UI2.WinForms.Guna2Button();
             this.btnLoc = new Guna.UI2.WinForms.Guna2Button();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbbNamHoc = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cbbLop = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.txttMaHS = new Guna.UI2.WinForms.Guna2TextBox();
-            this.cbbLop = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.cbbNamHoc = new Guna.UI2.WinForms.Guna2ComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -164,6 +164,28 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tìm Kiếm";
             // 
+            // txttMaHS
+            // 
+            this.txttMaHS.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txttMaHS.BorderRadius = 8;
+            this.txttMaHS.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txttMaHS.DefaultText = "";
+            this.txttMaHS.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txttMaHS.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txttMaHS.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txttMaHS.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txttMaHS.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txttMaHS.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txttMaHS.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txttMaHS.Location = new System.Drawing.Point(220, 34);
+            this.txttMaHS.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txttMaHS.Name = "txttMaHS";
+            this.txttMaHS.PlaceholderText = "";
+            this.txttMaHS.SelectedText = "";
+            this.txttMaHS.Size = new System.Drawing.Size(266, 24);
+            this.txttMaHS.TabIndex = 1;
+            // 
             // btnReload
             // 
             this.btnReload.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -216,7 +238,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(151, 38);
+            this.label1.Location = new System.Drawing.Point(118, 38);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(96, 20);
             this.label1.TabIndex = 6;
@@ -238,6 +260,42 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Lọc";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // cbbNamHoc
+            // 
+            this.cbbNamHoc.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbbNamHoc.BackColor = System.Drawing.Color.Transparent;
+            this.cbbNamHoc.BorderRadius = 8;
+            this.cbbNamHoc.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbbNamHoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbNamHoc.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbbNamHoc.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbbNamHoc.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbbNamHoc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbbNamHoc.ItemHeight = 30;
+            this.cbbNamHoc.Location = new System.Drawing.Point(110, 28);
+            this.cbbNamHoc.Name = "cbbNamHoc";
+            this.cbbNamHoc.Size = new System.Drawing.Size(146, 36);
+            this.cbbNamHoc.TabIndex = 4;
+            // 
+            // cbbLop
+            // 
+            this.cbbLop.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbbLop.BackColor = System.Drawing.Color.Transparent;
+            this.cbbLop.BorderRadius = 8;
+            this.cbbLop.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbbLop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbLop.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbbLop.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbbLop.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbbLop.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbbLop.ItemHeight = 30;
+            this.cbbLop.Location = new System.Drawing.Point(335, 28);
+            this.cbbLop.Name = "cbbLop";
+            this.cbbLop.Size = new System.Drawing.Size(146, 36);
+            this.cbbLop.TabIndex = 4;
             // 
             // label3
             // 
@@ -269,64 +327,6 @@
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // txttMaHS
-            // 
-            this.txttMaHS.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txttMaHS.BorderRadius = 8;
-            this.txttMaHS.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txttMaHS.DefaultText = "";
-            this.txttMaHS.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txttMaHS.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txttMaHS.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txttMaHS.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txttMaHS.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txttMaHS.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txttMaHS.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txttMaHS.Location = new System.Drawing.Point(220, 34);
-            this.txttMaHS.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txttMaHS.Name = "txttMaHS";
-            this.txttMaHS.PlaceholderText = "";
-            this.txttMaHS.SelectedText = "";
-            this.txttMaHS.Size = new System.Drawing.Size(266, 24);
-            this.txttMaHS.TabIndex = 1;
-            // 
-            // cbbLop
-            // 
-            this.cbbLop.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbbLop.BackColor = System.Drawing.Color.Transparent;
-            this.cbbLop.BorderRadius = 8;
-            this.cbbLop.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbbLop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbLop.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbbLop.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbbLop.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbbLop.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cbbLop.ItemHeight = 30;
-            this.cbbLop.Location = new System.Drawing.Point(335, 28);
-            this.cbbLop.Name = "cbbLop";
-            this.cbbLop.Size = new System.Drawing.Size(146, 36);
-            this.cbbLop.TabIndex = 4;
-            // 
-            // cbbNamHoc
-            // 
-            this.cbbNamHoc.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbbNamHoc.BackColor = System.Drawing.Color.Transparent;
-            this.cbbNamHoc.BorderRadius = 8;
-            this.cbbNamHoc.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbbNamHoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbNamHoc.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbbNamHoc.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbbNamHoc.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbbNamHoc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cbbNamHoc.ItemHeight = 30;
-            this.cbbNamHoc.Location = new System.Drawing.Point(110, 28);
-            this.cbbNamHoc.Name = "cbbNamHoc";
-            this.cbbNamHoc.Size = new System.Drawing.Size(146, 36);
-            this.cbbNamHoc.TabIndex = 4;
             // 
             // FrmQLDiemHS
             // 

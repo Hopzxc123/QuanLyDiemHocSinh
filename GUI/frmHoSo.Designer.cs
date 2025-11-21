@@ -49,24 +49,24 @@
             this.txtLoaiTaiKhoan = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnOpen = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.ptbavatar = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.pnlHeader.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.guna2GroupBox1.SuspendLayout();
             this.guna2GroupBox2.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
-            this.guna2Panel2.SuspendLayout();
-            this.guna2Panel3.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
+            this.guna2Panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbavatar)).BeginInit();
+            this.guna2Panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlHeader
@@ -104,13 +104,14 @@
             this.tableLayoutPanel2.Controls.Add(this.txtMatKhauMoi, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.txtXacNhan, 1, 2);
             this.tableLayoutPanel2.Controls.Add(this.txtMatKhauCu, 1, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 40);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 3;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1078, 164);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(815, 164);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // label6
@@ -163,7 +164,7 @@
             this.txtMatKhauMoi.Name = "txtMatKhauMoi";
             this.txtMatKhauMoi.PlaceholderText = "";
             this.txtMatKhauMoi.SelectedText = "";
-            this.txtMatKhauMoi.Size = new System.Drawing.Size(869, 42);
+            this.txtMatKhauMoi.Size = new System.Drawing.Size(606, 42);
             this.txtMatKhauMoi.TabIndex = 1;
             // 
             // txtXacNhan
@@ -183,7 +184,7 @@
             this.txtXacNhan.Name = "txtXacNhan";
             this.txtXacNhan.PlaceholderText = "";
             this.txtXacNhan.SelectedText = "";
-            this.txtXacNhan.Size = new System.Drawing.Size(869, 52);
+            this.txtXacNhan.Size = new System.Drawing.Size(606, 52);
             this.txtXacNhan.TabIndex = 1;
             // 
             // txtMatKhauCu
@@ -203,7 +204,7 @@
             this.txtMatKhauCu.Name = "txtMatKhauCu";
             this.txtMatKhauCu.PlaceholderText = "";
             this.txtMatKhauCu.SelectedText = "";
-            this.txtMatKhauCu.Size = new System.Drawing.Size(869, 42);
+            this.txtMatKhauCu.Size = new System.Drawing.Size(606, 42);
             this.txtMatKhauCu.TabIndex = 2;
             // 
             // guna2Button1
@@ -405,49 +406,6 @@
             this.guna2GroupBox2.TabIndex = 3;
             this.guna2GroupBox2.Text = "Đổi mật khẩu";
             // 
-            // guna2Panel1
-            // 
-            this.guna2Panel1.Controls.Add(this.guna2Panel4);
-            this.guna2Panel1.Controls.Add(this.guna2Panel3);
-            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.guna2Panel1.Location = new System.Drawing.Point(0, 80);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(263, 547);
-            this.guna2Panel1.TabIndex = 4;
-            // 
-            // guna2Panel2
-            // 
-            this.guna2Panel2.Controls.Add(this.guna2GroupBox1);
-            this.guna2Panel2.Controls.Add(this.guna2GroupBox2);
-            this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Panel2.Location = new System.Drawing.Point(263, 80);
-            this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(815, 547);
-            this.guna2Panel2.TabIndex = 5;
-            // 
-            // guna2Panel3
-            // 
-            this.guna2Panel3.Controls.Add(this.ptbavatar);
-            this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Panel3.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.Size = new System.Drawing.Size(263, 233);
-            this.guna2Panel3.TabIndex = 0;
-            // 
-            // guna2Panel4
-            // 
-            this.guna2Panel4.Controls.Add(this.btnOpen);
-            this.guna2Panel4.Controls.Add(this.guna2Button1);
-            this.guna2Panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Panel4.Location = new System.Drawing.Point(0, 233);
-            this.guna2Panel4.Name = "guna2Panel4";
-            this.guna2Panel4.Size = new System.Drawing.Size(263, 105);
-            this.guna2Panel4.TabIndex = 1;
-            // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            // 
             // guna2Button2
             // 
             this.guna2Button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -461,12 +419,32 @@
             this.guna2Button2.FillColor = System.Drawing.Color.White;
             this.guna2Button2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
             this.guna2Button2.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button2.Location = new System.Drawing.Point(641, 247);
+            this.guna2Button2.Location = new System.Drawing.Point(56, 236);
             this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(142, 45);
+            this.guna2Button2.Size = new System.Drawing.Size(171, 54);
             this.guna2Button2.TabIndex = 2;
             this.guna2Button2.Text = "Đổi mật khẩu";
             this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
+            // 
+            // guna2Panel1
+            // 
+            this.guna2Panel1.Controls.Add(this.guna2Panel4);
+            this.guna2Panel1.Controls.Add(this.guna2Panel3);
+            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.guna2Panel1.Location = new System.Drawing.Point(0, 80);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.Size = new System.Drawing.Size(263, 547);
+            this.guna2Panel1.TabIndex = 4;
+            // 
+            // guna2Panel4
+            // 
+            this.guna2Panel4.Controls.Add(this.btnOpen);
+            this.guna2Panel4.Controls.Add(this.guna2Button1);
+            this.guna2Panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2Panel4.Location = new System.Drawing.Point(0, 233);
+            this.guna2Panel4.Name = "guna2Panel4";
+            this.guna2Panel4.Size = new System.Drawing.Size(263, 105);
+            this.guna2Panel4.TabIndex = 1;
             // 
             // btnOpen
             // 
@@ -489,9 +467,17 @@
             this.btnOpen.Text = "Chọn ảnh";
             this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
             // 
+            // guna2Panel3
+            // 
+            this.guna2Panel3.Controls.Add(this.ptbavatar);
+            this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2Panel3.Location = new System.Drawing.Point(0, 0);
+            this.guna2Panel3.Name = "guna2Panel3";
+            this.guna2Panel3.Size = new System.Drawing.Size(263, 233);
+            this.guna2Panel3.TabIndex = 0;
+            // 
             // ptbavatar
             // 
-            this.ptbavatar.BackgroundImage = global::GUI.Properties.Resources.mau_nau_nhat_yody_vn1;
             this.ptbavatar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ptbavatar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ptbavatar.ImageRotate = 0F;
@@ -501,6 +487,20 @@
             this.ptbavatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.ptbavatar.TabIndex = 0;
             this.ptbavatar.TabStop = false;
+            // 
+            // guna2Panel2
+            // 
+            this.guna2Panel2.Controls.Add(this.guna2GroupBox1);
+            this.guna2Panel2.Controls.Add(this.guna2GroupBox2);
+            this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.guna2Panel2.Location = new System.Drawing.Point(263, 80);
+            this.guna2Panel2.Name = "guna2Panel2";
+            this.guna2Panel2.Size = new System.Drawing.Size(815, 547);
+            this.guna2Panel2.TabIndex = 5;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // frmHoSo
             // 
@@ -520,10 +520,10 @@
             this.guna2GroupBox1.ResumeLayout(false);
             this.guna2GroupBox2.ResumeLayout(false);
             this.guna2Panel1.ResumeLayout(false);
-            this.guna2Panel2.ResumeLayout(false);
-            this.guna2Panel3.ResumeLayout(false);
             this.guna2Panel4.ResumeLayout(false);
+            this.guna2Panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ptbavatar)).EndInit();
+            this.guna2Panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

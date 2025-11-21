@@ -242,7 +242,7 @@
             // ptbavatar
             // 
             this.sidebarTransition.SetDecoration(this.ptbavatar, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.ptbavatar.Image = global::GUI.Properties.Resources.mau_nau_nhat_yody_vn1;
+          //  this.ptbavatar.Image = global::GUI.Properties.Resources.mau_nau_nhat_yody_vn1;
             this.ptbavatar.ImageRotate = 0F;
             this.ptbavatar.Location = new System.Drawing.Point(6, 22);
             this.ptbavatar.Name = "ptbavatar";

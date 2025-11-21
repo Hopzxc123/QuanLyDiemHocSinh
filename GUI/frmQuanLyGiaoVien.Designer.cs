@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.btnThem = new Guna.UI2.WinForms.Guna2Button();
             this.btnSua = new Guna.UI2.WinForms.Guna2Button();
@@ -184,7 +184,7 @@
             this.GrbTTCT.Location = new System.Drawing.Point(0, 0);
             this.GrbTTCT.Margin = new System.Windows.Forms.Padding(0, 0, 0, 12);
             this.GrbTTCT.Name = "GrbTTCT";
-            this.GrbTTCT.Size = new System.Drawing.Size(262, 566);
+            this.GrbTTCT.Size = new System.Drawing.Size(262, 487);
             this.GrbTTCT.TabIndex = 5;
             this.GrbTTCT.Text = "Thông Tin Chi Tiết";
             this.GrbTTCT.Click += new System.EventHandler(this.GrbTTCT_Click);
@@ -228,7 +228,7 @@
             this.tLPTTCT.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tLPTTCT.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tLPTTCT.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tLPTTCT.Size = new System.Drawing.Size(262, 526);
+            this.tLPTTCT.Size = new System.Drawing.Size(262, 447);
             this.tLPTTCT.TabIndex = 20;
             this.tLPTTCT.Paint += new System.Windows.Forms.PaintEventHandler(this.tLPTTCT_Paint);
             // 
@@ -448,7 +448,7 @@
             this.lblTrangthai.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblTrangthai.Name = "lblTrangthai";
             this.lblTrangthai.Padding = new System.Windows.Forms.Padding(27, 0, 0, 0);
-            this.lblTrangthai.Size = new System.Drawing.Size(104, 202);
+            this.lblTrangthai.Size = new System.Drawing.Size(104, 22);
             this.lblTrangthai.TabIndex = 27;
             this.lblTrangthai.Text = "Trạng thái:";
             // 
@@ -515,7 +515,7 @@
             this.tLPChucNang.Controls.Add(this.btnThoat, 0, 1);
             this.tLPChucNang.Controls.Add(this.btnXoa, 1, 0);
             this.tLPChucNang.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tLPChucNang.Location = new System.Drawing.Point(0, 478);
+            this.tLPChucNang.Location = new System.Drawing.Point(0, 399);
             this.tLPChucNang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tLPChucNang.Name = "tLPChucNang";
             this.tLPChucNang.RowCount = 3;
@@ -551,7 +551,7 @@
             this.GrbDanhSach.Margin = new System.Windows.Forms.Padding(3, 0, 3, 2);
             this.GrbDanhSach.Name = "GrbDanhSach";
             this.GrbDanhSach.Padding = new System.Windows.Forms.Padding(0, 0, 0, 12);
-            this.GrbDanhSach.Size = new System.Drawing.Size(865, 576);
+            this.GrbDanhSach.Size = new System.Drawing.Size(865, 497);
             this.GrbDanhSach.TabIndex = 0;
             this.GrbDanhSach.Text = "Danh Sách";
             this.GrbDanhSach.Click += new System.EventHandler(this.GrbDanhSach_Click);
@@ -574,12 +574,12 @@
             this.tableLabelPanel1.Controls.Add(this.GrbTTCT, 0, 0);
             this.tableLabelPanel1.Controls.Add(this.GrbDanhSach, 1, 0);
             this.tableLabelPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLabelPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLabelPanel1.Location = new System.Drawing.Point(0, 79);
             this.tableLabelPanel1.Margin = new System.Windows.Forms.Padding(3, 24, 3, 2);
             this.tableLabelPanel1.Name = "tableLabelPanel1";
             this.tableLabelPanel1.RowCount = 1;
             this.tableLabelPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLabelPanel1.Size = new System.Drawing.Size(1133, 578);
+            this.tableLabelPanel1.Size = new System.Drawing.Size(1133, 499);
             this.tableLabelPanel1.TabIndex = 7;
             this.tableLabelPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLabelPanel1_Paint);
             // 
@@ -610,27 +610,27 @@
             // 
             // DataGridView1
             // 
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            this.DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.DataGridView1.ColumnHeadersHeight = 30;
             this.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DataGridView1.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.DataGridView1.Location = new System.Drawing.Point(0, 40);
@@ -639,7 +639,7 @@
             this.DataGridView1.RowHeadersVisible = false;
             this.DataGridView1.RowHeadersWidth = 62;
             this.DataGridView1.RowTemplate.Height = 28;
-            this.DataGridView1.Size = new System.Drawing.Size(865, 524);
+            this.DataGridView1.Size = new System.Drawing.Size(865, 445);
             this.DataGridView1.TabIndex = 0;
             this.DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.DataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -738,8 +738,8 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1133, 578);
-            this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.tableLabelPanel1);
+            this.Controls.Add(this.guna2Panel1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmQuanLyGiaoVien";
             this.Text = "QuanLyGiaoVien";

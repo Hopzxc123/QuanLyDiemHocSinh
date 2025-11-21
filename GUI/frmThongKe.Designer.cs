@@ -58,7 +58,6 @@
             this.pnBaoCao = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
             this.btnBaoCaoHK = new Guna.UI2.WinForms.Guna2Button();
             this.btnDiemCaNam = new Guna.UI2.WinForms.Guna2Button();
             this.btnDSHS = new Guna.UI2.WinForms.Guna2Button();
@@ -105,11 +104,10 @@
             // panel5
             // 
             this.panel5.Controls.Add(this.chart);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(4, 90);
+            this.panel5.Location = new System.Drawing.Point(3, 76);
             this.panel5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1189, 592);
+            this.panel5.Size = new System.Drawing.Size(1187, 582);
             this.panel5.TabIndex = 1;
             // 
             // chart
@@ -120,7 +118,7 @@
             this.chart.Location = new System.Drawing.Point(0, 0);
             this.chart.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chart.Name = "chart";
-            this.chart.Size = new System.Drawing.Size(1189, 592);
+            this.chart.Size = new System.Drawing.Size(1187, 582);
             this.chart.TabIndex = 0;
             chartFont2.FontName = "Arial";
             chartFont2.Size = 12;
@@ -176,6 +174,7 @@
             // cbbHocKy
             // 
             this.cbbHocKy.BackColor = System.Drawing.Color.Transparent;
+            this.cbbHocKy.BorderRadius = 8;
             this.cbbHocKy.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbbHocKy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbHocKy.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -193,6 +192,7 @@
             // cbbNamHoc
             // 
             this.cbbNamHoc.BackColor = System.Drawing.Color.Transparent;
+            this.cbbNamHoc.BorderRadius = 8;
             this.cbbNamHoc.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbbNamHoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbNamHoc.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -274,7 +274,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.guna2Button6);
             this.groupBox1.Controls.Add(this.btnBaoCaoHK);
             this.groupBox1.Controls.Add(this.btnDiemCaNam);
             this.groupBox1.Controls.Add(this.btnDSHS);
@@ -288,26 +287,6 @@
             this.groupBox1.Size = new System.Drawing.Size(1199, 122);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            // 
-            // guna2Button6
-            // 
-            this.guna2Button6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(101)))), ((int)(((byte)(241)))));
-            this.guna2Button6.BorderRadius = 8;
-            this.guna2Button6.BorderThickness = 1;
-            this.guna2Button6.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button6.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button6.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button6.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button6.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.guna2Button6.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(101)))), ((int)(((byte)(241)))));
-            this.guna2Button6.HoverState.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.guna2Button6.Location = new System.Drawing.Point(803, 22);
-            this.guna2Button6.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2Button6.Name = "guna2Button6";
-            this.guna2Button6.Size = new System.Drawing.Size(131, 57);
-            this.guna2Button6.TabIndex = 5;
-            this.guna2Button6.Text = "guna2Button6";
             // 
             // btnBaoCaoHK
             // 
@@ -513,7 +492,6 @@
         private Guna.UI2.WinForms.Guna2Panel pnBaoCao;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private System.Windows.Forms.GroupBox groupBox1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button6;
         private Guna.UI2.WinForms.Guna2Button btnBaoCaoHK;
         private Guna.UI2.WinForms.Guna2Button btnDiemCaNam;
         private Guna.UI2.WinForms.Guna2Button btnDSHS;
