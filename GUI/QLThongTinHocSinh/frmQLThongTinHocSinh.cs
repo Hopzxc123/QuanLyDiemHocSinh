@@ -61,7 +61,7 @@ namespace GUI
         // ======================== XỬ LÝ NÚT =========================
         private void ClearForm()
         {
-            txtHoTen.Clear();
+            txtDiaChi.Clear();
             txtDiaChi.Clear();
             txtEmail.Clear();
             cboGioiTinh.SelectedIndex = 0;
@@ -76,7 +76,7 @@ namespace GUI
             {
                 HocSinhDTO hs = new HocSinhDTO
                 {
-                    HoTen = txtHoTen.Text.Trim(),
+                    HoTen = txtDiaChi.Text.Trim(),
                     GioiTinh = cboGioiTinh.SelectedItem?.ToString(),
                     NgaySinh = dtpNgaySinh.Value,
                     DiaChi = txtDiaChi.Text.Trim(),
@@ -118,7 +118,7 @@ namespace GUI
                 HocSinhDTO hs = new HocSinhDTO
                 {
                     MaHocSinh = maHocSinh,
-                    HoTen = txtHoTen.Text.Trim(),
+                    HoTen = txtDiaChi.Text.Trim(),
                     GioiTinh = cboGioiTinh.SelectedItem?.ToString(),
                     NgaySinh = dtpNgaySinh.Value,
                     DiaChi = txtDiaChi.Text.Trim(),
@@ -273,7 +273,7 @@ namespace GUI
         {
             if (e.RowIndex >= 0 && dgvHocSinh.Rows.Count > 0)
             {
-                txtHoTen.Text = dgvHocSinh.CurrentRow.Cells["HoTen"].Value.ToString();
+                txtDiaChi.Text = dgvHocSinh.CurrentRow.Cells["HoTen"].Value.ToString();
                 cboGioiTinh.SelectedItem = dgvHocSinh.CurrentRow.Cells["GioiTinh"].Value.ToString();
                 dtpNgaySinh.Value = Convert.ToDateTime(dgvHocSinh.CurrentRow.Cells["NgaySinh"].Value);
                 txtDiaChi.Text = dgvHocSinh.CurrentRow.Cells["DiaChi"].Value.ToString();
@@ -346,6 +346,16 @@ namespace GUI
         {
             frmTimKiemHocSinh frm = new frmTimKiemHocSinh(this);
             frm.Show();
+        }
+
+        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

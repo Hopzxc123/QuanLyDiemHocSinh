@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.Charts.WinForms.ChartFont chartFont9 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.ChartFont chartFont10 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.ChartFont chartFont11 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.ChartFont chartFont12 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.Grid grid4 = new Guna.Charts.WinForms.Grid();
-            Guna.Charts.WinForms.Tick tick4 = new Guna.Charts.WinForms.Tick();
-            Guna.Charts.WinForms.ChartFont chartFont13 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.Grid grid5 = new Guna.Charts.WinForms.Grid();
-            Guna.Charts.WinForms.Tick tick5 = new Guna.Charts.WinForms.Tick();
-            Guna.Charts.WinForms.ChartFont chartFont14 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.Grid grid6 = new Guna.Charts.WinForms.Grid();
-            Guna.Charts.WinForms.PointLabel pointLabel2 = new Guna.Charts.WinForms.PointLabel();
-            Guna.Charts.WinForms.ChartFont chartFont15 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.Tick tick6 = new Guna.Charts.WinForms.Tick();
-            Guna.Charts.WinForms.ChartFont chartFont16 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.ChartFont chartFont1 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.ChartFont chartFont2 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.ChartFont chartFont3 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.ChartFont chartFont4 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.Grid grid1 = new Guna.Charts.WinForms.Grid();
+            Guna.Charts.WinForms.Tick tick1 = new Guna.Charts.WinForms.Tick();
+            Guna.Charts.WinForms.ChartFont chartFont5 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.Grid grid2 = new Guna.Charts.WinForms.Grid();
+            Guna.Charts.WinForms.Tick tick2 = new Guna.Charts.WinForms.Tick();
+            Guna.Charts.WinForms.ChartFont chartFont6 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.Grid grid3 = new Guna.Charts.WinForms.Grid();
+            Guna.Charts.WinForms.PointLabel pointLabel1 = new Guna.Charts.WinForms.PointLabel();
+            Guna.Charts.WinForms.ChartFont chartFont7 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.Tick tick3 = new Guna.Charts.WinForms.Tick();
+            Guna.Charts.WinForms.ChartFont chartFont8 = new Guna.Charts.WinForms.ChartFont();
             this.panel3 = new System.Windows.Forms.Panel();
             this.grThongKe = new System.Windows.Forms.GroupBox();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -54,9 +54,6 @@
             this.gunaLineDataset1 = new Guna.Charts.WinForms.GunaLineDataset();
             this.label7 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.tabThongKe = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.pnBaoCao = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
@@ -67,24 +64,24 @@
             this.btnDSHS = new Guna.UI2.WinForms.Guna2Button();
             this.btnBaoCaoHS = new Guna.UI2.WinForms.Guna2Button();
             this.btnBaoCaoMH = new Guna.UI2.WinForms.Guna2Button();
-            this.panel3.SuspendLayout();
+            this.tabThongKe = new Guna.UI2.WinForms.Guna2TabControl();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.grThongKe.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.tabThongKe.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.tabThongKe.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.tabPage4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.grThongKe);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(4, 74);
+            this.panel3.Location = new System.Drawing.Point(278, 111);
             this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1197, 686);
@@ -97,11 +94,11 @@
             this.grThongKe.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grThongKe.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.grThongKe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(101)))), ((int)(((byte)(241)))));
-            this.grThongKe.Location = new System.Drawing.Point(0, 0);
+            this.grThongKe.Location = new System.Drawing.Point(3, 73);
             this.grThongKe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grThongKe.Name = "grThongKe";
             this.grThongKe.Padding = new System.Windows.Forms.Padding(4);
-            this.grThongKe.Size = new System.Drawing.Size(1197, 686);
+            this.grThongKe.Size = new System.Drawing.Size(1199, 669);
             this.grThongKe.TabIndex = 0;
             this.grThongKe.TabStop = false;
             // 
@@ -117,38 +114,38 @@
             // chart
             // 
             this.chart.Dock = System.Windows.Forms.DockStyle.Fill;
-            chartFont9.FontName = "Arial";
-            this.chart.Legend.LabelFont = chartFont9;
+            chartFont1.FontName = "Arial";
+            this.chart.Legend.LabelFont = chartFont1;
             this.chart.Location = new System.Drawing.Point(0, 0);
             this.chart.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chart.Name = "chart";
             this.chart.Size = new System.Drawing.Size(1187, 582);
             this.chart.TabIndex = 0;
-            chartFont10.FontName = "Arial";
-            chartFont10.Size = 12;
-            chartFont10.Style = Guna.Charts.WinForms.ChartFontStyle.Bold;
-            this.chart.Title.Font = chartFont10;
-            chartFont11.FontName = "Arial";
-            this.chart.Tooltips.BodyFont = chartFont11;
-            chartFont12.FontName = "Arial";
-            chartFont12.Size = 9;
-            chartFont12.Style = Guna.Charts.WinForms.ChartFontStyle.Bold;
-            this.chart.Tooltips.TitleFont = chartFont12;
-            this.chart.XAxes.GridLines = grid4;
-            chartFont13.FontName = "Arial";
-            tick4.Font = chartFont13;
-            this.chart.XAxes.Ticks = tick4;
-            this.chart.YAxes.GridLines = grid5;
-            chartFont14.FontName = "Arial";
-            tick5.Font = chartFont14;
-            this.chart.YAxes.Ticks = tick5;
-            this.chart.ZAxes.GridLines = grid6;
-            chartFont15.FontName = "Arial";
-            pointLabel2.Font = chartFont15;
-            this.chart.ZAxes.PointLabels = pointLabel2;
-            chartFont16.FontName = "Arial";
-            tick6.Font = chartFont16;
-            this.chart.ZAxes.Ticks = tick6;
+            chartFont2.FontName = "Arial";
+            chartFont2.Size = 12;
+            chartFont2.Style = Guna.Charts.WinForms.ChartFontStyle.Bold;
+            this.chart.Title.Font = chartFont2;
+            chartFont3.FontName = "Arial";
+            this.chart.Tooltips.BodyFont = chartFont3;
+            chartFont4.FontName = "Arial";
+            chartFont4.Size = 9;
+            chartFont4.Style = Guna.Charts.WinForms.ChartFontStyle.Bold;
+            this.chart.Tooltips.TitleFont = chartFont4;
+            this.chart.XAxes.GridLines = grid1;
+            chartFont5.FontName = "Arial";
+            tick1.Font = chartFont5;
+            this.chart.XAxes.Ticks = tick1;
+            this.chart.YAxes.GridLines = grid2;
+            chartFont6.FontName = "Arial";
+            tick2.Font = chartFont6;
+            this.chart.YAxes.Ticks = tick2;
+            this.chart.ZAxes.GridLines = grid3;
+            chartFont7.FontName = "Arial";
+            pointLabel1.Font = chartFont7;
+            this.chart.ZAxes.PointLabels = pointLabel1;
+            chartFont8.FontName = "Arial";
+            tick3.Font = chartFont8;
+            this.chart.ZAxes.Ticks = tick3;
             // 
             // panel4
             // 
@@ -159,7 +156,7 @@
             this.panel4.Location = new System.Drawing.Point(4, 21);
             this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1189, 69);
+            this.panel4.Size = new System.Drawing.Size(1191, 69);
             this.panel4.TabIndex = 0;
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
@@ -221,7 +218,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(365, 14);
+            this.label7.Location = new System.Drawing.Point(366, 14);
             this.label7.Margin = new System.Windows.Forms.Padding(5);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(361, 41);
@@ -235,62 +232,22 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(101)))), ((int)(((byte)(241)))));
             this.panel1.Controls.Add(this.label7);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(4, 4);
+            this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Margin = new System.Windows.Forms.Padding(5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1197, 70);
+            this.panel1.Size = new System.Drawing.Size(1199, 70);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // tabThongKe
-            // 
-            this.tabThongKe.Controls.Add(this.tabPage1);
-            this.tabThongKe.Controls.Add(this.tabPage2);
-            this.tabThongKe.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabThongKe.Location = new System.Drawing.Point(0, 0);
-            this.tabThongKe.Margin = new System.Windows.Forms.Padding(4);
-            this.tabThongKe.Name = "tabThongKe";
-            this.tabThongKe.SelectedIndex = 0;
-            this.tabThongKe.Size = new System.Drawing.Size(1213, 793);
-            this.tabThongKe.TabIndex = 3;
-            this.tabThongKe.SelectedIndexChanged += new System.EventHandler(this.tabThongKe_SelectedIndexChanged);
-            this.tabThongKe.Click += new System.EventHandler(this.tabThongKe_Click);
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.panel3);
-            this.tabPage1.Controls.Add(this.panel1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage1.Size = new System.Drawing.Size(1205, 764);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Thống kê";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.guna2Panel1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage2.Size = new System.Drawing.Size(1205, 764);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Báo cáo";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
             // guna2Panel1
             // 
             this.guna2Panel1.Controls.Add(this.pnBaoCao);
             this.guna2Panel1.Controls.Add(this.guna2Panel2);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Panel1.Location = new System.Drawing.Point(4, 4);
+            this.guna2Panel1.Location = new System.Drawing.Point(3, 3);
             this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(1197, 756);
+            this.guna2Panel1.Size = new System.Drawing.Size(1199, 739);
             this.guna2Panel1.TabIndex = 0;
             // 
             // pnBaoCao
@@ -301,7 +258,7 @@
             this.pnBaoCao.Location = new System.Drawing.Point(0, 122);
             this.pnBaoCao.Margin = new System.Windows.Forms.Padding(4);
             this.pnBaoCao.Name = "pnBaoCao";
-            this.pnBaoCao.Size = new System.Drawing.Size(1197, 634);
+            this.pnBaoCao.Size = new System.Drawing.Size(1199, 617);
             this.pnBaoCao.TabIndex = 2;
             // 
             // guna2Panel2
@@ -311,7 +268,7 @@
             this.guna2Panel2.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel2.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(1197, 122);
+            this.guna2Panel2.Size = new System.Drawing.Size(1199, 122);
             this.guna2Panel2.TabIndex = 1;
             // 
             // groupBox1
@@ -327,18 +284,23 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(1197, 122);
+            this.groupBox1.Size = new System.Drawing.Size(1199, 122);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
             // guna2Button6
             // 
+            this.guna2Button6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(101)))), ((int)(((byte)(241)))));
+            this.guna2Button6.BorderRadius = 8;
+            this.guna2Button6.BorderThickness = 1;
             this.guna2Button6.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button6.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button6.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.guna2Button6.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button6.FillColor = System.Drawing.Color.WhiteSmoke;
             this.guna2Button6.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button6.ForeColor = System.Drawing.Color.White;
+            this.guna2Button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(101)))), ((int)(((byte)(241)))));
+            this.guna2Button6.HoverState.FillColor = System.Drawing.Color.WhiteSmoke;
             this.guna2Button6.Location = new System.Drawing.Point(803, 22);
             this.guna2Button6.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button6.Name = "guna2Button6";
@@ -348,12 +310,17 @@
             // 
             // btnBaoCaoHK
             // 
+            this.btnBaoCaoHK.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(101)))), ((int)(((byte)(241)))));
+            this.btnBaoCaoHK.BorderRadius = 8;
+            this.btnBaoCaoHK.BorderThickness = 1;
             this.btnBaoCaoHK.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnBaoCaoHK.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnBaoCaoHK.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnBaoCaoHK.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnBaoCaoHK.FillColor = System.Drawing.Color.WhiteSmoke;
             this.btnBaoCaoHK.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnBaoCaoHK.ForeColor = System.Drawing.Color.White;
+            this.btnBaoCaoHK.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(101)))), ((int)(((byte)(241)))));
+            this.btnBaoCaoHK.HoverState.FillColor = System.Drawing.Color.WhiteSmoke;
             this.btnBaoCaoHK.Location = new System.Drawing.Point(647, 22);
             this.btnBaoCaoHK.Margin = new System.Windows.Forms.Padding(4);
             this.btnBaoCaoHK.Name = "btnBaoCaoHK";
@@ -364,12 +331,17 @@
             // 
             // btnDiemCaNam
             // 
+            this.btnDiemCaNam.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(101)))), ((int)(((byte)(241)))));
+            this.btnDiemCaNam.BorderRadius = 8;
+            this.btnDiemCaNam.BorderThickness = 1;
             this.btnDiemCaNam.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnDiemCaNam.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnDiemCaNam.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnDiemCaNam.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDiemCaNam.FillColor = System.Drawing.Color.WhiteSmoke;
             this.btnDiemCaNam.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnDiemCaNam.ForeColor = System.Drawing.Color.White;
+            this.btnDiemCaNam.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(101)))), ((int)(((byte)(241)))));
+            this.btnDiemCaNam.HoverState.FillColor = System.Drawing.Color.WhiteSmoke;
             this.btnDiemCaNam.Location = new System.Drawing.Point(491, 22);
             this.btnDiemCaNam.Margin = new System.Windows.Forms.Padding(4);
             this.btnDiemCaNam.Name = "btnDiemCaNam";
@@ -380,12 +352,17 @@
             // 
             // btnDSHS
             // 
+            this.btnDSHS.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(101)))), ((int)(((byte)(241)))));
+            this.btnDSHS.BorderRadius = 8;
+            this.btnDSHS.BorderThickness = 1;
             this.btnDSHS.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnDSHS.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnDSHS.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnDSHS.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDSHS.FillColor = System.Drawing.Color.WhiteSmoke;
             this.btnDSHS.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnDSHS.ForeColor = System.Drawing.Color.White;
+            this.btnDSHS.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(101)))), ((int)(((byte)(241)))));
+            this.btnDSHS.HoverState.FillColor = System.Drawing.Color.WhiteSmoke;
             this.btnDSHS.Location = new System.Drawing.Point(335, 22);
             this.btnDSHS.Margin = new System.Windows.Forms.Padding(4);
             this.btnDSHS.Name = "btnDSHS";
@@ -396,12 +373,17 @@
             // 
             // btnBaoCaoHS
             // 
+            this.btnBaoCaoHS.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(101)))), ((int)(((byte)(241)))));
+            this.btnBaoCaoHS.BorderRadius = 8;
+            this.btnBaoCaoHS.BorderThickness = 1;
             this.btnBaoCaoHS.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnBaoCaoHS.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnBaoCaoHS.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnBaoCaoHS.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnBaoCaoHS.FillColor = System.Drawing.Color.WhiteSmoke;
             this.btnBaoCaoHS.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnBaoCaoHS.ForeColor = System.Drawing.Color.White;
+            this.btnBaoCaoHS.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(101)))), ((int)(((byte)(241)))));
+            this.btnBaoCaoHS.HoverState.FillColor = System.Drawing.Color.WhiteSmoke;
             this.btnBaoCaoHS.Location = new System.Drawing.Point(179, 22);
             this.btnBaoCaoHS.Margin = new System.Windows.Forms.Padding(4);
             this.btnBaoCaoHS.Name = "btnBaoCaoHS";
@@ -412,12 +394,17 @@
             // 
             // btnBaoCaoMH
             // 
+            this.btnBaoCaoMH.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(101)))), ((int)(((byte)(241)))));
+            this.btnBaoCaoMH.BorderRadius = 8;
+            this.btnBaoCaoMH.BorderThickness = 1;
             this.btnBaoCaoMH.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnBaoCaoMH.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnBaoCaoMH.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnBaoCaoMH.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnBaoCaoMH.FillColor = System.Drawing.Color.WhiteSmoke;
             this.btnBaoCaoMH.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnBaoCaoMH.ForeColor = System.Drawing.Color.White;
+            this.btnBaoCaoMH.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(101)))), ((int)(((byte)(241)))));
+            this.btnBaoCaoMH.HoverState.FillColor = System.Drawing.Color.WhiteSmoke;
             this.btnBaoCaoMH.Location = new System.Drawing.Point(23, 22);
             this.btnBaoCaoMH.Margin = new System.Windows.Forms.Padding(4);
             this.btnBaoCaoMH.Name = "btnBaoCaoMH";
@@ -425,6 +412,63 @@
             this.btnBaoCaoMH.TabIndex = 0;
             this.btnBaoCaoMH.Text = "Báo cáo môn học";
             this.btnBaoCaoMH.Click += new System.EventHandler(this.guna2Button1_Click);
+            // 
+            // tabThongKe
+            // 
+            this.tabThongKe.Controls.Add(this.tabPage3);
+            this.tabThongKe.Controls.Add(this.tabPage4);
+            this.tabThongKe.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabThongKe.ItemSize = new System.Drawing.Size(180, 40);
+            this.tabThongKe.Location = new System.Drawing.Point(0, 0);
+            this.tabThongKe.Name = "tabThongKe";
+            this.tabThongKe.SelectedIndex = 0;
+            this.tabThongKe.Size = new System.Drawing.Size(1213, 793);
+            this.tabThongKe.TabButtonHoverState.BorderColor = System.Drawing.Color.Empty;
+            this.tabThongKe.TabButtonHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(165)))), ((int)(((byte)(255)))));
+            this.tabThongKe.TabButtonHoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.tabThongKe.TabButtonHoverState.ForeColor = System.Drawing.Color.White;
+            this.tabThongKe.TabButtonHoverState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(165)))), ((int)(((byte)(255)))));
+            this.tabThongKe.TabButtonIdleState.BorderColor = System.Drawing.Color.Empty;
+            this.tabThongKe.TabButtonIdleState.FillColor = System.Drawing.Color.White;
+            this.tabThongKe.TabButtonIdleState.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.tabThongKe.TabButtonIdleState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(160)))), ((int)(((byte)(167)))));
+            this.tabThongKe.TabButtonIdleState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(165)))), ((int)(((byte)(255)))));
+            this.tabThongKe.TabButtonSelectedState.BorderColor = System.Drawing.Color.Empty;
+            this.tabThongKe.TabButtonSelectedState.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.tabThongKe.TabButtonSelectedState.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.tabThongKe.TabButtonSelectedState.ForeColor = System.Drawing.Color.Black;
+            this.tabThongKe.TabButtonSelectedState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(101)))), ((int)(((byte)(241)))));
+            this.tabThongKe.TabButtonSize = new System.Drawing.Size(180, 40);
+            this.tabThongKe.TabIndex = 4;
+            this.tabThongKe.TabMenuBackColor = System.Drawing.Color.White;
+            this.tabThongKe.TabMenuOrientation = Guna.UI2.WinForms.TabMenuOrientation.HorizontalTop;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.grThongKe);
+            this.tabPage3.Controls.Add(this.panel3);
+            this.tabPage3.Controls.Add(this.panel1);
+            this.tabPage3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabPage3.Location = new System.Drawing.Point(4, 44);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(1205, 745);
+            this.tabPage3.TabIndex = 0;
+            this.tabPage3.Text = "Thống kê";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.guna2Panel1);
+            this.tabPage4.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabPage4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(101)))), ((int)(((byte)(241)))));
+            this.tabPage4.Location = new System.Drawing.Point(4, 44);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(1205, 745);
+            this.tabPage4.TabIndex = 1;
+            this.tabPage4.Text = "Báo cáo";
+            this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // frmThongKe
             // 
@@ -436,19 +480,18 @@
             this.Name = "frmThongKe";
             this.Text = "frmThongKe";
             this.Load += new System.EventHandler(this.frmThongKe_Load);
-            this.panel3.ResumeLayout(false);
             this.grThongKe.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.tabThongKe.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
+            this.tabThongKe.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -465,9 +508,6 @@
         private System.Windows.Forms.Button btnLoc;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TabControl tabThongKe;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2Panel pnBaoCao;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
@@ -478,5 +518,8 @@
         private Guna.UI2.WinForms.Guna2Button btnDSHS;
         private Guna.UI2.WinForms.Guna2Button btnBaoCaoHS;
         private Guna.UI2.WinForms.Guna2Button btnBaoCaoMH;
+        private Guna.UI2.WinForms.Guna2TabControl tabThongKe;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabPage tabPage4;
     }
 }

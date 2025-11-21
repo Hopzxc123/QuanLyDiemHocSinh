@@ -1,5 +1,5 @@
 ﻿using BLL;
-using BLL.Reports;
+
 using Microsoft.Reporting.WinForms;
 using System;
 using System.Collections.Generic;
@@ -85,7 +85,7 @@ namespace GUI.Reports
             string ngayLap = DateTime.Now.ToString("dd/MM/yyyy");
 
             // 3. Gọi BLL (Giữ nguyên)
-            DataTable dt = KQLHHocKyBLL.Instance.GetBaoCaoHocKy(namHoc, hocKy);
+            DataTable dt = ReportBLL.Instance.GetBaoCaoHocKy(namHoc, hocKy);
 
             // 4. Đổ dữ liệu vào ReportViewer
             rpvKQLHHK.LocalReport.DataSources.Clear();

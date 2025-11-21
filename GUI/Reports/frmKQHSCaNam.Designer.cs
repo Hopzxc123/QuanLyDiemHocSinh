@@ -32,11 +32,11 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.rpvKQHSCaNam = new Microsoft.Reporting.WinForms.ReportViewer();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnXem = new Guna.UI2.WinForms.Guna2Button();
             this.cbbLop = new Guna.UI2.WinForms.Guna2ComboBox();
             this.lblLop = new System.Windows.Forms.Label();
             this.cbbNamHoc = new Guna.UI2.WinForms.Guna2ComboBox();
             this.lblNamHoc = new System.Windows.Forms.Label();
+            this.btnXem = new Guna.UI2.WinForms.Guna2Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -83,27 +83,6 @@
             this.panel2.Size = new System.Drawing.Size(1027, 124);
             this.panel2.TabIndex = 0;
             // 
-            // btnXem
-            // 
-            this.btnXem.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(101)))), ((int)(((byte)(241)))));
-            this.btnXem.BorderRadius = 10;
-            this.btnXem.BorderThickness = 1;
-            this.btnXem.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnXem.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnXem.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnXem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnXem.FillColor = System.Drawing.Color.White;
-            this.btnXem.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnXem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(101)))), ((int)(((byte)(241)))));
-            this.btnXem.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(101)))), ((int)(((byte)(241)))));
-            this.btnXem.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnXem.Location = new System.Drawing.Point(821, 36);
-            this.btnXem.Name = "btnXem";
-            this.btnXem.Size = new System.Drawing.Size(128, 57);
-            this.btnXem.TabIndex = 2;
-            this.btnXem.Text = "Xem";
-            this.btnXem.Click += new System.EventHandler(this.btnXem_Click);
-            // 
             // cbbLop
             // 
             this.cbbLop.BackColor = System.Drawing.Color.Transparent;
@@ -115,7 +94,7 @@
             this.cbbLop.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbbLop.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbbLop.ItemHeight = 30;
-            this.cbbLop.Location = new System.Drawing.Point(550, 44);
+            this.cbbLop.Location = new System.Drawing.Point(500, 44);
             this.cbbLop.Name = "cbbLop";
             this.cbbLop.Size = new System.Drawing.Size(163, 36);
             this.cbbLop.TabIndex = 1;
@@ -123,7 +102,7 @@
             // lblLop
             // 
             this.lblLop.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLop.Location = new System.Drawing.Point(430, 44);
+            this.lblLop.Location = new System.Drawing.Point(407, 44);
             this.lblLop.Name = "lblLop";
             this.lblLop.Size = new System.Drawing.Size(100, 36);
             this.lblLop.TabIndex = 3;
@@ -155,6 +134,25 @@
             this.lblNamHoc.TabIndex = 0;
             this.lblNamHoc.Text = "Năm học:";
             this.lblNamHoc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnXem
+            // 
+            this.btnXem.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(101)))), ((int)(((byte)(241)))));
+            this.btnXem.BorderRadius = 4;
+            this.btnXem.BorderThickness = 1;
+            this.btnXem.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnXem.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnXem.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnXem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnXem.FillColor = System.Drawing.Color.White;
+            this.btnXem.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.btnXem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(101)))), ((int)(((byte)(241)))));
+            this.btnXem.Location = new System.Drawing.Point(738, 44);
+            this.btnXem.Name = "btnXem";
+            this.btnXem.Size = new System.Drawing.Size(104, 36);
+            this.btnXem.TabIndex = 7;
+            this.btnXem.Text = "Xem";
+            this.btnXem.Click += new System.EventHandler(this.btnXem_Click);
             // 
             // frmKQHSCaNam
             // 

@@ -42,10 +42,6 @@
             this.btnThem = new Guna.UI2.WinForms.Guna2Button();
             this.btnThemMoi = new Guna.UI2.WinForms.Guna2Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtGhiChu = new System.Windows.Forms.TextBox();
-            this.txtHeSo = new System.Windows.Forms.TextBox();
-            this.txtTenMon = new System.Windows.Forms.TextBox();
-            this.txtMaMon = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -53,6 +49,10 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgvMonHoc = new System.Windows.Forms.DataGridView();
+            this.txtMaMon = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtTenMon = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtHeSo = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtGhiChu = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -200,42 +200,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin chi tiết";
             // 
-            // txtGhiChu
-            // 
-            this.txtGhiChu.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGhiChu.Location = new System.Drawing.Point(15, 306);
-            this.txtGhiChu.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtGhiChu.Name = "txtGhiChu";
-            this.txtGhiChu.Size = new System.Drawing.Size(272, 26);
-            this.txtGhiChu.TabIndex = 7;
-            // 
-            // txtHeSo
-            // 
-            this.txtHeSo.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHeSo.Location = new System.Drawing.Point(15, 220);
-            this.txtHeSo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtHeSo.Name = "txtHeSo";
-            this.txtHeSo.Size = new System.Drawing.Size(272, 26);
-            this.txtHeSo.TabIndex = 6;
-            // 
-            // txtTenMon
-            // 
-            this.txtTenMon.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenMon.Location = new System.Drawing.Point(15, 146);
-            this.txtTenMon.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtTenMon.Name = "txtTenMon";
-            this.txtTenMon.Size = new System.Drawing.Size(272, 26);
-            this.txtTenMon.TabIndex = 5;
-            // 
-            // txtMaMon
-            // 
-            this.txtMaMon.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaMon.Location = new System.Drawing.Point(15, 67);
-            this.txtMaMon.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtMaMon.Name = "txtMaMon";
-            this.txtMaMon.Size = new System.Drawing.Size(272, 26);
-            this.txtMaMon.TabIndex = 4;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -243,7 +207,7 @@
             this.label5.Location = new System.Drawing.Point(15, 278);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(48, 15);
+            this.label5.Size = new System.Drawing.Size(61, 20);
             this.label5.TabIndex = 3;
             this.label5.Text = "Ghi chú";
             // 
@@ -254,7 +218,7 @@
             this.label4.Location = new System.Drawing.Point(15, 192);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(37, 15);
+            this.label4.Size = new System.Drawing.Size(47, 20);
             this.label4.TabIndex = 2;
             this.label4.Text = "Hệ số";
             // 
@@ -265,7 +229,7 @@
             this.label3.Location = new System.Drawing.Point(15, 118);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(54, 15);
+            this.label3.Size = new System.Drawing.Size(68, 20);
             this.label3.TabIndex = 1;
             this.label3.Text = "Tên môn";
             // 
@@ -276,7 +240,7 @@
             this.label2.Location = new System.Drawing.Point(15, 39);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 15);
+            this.label2.Size = new System.Drawing.Size(66, 20);
             this.label2.TabIndex = 0;
             this.label2.Text = "Mã môn";
             // 
@@ -329,7 +293,7 @@
             this.dgvMonHoc.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvMonHoc.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvMonHoc.EnableHeadersVisualStyles = false;
-            this.dgvMonHoc.Location = new System.Drawing.Point(4, 22);
+            this.dgvMonHoc.Location = new System.Drawing.Point(4, 26);
             this.dgvMonHoc.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dgvMonHoc.MultiSelect = false;
             this.dgvMonHoc.Name = "dgvMonHoc";
@@ -347,14 +311,94 @@
             this.dgvMonHoc.RowHeadersWidth = 51;
             this.dgvMonHoc.RowTemplate.Height = 35;
             this.dgvMonHoc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMonHoc.Size = new System.Drawing.Size(706, 504);
+            this.dgvMonHoc.Size = new System.Drawing.Size(706, 500);
             this.dgvMonHoc.TabIndex = 0;
             this.dgvMonHoc.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMonHoc_CellClick);
             this.dgvMonHoc.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvMonHoc_DataBindingComplete);
             // 
+            // txtMaMon
+            // 
+            this.txtMaMon.BorderRadius = 8;
+            this.txtMaMon.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtMaMon.DefaultText = "";
+            this.txtMaMon.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtMaMon.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtMaMon.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMaMon.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMaMon.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtMaMon.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtMaMon.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtMaMon.Location = new System.Drawing.Point(19, 75);
+            this.txtMaMon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtMaMon.Name = "txtMaMon";
+            this.txtMaMon.PlaceholderText = "";
+            this.txtMaMon.SelectedText = "";
+            this.txtMaMon.Size = new System.Drawing.Size(272, 30);
+            this.txtMaMon.TabIndex = 8;
+            // 
+            // txtTenMon
+            // 
+            this.txtTenMon.BorderRadius = 8;
+            this.txtTenMon.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTenMon.DefaultText = "";
+            this.txtTenMon.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtTenMon.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtTenMon.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTenMon.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTenMon.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTenMon.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtTenMon.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTenMon.Location = new System.Drawing.Point(19, 142);
+            this.txtTenMon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtTenMon.Name = "txtTenMon";
+            this.txtTenMon.PlaceholderText = "";
+            this.txtTenMon.SelectedText = "";
+            this.txtTenMon.Size = new System.Drawing.Size(272, 30);
+            this.txtTenMon.TabIndex = 8;
+            // 
+            // txtHeSo
+            // 
+            this.txtHeSo.BorderRadius = 8;
+            this.txtHeSo.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtHeSo.DefaultText = "";
+            this.txtHeSo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtHeSo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtHeSo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtHeSo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtHeSo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtHeSo.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtHeSo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtHeSo.Location = new System.Drawing.Point(19, 216);
+            this.txtHeSo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtHeSo.Name = "txtHeSo";
+            this.txtHeSo.PlaceholderText = "";
+            this.txtHeSo.SelectedText = "";
+            this.txtHeSo.Size = new System.Drawing.Size(272, 30);
+            this.txtHeSo.TabIndex = 8;
+            // 
+            // txtGhiChu
+            // 
+            this.txtGhiChu.BorderRadius = 8;
+            this.txtGhiChu.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtGhiChu.DefaultText = "";
+            this.txtGhiChu.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtGhiChu.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtGhiChu.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtGhiChu.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtGhiChu.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtGhiChu.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtGhiChu.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtGhiChu.Location = new System.Drawing.Point(19, 302);
+            this.txtGhiChu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtGhiChu.Name = "txtGhiChu";
+            this.txtGhiChu.PlaceholderText = "";
+            this.txtGhiChu.SelectedText = "";
+            this.txtGhiChu.Size = new System.Drawing.Size(272, 30);
+            this.txtGhiChu.TabIndex = 8;
+            // 
             // frmQuanLyMonHoc
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1018, 609);
@@ -394,13 +438,13 @@
         private Guna.UI2.WinForms.Guna2Button btnSua;
         private Guna.UI2.WinForms.Guna2Button btnThem;
         private Guna.UI2.WinForms.Guna2Button btnThemMoi;
-        private System.Windows.Forms.TextBox txtGhiChu;
-        private System.Windows.Forms.TextBox txtHeSo;
-        private System.Windows.Forms.TextBox txtTenMon;
-        private System.Windows.Forms.TextBox txtMaMon;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private Guna.UI2.WinForms.Guna2TextBox txtMaMon;
+        private Guna.UI2.WinForms.Guna2TextBox txtGhiChu;
+        private Guna.UI2.WinForms.Guna2TextBox txtHeSo;
+        private Guna.UI2.WinForms.Guna2TextBox txtTenMon;
     }
 }

@@ -1,4 +1,5 @@
 ﻿using DAL;
+
 using DTO;
 using System;
 using System.Collections.Generic;
@@ -36,6 +37,10 @@ namespace BLL
         public DataTable ReportKQHSCaNam(string maNamHoc, string maLop)
         {
             return ReportDAL.Instance.ReportKQHSCaNam(maNamHoc, maLop);
+        }
+        public DataTable GetBaoCaoHocKy(string maNamHoc, string maHocKy)
+        {
+            return ReportDAL.Instance.GetBaoCaoHocKy(maNamHoc, maHocKy);
         }
     }
 }

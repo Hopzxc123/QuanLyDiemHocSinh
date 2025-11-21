@@ -88,6 +88,7 @@
                 <Style />
               </Paragraph>
             </Paragraphs>
+            <Top>0.38333in</Top>
             <Left>9.32603cm</Left>
             <Height>0.94544cm</Height>
             <Width>17.12617cm</Width>
@@ -119,8 +120,8 @@
                 </Style>
               </Paragraph>
             </Paragraphs>
-            <Top>1.54517cm</Top>
-            <Left>9.32603cm</Left>
+            <Top>2.87573cm</Top>
+            <Left>2.57386cm</Left>
             <Height>0.62117cm</Height>
             <Width>4.87067cm</Width>
             <ZIndex>1</ZIndex>
@@ -152,8 +153,8 @@
                 </Style>
               </Paragraph>
             </Paragraphs>
-            <Top>1.54517cm</Top>
-            <Left>16.3322cm</Left>
+            <Top>2.87573cm</Top>
+            <Left>9.66003cm</Left>
             <Height>0.62117cm</Height>
             <Width>4.87067cm</Width>
             <ZIndex>2</ZIndex>

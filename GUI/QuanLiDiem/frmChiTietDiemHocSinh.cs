@@ -464,5 +464,10 @@ namespace GUI.frmQLDiemHS
             }
             return;
         }
+
+        private void cbbtNamHoc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

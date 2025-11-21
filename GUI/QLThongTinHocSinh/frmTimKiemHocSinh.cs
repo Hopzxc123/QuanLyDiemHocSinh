@@ -192,5 +192,10 @@ namespace GUI.QLThongTinHocSinh
         {
 
         }
+
+        private void cbbGioiTinh_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
