@@ -27,5 +27,10 @@ namespace BLL
         {
             return ReportDAL.Instance.ReportTongKetMon(maHocKy, maMonHoc);
         }
+
+        public List<ReportMonHocDTO> ReportMonHoc()
+        {
+            return ReportDAL.Instance.ReportMonHoc();
+        }
     }
 }

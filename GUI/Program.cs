@@ -1,4 +1,5 @@
-﻿using GUI.Reports;
+﻿
+using GUI.Reports;
 using System;
 using System.Windows.Forms;
 
@@ -11,7 +12,7 @@ namespace GUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmThongKe());
+            Application.Run(new frmReportMonHoc());
             //while (true)
             //{
             //    using (frmDangNhap frmLogin = new frmDangNhap())
@@ -39,7 +40,6 @@ namespace GUI
             //        break;
             //    }
             //}
-
         }
     }
 }

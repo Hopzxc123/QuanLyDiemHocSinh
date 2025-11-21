@@ -182,6 +182,13 @@
     <Compile Include="frmQuanLyGiaoVien.Designer.cs">
       <DependentUpon>frmQuanLyGiaoVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reports\frmReportMonHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\frmReportMonHoc.Designer.cs">
+      <DependentUpon>frmReportMonHoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="Reports\frmBaoCaoDSHS.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -216,6 +223,10 @@
     <EmbeddedResource Include="Reports\frmBaoCaoDSHS.resx">
       <DependentUpon>frmBaoCaoDSHS.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\frmReportMonHoc.resx">
+      <DependentUpon>frmReportMonHoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReportMonHocDTO.rdlc" />
     <EmbeddedResource Include="Reports\rptDanhSachHocSinh.rdlc" />
     <EmbeddedResource Include="QuanLiDiem\frmChiTietDiemHocSinh.resx">
       <DependentUpon>frmChiTietDiemHocSinh.cs</DependentUpon>
@@ -249,6 +260,15 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\DTO.DiemDTO.datasource" />
+    <None Include="Properties\DataSources\DTO.GiaoVienDTO.datasource" />
+    <None Include="Properties\DataSources\DTO.HocKyDTO.datasource" />
+    <None Include="Properties\DataSources\DTO.HocSinhDTO.datasource" />
+    <None Include="Properties\DataSources\DTO.LopDTO.datasource" />
+    <None Include="Properties\DataSources\DTO.MonHocDTO.datasource" />
+    <None Include="Properties\DataSources\DTO.NamHocDTO.datasource" />
+    <None Include="Properties\DataSources\DTO.ReportMonHocDTO.datasource" />
+    <None Include="Properties\DataSources\DTO.TaiKhoanDTO.datasource" />
     <None Include="Properties\DataSources\DTO.DiemDTO.datasource" />
     <None Include="Properties\DataSources\DTO.GiaoVienDTO.datasource" />
     <None Include="Properties\DataSources\DTO.HocKyDTO.datasource" />
@@ -367,6 +387,13 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll" />
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll" />
+    <Content Include="SqlServerTypes\x86\msvcr120.dll" />
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
