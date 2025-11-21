@@ -48,7 +48,8 @@ namespace DAL
                                       Convert.ToDateTime(row["LanDangNhapCuoi"]) : (DateTime?)null,
                     NgayTao = row["NgayTao"] != DBNull.Value ?
                              Convert.ToDateTime(row["NgayTao"]) : DateTime.Now,
-                    TrangThai = row["TrangThai"].ToString()
+                    TrangThai = row["TrangThai"].ToString(),
+                    Avatar = row["avatar"].ToString()
                 };
             }
 
@@ -93,7 +94,8 @@ namespace DAL
                                       Convert.ToDateTime(row["LanDangNhapCuoi"]) : (DateTime?)null,
                     NgayTao = row["NgayTao"] != DBNull.Value ?
                              Convert.ToDateTime(row["NgayTao"]) : DateTime.Now,
-                    TrangThai = row["TrangThai"].ToString()
+                    TrangThai = row["TrangThai"].ToString(),
+                    Avatar = row["avatar"].ToString()
                 };
                 list.Add(tk);
             }
@@ -120,7 +122,8 @@ namespace DAL
                                       Convert.ToDateTime(row["LanDangNhapCuoi"]) : (DateTime?)null,
                     NgayTao = row["NgayTao"] != DBNull.Value ?
                              Convert.ToDateTime(row["NgayTao"]) : DateTime.Now,
-                    TrangThai = row["TrangThai"].ToString()
+                    TrangThai = row["TrangThai"].ToString(),
+                    Avatar = row["avatar"].ToString()
                 };
             }
 
@@ -146,7 +149,8 @@ namespace DAL
                                       Convert.ToDateTime(row["LanDangNhapCuoi"]) : (DateTime?)null,
                     NgayTao = row["NgayTao"] != DBNull.Value ?
                              Convert.ToDateTime(row["NgayTao"]) : DateTime.Now,
-                    TrangThai = row["TrangThai"].ToString()
+                    TrangThai = row["TrangThai"].ToString(),
+                    Avatar = row["avatar"].ToString()
                 };
             }
 
