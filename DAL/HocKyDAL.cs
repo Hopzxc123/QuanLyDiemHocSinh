@@ -36,7 +36,28 @@ namespace DAL
 
             return list;
         }
+        public HocKyDTO GetCurrentNamHoc()
+        {
+            string query = "SELECT TOP 1 * FROM HocKy ORDER BY NgayKetThuc DESC";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            if (data.Rows.Count > 0)
+                return MapToDTO(data.Rows[0]);
+            return null;
+        }
+        public List<HocKyDTO> GetHocKyByNamHoc(string maNamHoc)
+        {
+            List<HocKyDTO> list = new List<HocKyDTO>();
+            string query = $"SELECT * FROM HocKy where MaNamHoc ='{maNamHoc}'";
 
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            foreach (DataRow row in data.Rows)
+            {
+                list.Add(MapToDTO(row));
+            }
+
+            return list;
+        }
         // 🔹 Lấy học kỳ theo mã
         public HocKyDTO GetHocKyById(string maHocKy)
         {

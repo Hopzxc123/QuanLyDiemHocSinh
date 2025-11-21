@@ -42,12 +42,14 @@ namespace DAL
                 {
                     MaTaiKhoan = row["MaTaiKhoan"].ToString(),
                     TenDangNhap = row["TenDangNhap"].ToString(),
-                    MatKhau = row["MatKhau"].ToString(),                  
+                    MatKhau = row["MatKhau"].ToString(),
+                    VaiTro = row["LoaiTaiKhoan"].ToString(),
                     LanDangNhapCuoi = row["LanDangNhapCuoi"] != DBNull.Value ?
                                       Convert.ToDateTime(row["LanDangNhapCuoi"]) : (DateTime?)null,
                     NgayTao = row["NgayTao"] != DBNull.Value ?
                              Convert.ToDateTime(row["NgayTao"]) : DateTime.Now,
-                    TrangThai = row["TrangThai"].ToString()
+                    TrangThai = row["TrangThai"].ToString(),
+                    Avatar = row["avatar"].ToString()
                 };
             }
 
@@ -86,12 +88,14 @@ namespace DAL
                 {
                     MaTaiKhoan = row["MaTaiKhoan"].ToString(),
                     TenDangNhap = row["TenDangNhap"].ToString(),
-                    MatKhau = row["MatKhau"].ToString(),               
+                    MatKhau = row["MatKhau"].ToString(),    
+                    VaiTro = row["LoaiTaiKhoan"].ToString(),
                     LanDangNhapCuoi = row["LanDangNhapCuoi"] != DBNull.Value ?
                                       Convert.ToDateTime(row["LanDangNhapCuoi"]) : (DateTime?)null,
                     NgayTao = row["NgayTao"] != DBNull.Value ?
                              Convert.ToDateTime(row["NgayTao"]) : DateTime.Now,
-                    TrangThai = row["TrangThai"].ToString()
+                    TrangThai = row["TrangThai"].ToString(),
+                    Avatar = row["avatar"].ToString()
                 };
                 list.Add(tk);
             }
@@ -112,12 +116,14 @@ namespace DAL
                 {
                     MaTaiKhoan = row["MaTaiKhoan"].ToString(),
                     TenDangNhap = row["TenDangNhap"].ToString(),
-                    MatKhau = row["MatKhau"].ToString(),                   
+                    MatKhau = row["MatKhau"].ToString(),
+                    VaiTro = row["LoaiTaiKhoan"].ToString(),
                     LanDangNhapCuoi = row["LanDangNhapCuoi"] != DBNull.Value ?
                                       Convert.ToDateTime(row["LanDangNhapCuoi"]) : (DateTime?)null,
                     NgayTao = row["NgayTao"] != DBNull.Value ?
                              Convert.ToDateTime(row["NgayTao"]) : DateTime.Now,
-                    TrangThai = row["TrangThai"].ToString()
+                    TrangThai = row["TrangThai"].ToString(),
+                    Avatar = row["avatar"].ToString()
                 };
             }
 
@@ -137,12 +143,14 @@ namespace DAL
                 {
                     MaTaiKhoan = row["MaTaiKhoan"].ToString(),
                     TenDangNhap = row["TenDangNhap"].ToString(),
-                    MatKhau = row["MatKhau"].ToString(),                   
+                    MatKhau = row["MatKhau"].ToString(),
+                    VaiTro = row["LoaiTaiKhoan"].ToString(),
                     LanDangNhapCuoi = row["LanDangNhapCuoi"] != DBNull.Value ?
                                       Convert.ToDateTime(row["LanDangNhapCuoi"]) : (DateTime?)null,
                     NgayTao = row["NgayTao"] != DBNull.Value ?
                              Convert.ToDateTime(row["NgayTao"]) : DateTime.Now,
-                    TrangThai = row["TrangThai"].ToString()
+                    TrangThai = row["TrangThai"].ToString(),
+                    Avatar = row["avatar"].ToString()
                 };
             }
 
@@ -247,6 +255,7 @@ namespace DAL
                     MaTaiKhoan = row["MaTaiKhoan"].ToString(),
                     TenDangNhap = row["TenDangNhap"].ToString(),
                     MatKhau = row["MatKhau"].ToString(),
+                    VaiTro = row["LoaiTaiKhoan"].ToString(),
                     LanDangNhapCuoi = row["LanDangNhapCuoi"] != DBNull.Value ?
                                       Convert.ToDateTime(row["LanDangNhapCuoi"]) : (DateTime?)null,
                     NgayTao = row["NgayTao"] != DBNull.Value ?
@@ -278,6 +287,7 @@ namespace DAL
                     MaTaiKhoan = row["MaTaiKhoan"].ToString(),
                     TenDangNhap = row["TenDangNhap"].ToString(),
                     MatKhau = row["MatKhau"].ToString(),
+                    VaiTro = row["LoaiTaiKhoan"].ToString(),
                     LanDangNhapCuoi = row["LanDangNhapCuoi"] != DBNull.Value ?
                                       Convert.ToDateTime(row["LanDangNhapCuoi"]) : (DateTime?)null,
                     NgayTao = row["NgayTao"] != DBNull.Value ?
@@ -321,6 +331,7 @@ namespace DAL
                     MaTaiKhoan = row["MaTaiKhoan"].ToString(),
                     TenDangNhap = row["TenDangNhap"].ToString(),
                     MatKhau = row["MatKhau"].ToString(),
+                    VaiTro = row["LoaiTaiKhoan"].ToString(),
                     LanDangNhapCuoi = row["LanDangNhapCuoi"] != DBNull.Value ?
                                       Convert.ToDateTime(row["LanDangNhapCuoi"]) : (DateTime?)null,
                     NgayTao = row["NgayTao"] != DBNull.Value ?

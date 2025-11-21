@@ -51,7 +51,7 @@ namespace DAL
         // Lấy học sinh theo mã
         public HocSinhDTO GetHocSinhByMa(string maHocSinh)
         {
-            string query = "SELECT * FROM HocSinh WHERE MaHocSinh = @MaHocSinh";
+            string query = $"SELECT * FROM HocSinh WHERE MaHocSinh = '{maHocSinh}'";
             DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { maHocSinh });
 
             if (data.Rows.Count > 0)
@@ -72,7 +72,30 @@ namespace DAL
 
             return null;
         }
-
+        public List<HocSinhDTO> GetHocSinhByNamHoc(string maNamHoc)
+        {
+            List<HocSinhDTO> list = new List<HocSinhDTO>();
+            string query = "SELECT hs.* FROM HocSinh as hs " +
+                           "JOIN Lop as l ON hs.MaLop = l.MaLop " +
+                           $"WHERE l.NamHoc = '{maNamHoc}'";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow row in data.Rows)
+            {
+                HocSinhDTO hs = new HocSinhDTO
+                {
+                    MaHocSinh = row["MaHocSinh"].ToString(),
+                    HoTen = row["HoTen"].ToString(),
+                    NgaySinh = Convert.ToDateTime(row["NgaySinh"]),
+                    GioiTinh = row["GioiTinh"].ToString(),
+                    DiaChi = row["DiaChi"].ToString(),
+                    Email = row["Email"].ToString(),
+                    MaLop = row["MaLop"].ToString(),
+                    TrangThai = row["TrangThai"].ToString()
+                };
+                list.Add(hs);
+            }
+            return list;
+        }
         // Thêm học sinh mới
         public bool InsertHocSinh(HocSinhDTO hs)
         {
@@ -166,5 +189,29 @@ namespace DAL
 
             return list;
         }
+        public DataTable LayDanhSachHocSinh(string maNamHoc, string maLop)
+        {
+            string query = @"
+        SELECT 
+            hs.MaHocSinh,
+            hs.HoTen,
+            hs.NgaySinh,
+            hs.GioiTinh,
+            hs.DiaChi,
+            hs.Email,
+            hs.MaLop,
+            hs.TrangThai
+        FROM HocSinh hs
+        JOIN Lop l ON hs.MaLop = l.MaLop
+        JOIN NamHoc nh ON l.NamHoc = nh.MaNamHoc
+        WHERE nh.MaNamHoc = @MaNamHoc
+          AND l.MaLop = @MaLop";
+
+            return DataProvider.Instance.ExecuteQuery(query, new object[]
+            {
+        maNamHoc, maLop
+            });
+        }
+
     }
 }

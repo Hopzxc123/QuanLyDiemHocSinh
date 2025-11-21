@@ -25,9 +25,17 @@ namespace BLL
         {
             return HocKyDAL.Instance.GetAllHocKy();
         }
+        public HocKyDTO GetCurrentNamHoc()
+        {
+            return HocKyDAL.Instance.GetCurrentNamHoc();
+        }
         public HocKyDTO GetHocKyById(string maHocKy)
         {
             return HocKyDAL.Instance.GetHocKyById(maHocKy);
+        }
+        public List<HocKyDTO> GetHocKyByNamHoc(string maNamHoc)
+        {
+            return HocKyDAL.Instance.GetHocKyByNamHoc(maNamHoc);
         }
         public bool InsertHocKy(HocKyDTO hk)
         {

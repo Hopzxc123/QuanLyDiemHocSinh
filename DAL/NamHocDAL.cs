@@ -44,7 +44,7 @@ namespace DAL
 
             return list;
         }
-
+        
         // Lấy năm học theo mã
         public NamHocDTO GetNamHocByMa(string maNamHoc)
         {

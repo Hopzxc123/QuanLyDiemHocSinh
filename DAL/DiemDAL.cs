@@ -75,13 +75,23 @@ namespace DAL
 
             return list;
         }
-
+         public List<DiemDTO> GetDiemByHocSinhHocKy(string maHocSinh, string maHocKy)
+        {
+            List<DiemDTO> list = new List<DiemDTO>();
+            string query = $"SELECT * FROM Diem WHERE MaHocSinh = '{maHocSinh}' AND MaHocKy = '{maHocKy}'";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow row in data.Rows)
+            {
+                list.Add(MapRowToDiemDTO(row));
+            }
+            return list;
+        }
         // Thêm điểm mới
         public bool InsertDiem(DiemDTO diem)
         {
             string query = @"INSERT INTO Diem (MaHocSinh, MaMonHoc, MaHocKy, 
                             DiemTrenLop, DiemGiuaKy, DiemThi, DiemTongKet)"+
-                            $"VALUES ({diem.MaHocSinh}, {diem.MaMonHoc},{diem.MaHocKy}, {diem.DiemTrenLop}, {diem.DiemGiuaKy}, {diem.DiemThi}, {diem.DiemTongKet})";
+                            $"VALUES ('{diem.MaHocSinh}', '{diem.MaMonHoc}','{diem.MaHocKy}', {diem.DiemTrenLop}, {diem.DiemGiuaKy}, {diem.DiemThi}, {diem.DiemTongKet})";
 
             int result = DataProvider.Instance.ExecuteNonQuery(query);
 
@@ -93,11 +103,11 @@ namespace DAL
         {
             string query = @"UPDATE Diem SET "+
                             
-                            $"MaMonHoc = {diem.MaMonHoc}, MaHocKy = {diem.MaHocKy}, DiemTrenLop = {diem.DiemTrenLop}, DiemGiuaKy = {diem.DiemGiuaKy}, DiemThi = {diem.DiemThi}, DiemTongKet = {diem.DiemTongKet} WHERE MaDiem = {diem.MaDiem}";
+                            $"MaMonHoc = '{diem.MaMonHoc}', MaHocKy = '{diem.MaHocKy}', DiemTrenLop = {diem.DiemTrenLop}, DiemGiuaKy = {diem.DiemGiuaKy}, DiemThi = {diem.DiemThi}, DiemTongKet = {diem.DiemTongKet} WHERE MaDiem = '{diem.MaDiem}'";
 
             int result = DataProvider.Instance.ExecuteNonQuery(query, new object[]
             {
-                diem.MaHocSinh, diem.MaMonHoc, diem.MaHocKy,
+                diem.MaMonHoc, diem.MaHocKy,
                 diem.DiemTrenLop ?? (object)DBNull.Value,
                 diem.DiemGiuaKy ?? (object)DBNull.Value,
                 diem.DiemThi ?? (object)DBNull.Value,
@@ -143,6 +153,29 @@ namespace DAL
                 DiemThi = row["DiemThi"] != DBNull.Value ? (float?)Convert.ToSingle(row["DiemThi"]) : null,
                 DiemTongKet = row["DiemTongKet"] != DBNull.Value ? (float?)Convert.ToSingle(row["DiemTongKet"]) : null
             };
+        }
+        public float getDiemTongKet(string maHocSinh, string maHocKy)
+        {
+            string query = $"SELECT avg(DiemTongKet) as diemtongket FROM Diem WHERE MaHocSinh = '{maHocSinh}' AND MaHocKy = '{maHocKy}'";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            if (data.Rows.Count > 0)
+            {
+                // Lấy giá trị ra biến object trước
+                object result = data.Rows[0]["diemtongket"];
+
+                // Kiểm tra nếu khác DBNull thì mới convert
+                if (result != DBNull.Value)
+                {
+                    return Convert.ToSingle(result);
+                }
+            }
+            return -1; // Hoặc giá trị khác để biểu thị không tìm thấy
+        }
+        public DataTable LayDanhSachDiemHocSinh(string maHocSinh, string maMonHoc, string maHocKy, string maNamHoc, string maLop)
+        {
+            string query = "EXEC LayDanhSachDiemHocSinh @maHocSinh , @maMonHoc , @maHocKy , @maNamHoc , @maLop";
+            object[] parameters = new object[] { maHocSinh, maMonHoc, maHocKy, maNamHoc, maLop };
+            return DataProvider.Instance.ExecuteQuery(query, parameters);
         }
     }
 }

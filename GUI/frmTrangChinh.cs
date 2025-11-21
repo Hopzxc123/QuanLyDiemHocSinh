@@ -1,9 +1,12 @@
-﻿using DTO;
+﻿using BLL;
+using DTO;
+using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,17 +17,26 @@ namespace GUI
 {
     public partial class frmTrangChinh : Form
     {
-      
-        public frmTrangChinh()
+        bool sidebarExpand = true; // Trạng thái sidebar
+        public event EventHandler LogoutRequested;
+        public TaiKhoanDTO Account { get; private set; }
+        public bool IsLoggedOut { get; private set; }
+
+        // Định nghĩa hằng số cho kích thước, dễ dàng bảo trì
+        private const int sidebarWidthExpanded = 192;
+        private const int sidebarWidthCollapsed = 55;
+
+        public frmTrangChinh(TaiKhoanDTO account)
         {
             InitializeComponent();
             this.DoubleBuffered = true;
             this.SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
             this.UpdateStyles();
-
-         
+            Account = account;
 
         }
+
+
 
         private Form currentFormChild;
         private void openChildForm(Form childForm)
@@ -53,38 +65,72 @@ namespace GUI
             plView.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
-
-
-
         }
 
 
 
         private void fTrangChinh_Load(object sender, EventArgs e)
         {
+            CapNhatThongTinNguoiDangNhap();
+            LoadAvatar();
+            openChildForm(new frmThongKe());
+            
+        }
+
+        public void LoadAvatar()
+        {
+            Account = TaiKhoanBLL.Instance.LayTaiKhoanTheoMa(Account.MaTaiKhoan);
+            if (Account != null)
+            {
+                lblTenTaiKhoan.Text = Account.TenDangNhap;
+                if (!string.IsNullOrEmpty(Account.Avatar))
+                {
+                    string fullPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, Account.Avatar);
+                    if (File.Exists(fullPath))
+                    {
+                        // Tải ảnh
+                        // Lưu ý: Dùng FileStream để tránh khóa tệp (file locking)
+                        using (FileStream fs = new FileStream(fullPath, FileMode.Open, FileAccess.Read))
+                        {
+                            ptbavatar.Image = System.Drawing.Image.FromStream(fs);
+                        }
+                    }
+                    else
+                    {
+                        // Hiển thị ảnh mặc định nếu tệp không tồn tại
+                        // ptbavatar.Image = Properties.Resources.DefaultAvatar;
+                    }
+                }
+            }
+
+        }
+
+        private void CapNhatThongTinNguoiDangNhap()
+        {
+            lblTenTaiKhoan.Text = Account.TenDangNhap;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
-            openChildForm(new frmQLThongTinHocSinh ());
+
+            openChildForm(new frmQLThongTinHocSinh());
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-         
+
             openChildForm(new FrmQLDiemHS());
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            openChildForm(new frmQLLop());
+            openChildForm(new frmQuanLyLop());
         }
 
 
         private void button4_Click(object sender, EventArgs e)
         {
-            
+
             openChildForm(new frmQuanLyMonHoc());
         }
 
@@ -92,68 +138,88 @@ namespace GUI
         {
 
         }
-
+        private void buttonThongKe_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frmThongKe());
+        }
         private void button5_Click_1(object sender, EventArgs e)
         {
-           
-            openChildForm(new QuanLyGiangVien());
+
+            openChildForm(new frmQuanLyGiaoVien());
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
+            DialogResult result = MessageBox.Show(
+            "Bạn có chắc chắn muốn đăng xuất không?",
+            "Xác nhận đăng xuất",
+            MessageBoxButtons.YesNo,
+            MessageBoxIcon.Question
+             );
 
+            if (result == DialogResult.Yes)
+            {
+                // Người dùng đồng ý đăng xuất
+                IsLoggedOut = true;
+                LogoutRequested?.Invoke(this, EventArgs.Empty);
+            }
+            else
+            {
+                // Người dùng bấm "Không" → không làm gì cả
+                return;
+            }
         }
 
-        bool sidebarExpand = true;
-        private void sidebarTransition_Tick(object sender, EventArgs e)
+        // ====================================================================
+        // HÀM ĐÃ ĐƯỢC VIẾT LẠI VÀ ĐƠN GIẢN HÓA
+        // ====================================================================
+        private void ToggleSidebar()
         {
-            sidebar.SuspendLayout(); // 🧩 Ngắt layout tạm thời
-            plView.SuspendLayout();
+           
 
             if (sidebarExpand)
             {
-                sidebar.Width -= 5;
-                if(sidebar.Width <= 55)
-                {
-                    sidebarExpand = false;
-                    sidebarTransition.Stop();
-                    plQLHocSinh.Width = sidebar.Width;
-                    plQLDiemHS.Width = sidebar.Width;
-                    plQLLop.Width = sidebar.Width;
-                    plQLMonHoc.Width = sidebar.Width;
-                    plQLGiaoVien.Width = sidebar.Width;
-                    plDangXuat.Width = sidebar.Width;
-                    HideButtonText();
-                }
-            }else
-            {
-                sidebar.Width += 5;
-                if(sidebar.Width >= 245)
-                {
-                    sidebarExpand = true;
-                    sidebarTransition.Stop();
-                    plQLHocSinh.Width = sidebar.Width;
-                    plQLDiemHS.Width = sidebar.Width;
-                    plQLLop.Width = sidebar.Width;
-                    plQLMonHoc.Width = sidebar.Width;
-                    plQLGiaoVien.Width = sidebar.Width;
-                    plDangXuat.Width = sidebar.Width;
-                    ShowButtonText();
-                }
+                // --- THU GỌN SIDEBAR ---
+
+                // 1. Ẩn text của các button
+               
+                HideButtonText();
+
+                // 2. Thay đổi Width ngay lập tức (Snap)
+                
+                sidebar.Width = sidebarWidthCollapsed;
+
+                
+                sidebarExpand = false;
             }
-            sidebar.ResumeLayout(); // 🔧 Bật lại layout sau khi thay đổi
-            plView.ResumeLayout();
+            else
+            {
+                // --- MỞ RỘNG SIDEBAR ---
+
+                // 1. Thay đổi Width ngay lập tức (Snap)
+               
+                sidebar.Width = sidebarWidthExpanded;
+
+                // 2. Hiển thị lại text cho các button
+                ShowButtonText();
+
+                // 3. Cập nhật lại trạng thái
+                sidebarExpand = true;
+            }
+
+            
         }
 
         private void btnHam_Click(object sender, EventArgs e)
         {
-            sidebarTransition.Start();
+            ToggleSidebar();
         }
+
 
         private void HideButtonText()
         {
@@ -162,17 +228,17 @@ namespace GUI
             btnQLLop.Text = "";
             btnQLMonHoc.Text = "";
             btnQLGiaoVien.Text = "";
-            btnDangXuat.Text = "";
+            btnThongKe.Text = "";
         }
 
         private void ShowButtonText()
         {
-            btnQLHS.Text = "   Quản lý học sinh";
-            btnQLDiem.Text = "   Quản lý điểm";
-            btnQLLop.Text = "   Quản lý lớp";
-            btnQLMonHoc.Text = "   Quản lý môn học";
-            btnQLGiaoVien.Text = "   Quản lý giáo viên";
-            btnDangXuat.Text = "   Đăng xuất";
+            btnQLHS.Text = "     Quản lý học sinh";
+            btnQLDiem.Text = "     Quản lý điểm";
+            btnQLLop.Text = "     Quản lý lớp";
+            btnQLMonHoc.Text = "     Quản lý môn học";
+            btnQLGiaoVien.Text = "     Quản lý giáo viên";
+            btnThongKe.Text = "     Đăng xuất";
         }
 
 
@@ -216,6 +282,19 @@ namespace GUI
 
         }
 
-        
+        private void sidebar_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2CirclePictureBox1_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frmHoSo(this,Account));
+        }
     }
 }

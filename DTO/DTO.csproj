@@ -41,7 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaoCaoHocKyDTO.cs" />
     <Compile Include="DiemDTO.cs" />
+    <Compile Include="frmBaoCaoTKMHDTO.cs" />
     <Compile Include="GiaoVienDTO.cs" />
     <Compile Include="HocKyDTO.cs" />
     <Compile Include="HocSinhDTO.cs" />
@@ -49,6 +51,8 @@
     <Compile Include="MonHocDTO.cs" />
     <Compile Include="NamHocDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportMonHocDTO.cs" />
+    <Compile Include="KQHSCaNamDTO.cs" />
     <Compile Include="TaiKhoanDTO.cs" />
   </ItemGroup>
   <ItemGroup />
