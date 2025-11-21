@@ -189,5 +189,29 @@ namespace DAL
 
             return list;
         }
+        public DataTable LayDanhSachHocSinh(string maNamHoc, string maLop)
+        {
+            string query = @"
+        SELECT 
+            hs.MaHocSinh,
+            hs.HoTen,
+            hs.NgaySinh,
+            hs.GioiTinh,
+            hs.DiaChi,
+            hs.Email,
+            hs.MaLop,
+            hs.TrangThai
+        FROM HocSinh hs
+        JOIN Lop l ON hs.MaLop = l.MaLop
+        JOIN NamHoc nh ON l.NamHoc = nh.MaNamHoc
+        WHERE nh.MaNamHoc = @MaNamHoc
+          AND l.MaLop = @MaLop";
+
+            return DataProvider.Instance.ExecuteQuery(query, new object[]
+            {
+        maNamHoc, maLop
+            });
+        }
+
     }
 }

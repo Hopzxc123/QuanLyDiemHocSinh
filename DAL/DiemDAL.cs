@@ -171,5 +171,11 @@ namespace DAL
             }
             return -1; // Hoặc giá trị khác để biểu thị không tìm thấy
         }
+        public DataTable LayDanhSachDiemHocSinh(string maHocSinh, string maMonHoc, string maHocKy, string maNamHoc, string maLop)
+        {
+            string query = "EXEC LayDanhSachDiemHocSinh @maHocSinh , @maMonHoc , @maHocKy , @maNamHoc , @maLop";
+            object[] parameters = new object[] { maHocSinh, maMonHoc, maHocKy, maNamHoc, maLop };
+            return DataProvider.Instance.ExecuteQuery(query, parameters);
+        }
     }
 }

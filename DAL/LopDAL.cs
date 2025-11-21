@@ -159,5 +159,11 @@ namespace DAL
 
             return list;
         }
+        public int LaySiSo(string maLop)
+        {
+            string query = $"SELECT SiSo FROM LOP WHERE MaLop = '{maLop}'";
+            DataTable dataTable = DataProvider.Instance.ExecuteQuery(query);
+            return Convert.ToInt32(dataTable.Rows[0]["SiSo"]);
+        }
     }
 }

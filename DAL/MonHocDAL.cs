@@ -145,6 +145,12 @@ namespace DAL
 
             return list;
         }
+        public DataTable LayDanhSachMonHoc(string namHoc, string lop)
+        {
+            string query = "EXEC LayDanhSachMonHocTheoLop @maNamHoc , @maLop";
+            object[] parameters = new object[] { namHoc, lop };
+            return DataProvider.Instance.ExecuteQuery(query, parameters);
+        }
         public bool CheckMaMonHocExists(string maMonHoc)
         {
             return GetMonHocByMa(maMonHoc) != null;
