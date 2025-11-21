@@ -88,10 +88,6 @@ namespace GUI
             dgvDanhSach.Columns["TrangThai"].HeaderText = "Trạng thái";
         }
 
-        private void dgvDanhSach_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
 
         private void dgvDanhSach_CellClick(object sender, DataGridViewCellEventArgs e)
         {

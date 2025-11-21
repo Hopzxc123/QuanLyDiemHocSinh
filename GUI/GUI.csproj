@@ -64,6 +64,24 @@
     <Reference Include="Guna.UI2, Version=2.0.4.7, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
       <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.7\lib\net472\Guna.UI2.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
@@ -114,6 +132,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="QLThongTinHocSinh\frmBaoCaoDanhSachHocSinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLThongTinHocSinh\frmBaoCaoDanhSachHocSinh.Designer.cs">
+      <DependentUpon>frmBaoCaoDanhSachHocSinh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLThongTinHocSinh\frmTimKiemHocSinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLThongTinHocSinh\frmTimKiemHocSinh.Designer.cs">
+      <DependentUpon>frmTimKiemHocSinh.cs</DependentUpon>
+    </Compile>
     <Compile Include="QuanLiDiem\frmChiTietDiemHocSinh.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,10 +156,10 @@
     <Compile Include="QuanLiDiem\frmQLDiemHS.Designer.cs">
       <DependentUpon>frmQLDiemHS.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmQLThongTinHocSinh.cs">
+    <Compile Include="QLThongTinHocSinh\frmQLThongTinHocSinh.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmQLThongTinHocSinh.Designer.cs">
+    <Compile Include="QLThongTinHocSinh\frmQLThongTinHocSinh.Designer.cs">
       <DependentUpon>frmQLThongTinHocSinh.cs</DependentUpon>
     </Compile>
     <Compile Include="frmQuanLyMonHoc.cs">
@@ -157,6 +187,7 @@
     <Compile Include="frmQuanLyGiaoVien.Designer.cs">
       <DependentUpon>frmQuanLyGiaoVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
   </ItemGroup>
   <!-- Embedded Resources -->
   <ItemGroup>
@@ -172,13 +203,20 @@
     <EmbeddedResource Include="frmThongKe.resx">
       <DependentUpon>frmThongKe.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="QLThongTinHocSinh\frmBaoCaoDanhSachHocSinh.resx">
+      <DependentUpon>frmBaoCaoDanhSachHocSinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QLThongTinHocSinh\frmTimKiemHocSinh.resx">
+      <DependentUpon>frmTimKiemHocSinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QLThongTinHocSinh\rptDanhSachHocSinh.rdlc" />
     <EmbeddedResource Include="QuanLiDiem\frmChiTietDiemHocSinh.resx">
       <DependentUpon>frmChiTietDiemHocSinh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLiDiem\frmQLDiemHS.resx">
       <DependentUpon>frmQLDiemHS.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmQLThongTinHocSinh.resx">
+    <EmbeddedResource Include="QLThongTinHocSinh\frmQLThongTinHocSinh.resx">
       <DependentUpon>frmQLThongTinHocSinh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmQuanLyMonHoc.resx">
@@ -200,6 +238,14 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\DTO.DiemDTO.datasource" />
+    <None Include="Properties\DataSources\DTO.GiaoVienDTO.datasource" />
+    <None Include="Properties\DataSources\DTO.HocKyDTO.datasource" />
+    <None Include="Properties\DataSources\DTO.HocSinhDTO.datasource" />
+    <None Include="Properties\DataSources\DTO.LopDTO.datasource" />
+    <None Include="Properties\DataSources\DTO.MonHocDTO.datasource" />
+    <None Include="Properties\DataSources\DTO.NamHocDTO.datasource" />
+    <None Include="Properties\DataSources\DTO.TaiKhoanDTO.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -310,6 +356,21 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

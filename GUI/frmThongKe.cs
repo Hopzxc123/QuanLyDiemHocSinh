@@ -1,5 +1,6 @@
 ﻿using BLL;
 using DTO;
+using GUI.QLThongTinHocSinh;
 using Guna.Charts.WinForms;
 using Microsoft.Office.Interop.Excel;
 using System;
