@@ -288,5 +288,16 @@ namespace GUI
            
             Utilities.ShowForm("frmBaoCaoHS", pnBaoCao);
         }
+
+        private void btnDSHS_Click(object sender, EventArgs e)
+        {
+            
+            Utilities.ShowForm("frmBaoCaoDSHS", pnBaoCao);
+        }
+
+        private void btnDiemCaNam_Click(object sender, EventArgs e)
+        {
+            Utilities.ShowForm("frmKQHSCaNam", pnBaoCao);
+        }
     }
 }

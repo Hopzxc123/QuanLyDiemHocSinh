@@ -42,5 +42,44 @@ namespace DAL
             return list;
         }
 
+        public List<ReportMonHocDTO> ReportMonHoc()
+        {
+            List<ReportMonHocDTO> list = new List<ReportMonHocDTO>();
+            string query = "select BangDiem.MaMonHoc, MonHoc.TenMonHoc, HocKy.MaHocKy, HocKy.TenHocKy, NamHoc.MaNamHoc, NamHoc.TenNamHoc, AVG(DiemTBHK) DTB from BangDiem " +
+                            " join MonHoc on BangDiem.MaMonHoc = MonHoc.MaMonHoc" +
+                            " join HocKy on BangDiem.MaHocKy = HocKy.MaHocKy " +
+                            " join NamHoc on HocKy.MaNamHoc = NamHoc.MaNamHoc " +
+                            " group by BangDiem.MaMonHoc, MonHoc.TenMonHoc, HocKy.MaHocKy, HocKy.TenHocKy, NamHoc.MaNamHoc, NamHoc.TenNamHoc";
+
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            foreach (DataRow row in data.Rows)
+            {
+                ReportMonHocDTO mh = new ReportMonHocDTO
+                {
+                    MaMonHoc = row["MaMonHoc"].ToString(),
+                    TenMonHoc = row["TenMonHoc"].ToString(),
+                    MaHocKy = row["MaHocKy"].ToString(),
+                    TenHocKy = row["TenHocKy"].ToString(),
+                    MaNamHoc = row["MaNamHoc"].ToString(),
+                    TenNamHoc = row["TenNamHoc"].ToString(),
+                    DTB = row["DTB"] != DBNull.Value ? Math.Round(Convert.ToDouble(row["DTB"]), 1): 0
+
+                };
+                list.Add(mh);
+            }
+            return list;
+        }
+
+        public DataTable ReportKQHSCaNam(string maNamHoc, string maLop)
+        {
+            string query = $"EXEC ReportKQHSCaNam {maNamHoc}, {maLop}";
+            return DataProvider.Instance.ExecuteQuery(query, new object[]
+            {
+                maNamHoc,
+                maLop
+            });
+        }
+
     }
 }

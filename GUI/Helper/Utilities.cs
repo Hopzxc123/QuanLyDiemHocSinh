@@ -14,11 +14,16 @@ namespace GUI.Helper
             Type type = Type.GetType($"GUI.Reports.{formName}");
             Form frm = (Form)Activator.CreateInstance(type);
 
+            // Quan trọng: biến Form thành non-top-level để nhúng vào Panel
+            frm.TopLevel = false;
+            frm.FormBorderStyle = FormBorderStyle.None;
+            frm.Dock = DockStyle.Fill;      // Cho Form con tự lấp đầy Panel
+
+
             // 3. **Nhúng vào Panel**
             containerPanel.Controls.Clear(); // Xóa bất kỳ Control nào hiện có trong Panel
 
             containerPanel.Controls.Add(frm); // Thêm Form con vào Panel
-            frm.Dock = DockStyle.Fill;      // Cho Form con tự lấp đầy Panel
             
 
             // 4. Hiển thị

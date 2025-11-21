@@ -1,5 +1,6 @@
 ﻿using BLL;
 using DTO;
+using GUI.Reports;
 using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
@@ -188,5 +189,7 @@ namespace GUI
         Color.White, 0, ButtonBorderStyle.Solid,
         Color.White, 0, ButtonBorderStyle.Solid);
         }
+
+        
     }
 }

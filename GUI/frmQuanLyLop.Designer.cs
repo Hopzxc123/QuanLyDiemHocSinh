@@ -1073,7 +1073,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(937, 660);
+            this.ClientSize = new System.Drawing.Size(1170, 660);
             this.Controls.Add(this.tableLayoutPanel3);
             this.Name = "frmQuanLyLop";
             this.Text = "frmQuanLyLop";

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using GUI.QLThongTinHocSinh;
 
 namespace GUI
 {
@@ -288,6 +289,12 @@ namespace GUI
             }
         }
 
+        public DataGridView DgvHocSinh
+        {
+            get { return dgvHocSinh; }
+        }
+
+
         // ======================== LỌC THEO NĂM HỌC & LỚP =========================
         private void cbbNamHoc_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -333,6 +340,12 @@ namespace GUI
             {
                 LoadHocSinhData();
             }
+        }
+
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+            frmTimKiemHocSinh frm = new frmTimKiemHocSinh(this);
+            frm.Show();
         }
     }
 }
