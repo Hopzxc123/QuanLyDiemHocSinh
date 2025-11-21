@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GUI.Reports;
+using System;
 using System.Windows.Forms;
 
 namespace GUI
