@@ -102,6 +102,21 @@ namespace GUI.Reports
 
         private void btnXem_Click(object sender, EventArgs e)
         {
+            if (cbbNamHoc.SelectedIndex == 0)
+            {
+                MessageBox.Show(this, "Vui Lòng chọn năm học");
+                return;
+            }
+            if (cbbHocKy.SelectedIndex == 0)
+            {
+                MessageBox.Show(this, "Vui Lòng chọn học kì");
+                return;
+            }
+            if(cbbMonHoc.SelectedIndex == 0)
+            {
+                MessageBox.Show(this, "Vui Lòng chọn môn học");
+                return;
+            }
             IList<ReportParameter> param = new List<ReportParameter>();
             param.Add(new ReportParameter("NgayLap", DateTime.UtcNow.ToString("dd/MM/yyyy")));
             param.Add(new ReportParameter("NamHoc", cbbNamHoc.Text));
