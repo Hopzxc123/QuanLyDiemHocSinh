@@ -10,19 +10,26 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GUI.QLThongTinHocSinh
+namespace GUI.Reports
 {
-    public partial class frmBaoCaoDanhSachHocSinh : Form
+    public partial class frmBaoCaoDSHS : Form
     {
-        public frmBaoCaoDanhSachHocSinh()
+        public frmBaoCaoDSHS()
         {
             InitializeComponent();
+            this.TopLevel = false;
+
+            // 2. Tắt viền cửa sổ để nó trông giống một UserControl hơn.
+            this.FormBorderStyle = FormBorderStyle.None;
+
+            // 3. Đảm bảo Form con tự động điều chỉnh kích thước nếu cần.
+            this.AutoScroll = true;
         }
 
-        private void frmBaoCaoDanhSachHocSinh_Load(object sender, EventArgs e)
+        private void frmBaoCaoDSHS_Load(object sender, EventArgs e)
         {
-            rpvDSHS.LocalReport.ReportEmbeddedResource = "GUI.QLThongTinHocSinh.rptDanhSachHocSinh.rdlc";
-            
+            rpvDSHS.LocalReport.ReportEmbeddedResource = "GUI.Reports.rptDanhSachHocSinh.rdlc";
+
             var list = HocSinhBLL.Instance.GetAllHocSinh();
 
             rpvDSHS.LocalReport.DataSources.Clear();

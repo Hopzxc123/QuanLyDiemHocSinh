@@ -1,6 +1,6 @@
-﻿namespace GUI.QLThongTinHocSinh
+﻿namespace GUI.Reports
 {
-    partial class frmBaoCaoDanhSachHocSinh
+    partial class frmBaoCaoDSHS
     {
         /// <summary>
         /// Required designer variable.
@@ -43,18 +43,17 @@
             this.rpvDSHS.Name = "rpvDSHS";
             this.rpvDSHS.ServerReport.BearerToken = null;
             this.rpvDSHS.Size = new System.Drawing.Size(800, 450);
-            this.rpvDSHS.TabIndex = 2;
+            this.rpvDSHS.TabIndex = 3;
             // 
-            // frmBaoCaoDanhSachHocSinh
+            // frmBaoCaoDSHS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.rpvDSHS);
-            this.MaximizeBox = false;
-            this.Name = "frmBaoCaoDanhSachHocSinh";
-            this.Text = "frmBaoCaoDanhSachHocSinh";
-            this.Load += new System.EventHandler(this.frmBaoCaoDanhSachHocSinh_Load);
+            this.Name = "frmBaoCaoDSHS";
+            this.Text = "frmBaoCaoDSHS";
+            this.Load += new System.EventHandler(this.frmBaoCaoDSHS_Load);
             this.ResumeLayout(false);
 
         }
