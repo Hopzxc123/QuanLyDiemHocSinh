@@ -286,7 +286,7 @@ namespace GUI
         private void btnBaoCaoHS_Click(object sender, EventArgs e)
         {
            
-            Utilities.ShowForm("frmBaoCaoHS", pnBaoCao);
+            Utilities.ShowForm("frmReportMonHoc", pnBaoCao);
         }
 
         private void btnDSHS_Click(object sender, EventArgs e)

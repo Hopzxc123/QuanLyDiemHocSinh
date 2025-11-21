@@ -30,12 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnXem = new Guna.UI2.WinForms.Guna2Button();
             this.cbbMonHoc = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cbbHocKy = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cbbNamHoc = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.rpBaoCaoMH = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.btnXem = new Guna.UI2.WinForms.Guna2Button();
             this.bsTongKetMonHoc = new System.Windows.Forms.BindingSource(this.components);
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
@@ -54,6 +54,21 @@
             this.guna2Panel1.Size = new System.Drawing.Size(969, 81);
             this.guna2Panel1.TabIndex = 0;
             this.guna2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint);
+            // 
+            // btnXem
+            // 
+            this.btnXem.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnXem.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnXem.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnXem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnXem.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnXem.ForeColor = System.Drawing.Color.White;
+            this.btnXem.Location = new System.Drawing.Point(591, 23);
+            this.btnXem.Name = "btnXem";
+            this.btnXem.Size = new System.Drawing.Size(86, 45);
+            this.btnXem.TabIndex = 3;
+            this.btnXem.Text = "Xem";
+            this.btnXem.Click += new System.EventHandler(this.btnXem_Click);
             // 
             // cbbMonHoc
             // 
@@ -120,21 +135,6 @@
             this.rpBaoCaoMH.ServerReport.BearerToken = null;
             this.rpBaoCaoMH.Size = new System.Drawing.Size(969, 609);
             this.rpBaoCaoMH.TabIndex = 0;
-            // 
-            // btnXem
-            // 
-            this.btnXem.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnXem.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnXem.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnXem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnXem.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnXem.ForeColor = System.Drawing.Color.White;
-            this.btnXem.Location = new System.Drawing.Point(591, 23);
-            this.btnXem.Name = "btnXem";
-            this.btnXem.Size = new System.Drawing.Size(86, 45);
-            this.btnXem.TabIndex = 3;
-            this.btnXem.Text = "Xem";
-            this.btnXem.Click += new System.EventHandler(this.btnXem_Click);
             // 
             // frmBaoCaoMH
             // 
