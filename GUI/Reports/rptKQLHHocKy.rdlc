@@ -112,27 +112,27 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>1cm</Width>
+                  <Width>1.91017cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>3.41017cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.5cm</Width>
+                  <Width>4.41017cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>3.41017cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>4.95cm</Width>
+                  <Width>5.86017cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>3.41017cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>0.25in</Height>
+                  <Height>0.325in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -359,7 +359,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.25in</Height>
+                  <Height>0.325in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -610,10 +610,10 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>KQLHocKyDTO</DataSetName>
-            <Top>2.7535cm</Top>
-            <Left>0cm</Left>
-            <Height>0.5in</Height>
-            <Width>16.95cm</Width>
+            <Top>2.83361cm</Top>
+            <Left>0.93154cm</Left>
+            <Height>0.65in</Height>
+            <Width>22.411cm</Width>
             <ZIndex>2</ZIndex>
             <Style>
               <Border>
@@ -683,10 +683,10 @@
             </Style>
           </Textbox>
         </ReportItems>
-        <Height>2in</Height>
+        <Height>2.93333in</Height>
         <Style />
       </Body>
-      <Width>7.75059in</Width>
+      <Width>9.42559in</Width>
       <Page>
         <LeftMargin>1in</LeftMargin>
         <RightMargin>1in</RightMargin>

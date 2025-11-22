@@ -17,7 +17,7 @@ namespace GUI.Reports
         public HoSoLopHoc()
         {
             InitializeComponent();
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "GUI.Reports.rptHoSoLopHoc.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "GUI.Reports.HoSoLopHoc.rdlc";
 
             // CHỈ TẢI NĂM HỌC khi Form khởi tạo
             LoadNamHocData();
@@ -119,7 +119,7 @@ namespace GUI.Reports
             string ngayLap = DateTime.Now.ToString("dd/MM/yyyy");
 
             // 3. Gán ReportDataSource
-            ReportDataSource rds = new ReportDataSource("DataSet1", listHocSinh);
+            ReportDataSource rds = new ReportDataSource("HoSoHocSinh", listHocSinh);
             this.reportViewer1.LocalReport.DataSources.Add(rds);
 
             // 4. Gán Tham số (Đã bổ sung)

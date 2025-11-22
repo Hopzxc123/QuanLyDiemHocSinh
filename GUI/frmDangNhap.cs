@@ -19,6 +19,7 @@ namespace GUI
         private void frmDangNhap_Load(object sender, EventArgs e)
         {
             lblThongBao.Visible = false;
+
             txtTenDangNhap.Focus();
             txtMatKhau.UseSystemPasswordChar = true;
             // Khi nhấn Enter trên form => gọi nút đăng nhập
@@ -58,6 +59,7 @@ namespace GUI
             {
                 lblThongBao.Text = ex.Message;
                 lblThongBao.ForeColor = Color.Red;
+               lblThongBao.Width =this.Width;
                 lblThongBao.Visible = true;
                 txtMatKhau.Clear();
                 txtMatKhau.Focus();

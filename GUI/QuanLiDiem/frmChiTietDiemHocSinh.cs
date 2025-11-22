@@ -316,14 +316,17 @@ namespace GUI.frmQLDiemHS
                     exSheet.get_Range("G7").Value = "Điểm tổng kết";
                     for (int i = 0; i < dgvDiem.Rows.Count; i++)
                     {
-                        exSheet.get_Range("A" + (i + 8).ToString()).Value = (i + 1).ToString();
-                        exSheet.get_Range("B" + (i + 8).ToString()).Value = diems[i].MaMonHoc;
-                        exSheet.get_Range("C" + (i + 8).ToString()).Value = MonHocBLL.Instance.GetMonHocByMa(diems[i].MaMonHoc).TenMonHoc;
-                        exSheet.get_Range("D" + (i + 8).ToString()).Value = diems[i].DiemTrenLop;
-                        exSheet.get_Range("E" + (i + 8).ToString()).Value = diems[i].DiemGiuaKy;
-                        exSheet.get_Range("F" + (i + 8).ToString()).Value = diems[i].DiemThi;
-                        exSheet.get_Range("G" + (i + 8).ToString()).Value = diems[i].DiemTongKet;
+                        var row = dgvDiem.Rows[i];
+
+                        exSheet.get_Range("A" + (i + 8)).Value = (i + 1).ToString();
+                        exSheet.get_Range("B" + (i + 8)).Value = row.Cells[4].Value?.ToString(); // Mã môn học
+                        exSheet.get_Range("C" + (i + 8)).Value = row.Cells[4].Value?.ToString(); // hoặc TenMon
+                        exSheet.get_Range("D" + (i + 8)).Value = row.Cells[0].Value?.ToString(); // Điểm trên lớp
+                        exSheet.get_Range("E" + (i + 8)).Value = row.Cells[1].Value?.ToString(); // Điểm GK
+                        exSheet.get_Range("F" + (i + 8)).Value = row.Cells[2].Value?.ToString(); // Điểm thi
+                        exSheet.get_Range("G" + (i + 8)).Value = row.Cells[3].Value?.ToString(); // Điểm tổng kết
                     }
+
                     exSheet.Name = "Hang";
                     exBook.Activate();
                     using (SaveFileDialog dlgSave = new SaveFileDialog())
@@ -412,6 +415,13 @@ namespace GUI.frmQLDiemHS
             
         }
 
+        
+
+        private void toolTip1_Popup(object sender, PopupEventArgs e)
+        {
+
+        }
+
         private void cbbNamHoc_SelectedIndexChanged(object sender, EventArgs e)
         {
             //fix loi khi load form gan datasoure vao cbb thi no se tu dong kich hoat su kien nay
@@ -438,10 +448,7 @@ namespace GUI.frmQLDiemHS
             }
         }
 
-        private void toolTip1_Popup(object sender, PopupEventArgs e)
-        {
-
-        }
+        
 
         private void cbbNamHoc_SelectedIndexChanged_1(object sender, EventArgs e)
         {
@@ -463,11 +470,6 @@ namespace GUI.frmQLDiemHS
                 cbbHocKy.SelectedIndex = 0;
             }
             return;
-        }
-
-        private void cbbtNamHoc_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

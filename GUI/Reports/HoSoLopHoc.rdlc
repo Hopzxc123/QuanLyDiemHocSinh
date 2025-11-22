@@ -11,7 +11,7 @@
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DataSet1">
+    <DataSet Name="HoSoHocSinh">
       <Query>
         <DataSourceName>DTO</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
@@ -523,7 +523,7 @@
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
-            <DataSetName>DataSet1</DataSetName>
+            <DataSetName>HoSoHocSinh</DataSetName>
             <Top>0.4375in</Top>
             <Left>0.97917in</Left>
             <Height>0.5in</Height>
