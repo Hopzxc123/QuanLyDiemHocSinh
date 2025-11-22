@@ -199,7 +199,12 @@
     <Compile Include="Reports\frmKQHSCaNam.Designer.cs">
       <DependentUpon>frmKQHSCaNam.cs</DependentUpon>
     </Compile>
-    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="Reports\HoSoLopHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\HoSoLopHoc.Designer.cs">
+      <DependentUpon>HoSoLopHoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reports\frmReportMonHoc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -223,6 +228,19 @@
   </ItemGroup>
   <!-- Embedded Resources -->
   <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <EmbeddedResource Include="frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
@@ -243,6 +261,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\frmReportMonHoc.resx">
       <DependentUpon>frmReportMonHoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\HoSoLopHoc.rdlc" />
+    <EmbeddedResource Include="Reports\HoSoLopHoc.resx">
+      <DependentUpon>HoSoLopHoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\ReportMonHocDTO.rdlc" />
     <EmbeddedResource Include="Reports\rptDanhSachHocSinh.rdlc" />
@@ -272,6 +294,7 @@
     <EmbeddedResource Include="Reports\frmKQLHHocKy.resx">
       <DependentUpon>frmKQLHHocKy.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptHoSoLopHoc.rdlc" />
     <EmbeddedResource Include="Reports\rptKQLHHocKy.rdlc" />
     <EmbeddedResource Include="Reports\frmKQHSCaNam.resx">
       <DependentUpon>frmKQHSCaNam.cs</DependentUpon>
@@ -427,21 +450,6 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="SqlServerTypes\readme.htm" />
-    <Content Include="SqlServerTypes\x64\msvcr120.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x86\msvcr120.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

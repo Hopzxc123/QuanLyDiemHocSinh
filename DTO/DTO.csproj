@@ -55,6 +55,8 @@
     <Compile Include="KQHSCaNamDTO.cs" />
     <Compile Include="TaiKhoanDTO.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Properties\DataSources\HocSinhDTO.datasource" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

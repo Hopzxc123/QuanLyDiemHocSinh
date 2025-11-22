@@ -304,5 +304,9 @@ namespace GUI
         {
             Utilities.ShowForm("frmKQLHHocKy", pnBaoCao);
         }
+        private void btnHoSoLH_Click(object sender, EventArgs e)
+        {
+            Utilities.ShowForm("HoSoLopHoc", pnBaoCao);
+        }
     }
 }

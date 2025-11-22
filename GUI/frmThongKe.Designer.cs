@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.Charts.WinForms.ChartFont chartFont1 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.ChartFont chartFont2 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.ChartFont chartFont3 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.ChartFont chartFont4 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.Grid grid1 = new Guna.Charts.WinForms.Grid();
-            Guna.Charts.WinForms.Tick tick1 = new Guna.Charts.WinForms.Tick();
-            Guna.Charts.WinForms.ChartFont chartFont5 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.Grid grid2 = new Guna.Charts.WinForms.Grid();
-            Guna.Charts.WinForms.Tick tick2 = new Guna.Charts.WinForms.Tick();
-            Guna.Charts.WinForms.ChartFont chartFont6 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.Grid grid3 = new Guna.Charts.WinForms.Grid();
-            Guna.Charts.WinForms.PointLabel pointLabel1 = new Guna.Charts.WinForms.PointLabel();
-            Guna.Charts.WinForms.ChartFont chartFont7 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.Tick tick3 = new Guna.Charts.WinForms.Tick();
-            Guna.Charts.WinForms.ChartFont chartFont8 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.ChartFont chartFont9 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.ChartFont chartFont10 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.ChartFont chartFont11 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.ChartFont chartFont12 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.Grid grid4 = new Guna.Charts.WinForms.Grid();
+            Guna.Charts.WinForms.Tick tick4 = new Guna.Charts.WinForms.Tick();
+            Guna.Charts.WinForms.ChartFont chartFont13 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.Grid grid5 = new Guna.Charts.WinForms.Grid();
+            Guna.Charts.WinForms.Tick tick5 = new Guna.Charts.WinForms.Tick();
+            Guna.Charts.WinForms.ChartFont chartFont14 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.Grid grid6 = new Guna.Charts.WinForms.Grid();
+            Guna.Charts.WinForms.PointLabel pointLabel2 = new Guna.Charts.WinForms.PointLabel();
+            Guna.Charts.WinForms.ChartFont chartFont15 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.Tick tick6 = new Guna.Charts.WinForms.Tick();
+            Guna.Charts.WinForms.ChartFont chartFont16 = new Guna.Charts.WinForms.ChartFont();
             this.panel3 = new System.Windows.Forms.Panel();
             this.grThongKe = new System.Windows.Forms.GroupBox();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -66,6 +66,7 @@
             this.tabThongKe = new Guna.UI2.WinForms.Guna2TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.btnHoSoLH = new Guna.UI2.WinForms.Guna2Button();
             this.grThongKe.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -80,10 +81,10 @@
             // 
             // panel3
             // 
-            this.panel3.Location = new System.Drawing.Point(278, 111);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4);
+            this.panel3.Location = new System.Drawing.Point(313, 139);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1197, 686);
+            this.panel3.Size = new System.Drawing.Size(1347, 858);
             this.panel3.TabIndex = 2;
             // 
             // grThongKe
@@ -93,58 +94,58 @@
             this.grThongKe.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grThongKe.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.grThongKe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(101)))), ((int)(((byte)(241)))));
-            this.grThongKe.Location = new System.Drawing.Point(3, 73);
+            this.grThongKe.Location = new System.Drawing.Point(3, 92);
             this.grThongKe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grThongKe.Name = "grThongKe";
-            this.grThongKe.Padding = new System.Windows.Forms.Padding(4);
-            this.grThongKe.Size = new System.Drawing.Size(1199, 669);
+            this.grThongKe.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.grThongKe.Size = new System.Drawing.Size(1351, 847);
             this.grThongKe.TabIndex = 0;
             this.grThongKe.TabStop = false;
             // 
             // panel5
             // 
             this.panel5.Controls.Add(this.chart);
-            this.panel5.Location = new System.Drawing.Point(3, 76);
+            this.panel5.Location = new System.Drawing.Point(3, 95);
             this.panel5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1187, 582);
+            this.panel5.Size = new System.Drawing.Size(1335, 728);
             this.panel5.TabIndex = 1;
             // 
             // chart
             // 
             this.chart.Dock = System.Windows.Forms.DockStyle.Fill;
-            chartFont1.FontName = "Arial";
-            this.chart.Legend.LabelFont = chartFont1;
+            chartFont9.FontName = "Arial";
+            this.chart.Legend.LabelFont = chartFont9;
             this.chart.Location = new System.Drawing.Point(0, 0);
             this.chart.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chart.Name = "chart";
-            this.chart.Size = new System.Drawing.Size(1187, 582);
+            this.chart.Size = new System.Drawing.Size(1335, 728);
             this.chart.TabIndex = 0;
-            chartFont2.FontName = "Arial";
-            chartFont2.Size = 12;
-            chartFont2.Style = Guna.Charts.WinForms.ChartFontStyle.Bold;
-            this.chart.Title.Font = chartFont2;
-            chartFont3.FontName = "Arial";
-            this.chart.Tooltips.BodyFont = chartFont3;
-            chartFont4.FontName = "Arial";
-            chartFont4.Size = 9;
-            chartFont4.Style = Guna.Charts.WinForms.ChartFontStyle.Bold;
-            this.chart.Tooltips.TitleFont = chartFont4;
-            this.chart.XAxes.GridLines = grid1;
-            chartFont5.FontName = "Arial";
-            tick1.Font = chartFont5;
-            this.chart.XAxes.Ticks = tick1;
-            this.chart.YAxes.GridLines = grid2;
-            chartFont6.FontName = "Arial";
-            tick2.Font = chartFont6;
-            this.chart.YAxes.Ticks = tick2;
-            this.chart.ZAxes.GridLines = grid3;
-            chartFont7.FontName = "Arial";
-            pointLabel1.Font = chartFont7;
-            this.chart.ZAxes.PointLabels = pointLabel1;
-            chartFont8.FontName = "Arial";
-            tick3.Font = chartFont8;
-            this.chart.ZAxes.Ticks = tick3;
+            chartFont10.FontName = "Arial";
+            chartFont10.Size = 12;
+            chartFont10.Style = Guna.Charts.WinForms.ChartFontStyle.Bold;
+            this.chart.Title.Font = chartFont10;
+            chartFont11.FontName = "Arial";
+            this.chart.Tooltips.BodyFont = chartFont11;
+            chartFont12.FontName = "Arial";
+            chartFont12.Size = 9;
+            chartFont12.Style = Guna.Charts.WinForms.ChartFontStyle.Bold;
+            this.chart.Tooltips.TitleFont = chartFont12;
+            this.chart.XAxes.GridLines = grid4;
+            chartFont13.FontName = "Arial";
+            tick4.Font = chartFont13;
+            this.chart.XAxes.Ticks = tick4;
+            this.chart.YAxes.GridLines = grid5;
+            chartFont14.FontName = "Arial";
+            tick5.Font = chartFont14;
+            this.chart.YAxes.Ticks = tick5;
+            this.chart.ZAxes.GridLines = grid6;
+            chartFont15.FontName = "Arial";
+            pointLabel2.Font = chartFont15;
+            this.chart.ZAxes.PointLabels = pointLabel2;
+            chartFont16.FontName = "Arial";
+            tick6.Font = chartFont16;
+            this.chart.ZAxes.Ticks = tick6;
             // 
             // panel4
             // 
@@ -152,10 +153,10 @@
             this.panel4.Controls.Add(this.cbbHocKy);
             this.panel4.Controls.Add(this.cbbNamHoc);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(4, 21);
+            this.panel4.Location = new System.Drawing.Point(4, 26);
             this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1191, 69);
+            this.panel4.Size = new System.Drawing.Size(1343, 86);
             this.panel4.TabIndex = 0;
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
@@ -163,10 +164,10 @@
             // 
             this.btnLoc.AutoSize = true;
             this.btnLoc.Image = global::GUI.Properties.Resources.icons8_search_30;
-            this.btnLoc.Location = new System.Drawing.Point(369, 2);
+            this.btnLoc.Location = new System.Drawing.Point(415, 2);
             this.btnLoc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLoc.Name = "btnLoc";
-            this.btnLoc.Size = new System.Drawing.Size(48, 44);
+            this.btnLoc.Size = new System.Drawing.Size(54, 55);
             this.btnLoc.TabIndex = 2;
             this.btnLoc.UseVisualStyleBackColor = true;
             this.btnLoc.Click += new System.EventHandler(this.btnLoc_Click);
@@ -182,10 +183,10 @@
             this.cbbHocKy.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbbHocKy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbbHocKy.ItemHeight = 30;
-            this.cbbHocKy.Location = new System.Drawing.Point(213, 2);
+            this.cbbHocKy.Location = new System.Drawing.Point(240, 2);
             this.cbbHocKy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbbHocKy.Name = "cbbHocKy";
-            this.cbbHocKy.Size = new System.Drawing.Size(145, 36);
+            this.cbbHocKy.Size = new System.Drawing.Size(163, 36);
             this.cbbHocKy.TabIndex = 1;
             this.cbbHocKy.SelectedIndexChanged += new System.EventHandler(this.cbbHocKy_SelectedIndexChanged);
             // 
@@ -200,10 +201,10 @@
             this.cbbNamHoc.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbbNamHoc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbbNamHoc.ItemHeight = 30;
-            this.cbbNamHoc.Location = new System.Drawing.Point(15, 2);
+            this.cbbNamHoc.Location = new System.Drawing.Point(17, 2);
             this.cbbNamHoc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbbNamHoc.Name = "cbbNamHoc";
-            this.cbbNamHoc.Size = new System.Drawing.Size(145, 36);
+            this.cbbNamHoc.Size = new System.Drawing.Size(163, 36);
             this.cbbNamHoc.TabIndex = 0;
             this.cbbNamHoc.SelectedIndexChanged += new System.EventHandler(this.cbbNamHoc_SelectedIndexChanged);
             // 
@@ -219,10 +220,10 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(366, 14);
-            this.label7.Margin = new System.Windows.Forms.Padding(5);
+            this.label7.Location = new System.Drawing.Point(413, 18);
+            this.label7.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(361, 41);
+            this.label7.Size = new System.Drawing.Size(429, 48);
             this.label7.TabIndex = 0;
             this.label7.Text = "THỐNG KÊ TỔNG QUAN";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -233,10 +234,10 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(101)))), ((int)(((byte)(241)))));
             this.panel1.Controls.Add(this.label7);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Margin = new System.Windows.Forms.Padding(5);
+            this.panel1.Location = new System.Drawing.Point(3, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1199, 70);
+            this.panel1.Size = new System.Drawing.Size(1351, 88);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -245,10 +246,10 @@
             this.guna2Panel1.Controls.Add(this.pnBaoCao);
             this.guna2Panel1.Controls.Add(this.guna2Panel2);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Panel1.Location = new System.Drawing.Point(3, 3);
-            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2Panel1.Location = new System.Drawing.Point(3, 4);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(1199, 739);
+            this.guna2Panel1.Size = new System.Drawing.Size(1351, 935);
             this.guna2Panel1.TabIndex = 0;
             // 
             // pnBaoCao
@@ -256,10 +257,10 @@
             this.pnBaoCao.BorderColor = System.Drawing.Color.White;
             this.pnBaoCao.BorderThickness = 3;
             this.pnBaoCao.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnBaoCao.Location = new System.Drawing.Point(0, 122);
-            this.pnBaoCao.Margin = new System.Windows.Forms.Padding(4);
+            this.pnBaoCao.Location = new System.Drawing.Point(0, 152);
+            this.pnBaoCao.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnBaoCao.Name = "pnBaoCao";
-            this.pnBaoCao.Size = new System.Drawing.Size(1199, 617);
+            this.pnBaoCao.Size = new System.Drawing.Size(1351, 783);
             this.pnBaoCao.TabIndex = 2;
             // 
             // guna2Panel2
@@ -267,13 +268,14 @@
             this.guna2Panel2.Controls.Add(this.groupBox1);
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel2.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(1199, 122);
+            this.guna2Panel2.Size = new System.Drawing.Size(1351, 152);
             this.guna2Panel2.TabIndex = 1;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnHoSoLH);
             this.groupBox1.Controls.Add(this.btnBaoCaoHK);
             this.groupBox1.Controls.Add(this.btnDiemCaNam);
             this.groupBox1.Controls.Add(this.btnDSHS);
@@ -281,10 +283,10 @@
             this.groupBox1.Controls.Add(this.btnBaoCaoMH);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(1199, 122);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox1.Size = new System.Drawing.Size(1351, 152);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
@@ -301,10 +303,10 @@
             this.btnBaoCaoHK.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnBaoCaoHK.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(101)))), ((int)(((byte)(241)))));
             this.btnBaoCaoHK.HoverState.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.btnBaoCaoHK.Location = new System.Drawing.Point(647, 22);
-            this.btnBaoCaoHK.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBaoCaoHK.Location = new System.Drawing.Point(728, 28);
+            this.btnBaoCaoHK.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnBaoCaoHK.Name = "btnBaoCaoHK";
-            this.btnBaoCaoHK.Size = new System.Drawing.Size(131, 57);
+            this.btnBaoCaoHK.Size = new System.Drawing.Size(147, 71);
             this.btnBaoCaoHK.TabIndex = 4;
             this.btnBaoCaoHK.Text = "Báo cáo học kỳ";
             this.btnBaoCaoHK.Click += new System.EventHandler(this.btnBaoCaoHK_Click);
@@ -322,10 +324,10 @@
             this.btnDiemCaNam.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnDiemCaNam.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(101)))), ((int)(((byte)(241)))));
             this.btnDiemCaNam.HoverState.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.btnDiemCaNam.Location = new System.Drawing.Point(491, 22);
-            this.btnDiemCaNam.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDiemCaNam.Location = new System.Drawing.Point(552, 28);
+            this.btnDiemCaNam.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnDiemCaNam.Name = "btnDiemCaNam";
-            this.btnDiemCaNam.Size = new System.Drawing.Size(131, 57);
+            this.btnDiemCaNam.Size = new System.Drawing.Size(147, 71);
             this.btnDiemCaNam.TabIndex = 3;
             this.btnDiemCaNam.Text = "Báo cáo cả năm";
             this.btnDiemCaNam.Click += new System.EventHandler(this.btnDiemCaNam_Click);
@@ -343,10 +345,10 @@
             this.btnDSHS.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnDSHS.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(101)))), ((int)(((byte)(241)))));
             this.btnDSHS.HoverState.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.btnDSHS.Location = new System.Drawing.Point(335, 22);
-            this.btnDSHS.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDSHS.Location = new System.Drawing.Point(377, 28);
+            this.btnDSHS.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnDSHS.Name = "btnDSHS";
-            this.btnDSHS.Size = new System.Drawing.Size(131, 57);
+            this.btnDSHS.Size = new System.Drawing.Size(147, 71);
             this.btnDSHS.TabIndex = 2;
             this.btnDSHS.Text = "Danh sách học sinh";
             this.btnDSHS.Click += new System.EventHandler(this.btnDSHS_Click);
@@ -364,10 +366,10 @@
             this.btnBaoCaoHS.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnBaoCaoHS.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(101)))), ((int)(((byte)(241)))));
             this.btnBaoCaoHS.HoverState.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.btnBaoCaoHS.Location = new System.Drawing.Point(179, 22);
-            this.btnBaoCaoHS.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBaoCaoHS.Location = new System.Drawing.Point(201, 28);
+            this.btnBaoCaoHS.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnBaoCaoHS.Name = "btnBaoCaoHS";
-            this.btnBaoCaoHS.Size = new System.Drawing.Size(131, 57);
+            this.btnBaoCaoHS.Size = new System.Drawing.Size(147, 71);
             this.btnBaoCaoHS.TabIndex = 1;
             this.btnBaoCaoHS.Text = "Báo cáo học sinh";
             this.btnBaoCaoHS.Click += new System.EventHandler(this.btnBaoCaoHS_Click);
@@ -385,10 +387,10 @@
             this.btnBaoCaoMH.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnBaoCaoMH.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(101)))), ((int)(((byte)(241)))));
             this.btnBaoCaoMH.HoverState.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.btnBaoCaoMH.Location = new System.Drawing.Point(23, 22);
-            this.btnBaoCaoMH.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBaoCaoMH.Location = new System.Drawing.Point(26, 28);
+            this.btnBaoCaoMH.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnBaoCaoMH.Name = "btnBaoCaoMH";
-            this.btnBaoCaoMH.Size = new System.Drawing.Size(131, 57);
+            this.btnBaoCaoMH.Size = new System.Drawing.Size(147, 71);
             this.btnBaoCaoMH.TabIndex = 0;
             this.btnBaoCaoMH.Text = "Báo cáo môn học";
             this.btnBaoCaoMH.Click += new System.EventHandler(this.guna2Button1_Click);
@@ -400,9 +402,10 @@
             this.tabThongKe.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabThongKe.ItemSize = new System.Drawing.Size(180, 40);
             this.tabThongKe.Location = new System.Drawing.Point(0, 0);
+            this.tabThongKe.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabThongKe.Name = "tabThongKe";
             this.tabThongKe.SelectedIndex = 0;
-            this.tabThongKe.Size = new System.Drawing.Size(1213, 793);
+            this.tabThongKe.Size = new System.Drawing.Size(1365, 991);
             this.tabThongKe.TabButtonHoverState.BorderColor = System.Drawing.Color.Empty;
             this.tabThongKe.TabButtonHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(165)))), ((int)(((byte)(255)))));
             this.tabThongKe.TabButtonHoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
@@ -430,9 +433,10 @@
             this.tabPage3.Controls.Add(this.panel1);
             this.tabPage3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPage3.Location = new System.Drawing.Point(4, 44);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1205, 745);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabPage3.Size = new System.Drawing.Size(1357, 943);
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "Thống kê";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -443,20 +447,42 @@
             this.tabPage4.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPage4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(101)))), ((int)(((byte)(241)))));
             this.tabPage4.Location = new System.Drawing.Point(4, 44);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1205, 745);
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabPage4.Size = new System.Drawing.Size(1357, 943);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "Báo cáo";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // btnHoSoLH
+            // 
+            this.btnHoSoLH.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(101)))), ((int)(((byte)(241)))));
+            this.btnHoSoLH.BorderRadius = 8;
+            this.btnHoSoLH.BorderThickness = 1;
+            this.btnHoSoLH.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnHoSoLH.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnHoSoLH.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnHoSoLH.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnHoSoLH.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.btnHoSoLH.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnHoSoLH.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(101)))), ((int)(((byte)(241)))));
+            this.btnHoSoLH.HoverState.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.btnHoSoLH.Location = new System.Drawing.Point(902, 28);
+            this.btnHoSoLH.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnHoSoLH.Name = "btnHoSoLH";
+            this.btnHoSoLH.Size = new System.Drawing.Size(147, 71);
+            this.btnHoSoLH.TabIndex = 4;
+            this.btnHoSoLH.Text = "Hồ sơ lớp học";
+            this.btnHoSoLH.Click += new System.EventHandler(this.btnHoSoLH_Click);
+            // 
             // frmThongKe
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1213, 793);
+            this.ClientSize = new System.Drawing.Size(1365, 991);
             this.Controls.Add(this.tabThongKe);
-            this.Margin = new System.Windows.Forms.Padding(5);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "frmThongKe";
             this.Text = "frmThongKe";
             this.Load += new System.EventHandler(this.frmThongKe_Load);
@@ -500,5 +526,6 @@
         private Guna.UI2.WinForms.Guna2TabControl tabThongKe;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
+        private Guna.UI2.WinForms.Guna2Button btnHoSoLH;
     }
 }
